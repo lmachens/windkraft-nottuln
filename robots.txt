@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://windklarheit-nottuln.de/sitemap.xml

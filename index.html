@@ -1,0 +1,1432 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="canonical" href="https://windkraft-nottuln.de/">
+    <title>Windkraft Nottuln – Fakten zur Debatte</title>
+    <meta name="description" content="Faktenbasierte Informationen zur Windkraft-Debatte in Nottuln. Schattenwurf, Infraschall, Bürgerbeteiligung – mit Quellen belegt.">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://windkraft-nottuln.de/">
+    <meta property="og:title" content="Windkraft Nottuln – Fakten zur Debatte">
+    <meta property="og:description" content="Faktenbasierte Informationen zur Windkraft-Debatte in Nottuln. Schattenwurf, Infraschall, Bürgerbeteiligung – mit Quellen belegt.">
+    <meta property="og:locale" content="de_DE">
+    <meta property="og:site_name" content="Windkraft Nottuln">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --color-primary: #1a5f6a;
+            --color-primary-dark: #134249;
+            --color-primary-light: #e8f4f5;
+            --color-accent: #7da87b;
+            --color-accent-light: #e8f0e7;
+            --color-text: #2d3436;
+            --color-text-muted: #636e72;
+            --color-bg: #fafbfc;
+            --color-white: #ffffff;
+            --color-border: #dfe6e9;
+            --color-warning: #c9a227;
+            --color-warning-light: #fef9e7;
+
+            --font-display: 'DM Serif Display', Georgia, serif;
+            --font-body: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
+
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 1.5rem;
+            --space-lg: 2.5rem;
+            --space-xl: 4rem;
+            --space-2xl: 6rem;
+
+            --max-width: 1200px;
+            --border-radius: 8px;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            font-size: 1.0625rem;
+            line-height: 1.7;
+            color: var(--color-text);
+            background-color: var(--color-bg);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            width: 100%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 var(--space-md);
+        }
+
+        h1, h2, h3 {
+            font-family: var(--font-display);
+            font-weight: 400;
+            line-height: 1.2;
+            color: var(--color-primary-dark);
+        }
+
+        h1 { font-size: clamp(2.5rem, 6vw, 4rem); letter-spacing: -0.02em; }
+        h2 { font-size: clamp(1.75rem, 4vw, 2.5rem); margin-bottom: var(--space-md); }
+        h3 { font-size: 1.25rem; color: var(--color-primary); }
+        p { margin-bottom: var(--space-sm); }
+
+        /* ===== HEADER ===== */
+        .header {
+            background: var(--color-white);
+            border-bottom: 1px solid var(--color-border);
+            padding: var(--space-sm) 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header__inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: var(--space-md);
+        }
+
+        .header__logo {
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+            text-decoration: none;
+            color: var(--color-primary-dark);
+        }
+
+        .header__logo-icon {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .header__logo-icon svg {
+            width: 18px;
+            height: 18px;
+            fill: white;
+        }
+
+        .header__logo-text {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+        }
+
+        .header__nav {
+            display: flex;
+            gap: var(--space-md);
+        }
+
+        .header__nav a {
+            color: var(--color-text-muted);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9375rem;
+            transition: color 0.2s ease;
+        }
+
+        .header__nav a:hover { color: var(--color-primary); }
+
+        @media (max-width: 640px) {
+            .header__nav { display: none; }
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            background: linear-gradient(175deg, var(--color-white) 0%, var(--color-primary-light) 100%);
+            padding: var(--space-2xl) 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 80%;
+            height: 200%;
+            background: radial-gradient(ellipse at center, rgba(125, 168, 123, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero__content {
+            position: relative;
+            max-width: 800px;
+        }
+
+        .hero__badge {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-xs);
+            background: var(--color-white);
+            border: 1px solid var(--color-border);
+            padding: 0.375rem 0.875rem;
+            border-radius: 2rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--color-text-muted);
+            margin-bottom: var(--space-md);
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .hero__badge::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--color-accent);
+            border-radius: 50%;
+        }
+
+        .hero h1 {
+            margin-bottom: var(--space-md);
+            animation: fadeInUp 0.6s ease-out 0.1s backwards;
+        }
+
+        .hero__subtitle {
+            font-size: clamp(1.125rem, 2.5vw, 1.375rem);
+            color: var(--color-text-muted);
+            max-width: 600px;
+            margin-bottom: var(--space-lg);
+            animation: fadeInUp 0.6s ease-out 0.2s backwards;
+        }
+
+        .hero__cta {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-xs);
+            background: var(--color-primary);
+            color: var(--color-white);
+            padding: 0.875rem 1.75rem;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            animation: fadeInUp 0.6s ease-out 0.3s backwards;
+        }
+
+        .hero__cta:hover {
+            background: var(--color-primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(26, 95, 106, 0.25);
+        }
+
+        .hero__cta svg {
+            width: 18px;
+            height: 18px;
+            transition: transform 0.2s ease;
+        }
+
+        .hero__cta:hover svg { transform: translateX(4px); }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ===== SECTIONS ===== */
+        section {
+            padding: var(--space-2xl) 0;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto var(--space-xl);
+        }
+
+        .section-header p {
+            color: var(--color-text-muted);
+            font-size: 1.125rem;
+        }
+
+        /* ===== ABOUT ME SECTION ===== */
+        .about {
+            background: var(--color-white);
+        }
+
+        .about__content {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: var(--space-xl);
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .about__content {
+                grid-template-columns: 1fr;
+                gap: var(--space-lg);
+            }
+        }
+
+        .about__visual {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .poster-illustration {
+            position: relative;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .poster {
+            background: var(--color-white);
+            border: 3px solid #c0392b;
+            border-radius: 4px;
+            padding: var(--space-md) var(--space-lg);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.12), 0 2px 8px rgba(0,0,0,0.08);
+            transform: rotate(-2deg);
+            position: relative;
+        }
+
+        .poster::before {
+            content: '';
+            position: absolute;
+            top: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 16px;
+            background: #e74c3c;
+            border-radius: 2px;
+        }
+
+        .poster__text {
+            font-family: var(--font-display);
+            font-size: 1.125rem;
+            color: #c0392b;
+            text-align: center;
+            line-height: 1.3;
+            margin-bottom: var(--space-sm);
+        }
+
+        .poster__subtext {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #c0392b;
+            text-align: center;
+        }
+
+        .poster__windrad {
+            display: flex;
+            justify-content: center;
+            margin: var(--space-sm) 0;
+        }
+
+        .poster__windrad svg {
+            width: 48px;
+            height: 48px;
+            opacity: 0.7;
+        }
+
+        .thought-bubble {
+            position: absolute;
+            bottom: -25px;
+            right: -35px;
+            background: var(--color-primary);
+            color: white;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-display);
+            font-size: 3rem;
+            font-weight: 700;
+            box-shadow: 0 6px 24px rgba(26, 95, 106, 0.4);
+            transform: rotate(5deg);
+            animation: pulse-attention 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-attention {
+            0%, 100% { transform: rotate(5deg) scale(1); }
+            50% { transform: rotate(5deg) scale(1.08); }
+        }
+
+        .thought-bubble::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: -12px;
+            width: 16px;
+            height: 16px;
+            background: var(--color-primary);
+            border-radius: 50%;
+            transform: translateY(-50%);
+        }
+
+        .thought-bubble::after {
+            content: '';
+            position: absolute;
+            top: 60%;
+            left: -26px;
+            width: 10px;
+            height: 10px;
+            background: var(--color-primary);
+            border-radius: 50%;
+        }
+
+        .thought-bubble-text {
+            font-size: 0.65rem;
+            position: absolute;
+            bottom: -18px;
+            white-space: nowrap;
+            color: var(--color-primary);
+            font-weight: 600;
+            font-family: var(--font-body);
+        }
+
+        .about__text h2 {
+            margin-bottom: var(--space-md);
+        }
+
+        .about__text p {
+            color: var(--color-text-muted);
+        }
+
+        .about__text p strong {
+            color: var(--color-text);
+        }
+
+        .about__signature {
+            margin-top: var(--space-md);
+            padding-top: var(--space-md);
+            border-top: 1px solid var(--color-border);
+            font-style: italic;
+            color: var(--color-text-muted);
+        }
+
+        /* ===== INFOGRAPHIC SECTION ===== */
+        .infographic {
+            background: var(--color-bg);
+        }
+
+        .infographic__grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-lg);
+        }
+
+        @media (max-width: 900px) {
+            .infographic__grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .info-card {
+            background: var(--color-white);
+            border-radius: var(--border-radius);
+            padding: var(--space-lg);
+            border: 1px solid var(--color-border);
+        }
+
+        .info-card h3 {
+            margin-bottom: var(--space-md);
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+        }
+
+        .info-card h3 svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--color-primary);
+            fill: none;
+            stroke-width: 2;
+        }
+
+        /* Schattenwurf Visualization */
+        .shadow-viz {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-md);
+        }
+
+        .shadow-bar {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+        }
+
+        .shadow-bar__label {
+            width: 140px;
+            font-size: 0.875rem;
+            color: var(--color-text-muted);
+        }
+
+        .shadow-bar__track {
+            flex: 1;
+            height: 32px;
+            background: var(--color-bg);
+            border-radius: 4px;
+            position: relative;
+        }
+
+        .shadow-bar__fill {
+            height: 100%;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            font-weight: 600;
+            font-size: 0.875rem;
+            color: var(--color-text);
+            transition: width 1s ease-out;
+            position: relative;
+        }
+
+        .shadow-bar__fill span {
+            position: absolute;
+            left: calc(100% + 8px);
+            white-space: nowrap;
+        }
+
+        .shadow-bar__fill--allowed {
+            background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-accent) 100%);
+            width: 20%;
+        }
+
+        .shadow-bar__fill--theoretical {
+            background: var(--color-border);
+            width: 75%;
+        }
+
+        .shadow-bar__value {
+            position: absolute;
+            right: var(--space-xs);
+            font-size: 0.75rem;
+            color: var(--color-text-muted);
+        }
+
+        .shadow-note {
+            font-size: 0.8125rem;
+            color: var(--color-text-muted);
+            background: var(--color-primary-light);
+            padding: var(--space-sm);
+            border-radius: 4px;
+            border-left: 3px solid var(--color-primary);
+        }
+
+        /* Infraschall Comparison */
+        .infraschall-viz {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-md);
+        }
+
+        .infraschall-compare {
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            gap: var(--space-xl);
+            padding: var(--space-lg) 0;
+        }
+
+        .infraschall-item {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .infraschall-item__icon {
+            width: 64px;
+            height: 64px;
+            background: var(--color-primary-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: var(--space-sm);
+        }
+
+        .infraschall-item__icon svg {
+            width: 32px;
+            height: 32px;
+            stroke: var(--color-primary);
+            fill: none;
+            stroke-width: 1.5;
+        }
+
+        .infraschall-item__icon--car {
+            background: var(--color-warning-light);
+        }
+
+        .infraschall-item__icon--car svg {
+            stroke: var(--color-warning);
+        }
+
+        .infraschall-item__bar {
+            width: 48px;
+            background: var(--color-primary);
+            border-radius: 4px 4px 0 0;
+            margin-bottom: var(--space-xs);
+        }
+
+        .infraschall-item__bar--high {
+            height: 120px;
+            background: var(--color-warning);
+        }
+
+        .infraschall-item__bar--low {
+            height: 30px;
+        }
+
+        .infraschall-item__label {
+            font-size: 0.875rem;
+            color: var(--color-text-muted);
+            max-width: 100px;
+        }
+
+        .infraschall-item__value {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            color: var(--color-primary-dark);
+        }
+
+        .vs-badge {
+            font-weight: 700;
+            color: var(--color-text-muted);
+            font-size: 1.25rem;
+            align-self: center;
+            margin-bottom: 60px;
+        }
+
+        /* ===== BENEFITS CARD ===== */
+        .benefits-card {
+            background: var(--color-accent-light);
+            border: 1px solid #c8dfc6;
+        }
+
+        .benefits-card h3 svg {
+            stroke: var(--color-accent);
+        }
+
+        .benefits-list {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-sm);
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--space-sm);
+            padding: var(--space-sm);
+            background: var(--color-white);
+            border-radius: 6px;
+        }
+
+        .benefit-item__icon {
+            width: 32px;
+            height: 32px;
+            min-width: 32px;
+            background: var(--color-accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 0.875rem;
+        }
+
+        .benefit-item__text {
+            font-size: 0.9375rem;
+            color: var(--color-text-muted);
+        }
+
+        .benefit-item__text strong {
+            color: var(--color-text);
+        }
+
+        .benefit-item__highlight {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            color: var(--color-accent);
+        }
+
+        /* ===== TRANSPARENCY CARD ===== */
+        .transparency-card {
+            background: var(--color-warning-light);
+            border: 1px solid #f0e6c8;
+        }
+
+        .transparency-card h3 svg {
+            stroke: var(--color-warning);
+        }
+
+        /* ===== RESOURCES SECTION ===== */
+        .resources {
+            background: var(--color-primary-dark);
+            color: var(--color-white);
+        }
+
+        .resources h2 {
+            color: var(--color-white);
+        }
+
+        .resources .section-header p {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .resources__grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-md);
+        }
+
+        @media (max-width: 900px) {
+            .resources__grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .resource-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: var(--border-radius);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: var(--space-lg);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: block;
+        }
+
+        .resource-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-4px);
+        }
+
+        .resource-item__icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(125, 168, 123, 0.2);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: var(--space-md);
+        }
+
+        .resource-item__icon svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--color-accent);
+            fill: none;
+            stroke-width: 1.5;
+        }
+
+        .resource-item h3 {
+            color: var(--color-white);
+            margin-bottom: var(--space-xs);
+            font-size: 1.125rem;
+        }
+
+        .resource-item p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.875rem;
+            margin-bottom: var(--space-sm);
+        }
+
+        .resource-item__link {
+            color: var(--color-accent);
+            font-size: 0.875rem;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .resource-item__link svg {
+            width: 14px;
+            height: 14px;
+            stroke: var(--color-accent);
+        }
+
+        /* ===== CTA SECTION ===== */
+        .cta-section {
+            background: linear-gradient(135deg, var(--color-accent-light) 0%, var(--color-primary-light) 100%);
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            margin-bottom: var(--space-sm);
+        }
+
+        .cta-section p {
+            color: var(--color-text-muted);
+            font-size: 1.125rem;
+            max-width: 600px;
+            margin: 0 auto var(--space-lg);
+        }
+
+        .cta-section__buttons {
+            display: flex;
+            gap: var(--space-sm);
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-xs);
+            padding: 0.875rem 1.75rem;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn--primary {
+            background: var(--color-primary);
+            color: var(--color-white);
+        }
+
+        .btn--primary:hover {
+            background: var(--color-primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(26, 95, 106, 0.25);
+        }
+
+        .btn--secondary {
+            background: var(--color-white);
+            color: var(--color-primary);
+            border: 1px solid var(--color-border);
+        }
+
+        .btn--secondary:hover {
+            border-color: var(--color-primary);
+            transform: translateY(-2px);
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: var(--color-white);
+            border-top: 1px solid var(--color-border);
+            padding: var(--space-xl) 0 var(--space-lg);
+        }
+
+        .footer__inner {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: var(--space-lg);
+        }
+
+        @media (max-width: 768px) {
+            .footer__inner { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 480px) {
+            .footer__inner { grid-template-columns: 1fr; }
+        }
+
+        .footer__brand p {
+            color: var(--color-text-muted);
+            font-size: 0.9375rem;
+            margin-top: var(--space-sm);
+        }
+
+        .footer__col h4 {
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--color-text-muted);
+            margin-bottom: var(--space-sm);
+        }
+
+        .footer__col ul { list-style: none; }
+        .footer__col li { margin-bottom: var(--space-xs); }
+
+        .footer__col a {
+            color: var(--color-text);
+            text-decoration: none;
+            font-size: 0.9375rem;
+            transition: color 0.2s ease;
+        }
+
+        .footer__col a:hover { color: var(--color-primary); }
+
+        .footer__bottom {
+            margin-top: var(--space-xl);
+            padding-top: var(--space-md);
+            border-top: 1px solid var(--color-border);
+            text-align: center;
+        }
+
+        .footer__bottom p {
+            color: var(--color-text-muted);
+            font-size: 0.875rem;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header__inner">
+            <a href="/" class="header__logo">
+                <div class="header__logo-icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                    </svg>
+                </div>
+                <span class="header__logo-text">Windkraft Nottuln</span>
+            </a>
+            <nav class="header__nav">
+                <a href="#fakten">Fakten</a>
+                <a href="#ehrlichkeit">Ehrlichkeit</a>
+                <a href="#ressourcen">Ressourcen</a>
+                <a href="/quellen/">Quellen</a>
+                <a href="/impressum/">Impressum</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero__content">
+            <div class="hero__badge">Von einem Nottulner für Nottulner</div>
+            <h1>Windklarheit für Nottuln</h1>
+            <p class="hero__subtitle">Die Plakate an den Ortseingängen haben Fragen aufgeworfen. Also habe ich recherchiert – und möchte teilen, was ich herausgefunden habe.</p>
+            <a href="#fakten" class="hero__cta">
+                Zu den Fakten
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container about__content">
+            <div class="about__visual">
+                <div class="poster-illustration">
+                    <div class="poster">
+                        <div class="poster__text">Soll so unser Nottuln aussehen?</div>
+                        <div class="poster__windrad">
+                            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <!-- Turm -->
+                                <path d="M30 28L28 60H36L34 28" fill="#c0392b" opacity="0.6"/>
+                                <!-- Nabe -->
+                                <circle cx="32" cy="24" r="4" fill="#c0392b"/>
+                                <!-- Rotorblätter -->
+                                <path d="M32 24L32 4L28 24Z" fill="#c0392b" opacity="0.8"/>
+                                <path d="M32 24L49 34L32 28Z" fill="#c0392b" opacity="0.8"/>
+                                <path d="M32 24L15 34L32 28Z" fill="#c0392b" opacity="0.8"/>
+                            </svg>
+                        </div>
+                        <div class="poster__subtext">Nein, Danke!</div>
+                    </div>
+                    <div class="thought-bubble">
+                        ?
+                        <span class="thought-bubble-text">Stimmt das?</span>
+                    </div>
+                </div>
+            </div>
+            <div class="about__text">
+                <h2>Warum ich diese Seite erstellt habe</h2>
+                <p>Ich wohne selbst in Nottuln. Wie viele hier habe ich die Plakate gesehen: <em>„Soll so unser Nottuln aussehen? Nein, Danke!"</em></p>
+                <p>Die Bilder wirken bedrohlich. Aber stimmt das auch? Ich wollte es genau wissen und habe angefangen zu recherchieren. Dabei ist mir aufgefallen: <strong>Wichtige Informationen fehlen in der aktuellen Debatte.</strong></p>
+                <p>Diese Website sammelt, was ich herausgefunden habe. Keine Werbung für Windkraft, keine Kampagne dagegen – nur die Fakten, die ich für eine ehrliche Diskussion in unserer Gemeinde vermisse.</p>
+                <div class="about__transparency" style="margin-top: var(--space-md); padding: var(--space-md); background: var(--color-primary-light); border-radius: var(--border-radius); border-left: 3px solid var(--color-primary);">
+                    <strong style="color: var(--color-primary-dark);">Transparenz über mich:</strong>
+                    <p style="margin: var(--space-xs) 0 0 0; color: var(--color-text-muted);">Ich wohne in Nottuln, aber ohne direkte Sicht auf die geplanten Standorte. Ich bin also nicht unmittelbar betroffen. Was ich aber regelmäßig mache: Mit meinem Sohn über die Felder radeln. Die bestehenden Windräder dort stören uns nicht.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Infographic Section -->
+    <section class="infographic" id="fakten">
+        <div class="container">
+            <div class="section-header">
+                <h2>Was in der Debatte oft fehlt</h2>
+                <p>Vier Themen, bei denen ich Kontext vermisst habe – mit Zahlen und Quellen.</p>
+            </div>
+            <div class="infographic__grid">
+                <!-- Schattenwurf Card -->
+                <article class="info-card">
+                    <h3>
+                        <svg viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="5"/>
+                            <line x1="12" y1="1" x2="12" y2="3"/>
+                            <line x1="12" y1="21" x2="12" y2="23"/>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                            <line x1="1" y1="12" x2="3" y2="12"/>
+                            <line x1="21" y1="12" x2="23" y2="12"/>
+                        </svg>
+                        Schattenwurf – die Grenzen
+                    </h3>
+                    <div class="shadow-viz">
+                        <div class="shadow-bar">
+                            <span class="shadow-bar__label">Tatsächlich erlaubt</span>
+                            <div class="shadow-bar__track">
+                                <div class="shadow-bar__fill shadow-bar__fill--allowed"><span>8h/Jahr</span></div>
+                            </div>
+                        </div>
+                        <div class="shadow-bar">
+                            <span class="shadow-bar__label">Theoretisches Max.</span>
+                            <div class="shadow-bar__track">
+                                <div class="shadow-bar__fill shadow-bar__fill--theoretical"><span>30h/Jahr</span></div>
+                            </div>
+                        </div>
+                        <div class="shadow-note" style="margin-bottom: var(--space-sm);">
+                            <strong>Was ist der Unterschied?</strong><br>
+                            • <strong>30h/Jahr theoretisch:</strong> Worst-Case-Berechnung – als würde die Sonne jeden Tag scheinen und das Windrad immer laufen<br>
+                            • <strong>8h/Jahr tatsächlich:</strong> Realistische Grenze unter echten Wetterbedingungen (Wolken, Windstille, etc.)
+                        </div>
+                        <div class="shadow-note">
+                            <strong>Die Abschaltautomatik:</strong> Moderne Windräder haben Sensoren, die den Schattenwurf messen. Wird der Grenzwert erreicht, schaltet die Anlage automatisch ab – per Gesetz vorgeschrieben.
+                        </div>
+                        <a href="https://www.lai-immissionsschutz.de/documents/wka_schattenwurfhinweise_stand_23_1588595757.01.pdf" target="_blank" rel="noopener" style="font-size: 0.8125rem; color: var(--color-primary); margin-top: var(--space-sm); display: inline-block;">
+                            → Quelle: LAI-Schattenwurfhinweise (PDF)
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Infraschall Card -->
+                <article class="info-card">
+                    <h3>
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
+                            <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+                            <line x1="12" y1="19" x2="12" y2="23"/>
+                            <line x1="8" y1="23" x2="16" y2="23"/>
+                        </svg>
+                        Infraschall – ein Vergleich
+                    </h3>
+                    <div class="infraschall-viz">
+                        <div class="infraschall-compare">
+                            <div class="infraschall-item">
+                                <div class="infraschall-item__bar infraschall-item__bar--high"></div>
+                                <div class="infraschall-item__icon infraschall-item__icon--car">
+                                    <svg viewBox="0 0 24 24">
+                                        <path d="M5 17h14v-5H5v5zm3-4a1 1 0 100 2 1 1 0 000-2zm8 0a1 1 0 100 2 1 1 0 000-2z"/>
+                                        <path d="M18 5H6L3 12v9h3v-2h12v2h3v-9l-3-7z"/>
+                                    </svg>
+                                </div>
+                                <span class="infraschall-item__label">10 Min. Autofahrt</span>
+                            </div>
+                            <span class="vs-badge">›</span>
+                            <div class="infraschall-item">
+                                <div class="infraschall-item__bar infraschall-item__bar--low"></div>
+                                <div class="infraschall-item__icon">
+                                    <svg viewBox="0 0 24 24">
+                                        <circle cx="12" cy="8" r="2"/>
+                                        <path d="M12 10v8"/>
+                                        <path d="M8 14l4-2 4 2"/>
+                                        <path d="M9 22l3-4 3 4"/>
+                                    </svg>
+                                </div>
+                                <span class="infraschall-item__label">Windrad in 300m</span>
+                            </div>
+                        </div>
+                        <div class="shadow-note">
+                            <strong>Uni Bayreuth (2020):</strong> Schon nach 10-12 Minuten Autofahrt ist man höherem Infraschall ausgesetzt als in 300m Entfernung zu einem Windrad. Der Infraschall von WEA liegt deutlich unter der menschlichen Wahrnehmungsschwelle.
+                        </div>
+                        <a href="https://www.umweltbundesamt.de/themen/laerm/nachbarschaftslaerm-laerm-von-anlagen/laerm-von-windenergieanlagen" target="_blank" rel="noopener" style="font-size: 0.8125rem; color: var(--color-primary);">
+                            → Quelle: Umweltbundesamt
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Benefits Card -->
+                <article class="info-card benefits-card">
+                    <h3>
+                        <svg viewBox="0 0 24 24">
+                            <!-- Trend-Up / Gewinn Icon -->
+                            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+                            <polyline points="17 6 23 6 23 12"/>
+                        </svg>
+                        Was Nottuln davon hat
+                    </h3>
+                    <div class="benefits-list">
+                        <div class="benefit-item">
+                            <div class="benefit-item__icon">€</div>
+                            <div class="benefit-item__text">
+                                <strong>Pflichtabgabe ans Dorf:</strong> 0,2 Cent pro kWh gehen direkt an die Gemeinde – das sind <span class="benefit-item__highlight">~20.000€+ pro Windrad/Jahr</span>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-item__icon">%</div>
+                            <div class="benefit-item__text">
+                                <strong>90% Gewerbesteuer</strong> fließen an die Standortgemeinde (seit 2021 gesetzlich geregelt)
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-item__icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 18px; height: 18px;">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                    <circle cx="9" cy="7" r="4"/>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                                </svg>
+                            </div>
+                            <div class="benefit-item__text">
+                                <strong>Bürgerbeteiligung:</strong> Laut Bürgerenergiegesetz NRW können Nottulner ab 500€ investieren und mitverdienen
+                            </div>
+                        </div>
+                    </div>
+                    <div class="shadow-note" style="margin-top: var(--space-md); background: white;">
+                        <strong>Praxisbeispiel Simmerath:</strong> Durch Windkraft-Einnahmen hat die Gemeinde die niedrigsten Steuern der Region – Grundsteuer, Gewerbesteuer, sogar Hundesteuer.
+                    </div>
+                    <a href="https://www.wirtschaft.nrw/buergerenergiegesetz-nrw" target="_blank" rel="noopener" style="font-size: 0.8125rem; color: var(--color-primary); margin-top: var(--space-sm); display: inline-block;">
+                        → Quelle: Bürgerenergiegesetz NRW
+                    </a>
+                </article>
+
+                <!-- Transparency Card -->
+                <article class="info-card transparency-card">
+                    <h3>
+                        <svg viewBox="0 0 24 24">
+                            <!-- Waage/Balance Icon -->
+                            <path d="M12 3v18"/>
+                            <path d="M5 8l7-2 7 2"/>
+                            <circle cx="5" cy="13" r="3"/>
+                            <circle cx="19" cy="13" r="3"/>
+                        </svg>
+                        Transparenz in der Debatte
+                    </h3>
+                    <div style="display: flex; flex-direction: column; gap: var(--space-md);">
+                        <p style="color: var(--color-text-muted); margin: 0;">In einer fairen Debatte sollten alle Beteiligten offenlegen, aus welcher Perspektive sie sprechen. Hier ein Überblick:</p>
+
+                        <!-- Comparison of perspectives -->
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-sm);">
+                            <div style="background: white; border-radius: 6px; padding: var(--space-sm);">
+                                <strong style="color: var(--color-warning); font-size: 0.875rem;">windsinn-nottuln.info</strong>
+                                <p style="font-size: 0.8125rem; color: var(--color-text-muted); margin: var(--space-xs) 0 0 0;">
+                                    Betreiber wohnt in der Falkenstraße (Dorfrand), ca. 300m von geplanten Anlagen. <strong style="color: var(--color-text);">Direkt betroffen</strong> – aber diese Info fehlt auf der Seite.
+                                </p>
+                            </div>
+                            <div style="background: white; border-radius: 6px; padding: var(--space-sm);">
+                                <strong style="color: var(--color-primary); font-size: 0.875rem;">Diese Seite</strong>
+                                <p style="font-size: 0.8125rem; color: var(--color-text-muted); margin: var(--space-xs) 0 0 0;">
+                                    Ich wohne in Nottuln, aber <strong style="color: var(--color-text);">nicht direkt betroffen</strong> (keine Sichtachse zu geplanten Standorten). Meine Motivation: fehlende Fakten in der Debatte.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="shadow-note" style="background: white;">
+                            <strong>Mein Standpunkt:</strong> Die Sorgen von Anwohnern am Dorfrand sind nachvollziehbar und legitim. Wer 300m entfernt wohnt, darf sich Sorgen machen. Ich wünsche mir nur, dass diese Betroffenheit offen kommuniziert wird – und dass Fakten nicht verzerrt werden.
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Honesty Section -->
+    <section class="honesty" id="ehrlichkeit" style="background: var(--color-white);">
+        <div class="container">
+            <div class="section-header">
+                <h2>Was diese Seite nicht behauptet</h2>
+                <p>Ehrlichkeit bedeutet auch, die Grenzen der eigenen Argumente anzuerkennen.</p>
+            </div>
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div style="display: flex; flex-direction: column; gap: var(--space-md);">
+
+                    <!-- Point 1: Landscape -->
+                    <div style="display: flex; gap: var(--space-md); align-items: flex-start;">
+                        <div style="width: 40px; height: 40px; min-width: 40px; background: var(--color-primary-light); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                            <svg viewBox="0 0 24 24" style="width: 20px; height: 20px; stroke: var(--color-primary); fill: none; stroke-width: 2;">
+                                <path d="M3 17l6-6 4 4 8-8"/>
+                                <path d="M17 7h4v4"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 style="font-size: 1rem; margin-bottom: var(--space-xs); color: var(--color-primary-dark);">Windräder verändern das Landschaftsbild</h3>
+                            <p style="color: var(--color-text-muted); margin: 0;">Das ist Fakt, und ob man das schön oder störend findet, ist subjektiv. Ich behaupte nicht, dass Windräder unsichtbar sind oder die Landschaft "verbessern". Das muss jeder für sich entscheiden.</p>
+                        </div>
+                    </div>
+
+                    <!-- Point 2: Property Values -->
+                    <div style="display: flex; gap: var(--space-md); align-items: flex-start;">
+                        <div style="width: 40px; height: 40px; min-width: 40px; background: var(--color-primary-light); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                            <svg viewBox="0 0 24 24" style="width: 20px; height: 20px; stroke: var(--color-primary); fill: none; stroke-width: 2;">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                                <polyline points="9 22 9 12 15 12 15 22"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 style="font-size: 1rem; margin-bottom: var(--space-xs); color: var(--color-primary-dark);">Immobilienwerte können sinken</h3>
+                            <p style="color: var(--color-text-muted); margin: 0;">Studien zeigen unterschiedliche Ergebnisse: Manche finden Wertverluste von 5-10% in unmittelbarer Nähe (&lt;1km), andere keinen messbaren Effekt. Die Sorge ist berechtigt – auch wenn die Datenlage nicht eindeutig ist. <a href="https://www.rwi-essen.de/publikationen/wissenschaftliche-zeitschriftenaufsaetze/detail/the-effect-of-wind-turbines-on-property-values" target="_blank" rel="noopener" style="font-size: 0.8125rem;">→ RWI-Studie</a></p>
+                        </div>
+                    </div>
+
+                    <!-- Point 3: Legitimate Concerns -->
+                    <div style="display: flex; gap: var(--space-md); align-items: flex-start;">
+                        <div style="width: 40px; height: 40px; min-width: 40px; background: var(--color-primary-light); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                            <svg viewBox="0 0 24 24" style="width: 20px; height: 20px; stroke: var(--color-primary); fill: none; stroke-width: 2;">
+                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 style="font-size: 1rem; margin-bottom: var(--space-xs); color: var(--color-primary-dark);">Die Sorgen der Anwohner sind real</h3>
+                            <p style="color: var(--color-text-muted); margin: 0;">Wer seit Jahrzehnten aufs freie Feld schaut und plötzlich Windräder sieht, empfindet das möglicherweise als Verlust. Das ist kein "Unsinn" – das ist menschlich. Ich kritisiere nicht die Sorgen, sondern fehlende Transparenz und übertriebene Behauptungen.</p>
+                        </div>
+                    </div>
+
+                    <!-- Point 4: This site has a perspective -->
+                    <div style="display: flex; gap: var(--space-md); align-items: flex-start;">
+                        <div style="width: 40px; height: 40px; min-width: 40px; background: var(--color-primary-light); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                            <svg viewBox="0 0 24 24" style="width: 20px; height: 20px; stroke: var(--color-primary); fill: none; stroke-width: 2;">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                                <circle cx="12" cy="12" r="3"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 style="font-size: 1rem; margin-bottom: var(--space-xs); color: var(--color-primary-dark);">Auch ich habe eine Perspektive</h3>
+                            <p style="color: var(--color-text-muted); margin: 0;">Ich bin nicht "neutral" – ich halte Windkraft für einen wichtigen Teil der Energiewende. Aber ich versuche, nur Fakten zu präsentieren, die ich belegen kann. Wenn ich etwas falsch dargestellt habe, korrigiere ich es gerne.</p>
+                        </div>
+                    </div>
+
+                    <!-- Point 5: Other valid concerns -->
+                    <div style="display: flex; gap: var(--space-md); align-items: flex-start;">
+                        <div style="width: 40px; height: 40px; min-width: 40px; background: var(--color-primary-light); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                            <svg viewBox="0 0 24 24" style="width: 20px; height: 20px; stroke: var(--color-primary); fill: none; stroke-width: 2;">
+                                <line x1="8" y1="6" x2="21" y2="6"/>
+                                <line x1="8" y1="12" x2="21" y2="12"/>
+                                <line x1="8" y1="18" x2="21" y2="18"/>
+                                <line x1="3" y1="6" x2="3.01" y2="6"/>
+                                <line x1="3" y1="12" x2="3.01" y2="12"/>
+                                <line x1="3" y1="18" x2="3.01" y2="18"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 style="font-size: 1rem; margin-bottom: var(--space-xs); color: var(--color-primary-dark);">Themen, die ich hier nicht behandle</h3>
+                            <p style="color: var(--color-text-muted); margin: 0;">Vogelschlag, Nachtbefeuerung (rote Blinklichter), Baulärm während der Errichtung, hörbarer Schall (nicht nur Infraschall) – das sind alles Themen, zu denen es berechtigte Fragen gibt. Diese Seite deckt nicht alles ab.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div style="margin-top: var(--space-lg); padding: var(--space-md); background: var(--color-primary-light); border-radius: var(--border-radius); border-left: 3px solid var(--color-primary);">
+                    <strong style="color: var(--color-primary-dark);">Mein Ziel:</strong>
+                    <p style="margin: var(--space-xs) 0 0 0; color: var(--color-text-muted);">Keine Propaganda für Windkraft – sondern eine Gegenstimme zu übertriebenen Behauptungen. Wenn jemand sagt "Windräder machen krank" oder "Der Schattenwurf ist unerträglich", dann möchte ich zeigen, was die Wissenschaft dazu sagt. Nicht mehr, nicht weniger.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section class="resources" id="ressourcen">
+        <div class="container">
+            <div class="section-header">
+                <h2>Selbst recherchieren</h2>
+                <p>Diese unabhängigen Quellen haben mir bei meiner Recherche geholfen.</p>
+            </div>
+            <div class="resources__grid">
+                <a href="https://www.wind-energie.de/themen/publikationen/infografiken/" target="_blank" rel="noopener" class="resource-item">
+                    <div class="resource-item__icon">
+                        <svg viewBox="0 0 24 24">
+                            <rect x="3" y="3" width="18" height="18" rx="2"/>
+                            <path d="M3 9h18"/>
+                            <path d="M9 21V9"/>
+                        </svg>
+                    </div>
+                    <h3>BWE Infografiken</h3>
+                    <p>Bundesverband WindEnergie: Grafiken zu Fakten, Kosten und Umwelt – frei nutzbar mit Quellenangabe.</p>
+                    <span class="resource-item__link">
+                        wind-energie.de
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                            <polyline points="15 3 21 3 21 9"/>
+                            <line x1="10" y1="14" x2="21" y2="3"/>
+                        </svg>
+                    </span>
+                </a>
+
+                <a href="https://www.energieatlas.bayern.de/karten-tools/tools/3d-analyse-wind-pv" target="_blank" rel="noopener" class="resource-item">
+                    <div class="resource-item__icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+                            <line x1="12" y1="22.08" x2="12" y2="12"/>
+                        </svg>
+                    </div>
+                    <h3>3D-Visualisierung</h3>
+                    <p>Bayerischer Energieatlas: Neutrale 3D-Ansicht inkl. Schattenwurf-Simulation – funktioniert deutschlandweit.</p>
+                    <span class="resource-item__link">
+                        energieatlas.bayern.de
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                            <polyline points="15 3 21 3 21 9"/>
+                            <line x1="10" y1="14" x2="21" y2="3"/>
+                        </svg>
+                    </span>
+                </a>
+
+                <a href="https://www.stadtwerke-muenster.de/unternehmen/muenster-wird-gruen/energiewende/windenergie/nottuln" target="_blank" rel="noopener" class="resource-item">
+                    <div class="resource-item__icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M3 21h18"/>
+                            <path d="M9 8h1"/>
+                            <path d="M9 12h1"/>
+                            <path d="M9 16h1"/>
+                            <path d="M14 8h1"/>
+                            <path d="M14 12h1"/>
+                            <path d="M14 16h1"/>
+                            <path d="M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16"/>
+                        </svg>
+                    </div>
+                    <h3>Stadtwerke Münster</h3>
+                    <p>Offizielle Projektseite zum Windpark Nottuln-Stockum mit Karte, Zeitplan und Bürgerbeteiligung.</p>
+                    <span class="resource-item__link">
+                        stadtwerke-muenster.de
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                            <polyline points="15 3 21 3 21 9"/>
+                            <line x1="10" y1="14" x2="21" y2="3"/>
+                        </svg>
+                    </span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Wie geht es weiter?</h2>
+            <p>Der Genehmigungsantrag wird voraussichtlich 2026 eingereicht. Bis dahin gibt es Möglichkeiten, sich zu informieren und einzubringen.</p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-md); margin: var(--space-lg) auto; max-width: 900px; text-align: left;">
+                <!-- Official Info -->
+                <div style="background: var(--color-white); padding: var(--space-md); border-radius: var(--border-radius); border: 1px solid var(--color-border);">
+                    <h3 style="font-size: 1rem; color: var(--color-primary-dark); margin-bottom: var(--space-sm);">Offizielle Informationen</h3>
+                    <ul style="list-style: none; font-size: 0.9375rem;">
+                        <li style="margin-bottom: var(--space-xs);">
+                            <a href="https://www.nottuln.de" target="_blank" rel="noopener" style="color: var(--color-primary);">→ Gemeinde Nottuln</a>
+                            <span style="display: block; font-size: 0.8125rem; color: var(--color-text-muted);">Veranstaltungen & Ratsbeschlüsse</span>
+                        </li>
+                        <li style="margin-bottom: var(--space-xs);">
+                            <a href="https://www.stadtwerke-muenster.de/unternehmen/muenster-wird-gruen/energiewende/windenergie/nottuln" target="_blank" rel="noopener" style="color: var(--color-primary);">→ Stadtwerke Münster</a>
+                            <span style="display: block; font-size: 0.8125rem; color: var(--color-text-muted);">Projektdetails & Bürgerbeteiligung</span>
+                        </li>
+                        <li>
+                            <a href="mailto:info@nottuln.de" style="color: var(--color-primary);">→ info@nottuln.de</a>
+                            <span style="display: block; font-size: 0.8125rem; color: var(--color-text-muted);">Fragen an die Gemeindeverwaltung</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Timeline -->
+                <div style="background: var(--color-white); padding: var(--space-md); border-radius: var(--border-radius); border: 1px solid var(--color-border);">
+                    <h3 style="font-size: 1rem; color: var(--color-primary-dark); margin-bottom: var(--space-sm);">Zeitplan (Stand: Ende 2025)</h3>
+                    <ul style="list-style: none; font-size: 0.9375rem;">
+                        <li style="margin-bottom: var(--space-xs); display: flex; gap: var(--space-xs);">
+                            <span style="color: var(--color-accent);">✓</span>
+                            <span><strong>2025:</strong> Vorbescheid erteilt, Windmesse</span>
+                        </li>
+                        <li style="margin-bottom: var(--space-xs); display: flex; gap: var(--space-xs);">
+                            <span style="color: var(--color-text-muted);">○</span>
+                            <span><strong>2026:</strong> Genehmigungsantrag geplant</span>
+                        </li>
+                        <li style="margin-bottom: var(--space-xs); display: flex; gap: var(--space-xs);">
+                            <span style="color: var(--color-text-muted);">○</span>
+                            <span><strong>2026:</strong> Weitere Info-Veranstaltungen</span>
+                        </li>
+                        <li style="display: flex; gap: var(--space-xs);">
+                            <span style="color: var(--color-text-muted);">○</span>
+                            <span><strong>2028:</strong> Möglicher Betriebsstart</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- This Site -->
+                <div style="background: var(--color-white); padding: var(--space-md); border-radius: var(--border-radius); border: 1px solid var(--color-border);">
+                    <h3 style="font-size: 1rem; color: var(--color-primary-dark); margin-bottom: var(--space-sm);">Diese Seite</h3>
+                    <ul style="list-style: none; font-size: 0.9375rem;">
+                        <li style="margin-bottom: var(--space-xs);">
+                            <a href="/quellen/" style="color: var(--color-primary);">→ Quellenverzeichnis</a>
+                            <span style="display: block; font-size: 0.8125rem; color: var(--color-text-muted);">Alle Fakten mit Belegen</span>
+                        </li>
+                        <li>
+                            <a href="mailto:kontakt@windkraft-nottuln.de" style="color: var(--color-primary);">→ Fehler melden</a>
+                            <span style="display: block; font-size: 0.8125rem; color: var(--color-text-muted);">Korrekturen willkommen</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <p style="font-size: 0.9375rem; color: var(--color-text-muted); max-width: 600px; margin: 0 auto;">
+                <strong>Tipp:</strong> Die Gemeinde plant 2026 weitere Infoveranstaltungen. Termine werden auf <a href="https://www.nottuln.de/kultur-freizeit/veranstaltungskalender" target="_blank" rel="noopener" style="color: var(--color-primary);">nottuln.de</a> veröffentlicht.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <div class="footer__brand">
+                    <a href="/" class="header__logo">
+                        <div class="header__logo-icon">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                            </svg>
+                        </div>
+                        <span class="header__logo-text">Windkraft Nottuln</span>
+                    </a>
+                    <p>Eine private Initiative für mehr Fakten in der Nottulner Windkraft-Debatte. Nicht gesponsert, nicht parteiisch.</p>
+                </div>
+                <div class="footer__col">
+                    <h4>Inhalte</h4>
+                    <ul>
+                        <li><a href="#fakten">Faktenchecks</a></li>
+                        <li><a href="/quellen/">Quellenverzeichnis</a></li>
+                    </ul>
+                </div>
+                <div class="footer__col">
+                    <h4>Externe Quellen</h4>
+                    <ul>
+                        <li><a href="https://www.bund.net/themen/aktuelles/detail-aktuelles/news/argumente-fuer-windenergie-fakten-statt-mythen/" target="_blank" rel="noopener">BUND Faktencheck</a></li>
+                        <li><a href="https://www.umweltbundesamt.de" target="_blank" rel="noopener">Umweltbundesamt</a></li>
+                        <li><a href="https://www.prowindcoe.de/" target="_blank" rel="noopener">ProWindCOE</a></li>
+                    </ul>
+                </div>
+                <div class="footer__col">
+                    <h4>Rechtliches</h4>
+                    <ul>
+                        <li><a href="/impressum/">Impressum</a></li>
+                        <li><a href="/datenschutz/">Datenschutz</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>© 2025 Windkraft Nottuln · Alle Inhalte mit Quellenangabe frei verwendbar</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

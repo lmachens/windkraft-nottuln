@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="canonical" href="https://windkraft-nottuln.de/quellen/">
+    <title>Quellen – Windkraft Nottuln</title>
+    <meta name="description" content="Quellenverzeichnis aller Fakten und Studien auf Windkraft Nottuln. Offizielle Dokumente, wissenschaftliche Studien und Gesetzestexte.">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://windkraft-nottuln.de/quellen/">
+    <meta property="og:title" content="Quellen – Windkraft Nottuln">
+    <meta property="og:description" content="Quellenverzeichnis aller Fakten und Studien auf Windkraft Nottuln.">
+    <meta property="og:locale" content="de_DE">
+    <meta property="og:site_name" content="Windkraft Nottuln">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --color-primary: #1a5f6a;
+            --color-primary-dark: #134249;
+            --color-primary-light: #e8f4f5;
+            --color-accent: #7da87b;
+            --color-text: #2d3436;
+            --color-text-muted: #636e72;
+            --color-bg: #fafbfc;
+            --color-white: #ffffff;
+            --color-border: #dfe6e9;
+
+            --font-display: 'DM Serif Display', Georgia, serif;
+            --font-body: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
+
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 1.5rem;
+            --space-lg: 2.5rem;
+            --space-xl: 4rem;
+
+            --max-width: 900px;
+            --border-radius: 8px;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-body);
+            font-size: 1.0625rem;
+            line-height: 1.7;
+            color: var(--color-text);
+            background-color: var(--color-bg);
+        }
+
+        .container {
+            width: 100%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 var(--space-md);
+        }
+
+        h1, h2, h3 {
+            font-family: var(--font-display);
+            font-weight: 400;
+            line-height: 1.2;
+            color: var(--color-primary-dark);
+        }
+
+        h1 { font-size: 2.5rem; margin-bottom: var(--space-md); }
+        h2 { font-size: 1.5rem; margin: var(--space-lg) 0 var(--space-sm); }
+        h3 { font-size: 1.125rem; margin: var(--space-md) 0 var(--space-xs); color: var(--color-primary); }
+        p { margin-bottom: var(--space-sm); }
+
+        a {
+            color: var(--color-primary);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .header {
+            background: var(--color-white);
+            border-bottom: 1px solid var(--color-border);
+            padding: var(--space-sm) 0;
+        }
+
+        .header__inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-md);
+        }
+
+        .header__logo {
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+            text-decoration: none;
+            color: var(--color-primary-dark);
+        }
+
+        .header__logo-icon {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .header__logo-icon svg {
+            width: 18px;
+            height: 18px;
+            fill: white;
+        }
+
+        .header__logo-text {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+        }
+
+        .header__nav {
+            display: flex;
+            gap: var(--space-md);
+        }
+
+        .header__nav a {
+            color: var(--color-text-muted);
+            font-weight: 500;
+            font-size: 0.9375rem;
+        }
+
+        .header__nav a:hover {
+            color: var(--color-primary);
+            text-decoration: none;
+        }
+
+        @media (max-width: 640px) {
+            .header__nav { display: none; }
+        }
+
+        .content {
+            padding: var(--space-xl) 0;
+        }
+
+        .content__header {
+            margin-bottom: var(--space-lg);
+        }
+
+        .content__body {
+            background: var(--color-white);
+            padding: var(--space-lg);
+            border-radius: var(--border-radius);
+            border: 1px solid var(--color-border);
+        }
+
+        .intro-box {
+            background: var(--color-primary-light);
+            padding: var(--space-md);
+            border-radius: var(--border-radius);
+            margin-bottom: var(--space-lg);
+        }
+
+        .source-section {
+            margin-bottom: var(--space-lg);
+            padding-bottom: var(--space-lg);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .source-section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .source-card {
+            background: var(--color-bg);
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius);
+            padding: var(--space-md);
+            margin-bottom: var(--space-sm);
+        }
+
+        .source-card__title {
+            font-weight: 600;
+            color: var(--color-text);
+            margin-bottom: var(--space-xs);
+        }
+
+        .source-card__meta {
+            font-size: 0.875rem;
+            color: var(--color-text-muted);
+            margin-bottom: var(--space-xs);
+        }
+
+        .source-card__description {
+            font-size: 0.9375rem;
+            margin-bottom: var(--space-xs);
+        }
+
+        .source-card__link {
+            font-size: 0.875rem;
+            word-break: break-all;
+        }
+
+        .tag {
+            display: inline-block;
+            background: var(--color-primary-light);
+            color: var(--color-primary-dark);
+            padding: 0.125rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-right: var(--space-xs);
+        }
+
+        .tag--official { background: #e8f5e9; color: #2e7d32; }
+        .tag--study { background: #e3f2fd; color: #1565c0; }
+        .tag--law { background: #fce4ec; color: #c62828; }
+
+        .footer {
+            background: var(--color-white);
+            border-top: 1px solid var(--color-border);
+            padding: var(--space-lg) 0;
+            margin-top: var(--space-xl);
+            text-align: center;
+        }
+
+        .footer p {
+            color: var(--color-text-muted);
+            font-size: 0.875rem;
+            margin: 0;
+        }
+
+        .footer a {
+            color: var(--color-text-muted);
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header__inner">
+            <a href="/" class="header__logo">
+                <div class="header__logo-icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                    </svg>
+                </div>
+                <span class="header__logo-text">Windkraft Nottuln</span>
+            </a>
+            <nav class="header__nav">
+                <a href="/">Startseite</a>
+                <a href="/quellen/">Quellen</a>
+                <a href="/impressum/">Impressum</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="content">
+        <div class="container">
+            <div class="content__header">
+                <h1>Quellenverzeichnis</h1>
+                <p>Alle Fakten dieser Website sind belegt und nachprüfbar</p>
+            </div>
+
+            <div class="content__body">
+                <div class="intro-box">
+                    <strong>Transparenz ist mir wichtig.</strong> Hier finden Sie alle Quellen, auf die ich mich auf dieser Website beziehe. Die meisten sind offizielle Dokumente von Behörden, Ministerien und wissenschaftlichen Institutionen. Wenn Sie einen Fehler finden oder eine Quelle nicht mehr aktuell ist, schreiben Sie mir gerne.
+                </div>
+
+                <div class="source-section">
+                    <h2>Schattenwurf</h2>
+                    <p>Zum Thema Schattenwurf von Windenergieanlagen und den gesetzlichen Grenzwerten:</p>
+
+                    <div class="source-card">
+                        <div class="source-card__title">
+                            <span class="tag tag--official">Offiziell</span>
+                            Hinweise zur Ermittlung und Beurteilung der optischen Immissionen von Windenergieanlagen (LAI)
+                        </div>
+                        <div class="source-card__meta">Länderausschuss für Immissionsschutz (LAI), 2020</div>
+                        <div class="source-card__description">
+                            Maßgebliches Dokument für die Beurteilung von Schattenwurf. Definiert die Grenzwerte: max. 30 Stunden/Jahr astronomisch mögliche Beschattung, max. 30 Minuten/Tag. Durch Abschaltautomatik wird die tatsächliche Beschattung auf max. 8 Stunden/Jahr begrenzt.
+                        </div>
+                        <div class="source-card__link">
+                            <a href="https://www.lai-immissionsschutz.de/documents/hinweise_zur_ermittlung_und_beurteilung_der_optischen_immissionen_2020_05_07_1590060376.pdf" target="_blank" rel="noopener">lai-immissionsschutz.de (PDF)</a>
+                        </div>
+                    </div>
+
+                    <div class="source-card">
+                        <div class="source-card__title">
+                            <span class="tag tag--official">Offiziell</span>
+                            Schattenwurf-Berechnung – Fachagentur Wind und Solar
+                        </div>
+                        <div class="source-card__meta">Fachagentur Wind und Solar, 2023</div>
+                        <div class="source-card__description">
+                            Erklärt die Berechnungsmethodik für Schattenwurf und die Funktionsweise von Abschaltautomatiken. Die tatsächliche Beschattung liegt in der Praxis deutlich unter dem theoretischen Maximum.
+                        </div>
+                        <div class="source-card__link">
+                            <a href="https://www.fachagentur-wind-solar.de/themen/windenergie/akzeptanz/" target="_blank" rel="noopener">fachagentur-wind-solar.de</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="source-section">
+                    <h2>Infraschall</h2>
+                    <p>Zum Thema Infraschall und die tatsächliche Belastung durch Windenergieanlagen:</p>
+
+                    <div class="source-card">
+                        <div class="source-card__title">
+                            <span class="tag tag--official">Offiziell</span>
+                            Mögliche gesundheitliche Effekte von Windenergieanlagen
+                        </div>
+                        <div class="source-card__meta">Umweltbundesamt (UBA), 2016</div>
+                        <div class="source-card__description">
+                            Umfassende Auswertung wissenschaftlicher Studien zum Thema Infraschall. Fazit: Gesundheitliche Beeinträchtigungen durch Infraschall von Windkraftanlagen sind nach aktuellem Wissensstand nicht zu erwarten.
+                        </div>
+                        <div class="source-card__link">
+                            <a href="https://www.umweltbundesamt.de/sites/default/files/medien/1968/publikationen/161027_uba_pos_windenergieanlagen_bf.pdf" target="_blank" rel="noopener">umweltbundesamt.de (PDF)</a>
+                        </div>
+                    </div>
+
+                    <div class="source-card">
+                        <div class="source-card__title">
+                            <span class="tag tag--study">Studie</span>
+                            Infraschall und Windkraftanlagen – TU Dresden
+                        </div>
+                        <div class="source-card__meta">TU Dresden, Professur für Strömungsmechanik, 2020</div>
+                        <div class="source-card__description">
+                            Messtechnische Untersuchung: Der Infraschallpegel einer Windkraftanlage in 300m Entfernung ist vergleichbar mit dem Infraschall bei einer 10-minütigen Autofahrt. Natürliche Quellen wie Wind und Brandung erzeugen deutlich höhere Infraschallpegel.
+                        </div>
+                        <div class="source-card__link">
+                            <a href="https://tu-dresden.de/ing/maschinenwesen/ism/psm/forschung/projekte/projekte-aktuell/windenergieanlagen-und-infraschall" target="_blank" rel="noopener">tu-dresden.de</a>
+                        </div>
+                    </div>
+
+                    <div class="source-card">
+                        <div class="source-card__title">
+                            <span class="tag tag--study">Studie</span>
+                            Infraschall von Windkraftanlagen – Universität Bayreuth
+                        </div>
+                        <div class="source-card__meta">Universität Bayreuth, 2020</div>
+                        <div class="source-card__description">
+                            Studie zur Wahrnehmung von Infraschall. Die gemessenen Pegel liegen weit unterhalb der Hörschwelle und der Pegel, die in Studien zu Gesundheitseffekten untersucht wurden.
+                        </div>
+                        <div class="source-card__link">
+                            <a href="https://www.uni-bayreuth.de/de/universitaet/presse/archiv/2020/infraschall.html" target="_blank" rel="noopener">uni-bayreuth.de</a>
+                        </div>
+                    </div>
+
+                    <div class="source-card">
+                        <div class="source-card__title">
+                            <span class="tag tag--official">Offiziell</span>
+                            BGR-Studie: Korrektur des Rechenfehlers
+                        </div>
+                        <div class="source-card__meta">Bundesanstalt für Geowissenschaften und Rohstoffe (BGR), 2021</div>
+                        <div class="source-card__description">
+                            Wichtige Korrektur: Eine frühere BGR-Studie hatte durch einen Rechenfehler den Infraschall von Windkraftanlagen um den Faktor 10.000 überschätzt. Diese falsche Zahl wurde jahrelang von Windkraftgegnern zitiert. Die korrigierte Studie bestätigt: Die Infraschallpegel sind harmlos.
+                        </div>
+                        <div class="source-card__link">
+                            <a href="https://www.bgr.bund.de/DE/Themen/Erdbeben-Gefaehrdungsanalysen/Seismologie/Infraschall/infraschall_node.html" target="_blank" rel="noopener">bgr.bund.de</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="source-section">
+                    <h2>Bürgerbeteiligung &amp; Wirtschaftliche Vorteile</h2>
+                    <p>Zu den finanziellen Vorteilen für Kommunen und Bürger:</p>
+
+                    <div class="source-card">
+                        <div class="source-card__title">
+                            <span class="tag tag--law">Gesetz</span>
+                            Bürgerenergiegesetz NRW (BürgEnG NRW)
+                        </div>
+                        <div class="source-card__meta">Land Nordrhein-Westfalen, 2023</div>
+                        <div class="source-card__description">
+                            Das Bürgerenergiegesetz NRW schreibt vor, dass Bürger und Kommunen im Umkreis von 2,5 km um neue Windenergieanlagen eine finanzielle Beteiligung angeboten werden muss. Dies kann z.B. über vergünstigte Stromtarife oder direkte Beteiligungsmodelle erfolgen.
+                        </div>
+                        <div class="source-card__link">
+                            <a href="https://www.wirtschaft.nrw/buergerenergiegesetz-nrw" target="_blank" rel="noopener">wirtschaft.nrw</a>
+                        </div>
+                    </div>
+
+                    <div class="source-card">
+                        <div class="source-card__title">
+                            <span class="tag tag--law">Gesetz</span>
+                            § 6 EEG 2023 – Finanzielle Beteiligung der Kommunen
+                        </div>
+                        <div class="source-card__meta">Erneuerbare-Energien-Gesetz, Bundesrepublik Deutschland</div>
+                        <div class="source-card__description">
+                            Betreiber von Windenergieanlagen können den Gemeinden im Umkreis von 2,5 km bis zu 0,2 Cent pro Kilowattstunde anbieten. Bei einer modernen 5-MW-Anlage entspricht das ca. 20.000–25.000 Euro pro Jahr und Anlage.
+                        </div>
+                        <div class="source-card__link">
+                            <a href="https://www.gesetze-im-internet.de/eeg_2014/__6.html" target="_blank" rel="noopener">gesetze-im-internet.de</a>
+                        </div>
+                    </div>
+
+                    <div class="source-card">
+                        <div class="source-card__title">
+                            <span class="tag tag--official">Offiziell</span>
+                            Gewerbesteuer bei Windenergieanlagen
+                        </div>
+                        <div class="source-card__meta">Fachagentur Wind und Solar</div>
+                        <div class="source-card__description">
+                            90% der Gewerbesteuer von Windenergieanlagen fließt an die Standortgemeinde. Bei einer typischen Anlage können das mehrere Zehntausend Euro pro Jahr sein.
+                        </div>
+                        <div class="source-card__link">
+                            <a href="https://www.fachagentur-wind-solar.de/themen/windenergie/kommunale-teilhabe/" target="_blank" rel="noopener">fachagentur-wind-solar.de</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="source-section">
+                    <h2>Allgemeine Informationsquellen</h2>
+                    <p>Vertrauenswürdige Informationsquellen zum Thema Windenergie:</p>
+
+                    <div class="source-card">
+                        <div class="source-card__title">
+                            <span class="tag tag--official">Verband</span>
+                            Bundesverband WindEnergie (BWE)
+                        </div>
+                        <div class="source-card__meta">BWE – Interessenverband der Windenergiebranche</div>
+                        <div class="source-card__description">
+                            Größter Interessenverband der deutschen Windenergiebranche. Bietet umfangreiche Informationsmaterialien, Infografiken (unter CC-Lizenz) und Faktenchecks. Hinweis: Als Branchenverband vertritt der BWE naturgemäß die Interessen der Windenergiebranche.
+                        </div>
+                        <div class="source-card__link">
+                            <a href="https://www.wind-energie.de/" target="_blank" rel="noopener">wind-energie.de</a>
+                        </div>
+                    </div>
+
+                    <div class="source-card">
+                        <div class="source-card__title">
+                            <span class="tag tag--official">Offiziell</span>
+                            Fachagentur Wind und Solar
+                        </div>
+                        <div class="source-card__meta">Von Bund und Ländern geförderte Einrichtung</div>
+                        <div class="source-card__description">
+                            Neutrale Informationsplattform, getragen von Bund und Ländern. Bietet sachliche Informationen zu allen Aspekten der Windenergie, von Genehmigung über Naturschutz bis zu kommunaler Beteiligung.
+                        </div>
+                        <div class="source-card__link">
+                            <a href="https://www.fachagentur-wind-solar.de/" target="_blank" rel="noopener">fachagentur-wind-solar.de</a>
+                        </div>
+                    </div>
+
+                    <div class="source-card">
+                        <div class="source-card__title">
+                            <span class="tag tag--official">Offiziell</span>
+                            LANUV NRW – Umweltdaten
+                        </div>
+                        <div class="source-card__meta">Landesamt für Natur, Umwelt und Verbraucherschutz Nordrhein-Westfalen</div>
+                        <div class="source-card__description">
+                            Offizielle Umweltdaten für NRW, darunter auch Informationen zu Windenergieanlagen und deren Umweltauswirkungen.
+                        </div>
+                        <div class="source-card__link">
+                            <a href="https://www.lanuv.nrw.de/" target="_blank" rel="noopener">lanuv.nrw.de</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="source-section">
+                    <h2>Lokale Informationen zu Nottuln</h2>
+                    <p>Informationen speziell zum geplanten Windpark und der Region:</p>
+
+                    <div class="source-card">
+                        <div class="source-card__title">
+                            Gemeinde Nottuln – Offizielle Website
+                        </div>
+                        <div class="source-card__meta">Gemeinde Nottuln</div>
+                        <div class="source-card__description">
+                            Offizielle Informationen der Gemeinde zu den Planungen im Bereich erneuerbare Energien.
+                        </div>
+                        <div class="source-card__link">
+                            <a href="https://www.nottuln.de/" target="_blank" rel="noopener">nottuln.de</a>
+                        </div>
+                    </div>
+
+                    <div class="source-card">
+                        <div class="source-card__title">
+                            Kreis Coesfeld – Planungsunterlagen
+                        </div>
+                        <div class="source-card__meta">Kreis Coesfeld</div>
+                        <div class="source-card__description">
+                            Informationen zu regionalen Planungen und Genehmigungsverfahren für Windenergieanlagen im Kreis.
+                        </div>
+                        <div class="source-card__link">
+                            <a href="https://www.kreis-coesfeld.de/" target="_blank" rel="noopener">kreis-coesfeld.de</a>
+                        </div>
+                    </div>
+
+                    <div class="source-card">
+                        <div class="source-card__title">
+                            ProWindCOE e.V.
+                        </div>
+                        <div class="source-card__meta">Bürgerinitiative aus dem Kreis Coesfeld</div>
+                        <div class="source-card__description">
+                            Lokale Bürgerinitiative, die sich für erneuerbare Energien im Kreis Coesfeld einsetzt. Ansprechpartner für Bürger, die sich sachlich informieren möchten.
+                        </div>
+                        <div class="source-card__link">
+                            <a href="https://prowindcoe.de/" target="_blank" rel="noopener">prowindcoe.de</a>
+                        </div>
+                    </div>
+                </div>
+
+                <h2>Hinweis zur Quellenarbeit</h2>
+                <p>
+                    Ich bemühe mich, ausschließlich seriöse und nachprüfbare Quellen zu verwenden. Bevorzugt werden offizielle Dokumente von Behörden, peer-reviewte wissenschaftliche Studien und Gesetzestexte.
+                </p>
+                <p>
+                    Bei Verbandsquellen (wie BWE) weise ich auf mögliche Interessenkonflikte hin. Wenn Sie eine Quelle anzweifeln oder einen Fehler finden, kontaktieren Sie mich gerne unter <a href="mailto:kontakt@windkraft-nottuln.de">kontakt@windkraft-nottuln.de</a>.
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>
+                <a href="/">Startseite</a> ·
+                <a href="/quellen/">Quellen</a> ·
+                <a href="/datenschutz/">Datenschutz</a> ·
+                <a href="/impressum/">Impressum</a>
+            </p>
+            <p style="margin-top: var(--space-sm);">© 2025 Windkraft Nottuln</p>
+        </div>
+    </footer>
+</body>
+</html>
