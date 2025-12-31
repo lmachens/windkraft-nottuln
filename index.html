@@ -1316,6 +1316,97 @@
                     </a>
                 </article>
 
+                <!-- Noise Card -->
+                <article class="info-card">
+                    <h3>
+                        <svg viewBox="0 0 24 24">
+                            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+                            <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+                            <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+                        </svg>
+                        Hörbarer Lärm: Die Grenzwerte
+                    </h3>
+                    <div style="display: flex; flex-direction: column; gap: var(--space-sm);">
+                        <p style="color: var(--color-text-muted); margin: 0;">
+                            Windräder müssen die <strong>TA Lärm</strong> einhalten – die gleichen Regeln wie für Industrieanlagen:
+                        </p>
+                        <div style="display: flex; flex-direction: column; gap: var(--space-xs);">
+                            <div style="display: flex; justify-content: space-between; padding: var(--space-xs); background: var(--color-bg); border-radius: 4px;">
+                                <span style="color: var(--color-text-muted);">Wohngebiet tags</span>
+                                <strong style="color: var(--color-text);">max. 50 dB(A)</strong>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; padding: var(--space-xs); background: var(--color-bg); border-radius: 4px;">
+                                <span style="color: var(--color-text-muted);">Wohngebiet nachts</span>
+                                <strong style="color: var(--color-text);">max. 35 dB(A)</strong>
+                            </div>
+                        </div>
+                        <div class="shadow-note">
+                            <strong>Zum Vergleich:</strong> 35 dB(A) entspricht Flüstern. In 500m Entfernung liegt ein modernes Windrad bei etwa 35-45 dB(A) – vergleichbar mit einem Kühlschrank.
+                        </div>
+                    </div>
+                    <a href="https://www.umweltbundesamt.de/themen/laerm/nachbarschaftslaerm-laerm-von-anlagen/laerm-von-windenergieanlagen" target="_blank" rel="noopener" style="font-size: 0.8125rem; color: var(--color-primary); margin-top: var(--space-sm); display: inline-block;">
+                        → Quelle: Umweltbundesamt (TA Lärm)
+                    </a>
+                </article>
+
+                <!-- Land Use Card -->
+                <article class="info-card">
+                    <h3>
+                        <svg viewBox="0 0 24 24">
+                            <rect x="3" y="3" width="18" height="18" rx="2"/>
+                            <path d="M3 9h18"/>
+                            <path d="M9 21V9"/>
+                        </svg>
+                        Flächenverbrauch: Weniger als gedacht
+                    </h3>
+                    <div style="display: flex; flex-direction: column; gap: var(--space-sm);">
+                        <div style="display: flex; gap: var(--space-md); align-items: center;">
+                            <div style="text-align: center; flex: 1; padding: var(--space-sm); background: var(--color-bg); border-radius: 8px;">
+                                <span style="font-family: var(--font-display); font-size: 2rem; color: var(--color-primary);">0,5</span>
+                                <p style="font-size: 0.8125rem; color: var(--color-text-muted); margin: 0;">Hektar versiegelt</p>
+                            </div>
+                            <div style="text-align: center; flex: 1; padding: var(--space-sm); background: var(--color-accent-light); border-radius: 8px;">
+                                <span style="font-family: var(--font-display); font-size: 2rem; color: var(--color-accent);">97%</span>
+                                <p style="font-size: 0.8125rem; color: var(--color-text-muted); margin: 0;">weiter nutzbar</p>
+                            </div>
+                        </div>
+                        <p style="color: var(--color-text-muted); margin: 0; font-size: 0.9375rem;">
+                            <strong>Die Fläche zwischen Windrädern</strong> bleibt vollständig nutzbar – für Ackerbau, Weidewirtschaft oder ökologische Ausgleichsmaßnahmen. Landwirte profitieren doppelt: Pachteinnahmen plus normale Ernte.
+                        </p>
+                    </div>
+                    <a href="https://www.naturschutz-energiewende.de/wortmeldung/wortmeldung-zum-flaechenbedarf-der-windenergie/" target="_blank" rel="noopener" style="font-size: 0.8125rem; color: var(--color-primary); margin-top: var(--space-sm); display: inline-block;">
+                        → Quelle: Kompetenzzentrum Naturschutz
+                    </a>
+                </article>
+
+                <!-- Recycling Card -->
+                <article class="info-card">
+                    <h3>
+                        <svg viewBox="0 0 24 24">
+                            <path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+                            <path d="M3 3v5h5"/>
+                            <path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"/>
+                            <path d="M16 21h5v-5"/>
+                        </svg>
+                        Rückbau & Recycling
+                    </h3>
+                    <div style="display: flex; flex-direction: column; gap: var(--space-sm);">
+                        <div style="text-align: center; padding: var(--space-md); background: var(--color-accent-light); border-radius: 8px;">
+                            <span style="font-family: var(--font-display); font-size: 2.5rem; color: var(--color-accent);">90-95%</span>
+                            <p style="color: var(--color-text-muted); margin: var(--space-xs) 0 0 0;">recyclebar (Stahl, Kupfer, Beton, Getriebe)</p>
+                        </div>
+                        <p style="color: var(--color-text-muted); margin: 0; font-size: 0.9375rem;">
+                            <strong>Herausforderung Rotorblätter:</strong> Die Verbundwerkstoffe (2-3% der Anlage) sind schwieriger zu recyceln. EU-Ziel: 100% Verwertung bis 2025. Neue thermoplastische Blätter sind bereits vollständig recyclebar.
+                        </p>
+                        <div class="shadow-note">
+                            <strong>Rückbaupflicht:</strong> Betreiber müssen Rücklagen bilden und die Anlage nach Laufzeitende vollständig zurückbauen – inklusive Fundament.
+                        </div>
+                    </div>
+                    <a href="https://www.enbw.com/unternehmen/themen/windkraft/windrad-recycling.html" target="_blank" rel="noopener" style="font-size: 0.8125rem; color: var(--color-primary); margin-top: var(--space-sm); display: inline-block;">
+                        → Quelle: EnBW Recycling
+                    </a>
+                </article>
+
             </div>
         </div>
     </section>
@@ -1399,7 +1490,7 @@
                         </div>
                         <div>
                             <h3 style="font-size: 1rem; margin-bottom: var(--space-xs); color: var(--color-primary-dark);">Themen, die ich hier nicht vertiefe</h3>
-                            <p style="color: var(--color-text-muted); margin: 0;">Baulärm während der Errichtung, hörbarer Schall (nicht nur Infraschall), Auswirkungen auf bestimmte Tierarten – das sind Themen, zu denen es berechtigte Fragen gibt. Diese Seite deckt nicht alles ab.</p>
+                            <p style="color: var(--color-text-muted); margin: 0;">Baulärm während der Errichtung, Auswirkungen auf bestimmte Tierarten (z.B. Rotmilan), Eiswurf im Winter – das sind Themen, zu denen es berechtigte Fragen gibt. Diese Seite deckt nicht alles ab.</p>
                         </div>
                     </div>
 
