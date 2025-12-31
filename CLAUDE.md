@@ -3,6 +3,15 @@
 ## Über das Projekt
 Faktencheck-Website zur Windkraft-Debatte in Nottuln. Domain: windkraft-nottuln.de
 
+**Ziel:** Sachliche Gegenposition zu emotionalen Anti-Windkraft-Kampagnen (insb. windsinn-nottuln.info).
+Faktenbasierte Aufklärung über Windkraft mit verifizierten Quellen.
+
+**QUALITÄTSSTANDARD:**
+- NICHTS ausdenken oder imaginieren
+- JEDE Aussage muss durch Originalquellen belegt sein
+- Bei Unsicherheit: NICHT schreiben, sondern recherchieren oder weglassen
+- Lieber weniger Behauptungen als falsche Behauptungen
+
 ## Wichtige Regeln
 
 ### Quellenverifizierung
@@ -22,6 +31,46 @@ Faktencheck-Website zur Windkraft-Debatte in Nottuln. Domain: windkraft-nottuln.
 - Studien-Jahre falsch angeben (z.B. 2024 statt 2023)
 - Autoren verwechseln (z.B. Crichton statt Petrie)
 - Entfernungen falsch angeben (z.B. 300m statt 750m)
+- Glasscheiben-Vogelschlag "18-115 Mio." war FALSCH → korrekt: "100-115 Mio." (NABU)
+- Recycling-Quote "90-95%" war zu optimistisch → korrekt: "~90%" (UBA, EnBW)
+- Studien nicht vermischen (RWI-Studie ≠ Berkeley/PIK-Studie)
+- Bauzeit "2-4 Wochen" war FALSCH → korrekt: "3-6 Monate" (Fundament, Aufbau, Netzanschluss)
+
+## Verifizierte Fakten (Stand: Dezember 2025)
+Alle folgenden Fakten wurden gegen Originalquellen geprüft:
+- Schattenwurf: 8h tatsächlich / 30h astronomisch (LAI-Hinweise)
+- Infraschall: 3,5h Autofahrt = 27 Jahre in 300m (Uni Bayreuth)
+- §6 EEG: 0,2 ct/kWh für Gemeinden
+- §29 GewStG: 90% Gewerbesteuer an Standortgemeinde (seit 2021)
+- BürgEnG NRW: Investition ab 500€
+- CO2-Einsparung: 6.000-10.000t pro Windrad/Jahr
+- EPBT: 2,5-4,5 Monate (UBA)
+- 106 Mio. t CO2 durch Wind vermieden (2024)
+- 70% Energieimportabhängigkeit, ~70-76 Mrd. €/Jahr
+- TA Lärm: 50/35 dB(A) für reine Wohngebiete
+- BNK: bis zu 98% weniger Lichtemissionen
+- Flächenverbrauch: ~0,5 ha versiegelt, 97% weiter nutzbar
+- Recycling: ~90%
+- Bauzeit pro Anlage: 3-6 Monate (Fundament, Aufbau, Netzanschluss)
+- Immobilienwerte: 7% Verlust in 1km (RWI), ab 8-9km kein Effekt
+- Abregelung 2024: 9,4 TWh (3,5% der EE-Produktion) wegen Netzengpässen
+- Negative Strompreise 2024: 457 Stunden
+- Speicherkapazität Ende 2024: ~57 GWh (19 GWh Batterie + 38 GWh Pumpspeicher)
+- Speicherbedarf 2030: ~100 GWh (Fraunhofer ISE)
+- Batteriespeicher-Wachstum: +50%/Jahr
+- SuedLink (4 GW): Fertigstellung 2028
+- Ultranet (2 GW): Fertigstellung 2026
+- Auckland ist in Neuseeland, NICHT Australien
+
+## Nottuln-spezifische Fakten (verifiziert Dezember 2025)
+- Bestehende Anlagen: 7 WEA im Gemeindegebiet (Buxtrup, Hastehausen, Schapdetten)
+- Stockum-Projekt (Stadtwerke Münster): bis zu 7 neue Anlagen, 266m Höhe
+- ~30.000 Haushalte Strom aus Stockum-Projekt
+- Vorbescheid vom Kreis Coesfeld: Frühjahr 2025
+- Genehmigungsantrag: geplant 2026
+- Frühester Baubeginn: 2028
+- Gemeindebeteiligung: sechsstelliger Betrag/Jahr (§6 EEG)
+- "19 Windräder" = 7 bestehende + bis zu 7 Stockum + 4 ABO Energy (Limbergen-Karthaus)
 
 ### Inhaltliche Standards
 - Sachlich und faktenbasiert bleiben
