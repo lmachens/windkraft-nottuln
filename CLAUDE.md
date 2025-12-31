@@ -8,7 +8,7 @@ Faktencheck-Website zur Windkraft-Debatte in Nottuln. Domain: windkraft-nottuln.
 ### Quellenverifizierung
 **IMMER alle Quellen genau überprüfen:**
 - Jede Behauptung muss durch die verlinkte Quelle belegt sein
-- Zitate wörtlich prüfen (nicht paraphrasieren ohne Kennzeichnung)
+- **Zitate IMMER wörtlich und exakt übernehmen** – niemals umformulieren oder paraphrasieren
 - Jahreszahlen und Autorennamen in der Originalquelle verifizieren
 - Bei Studien: Titel, Autoren, Jahr und Institution gegenchecken
 - Zahlen und Statistiken mit der Originalquelle abgleichen
@@ -24,3 +24,8 @@ Faktencheck-Website zur Windkraft-Debatte in Nottuln. Domain: windkraft-nottuln.
 - Statische HTML/CSS Website
 - Hosting: GitHub Pages
 - Struktur: /quellen/, /impressum/, /datenschutz/
+
+## Git Commits
+- **KEINE "Generated with Claude Code" Zeile** in Commit-Nachrichten
+- **KEIN Co-Authored-By** in Commit-Nachrichten
+- Commit-Nachrichten kurz und auf Deutsch
