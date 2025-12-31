@@ -1,0 +1,30 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:windsinn-nottuln.info)",
+      "WebSearch",
+      "WebFetch(domain:www.stadtwerke-muenster.de)",
+      "Bash(claude mcp:*)",
+      "Skill(frontend-design)",
+      "WebFetch(domain:www.wirtschaft.nrw)",
+      "WebFetch(domain:www.fachagentur-windenergie.de)",
+      "WebFetch(domain:www.lai-immissionsschutz.de)",
+      "WebFetch(domain:www.nottuln.de)",
+      "Bash(git add:*)",
+      "Bash(git init:*)",
+      "Bash(git remote add:*)",
+      "Bash(git fetch:*)",
+      "Bash(git branch:*)",
+      "WebFetch(domain:www.fachagentur-wind-solar.de)",
+      "WebFetch(domain:tu-dresden.de)",
+      "WebFetch(domain:www.uni-bayreuth.de)",
+      "WebFetch(domain:www.bgr.bund.de)",
+      "Bash(git commit:*)",
+      "Bash(git push)",
+      "WebFetch(domain:www.umweltbundesamt.de)",
+      "WebFetch(domain:www.bayceer.uni-bayreuth.de)",
+      "WebFetch(domain:www.gesetze-im-internet.de)",
+      "Bash(git restore:*)"
+    ]
+  }
+}
