@@ -1011,6 +1011,22 @@
             .header {
                 position: relative;
             }
+
+            /* Schattenwurf-Balken: Wert innerhalb auf Mobile */
+            .shadow-bar {
+                flex-wrap: wrap;
+            }
+
+            .shadow-bar__label {
+                width: 100%;
+                margin-bottom: var(--space-xs);
+            }
+
+            .shadow-bar__fill span {
+                position: static;
+                margin-left: var(--space-sm);
+                font-size: 1rem;
+            }
         }
 
         /* ===== ENHANCED VISUAL ELEMENTS ===== */
