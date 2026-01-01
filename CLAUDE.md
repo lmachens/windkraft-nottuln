@@ -62,9 +62,14 @@ Alle folgenden Fakten wurden gegen Originalquellen geprüft:
 - Ultranet (2 GW): Fertigstellung 2026
 - Auckland ist in Neuseeland, NICHT Australien
 
-## Nottuln-spezifische Fakten (verifiziert Dezember 2025)
+## NRW-spezifische Fakten (verifiziert Januar 2026)
+- NRW 1000m-Mindestabstand: **ABGESCHAFFT seit August 2023**
+- Aktuell gelten nur: Immissionsschutz (TA Lärm, Schattenwurf) + optisch bedrängende Wirkung (2-3× Anlagenhöhe)
+- Bei 267m-Anlagen: ca. 530-800m Abstand nach "optisch bedrängend"-Regel
+
+## Nottuln-spezifische Fakten (verifiziert Januar 2026)
 - Bestehende Anlagen: 7 WEA im Gemeindegebiet (Buxtrup, Hastehausen, Schapdetten)
-- Stockum-Projekt (Stadtwerke Münster): bis zu 7 neue Anlagen, 266m Höhe
+- Stockum-Projekt (Stadtwerke Münster): bis zu 7 neue Anlagen, 266-267m Höhe (WEA Nr. 10: 267m)
 - ~30.000 Haushalte Strom aus Stockum-Projekt
 - Vorbescheid vom Kreis Coesfeld: Frühjahr 2025
 - Genehmigungsantrag: geplant 2026
@@ -81,6 +86,7 @@ Alle folgenden Fakten wurden gegen Originalquellen geprüft:
 ## Technische Details
 - Statische HTML/CSS Website
 - Hosting: GitHub Pages
+- Repository: github.com/lmachens/windkraft-nottuln (öffentlich, MIT-Lizenz)
 - Struktur: /quellen/, /impressum/, /datenschutz/
 
 ## Git Commits
