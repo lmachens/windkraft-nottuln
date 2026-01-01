@@ -14,6 +14,35 @@ Faktenbasierte Aufklärung über Windkraft mit verifizierten Quellen.
 
 ## Wichtige Regeln
 
+### Quellenhierarchie (Glaubwürdigkeit)
+**Bei widersprüchlichen Informationen gilt diese Rangfolge:**
+
+1. **Offizielle Behörden/Institutionen** (höchste Priorität)
+   - nottuln.de (Gemeinde Nottuln)
+   - kreis-coesfeld.de
+   - Landesregierung NRW, Bundesbehörden (UBA, BGR, etc.)
+   - Gesetzestexte (gesetze-im-internet.de)
+
+2. **Projektbetreiber** (hoch, aber Eigeninteresse beachten)
+   - stadtwerke-muenster.de
+   - Offizielle Projektseiten
+
+3. **Wissenschaftliche Studien** (hoch)
+   - Peer-reviewte Publikationen
+   - Universitäten (Uni Bayreuth, etc.)
+   - Forschungsinstitute (Fraunhofer, RWI, etc.)
+
+4. **Lokale Presse** (mittel, gut für Zitate/Events)
+   - nottuln.info
+   - Westfälische Nachrichten
+   - → Immer Datum prüfen! Ältere Artikel können veraltete Zahlen enthalten
+
+5. **Verbände** (niedrig, Interessenkonflikt kennzeichnen)
+   - BWE, NABU, etc.
+   - → Immer auf mögliche Interessenkonflikte hinweisen
+
+**WICHTIG:** Bei Zahlen (z.B. Anzahl WEA) IMMER die aktuellste offizielle Quelle verwenden!
+
 ### Quellenverifizierung
 **IMMER alle Quellen genau überprüfen – KEINE Ausnahmen:**
 - Jede Behauptung muss durch die verlinkte Quelle belegt sein
@@ -25,6 +54,7 @@ Faktenbasierte Aufklärung über Windkraft mit verifizierten Quellen.
 - Keine Behauptungen aufstellen, die nicht direkt aus der Quelle hervorgehen
 - **Bei neuen Fakten: IMMER zuerst die Originalquelle lesen, DANN schreiben**
 - Wenn eine Zahl nicht verifiziert werden kann: NICHT verwenden
+- **Bei widersprüchlichen Quellen: Quellenhierarchie beachten + Datum prüfen**
 
 ### Bekannte Fehlerquellen (NICHT wiederholen!)
 - "10-12 Minuten Autofahrt" war FALSCH → korrekt: "3,5 Stunden" (Uni Bayreuth)
