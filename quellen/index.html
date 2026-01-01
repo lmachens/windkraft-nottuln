@@ -148,8 +148,73 @@
             text-decoration: none;
         }
 
+        /* Mobile Navigation */
+        .mobile-nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: var(--space-xs);
+            z-index: 101;
+        }
+
+        .mobile-nav-toggle span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--color-primary-dark);
+            margin: 5px 0;
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+
+        .mobile-nav-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .mobile-nav-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-nav-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
         @media (max-width: 640px) {
-            .header__nav { display: none; }
+            .mobile-nav-toggle {
+                display: block;
+            }
+
+            .header__nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--color-white);
+                flex-direction: column;
+                padding: var(--space-md);
+                border-bottom: 1px solid var(--color-border);
+                box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+                gap: var(--space-sm);
+            }
+
+            .header__nav.active {
+                display: flex;
+            }
+
+            .header__nav a {
+                padding: var(--space-xs) 0;
+                border-bottom: 1px solid var(--color-border);
+            }
+
+            .header__nav a:last-child {
+                border-bottom: none;
+            }
+
+            .header {
+                position: relative;
+            }
         }
 
         .content {
@@ -263,6 +328,11 @@
                 </div>
                 <span class="header__logo-text">Windkraft Nottuln</span>
             </a>
+            <button class="mobile-nav-toggle" aria-label="Menü öffnen" onclick="this.classList.toggle('active'); document.querySelector('.header__nav').classList.toggle('active');">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <nav class="header__nav">
                 <a href="/">Startseite</a>
                 <a href="/quellen/">Quellen</a>
@@ -855,7 +925,7 @@
                 <a href="/datenschutz/">Datenschutz</a> ·
                 <a href="/impressum/">Impressum</a>
             </p>
-            <p style="margin-top: var(--space-sm);">© 2025 Windkraft Nottuln</p>
+            <p style="margin-top: var(--space-sm);">© 2026 Windkraft Nottuln</p>
         </div>
     </footer>
 </body>
