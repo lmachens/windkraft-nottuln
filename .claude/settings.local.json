@@ -24,7 +24,16 @@
       "WebFetch(domain:www.umweltbundesamt.de)",
       "WebFetch(domain:www.bayceer.uni-bayreuth.de)",
       "WebFetch(domain:www.gesetze-im-internet.de)",
-      "Bash(git restore:*)"
+      "Bash(git restore:*)",
+      "WebFetch(domain:w3.windmesse.de)",
+      "WebFetch(domain:www.nabu.de)",
+      "WebFetch(domain:www.aerzteblatt.de)",
+      "WebFetch(domain:www.wind-energie.de)",
+      "WebFetch(domain:de.statista.com)",
+      "WebFetch(domain:www.openpetition.de)",
+      "WebFetch(domain:www.wiwo.de)",
+      "WebFetch(domain:www.woolcock.org.au)",
+      "WebFetch(domain:www.rwi-essen.de)"
     ]
   }
 }
