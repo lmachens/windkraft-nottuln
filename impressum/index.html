@@ -47,6 +47,10 @@
 
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+        /* Accessibility: Focus styles */
+        :focus-visible { outline: 2px solid var(--color-primary); outline-offset: 2px; }
+        a:focus-visible, button:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 2px; border-radius: 2px; }
+
         body {
             font-family: var(--font-body);
             font-size: 1.0625rem;
@@ -154,7 +158,7 @@
         <div class="container">
             <div class="content__header">
                 <h1>Impressum</h1>
-                <p>Angaben gemäß § 5 TMG</p>
+                <p>Angaben gemäß § 5 DDG</p>
             </div>
 
             <div class="content__body">
@@ -170,7 +174,7 @@
                 <p>E-Mail: <a href="mailto:kontakt@windkraft-nottuln.de">kontakt@windkraft-nottuln.de</a></p>
 
                 <h2>Haftung für Inhalte</h2>
-                <p>Als Betreiber dieser Seite bin ich gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG bin ich als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.</p>
+                <p>Als Betreiber dieser Seite bin ich gemäß § 7 Abs. 1 DDG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 DDG bin ich als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.</p>
                 <p>Alle Inhalte auf dieser Website wurden sorgfältig recherchiert und mit Quellen belegt. Sollte dennoch ein Fehler vorliegen, bitte ich um einen Hinweis per E-Mail. Ich werde fehlerhafte Informationen umgehend korrigieren.</p>
 
                 <h2>Haftung für Links</h2>
