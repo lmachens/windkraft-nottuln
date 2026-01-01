@@ -1016,20 +1016,25 @@
                 position: relative;
             }
 
-            /* Schattenwurf-Balken: Wert innerhalb auf Mobile */
-            .shadow-bar {
-                flex-wrap: wrap;
-            }
-
+            /* Schattenwurf-Balken: Label schmaler, Wert rechts fixiert */
             .shadow-bar__label {
-                width: 100%;
-                margin-bottom: var(--space-xs);
+                width: 90px;
+                font-size: 0.75rem;
             }
 
-            .shadow-bar__fill span {
-                position: static;
-                margin-left: var(--space-sm);
-                font-size: 1rem;
+            .shadow-bar__track {
+                position: relative;
+            }
+
+            .shadow-bar__fill--theoretical span {
+                left: auto;
+                right: calc(-25% - 8px);
+            }
+
+            .shadow-bar__fill--allowed span {
+                left: auto;
+                right: calc(-80% - 8px);
+                color: var(--color-primary-dark);
             }
         }
 
