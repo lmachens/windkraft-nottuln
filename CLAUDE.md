@@ -35,6 +35,7 @@ Faktenbasierte Aufklärung über Windkraft mit verifizierten Quellen.
 - Recycling-Quote "90-95%" war zu optimistisch → korrekt: "~90%" (UBA, EnBW)
 - Studien nicht vermischen (RWI-Studie ≠ Berkeley/PIK-Studie)
 - Bauzeit "2-4 Wochen" war FALSCH → korrekt: "3-6 Monate" (Fundament, Aufbau, Netzanschluss)
+- Bestehende WEA "7" war VERALTET → korrekt: "9" (davon 6 bleiben, 3 Repowering) - Quelle: nottuln.de
 
 ## Verifizierte Fakten (Stand: Dezember 2025)
 Alle folgenden Fakten wurden gegen Originalquellen geprüft:
@@ -67,15 +68,16 @@ Alle folgenden Fakten wurden gegen Originalquellen geprüft:
 - Aktuell gelten nur: Immissionsschutz (TA Lärm, Schattenwurf) + optisch bedrängende Wirkung (2-3× Anlagenhöhe)
 - Bei 267m-Anlagen: ca. 530-800m Abstand nach "optisch bedrängend"-Regel
 
-## Nottuln-spezifische Fakten (verifiziert Januar 2026)
-- Bestehende Anlagen: 7 WEA im Gemeindegebiet (Buxtrup, Hastehausen, Schapdetten)
-- Stockum-Projekt (Stadtwerke Münster): bis zu 7 neue Anlagen, 266-267m Höhe (WEA Nr. 10: 267m)
+## Nottuln-spezifische Fakten (verifiziert Januar 2026, Quelle: nottuln.de)
+- Bestehende Anlagen: **9 WEA** im Gemeindegebiet (davon 6 bleiben, 3 Repowering)
+- Geplante Anlagen: **18 WEA** (Mix aus Neubau und Repowering)
+- Nach Abschluss aller Projekte: **24 WEA** insgesamt (6 alte + 18 neue)
+- Stockum-Projekt (Stadtwerke Münster): 7 Anlagen, 266-267m Höhe
 - ~30.000 Haushalte Strom aus Stockum-Projekt
-- Vorbescheid vom Kreis Coesfeld: Frühjahr 2025
-- Genehmigungsantrag: geplant 2026
-- Frühester Baubeginn: 2028
+- Betreiber: Stadtwerke Münster, Bürgerwind Nottuln-Gladbeck, Bürgerwind Roruper Berg, u.a.
+- Genehmigungsstatus: 9 genehmigt, 9 mit Vorbescheid, 1 im Bauleitverfahren
+- Frühester Baubeginn (Stockum): 2028
 - Gemeindebeteiligung: sechsstelliger Betrag/Jahr (§6 EEG)
-- "19 Windräder" = 7 bestehende + bis zu 7 Stockum + 4 ABO Energy (Limbergen-Karthaus)
 
 ### Inhaltliche Standards
 - Sachlich und faktenbasiert bleiben
