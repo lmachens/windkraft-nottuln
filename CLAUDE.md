@@ -141,28 +141,14 @@ Auf ALLEN Seiten identisch halten:
 **Ausnahme:** index.html hat zusätzlich Anker-Links (#fakten, #ehrlichkeit, #ressourcen)
 
 ### Footer
-**Zwei Varianten:**
+**Einheitlich auf ALLEN Seiten** (4-spaltig mit Logo):
+- Logo + Beschreibungstext
+- Spalte "Inhalte": Startseite, Häufige Fragen, Quellenverzeichnis
+- Spalte "Externe Quellen": BUND, UBA, ProWindCOE
+- Spalte "Rechtliches": Impressum, Datenschutz, GitHub
+- Footer-Bottom: © 2026 + MIT-Lizenz
 
-1. **Einfacher Footer** (faq, quellen, impressum, datenschutz):
-```html
-<footer class="footer">
-    <div class="container">
-        <p>
-            <a href="/">Startseite</a> ·
-            <a href="/faq/">FAQ</a> ·
-            <a href="/quellen/">Quellen</a> ·
-            <a href="/datenschutz/">Datenschutz</a> ·
-            <a href="/impressum/">Impressum</a>
-        </p>
-        <p style="margin-top: var(--space-sm);">© 2026 Windkraft Nottuln</p>
-    </div>
-</footer>
-```
-
-2. **Erweiterter Footer** (nur index.html):
-   - Logo + Beschreibungstext
-   - 3 Spalten: Inhalte, Rechtliches, Kontakt
-   - GitHub-Link
+**Unterschied:** index.html hat unter "Inhalte" zusätzlich "#fakten" statt "Startseite"
 
 ### Änderungs-Checkliste
 Bei Änderungen an gemeinsamen Elementen ALLE Dateien prüfen:
