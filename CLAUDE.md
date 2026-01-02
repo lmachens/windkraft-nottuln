@@ -120,11 +120,70 @@ Alle folgenden Fakten wurden gegen Originalquellen geprüft:
 - Bei Unsicherheit: lieber weglassen als falsch zitieren
 
 ## Technische Details
-- Statische HTML/CSS Website
+- Statische HTML/CSS Website (kein Build-Prozess, kein SSG)
 - Hosting: GitHub Pages
 - Repository: github.com/lmachens/windkraft-nottuln (öffentlich, MIT-Lizenz)
 - Struktur: /faq/, /quellen/, /impressum/, /datenschutz/
 - FAQ-Seite hat Schema.org FAQPage JSON-LD Markup für Google Rich Results
+
+## Gemeinsame Elemente (Duplikat-Verwaltung)
+
+### Header Navigation
+Auf ALLEN Seiten identisch halten:
+```html
+<nav class="header__nav">
+    <a href="/">Startseite</a>
+    <a href="/faq/">FAQ</a>
+    <a href="/quellen/">Quellen</a>
+    <a href="/impressum/">Impressum</a>
+</nav>
+```
+**Ausnahme:** index.html hat zusätzlich Anker-Links (#fakten, #ehrlichkeit, #ressourcen)
+
+### Footer
+**Zwei Varianten:**
+
+1. **Einfacher Footer** (faq, quellen, impressum, datenschutz):
+```html
+<footer class="footer">
+    <div class="container">
+        <p>
+            <a href="/">Startseite</a> ·
+            <a href="/faq/">FAQ</a> ·
+            <a href="/quellen/">Quellen</a> ·
+            <a href="/datenschutz/">Datenschutz</a> ·
+            <a href="/impressum/">Impressum</a>
+        </p>
+        <p style="margin-top: var(--space-sm);">© 2026 Windkraft Nottuln</p>
+    </div>
+</footer>
+```
+
+2. **Erweiterter Footer** (nur index.html):
+   - Logo + Beschreibungstext
+   - 3 Spalten: Inhalte, Rechtliches, Kontakt
+   - GitHub-Link
+
+### Änderungs-Checkliste
+Bei Änderungen an gemeinsamen Elementen ALLE Dateien prüfen:
+- [ ] index.html
+- [ ] faq/index.html
+- [ ] quellen/index.html
+- [ ] impressum/index.html
+- [ ] datenschutz/index.html
+- [ ] sitemap.xml (bei neuen Seiten)
+
+### Fakten-Duplikate
+Gleiche Fakten können auf mehreren Seiten vorkommen:
+| Fakt | index.html | faq/index.html | Aktualisieren |
+|------|------------|----------------|---------------|
+| Infraschall 3,5h Auto | ✓ | ✓ | beide |
+| Immobilienwerte 7%/1km | ✓ | ✓ | beide |
+| Abregelung 3,5% | ✓ | ✓ | beide |
+| Vogelschlag-Zahlen | ✓ | ✓ | beide |
+| Schattenwurf 8h | ✓ | ✓ | beide |
+
+**Regel:** Bei Fakten-Änderungen IMMER grep über alle .html-Dateien!
 
 ## Git Commits
 - **KEINE "Generated with Claude Code" Zeile** in Commit-Nachrichten
