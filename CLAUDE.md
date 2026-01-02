@@ -85,6 +85,10 @@ Alle folgenden Fakten wurden gegen Originalquellen geprüft:
 - Bauzeit pro Anlage: 3-6 Monate (Fundament, Aufbau, Netzanschluss)
 - Immobilienwerte: 7% Verlust in 1km (RWI), ab 8-9km kein Effekt
 - Abregelung 2024: 9,4 TWh (3,5% der EE-Produktion) wegen Netzengpässen
+- Strommix 2024: 59,4% erneuerbar, 40,6% fossil (Destatis)
+- Klimaziel 2030: 80% EE (EEG 2023, §1 Abs. 2)
+- Volllaststunden Onshore: 2.000-3.000h/Jahr (Fraunhofer)
+- Technische Verfügbarkeit Onshore: ~98%
 - Negative Strompreise 2024: 457 Stunden
 - Speicherkapazität Ende 2024: ~57 GWh (19 GWh Batterie + 38 GWh Pumpspeicher)
 - Speicherbedarf 2030: ~100 GWh (Fraunhofer ISE)
