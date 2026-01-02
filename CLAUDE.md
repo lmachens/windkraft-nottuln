@@ -67,7 +67,7 @@ Faktenbasierte Aufklärung über Windkraft mit verifizierten Quellen.
 - Bauzeit "2-4 Wochen" war FALSCH → korrekt: "3-6 Monate" (Fundament, Aufbau, Netzanschluss)
 - Bestehende WEA "7" war VERALTET → korrekt: "9" (davon 6 bleiben, 3 Repowering) - Quelle: nottuln.de
 
-## Verifizierte Fakten (Stand: Dezember 2025)
+## Verifizierte Fakten (Stand: Januar 2026)
 Alle folgenden Fakten wurden gegen Originalquellen geprüft:
 - Schattenwurf: 8h tatsächlich / 30h astronomisch (LAI-Hinweise)
 - Infraschall: 3,5h Autofahrt = 27 Jahre in 300m (Uni Bayreuth)
@@ -123,7 +123,8 @@ Alle folgenden Fakten wurden gegen Originalquellen geprüft:
 - Statische HTML/CSS Website
 - Hosting: GitHub Pages
 - Repository: github.com/lmachens/windkraft-nottuln (öffentlich, MIT-Lizenz)
-- Struktur: /quellen/, /impressum/, /datenschutz/
+- Struktur: /faq/, /quellen/, /impressum/, /datenschutz/
+- FAQ-Seite hat Schema.org FAQPage JSON-LD Markup für Google Rich Results
 
 ## Git Commits
 - **KEINE "Generated with Claude Code" Zeile** in Commit-Nachrichten
