@@ -1024,6 +1024,66 @@
             font-weight: 700;
         }
 
+        /* ===== TOOLTIPS ===== */
+        .tooltip {
+            position: relative;
+            cursor: help;
+            border-bottom: 1px dotted var(--color-primary);
+        }
+
+        .tooltip-content {
+            display: none;
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #1a3a3f;
+            color: #fff;
+            padding: 10px 14px;
+            border-radius: 6px;
+            font-family: var(--font-body);
+            font-size: 0.8125rem;
+            font-weight: normal;
+            line-height: 1.5;
+            width: 240px;
+            z-index: 100;
+            margin-bottom: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            text-align: left;
+        }
+
+        .tooltip-content::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 6px solid transparent;
+            border-top-color: #1a3a3f;
+        }
+
+        .tooltip:hover .tooltip-content,
+        .tooltip:focus .tooltip-content {
+            display: block;
+        }
+
+        @media (max-width: 640px) {
+            .tooltip-content {
+                width: 200px;
+                font-size: 0.75rem;
+            }
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .tooltip-content {
+                background: #e8eaed;
+                color: #1a1a1a;
+            }
+            .tooltip-content::after {
+                border-top-color: #e8eaed;
+            }
+        }
+
         /* ===== MOBILE NAVIGATION ===== */
         .mobile-nav-toggle {
             display: none;
@@ -1375,7 +1435,7 @@
                         <div class="benefit-item">
                             <div class="benefit-item__icon">€</div>
                             <div class="benefit-item__text">
-                                <strong>Gemeindebeteiligung:</strong> 0,2 Cent/kWh an Nottuln (§6 EEG). Laut Stadtwerke Münster: <span class="benefit-item__highlight">sechsstelliger Betrag pro Jahr</span> – nur aus dem Windpark Stockum
+                                <strong>Gemeindebeteiligung:</strong> 0,2 Cent/kWh an Nottuln (§6 <span class="tooltip" tabindex="0">EEG<span class="tooltip-content">Erneuerbare-Energien-Gesetz: Regelt die Förderung von Wind, Solar & Co. und schreibt Zahlungen an betroffene Gemeinden vor.</span></span>). Laut Stadtwerke Münster: <span class="benefit-item__highlight">sechsstelliger Betrag pro Jahr</span> – nur aus dem Windpark Stockum
                             </div>
                         </div>
                         <div class="benefit-item">
@@ -1422,13 +1482,13 @@
                     </h3>
                     <div class="shadow-viz">
                         <div class="shadow-bar">
-                            <span class="shadow-bar__label">Theoretisches Max.</span>
+                            <span class="shadow-bar__label"><span class="tooltip" tabindex="0">Theoretisches Max.<span class="tooltip-content">Astronomisch berechnet: Als würde die Sonne jeden Tag scheinen und das Windrad ständig laufen. In der Realität nie erreicht.</span></span></span>
                             <div class="shadow-bar__track">
                                 <div class="shadow-bar__fill shadow-bar__fill--theoretical"><span>30h/Jahr</span></div>
                             </div>
                         </div>
                         <div class="shadow-bar">
-                            <span class="shadow-bar__label">Tatsächlich erlaubt</span>
+                            <span class="shadow-bar__label"><span class="tooltip" tabindex="0">Tatsächlich erlaubt<span class="tooltip-content">Der gesetzliche Grenzwert: Maximal 8 Stunden Schatten pro Jahr auf ein Wohnhaus. Danach muss das Windrad abschalten.</span></span></span>
                             <div class="shadow-bar__track">
                                 <div class="shadow-bar__fill shadow-bar__fill--allowed"><span>8h/Jahr</span></div>
                             </div>
@@ -1442,7 +1502,7 @@
                             <strong>Die Abschaltautomatik:</strong> Moderne Windräder haben Sensoren, die den Schattenwurf messen. Wird der Grenzwert erreicht, schaltet die Anlage automatisch ab – per Gesetz vorgeschrieben.
                         </div>
                         <a href="https://www.lai-immissionsschutz.de/documents/wka_schattenwurfhinweise_stand_23_1588595757.01.pdf" target="_blank" rel="noopener" style="font-size: 0.8125rem; color: var(--color-primary); margin-top: var(--space-sm); display: inline-block;">
-                            → Quelle: LAI-Schattenwurfhinweise (PDF)
+                            → Quelle: <span class="tooltip" tabindex="0">LAI<span class="tooltip-content">Länderausschuss für Immissionsschutz – das Gremium der Bundesländer, das einheitliche Umweltschutz-Richtlinien erarbeitet.</span></span>-Schattenwurfhinweise (PDF)
                         </a>
                     </div>
                 </article>
@@ -1484,7 +1544,7 @@
                             </div>
                         </div>
                         <div class="shadow-note">
-                            <strong>Uni Bayreuth (2020):</strong> „3,5 Stunden Autofahrt setzen Sie genauso viel Infraschallenergie aus wie 27 Jahre Aufenthalt in 300m Abstand zu einem Windrad." Der Infraschall von WEA liegt deutlich unter der menschlichen Wahrnehmungsschwelle.
+                            <strong>Uni Bayreuth (2020):</strong> „3,5 Stunden Autofahrt setzen Sie genauso viel <span class="tooltip" tabindex="0">Infraschall<span class="tooltip-content">Sehr tiefe Töne unter 20 Hz, die Menschen nicht hören können. Entsteht z.B. bei Wind, Verkehr, Waschmaschinen – und auch bei Windrädern.</span></span>energie aus wie 27 Jahre Aufenthalt in 300m Abstand zu einem Windrad." Der Infraschall von Windrädern liegt deutlich unter der menschlichen <span class="tooltip" tabindex="0">Wahrnehmungsschwelle<span class="tooltip-content">Die Grenze, ab der Menschen etwas spüren oder hören können. Infraschall von Windrädern ist so schwach, dass der Körper ihn nicht wahrnimmt.</span></span>.
                         </div>
                         <a href="https://www.bayceer.uni-bayreuth.de/infraschall/de/forschung/gru/html.php?id_obj=157452" target="_blank" rel="noopener" style="font-size: 0.8125rem; color: var(--color-primary);">
                             → Quelle: Uni Bayreuth Infraschall-Studie
@@ -1504,20 +1564,20 @@
                     </h3>
                     <div style="display: flex; flex-direction: column; gap: var(--space-sm);">
                         <p style="color: var(--color-text-muted); margin: 0;">
-                            Windräder müssen die <strong>TA Lärm</strong> einhalten – die gleichen Regeln wie für Industrieanlagen:
+                            Windräder müssen die <span class="tooltip" tabindex="0"><strong>TA Lärm</strong><span class="tooltip-content">Technische Anleitung zum Schutz gegen Lärm – das deutsche Regelwerk für Lärmgrenzwerte bei Anlagen aller Art.</span></span> einhalten – die gleichen Regeln wie für Industrieanlagen:
                         </p>
                         <div style="display: flex; flex-direction: column; gap: var(--space-xs);">
                             <div style="display: flex; justify-content: space-between; padding: var(--space-xs); background: var(--color-bg); border-radius: 4px;">
                                 <span style="color: var(--color-text-muted);">Wohngebiet tags</span>
-                                <strong style="color: var(--color-text);">max. 50 dB(A)</strong>
+                                <span class="tooltip" tabindex="0"><strong style="color: var(--color-text);">max. 50 dB(A)</strong><span class="tooltip-content">Dezibel (dB) misst Lautstärke. Das (A) passt die Messung ans menschliche Ohr an. 50 dB ist etwa so laut wie eine normale Unterhaltung.</span></span>
                             </div>
                             <div style="display: flex; justify-content: space-between; padding: var(--space-xs); background: var(--color-bg); border-radius: 4px;">
                                 <span style="color: var(--color-text-muted);">Wohngebiet nachts</span>
-                                <strong style="color: var(--color-text);">max. 35 dB(A)</strong>
+                                <span class="tooltip" tabindex="0"><strong style="color: var(--color-text);">max. 35 dB(A)</strong><span class="tooltip-content">35 dB ist etwa so laut wie Flüstern oder ein leiser Kühlschrank. Gemessen wird außen am Gebäude, nicht im Schlafzimmer.</span></span>
                             </div>
                         </div>
                         <div class="shadow-note">
-                            <strong>Zum Vergleich:</strong> 35 dB(A) entspricht Flüstern. In 500m Entfernung liegt ein modernes Windrad bei etwa 35-45 dB(A) – vergleichbar mit einem Kühlschrank. <em>(Gemessen wird außen am Gebäude.)</em>
+                            <strong>Zum Vergleich:</strong> In 500m Entfernung liegt ein modernes Windrad bei etwa 35-45 dB(A) – vergleichbar mit einem Kühlschrank.
                         </div>
                         <p style="color: var(--color-text-muted); margin: 0; font-size: 0.875rem;">
                             <strong>Typische Abstände:</strong> Die TA Lärm schreibt keine festen Abstände vor, sondern Schallpegel. In der Praxis ergeben sich daraus <strong>500–800m</strong> zu Wohngebieten – je nach Anlagentyp und Gebietsart.
@@ -1553,7 +1613,7 @@
                             <path d="M8 6c0 1.5.5 2.5 2 3"/>
                             <path d="M16 6c0 1.5-.5 2.5-2 3"/>
                         </svg>
-                        Nocebo-Effekt: Wenn Angst krank macht
+                        <span class="tooltip" tabindex="0">Nocebo-Effekt<span class="tooltip-content">Das Gegenteil von Placebo: Wer glaubt, dass etwas schadet, entwickelt echte Symptome – auch wenn keine echte Ursache vorliegt.</span></span>: Wenn Angst krank macht
                     </h3>
                     <div style="display: flex; flex-direction: column; gap: var(--space-sm);">
                         <p style="color: var(--color-text-muted); margin: 0;">
@@ -1607,7 +1667,7 @@
                         </p>
                     </div>
                     <a href="https://www.nabu.de/tiere-und-pflanzen/voegel/gefaehrdungen/24661.html" target="_blank" rel="noopener" style="font-size: 0.8125rem; color: var(--color-primary); margin-top: var(--space-sm); display: inline-block;">
-                        → Quelle: NABU
+                        → Quelle: <span class="tooltip" tabindex="0">NABU<span class="tooltip-content">Naturschutzbund Deutschland – einer der größten Umweltverbände Deutschlands mit über 900.000 Mitgliedern.</span></span>
                     </a>
                 </article>
 
@@ -1632,7 +1692,7 @@
                             Die roten Warnlichter an Windrädern waren ein häufiger Kritikpunkt. Das ist jetzt Vergangenheit:
                         </p>
                         <div class="shadow-note" style="background: var(--color-accent-light); border-left-color: var(--color-accent);">
-                            <strong>Seit 1. Januar 2025 Pflicht:</strong> Alle Windräder müssen mit "Bedarfsgesteuerter Nachtkennzeichnung" (BNK) ausgestattet sein.
+                            <strong>Seit 1. Januar 2025 Pflicht:</strong> Alle Windräder müssen mit <span class="tooltip" tabindex="0">BNK<span class="tooltip-content">Bedarfsgesteuerte Nachtkennzeichnung: Die roten Warnlichter blinken nur noch, wenn ein Flugzeug in der Nähe ist. Sonst bleiben sie aus.</span></span> ausgestattet sein.
                         </div>
                         <p style="color: var(--color-text-muted); margin: 0;">
                             <strong>So funktioniert's:</strong> Die Lichter blinken nur noch, wenn sich ein Flugzeug nähert (Umkreis 4km, unter 600m Höhe). Ansonsten bleiben sie aus.
@@ -1658,12 +1718,12 @@
                     <div style="display: flex; flex-direction: column; gap: var(--space-sm);">
                         <div style="text-align: center; padding: var(--space-md); background: var(--color-white); border-radius: 8px;">
                             <span style="font-family: var(--font-display); font-size: 2.5rem; color: var(--color-accent);">6.000–10.000</span>
-                            <p style="color: var(--color-text-muted); margin: var(--space-xs) 0 0 0;">Tonnen CO₂ eingespart pro Windrad pro Jahr</p>
+                            <p style="color: var(--color-text-muted); margin: var(--space-xs) 0 0 0;">Tonnen <span class="tooltip" tabindex="0">CO₂<span class="tooltip-content">Kohlendioxid – das wichtigste Treibhausgas. Entsteht bei Verbrennung von Kohle, Öl, Gas. Windkraft erzeugt im Betrieb kein CO₂.</span></span> eingespart pro Windrad pro Jahr</p>
                         </div>
                         <div style="display: flex; gap: var(--space-sm);">
                             <div style="flex: 1; text-align: center; padding: var(--space-sm); background: var(--color-white); border-radius: 6px;">
                                 <strong style="color: var(--color-accent); font-size: 1.25rem;">2,5–4,5</strong>
-                                <p style="font-size: 0.8125rem; color: var(--color-text-muted); margin: 0;">Monate bis zur energetischen Amortisation</p>
+                                <p style="font-size: 0.8125rem; color: var(--color-text-muted); margin: 0;">Monate bis zur <span class="tooltip" tabindex="0">energetischen Amortisation<span class="tooltip-content">Die Zeit, bis ein Windrad mehr Energie erzeugt hat, als für Bau, Transport und Aufstellung nötig war.</span></span></p>
                             </div>
                             <div style="flex: 1; text-align: center; padding: var(--space-sm); background: var(--color-white); border-radius: 6px;">
                                 <strong style="color: var(--color-accent); font-size: 1.25rem;">106 Mio.</strong>
@@ -1672,7 +1732,7 @@
                         </div>
                     </div>
                     <a href="https://www.wind-energie.de/themen/mensch-und-umwelt/klimaschutz/" target="_blank" rel="noopener" style="font-size: 0.8125rem; color: var(--color-primary); margin-top: var(--space-sm); display: inline-block;">
-                        → Quelle: BWE Klimaschutz
+                        → Quelle: <span class="tooltip" tabindex="0">BWE<span class="tooltip-content">Bundesverband WindEnergie – der größte Verband der Windkraft-Branche in Deutschland.</span></span> Klimaschutz
                     </a>
                 </article>
 
@@ -1774,12 +1834,12 @@
                     </h3>
                     <div style="display: flex; flex-direction: column; gap: var(--space-sm);">
                         <p style="color: var(--color-text-muted); margin: 0;">
-                            <strong>Das Problem ist real:</strong> 2024 wurden 9,4 TWh (3,5% der EE-Produktion) abgeregelt – meist weil Netzkapazitäten fehlen, nicht weil der Strom nicht gebraucht wird.
+                            <strong>Das Problem ist real:</strong> 2024 wurden 9,4 <span class="tooltip" tabindex="0">TWh<span class="tooltip-content">Terawattstunde = 1 Milliarde kWh. Damit könnte man etwa 2,5 Millionen Haushalte ein Jahr lang versorgen.</span></span> (3,5% der EE-Produktion) abgeregelt – meist weil Netzkapazitäten fehlen, nicht weil der Strom nicht gebraucht wird.
                         </p>
                         <div style="display: flex; gap: var(--space-sm); flex-wrap: wrap;">
                             <div style="flex: 1; min-width: 120px; text-align: center; padding: var(--space-sm); background: var(--color-bg); border-radius: 8px;">
                                 <span style="font-family: var(--font-display); font-size: 1.5rem; color: var(--color-primary);">57</span>
-                                <p style="font-size: 0.75rem; color: var(--color-text-muted); margin: 0;">GWh Speicher heute</p>
+                                <p style="font-size: 0.75rem; color: var(--color-text-muted); margin: 0;"><span class="tooltip" tabindex="0">GWh<span class="tooltip-content">Gigawattstunde = 1 Million kWh. Damit könnte man etwa 250 Haushalte ein Jahr lang versorgen.</span></span> Speicher heute</p>
                             </div>
                             <div style="flex: 1; min-width: 120px; text-align: center; padding: var(--space-sm); background: var(--color-accent-light); border-radius: 8px;">
                                 <span style="font-family: var(--font-display); font-size: 1.5rem; color: var(--color-accent);">100</span>
@@ -1787,7 +1847,7 @@
                             </div>
                         </div>
                         <div class="shadow-note">
-                            <strong>Lösungen in Arbeit:</strong> Batteriespeicher wachsen +50%/Jahr. SuedLink (4 GW) kommt 2028. 10.000 Großspeicher-Projekte mit 660 GWh sind beantragt.
+                            <strong>Lösungen in Arbeit:</strong> Batteriespeicher wachsen +50%/Jahr. SuedLink (4 <span class="tooltip" tabindex="0">GW<span class="tooltip-content">Gigawatt = 1 Milliarde Watt. Entspricht der Leistung von etwa 4 großen Kohlekraftwerken oder 800 Windrädern.</span></span>) kommt 2028. 10.000 Großspeicher-Projekte mit 660 GWh sind beantragt.
                         </div>
                         <p style="font-size: 0.875rem; color: var(--color-text-muted); margin: 0;">
                             <strong>Fazit:</strong> Ein Übergangsproblem durch verzögerten Netzausbau – keine grundsätzliche Grenze der Windkraft.
