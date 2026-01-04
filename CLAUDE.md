@@ -6,11 +6,12 @@ Faktencheck-Website zur Windkraft-Debatte in Nottuln. Domain: windkraft-nottuln.
 **Ziel:** Sachliche Gegenposition zu emotionalen Anti-Windkraft-Kampagnen (insb. windsinn-nottuln.info).
 Faktenbasierte Aufklärung über Windkraft mit verifizierten Quellen.
 
-**QUALITÄTSSTANDARD:**
+**QUALITÄTSSTANDARD – OBERSTE PRIORITÄT:**
 - NICHTS ausdenken oder imaginieren
 - JEDE Aussage muss durch Originalquellen belegt sein
 - Bei Unsicherheit: NICHT schreiben, sondern recherchieren oder weglassen
 - Lieber weniger Behauptungen als falsche Behauptungen
+- KEINE Annahmen treffen (z.B. "dort leben auch Anwohner") ohne Verifizierung
 
 ## Wichtige Regeln
 
@@ -96,6 +97,9 @@ Alle folgenden Fakten wurden gegen Originalquellen geprüft:
 - SuedLink (4 GW): Fertigstellung 2028
 - Ultranet (2 GW): Fertigstellung 2026
 - Auckland ist in Neuseeland, NICHT Australien
+- § 9 FStrG: 40m Bauverbot an Autobahnen, 100m Beschränkungszone
+- OVG Berlin-Brandenburg 2024: WEA mit 110m Abstand zu Autobahn genehmigt
+- Münsterland Flächenziel: 12.670 ha (wird mit 15.500 ha übererfüllt)
 
 ## NRW-spezifische Fakten (verifiziert Januar 2026)
 - NRW 1000m-Mindestabstand: **ABGESCHAFFT seit August 2023**
@@ -126,6 +130,19 @@ Alle folgenden Fakten wurden gegen Originalquellen geprüft:
 - Struktur: /faq/, /quellen/, /impressum/, /datenschutz/
 - FAQ-Seite hat Schema.org FAQPage JSON-LD Markup für Google Rich Results
 
+### Tooltips für Fachbegriffe
+**IMMER Tooltips verwenden für:**
+- Abkürzungen: BWE, NABU, UBA, EEG, BNK, FStrG, OVG, TWh, GWh, GW, CO₂, etc.
+- Fachbegriffe: Infraschall, Nocebo-Effekt, energetische Amortisation, TA Lärm, LAI, etc.
+- Technische Werte: dB(A), Volllaststunden, etc.
+
+**Tooltip-Syntax:**
+```html
+<span class="tooltip" tabindex="0">Abkürzung<span class="tooltip-content">Erklärung hier.</span></span>
+```
+- `tabindex="0"` für Keyboard-Accessibility
+- Tooltip-CSS muss auf der Seite vorhanden sein (index.html und faq/index.html haben sie)
+
 ## Gemeinsame Elemente (Duplikat-Verwaltung)
 
 ### Header Navigation
@@ -150,6 +167,10 @@ Auf ALLEN Seiten identisch halten:
 
 **Unterschied:** index.html hat unter "Inhalte" zusätzlich "#fakten" statt "Startseite"
 
+### Tooltip-CSS
+Vorhanden auf: index.html, faq/index.html
+Bei Änderungen an Tooltip-Styles beide Dateien aktualisieren!
+
 ### Änderungs-Checkliste
 Bei Änderungen an gemeinsamen Elementen ALLE Dateien prüfen:
 - [ ] index.html
@@ -168,6 +189,7 @@ Gleiche Fakten können auf mehreren Seiten vorkommen:
 | Abregelung 3,5% | ✓ | ✓ | beide |
 | Vogelschlag-Zahlen | ✓ | ✓ | beide |
 | Schattenwurf 8h | ✓ | ✓ | beide |
+| Standortwahl/Autobahn | ✓ | ✓ | beide |
 
 **Regel:** Bei Fakten-Änderungen IMMER grep über alle .html-Dateien!
 
