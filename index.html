@@ -6,16 +6,21 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="canonical" href="https://windkraft-nottuln.de/">
     <title>Windkraft Nottuln (Kreis Coesfeld) – Fakten zu Windenergie & Windpark Stockum</title>
-    <meta name="description" content="Faktenbasierte Informationen zu Windkraft und Windenergie in Nottuln, Kreis Coesfeld. Windpark Stockum, Schattenwurf, Infraschall, Bürgerbeteiligung – mit Quellen belegt.">
-    <meta name="keywords" content="Windkraft Nottuln, Windenergie Nottuln, Windpark Stockum, Kreis Coesfeld, Windenergieanlagen Münsterland, Stadtwerke Münster Windkraft, Windräder Nottuln">
+    <meta name="description" content="Faktenbasierte Informationen zu Windkraft in Nottuln, Kreis Coesfeld. Windpark Stockum, Infraschall, Rotmilan, Fledermäuse, Artenschutz, Bürgerbeteiligung – mit Quellen belegt.">
+    <meta name="keywords" content="Windkraft Nottuln, Windenergie Nottuln, Windpark Stockum, Kreis Coesfeld, Windenergieanlagen Münsterland, Stadtwerke Münster Windkraft, Windräder Nottuln, Rotmilan Windkraft, Artenschutz Windenergie">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://windkraft-nottuln.de/">
     <meta property="og:title" content="Windkraft Nottuln (Kreis Coesfeld) – Fakten zu Windenergie">
-    <meta property="og:description" content="Faktenbasierte Informationen zu Windkraft und Windenergie in Nottuln, Kreis Coesfeld. Windpark Stockum, Schattenwurf, Infraschall – mit Quellen belegt.">
+    <meta property="og:description" content="Faktenbasierte Informationen zu Windkraft in Nottuln: Infraschall, Rotmilan, Artenschutz, Bürgerbeteiligung am Windpark Stockum – mit Quellen belegt.">
     <meta property="og:locale" content="de_DE">
     <meta property="og:site_name" content="Windkraft Nottuln">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Windkraft Nottuln – Fakten zu Windenergie">
+    <meta name="twitter:description" content="Faktenbasierte Informationen zu Windkraft in Nottuln: Infraschall, Rotmilan, Schattenwurf, Bürgerbeteiligung.">
 
     <!-- Structured Data for SEO -->
     <script type="application/ld+json">
@@ -53,7 +58,7 @@
             "name": "Leon Machens"
         },
         "datePublished": "2025-12-01",
-        "dateModified": "2026-01-01",
+        "dateModified": "2026-01-12",
         "mainEntityOfPage": "https://windkraft-nottuln.de/",
         "about": [
             {"@type": "Thing", "name": "Windkraft"},
@@ -346,6 +351,52 @@
         .section-header p {
             color: var(--color-text-muted);
             font-size: 1.125rem;
+        }
+
+        /* ===== QUICK NAVIGATION ===== */
+        .quick-nav {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-sm);
+            padding: var(--space-md) var(--space-sm);
+            background: var(--color-white);
+            border-bottom: 1px solid var(--color-border);
+            flex-wrap: wrap;
+        }
+
+        .quick-nav__label {
+            font-size: 0.875rem;
+            color: var(--color-text-muted);
+            font-weight: 500;
+        }
+
+        .quick-nav__pill {
+            display: inline-flex;
+            align-items: center;
+            padding: var(--space-xs) var(--space-sm);
+            background: var(--color-primary-light);
+            color: var(--color-primary);
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .quick-nav__pill:hover {
+            background: var(--color-primary);
+            color: var(--color-white);
+        }
+
+        @media (max-width: 480px) {
+            .quick-nav {
+                gap: var(--space-xs);
+            }
+            .quick-nav__pill {
+                font-size: 0.8125rem;
+                padding: 6px 12px;
+            }
         }
 
         /* ===== ABOUT ME SECTION ===== */
@@ -1318,9 +1369,10 @@
                 <span></span>
             </button>
             <nav class="header__nav">
-                <a href="#fakten">Fakten</a>
-                <a href="#ehrlichkeit">Ehrlichkeit</a>
-                <a href="#ressourcen">Ressourcen</a>
+                <a href="#gesundheit">Gesundheit</a>
+                <a href="#natur">Natur</a>
+                <a href="#klima">Klima</a>
+                <a href="#technik">Technik</a>
                 <a href="/faq/">FAQ</a>
                 <a href="/quellen/">Quellen</a>
                 <a href="/impressum/">Impressum</a>
@@ -1348,6 +1400,16 @@
             </svg>
         </div>
     </section>
+
+    <!-- Quick Navigation -->
+    <nav class="quick-nav">
+        <span class="quick-nav__label">Direkt zu:</span>
+        <a href="#gesundheit" class="quick-nav__pill">Gesundheit</a>
+        <a href="#natur" class="quick-nav__pill">Natur</a>
+        <a href="#klima" class="quick-nav__pill">Klima</a>
+        <a href="#technik" class="quick-nav__pill">Technik</a>
+        <a href="#ressourcen" class="quick-nav__pill">Ressourcen</a>
+    </nav>
 
     <!-- About Section -->
     <section class="about">
@@ -1413,59 +1475,14 @@
 
     <div class="section-wave"></div>
 
-    <!-- Infographic Section -->
-    <section class="infographic" id="fakten">
+    <!-- Gesundheit Section -->
+    <section class="infographic" id="gesundheit">
         <div class="container">
             <div class="section-header">
-                <h2>Was in der Debatte oft fehlt</h2>
-                <p>Vier Themen, bei denen ich Kontext vermisst habe – mit Zahlen und Quellen.</p>
+                <h2>Gesundheit & Anwohner</h2>
+                <p>Was sagt die Wissenschaft zu den häufigsten Bedenken?</p>
             </div>
             <div class="infographic__grid">
-                <!-- Benefits Card -->
-                <article class="info-card benefits-card">
-                    <h3>
-                        <svg viewBox="0 0 24 24">
-                            <!-- Trend-Up / Gewinn Icon -->
-                            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
-                            <polyline points="17 6 23 6 23 12"/>
-                        </svg>
-                        Was Nottuln davon hat
-                    </h3>
-                    <div class="benefits-list">
-                        <div class="benefit-item">
-                            <div class="benefit-item__icon">€</div>
-                            <div class="benefit-item__text">
-                                <strong>Gemeindebeteiligung:</strong> 0,2 Cent/kWh an Nottuln (§6 <span class="tooltip" tabindex="0">EEG<span class="tooltip-content">Erneuerbare-Energien-Gesetz: Regelt die Förderung von Wind, Solar & Co. und schreibt Zahlungen an betroffene Gemeinden vor.</span></span>). Laut Stadtwerke Münster: <span class="benefit-item__highlight">sechsstelliger Betrag pro Jahr</span> – nur aus dem Windpark Stockum
-                            </div>
-                        </div>
-                        <div class="benefit-item">
-                            <div class="benefit-item__icon">%</div>
-                            <div class="benefit-item__text">
-                                <strong>90% Gewerbesteuer</strong> fließen an die Standortgemeinde (seit 2021 gesetzlich geregelt)
-                            </div>
-                        </div>
-                        <div class="benefit-item">
-                            <div class="benefit-item__icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 18px; height: 18px;">
-                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                                    <circle cx="9" cy="7" r="4"/>
-                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-                                </svg>
-                            </div>
-                            <div class="benefit-item__text">
-                                <strong>Bürgerbeteiligung:</strong> Laut Bürgerenergiegesetz NRW können Nottulner ab 500€ investieren und mitverdienen
-                            </div>
-                        </div>
-                    </div>
-                    <div class="shadow-note" style="margin-top: var(--space-md); background: var(--color-white);">
-                        <strong>Praxisbeispiel Simmerath (Eifel):</strong> Durch ~2 Mio. €/Jahr Windkraft-Einnahmen hat die Gemeinde die niedrigsten Steuern der Region. <a href="https://www.bundeskanzler.de/bk-de/aktuelles/bundeskanzler-windpark-2215404" target="_blank" rel="noopener" style="color: var(--color-primary); font-size: 0.8125rem;">→ Bundeskanzler.de</a>
-                    </div>
-                    <a href="https://www.wirtschaft.nrw/buergerenergiegesetz-nrw" target="_blank" rel="noopener" style="font-size: 0.8125rem; color: var(--color-primary); margin-top: var(--space-sm); display: inline-block;">
-                        → Quelle: Bürgerenergiegesetz NRW
-                    </a>
-                </article>
-
                 <!-- Schattenwurf Card -->
                 <article class="info-card">
                     <h3>
@@ -1501,6 +1518,14 @@
                         <div class="shadow-note">
                             <strong>Die Abschaltautomatik:</strong> Moderne Windräder haben Sensoren, die den Schattenwurf messen. Wird der Grenzwert erreicht, schaltet die Anlage automatisch ab – per Gesetz vorgeschrieben.
                         </div>
+                        <details style="margin-top: var(--space-sm); background: var(--color-bg); border-radius: 6px; padding: var(--space-sm);">
+                            <summary style="cursor: pointer; font-weight: 600; color: var(--color-primary); font-size: 0.875rem;">Die Himmelsrichtung macht den Unterschied</summary>
+                            <div style="margin-top: var(--space-sm); font-size: 0.875rem; color: var(--color-text-muted);">
+                                <p style="margin: 0;">
+                                    Da die Sonne in unseren Breiten <strong>nie im Norden</strong> steht, wirft ein Windrad keinen Schatten nach Süden. Ein Haus <strong>südlich</strong> eines Windrads ist vom Schattenwurf <strong>gar nicht betroffen</strong> – egal wie nah es steht. Deshalb sind pauschale km-Abstände nicht sinnvoll. Es kommt auf die konkreten Gegebenheiten vor Ort an.
+                                </p>
+                            </div>
+                        </details>
                         <a href="https://www.lai-immissionsschutz.de/documents/wka_schattenwurfhinweise_stand_23_1588595757.01.pdf" target="_blank" rel="noopener" style="font-size: 0.8125rem; color: var(--color-primary); margin-top: var(--space-sm); display: inline-block;">
                             → Quelle: <span class="tooltip" tabindex="0">LAI<span class="tooltip-content">Länderausschuss für Immissionsschutz – das Gremium der Bundesländer, das einheitliche Umweltschutz-Richtlinien erarbeitet.</span></span>-Schattenwurfhinweise (PDF)
                         </a>
@@ -1582,26 +1607,25 @@
                         <p style="color: var(--color-text-muted); margin: 0; font-size: 0.875rem;">
                             <strong>Typische Abstände:</strong> Die TA Lärm schreibt keine festen Abstände vor, sondern Schallpegel. In der Praxis ergeben sich daraus <strong>500–800m</strong> zu Wohngebieten – je nach Anlagentyp und Gebietsart.
                         </p>
+                        <details style="margin-top: var(--space-sm); background: var(--color-bg); border-radius: 6px; padding: var(--space-sm);">
+                            <summary style="cursor: pointer; font-weight: 600; color: var(--color-primary); font-size: 0.875rem;">Größere Anlagen = besser für Anwohner?</summary>
+                            <div style="margin-top: var(--space-sm); font-size: 0.875rem; color: var(--color-text-muted);">
+                                <p style="margin: 0 0 var(--space-xs) 0;">
+                                    <strong>Langsamer:</strong> Große Rotoren drehen langsamer – weniger optische Unruhe und gleichmäßigeres Geräusch.
+                                </p>
+                                <p style="margin: 0 0 var(--space-xs) 0;">
+                                    <strong>Weniger Anlagen:</strong> Bei gleicher Stromproduktion braucht man weniger große Anlagen statt vieler kleiner.
+                                </p>
+                                <p style="margin: 0;">
+                                    <strong>Höhere Rotorunterkante:</strong> Bei 266m-Anlagen beginnt der Rotor erst bei ~96m Höhe – besser für Vögel, die meist tiefer fliegen.
+                                </p>
+                            </div>
+                        </details>
                     </div>
                     <a href="https://www.umweltbundesamt.de/themen/laerm/nachbarschaftslaerm-laerm-von-anlagen/laerm-von-windenergieanlagen" target="_blank" rel="noopener" style="font-size: 0.8125rem; color: var(--color-primary); margin-top: var(--space-sm); display: inline-block;">
                         → Quelle: Umweltbundesamt (TA Lärm)
                     </a>
                 </article>
-
-            </div>
-        </div>
-    </section>
-
-    <div class="section-wave section-wave--reverse"></div>
-
-    <!-- Additional Facts Section -->
-    <section class="section" id="weitere-fakten" style="background: var(--color-white);">
-        <div class="container">
-            <div class="section-header">
-                <h2>Weitere Fakten im Kontext</h2>
-                <p>Häufige Bedenken – wissenschaftlich eingeordnet.</p>
-            </div>
-            <div class="infographic__grid">
 
                 <!-- Nocebo Effect Card -->
                 <article class="info-card">
@@ -1630,6 +1654,21 @@
                         → Quelle: Woolcock Institute Studie
                     </a>
                 </article>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="section-wave section-wave--reverse"></div>
+
+    <!-- Artenschutz Section -->
+    <section class="section" id="natur" style="background: var(--color-white);">
+        <div class="container">
+            <div class="section-header">
+                <h2>Artenschutz</h2>
+                <p>Vögel und Fledermäuse – was sagen die Studien?</p>
+            </div>
+            <div class="infographic__grid">
 
                 <!-- Bird Strike Card -->
                 <article class="info-card">
@@ -1663,7 +1702,7 @@
                             </div>
                         </div>
                         <p style="color: var(--color-text-muted); margin: 0; font-size: 0.875rem;">
-                            Windkraft verursacht &lt;0,1% der Vogeltode. Für einzelne Greifvogelarten kann es dennoch ein Faktor sein.
+                            Windkraft verursacht &lt;0,1% der Vogeltode. Für Greifvögel wie den Rotmilan ist die Situation differenzierter.
                         </p>
                     </div>
                     <a href="https://www.nabu.de/tiere-und-pflanzen/voegel/gefaehrdungen/24661.html" target="_blank" rel="noopener" style="font-size: 0.8125rem; color: var(--color-primary); margin-top: var(--space-sm); display: inline-block;">
@@ -1671,40 +1710,92 @@
                     </a>
                 </article>
 
-                <!-- BNK / Red Lights Card -->
-                <article class="info-card">
+                <!-- Rotmilan Card -->
+                <article class="info-card" style="background: var(--color-warning-light); border-color: #e8dbb3;">
                     <h3>
-                        <svg viewBox="0 0 24 24">
-                            <circle cx="12" cy="12" r="5"/>
-                            <line x1="12" y1="1" x2="12" y2="3"/>
-                            <line x1="12" y1="21" x2="12" y2="23"/>
-                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
-                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
-                            <line x1="1" y1="12" x2="3" y2="12"/>
-                            <line x1="21" y1="12" x2="23" y2="12"/>
-                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
-                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                        <svg viewBox="0 0 24 24" style="stroke: var(--color-warning);">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                            <path d="M2 17l10 5 10-5"/>
+                            <path d="M2 12l10 5 10-5"/>
                         </svg>
-                        Rote Blinklichter: Problem gelöst
+                        <span class="tooltip" tabindex="0">Rotmilan<span class="tooltip-content">Greifvogel mit gegabeltem Schwanz. Deutschland beherbergt über 50% des weltweiten Bestands – eine besondere Verantwortung.</span></span>: Höhere Anlagen sind sicherer
                     </h3>
                     <div style="display: flex; flex-direction: column; gap: var(--space-sm);">
                         <p style="color: var(--color-text-muted); margin: 0;">
-                            Die roten Warnlichter an Windrädern waren ein häufiger Kritikpunkt. Das ist jetzt Vergangenheit:
+                            Der Rotmilan ist ein häufiges Argument gegen Windkraft. Die Wissenschaft zeigt ein differenziertes Bild:
                         </p>
-                        <div class="shadow-note" style="background: var(--color-accent-light); border-left-color: var(--color-accent);">
-                            <strong>Seit 1. Januar 2025 Pflicht:</strong> Alle Windräder müssen mit <span class="tooltip" tabindex="0">BNK<span class="tooltip-content">Bedarfsgesteuerte Nachtkennzeichnung: Die roten Warnlichter blinken nur noch, wenn ein Flugzeug in der Nähe ist. Sonst bleiben sie aus.</span></span> ausgestattet sein.
+                        <div style="display: flex; gap: var(--space-sm); flex-wrap: wrap;">
+                            <div style="flex: 1; min-width: 120px; text-align: center; padding: var(--space-sm); background: var(--color-white); border-radius: 8px;">
+                                <span style="font-family: var(--font-display); font-size: 1.5rem; color: var(--color-warning);">~40m</span>
+                                <p style="font-size: 0.75rem; color: var(--color-text-muted); margin: 0;">Flughöhe beim Jagen</p>
+                            </div>
+                            <div style="flex: 1; min-width: 120px; text-align: center; padding: var(--space-sm); background: var(--color-white); border-radius: 8px;">
+                                <span style="font-family: var(--font-display); font-size: 1.5rem; color: var(--color-primary);">~96m</span>
+                                <p style="font-size: 0.75rem; color: var(--color-text-muted); margin: 0;">Rotorunterkante (266m-Anlage)</p>
+                            </div>
                         </div>
-                        <p style="color: var(--color-text-muted); margin: 0;">
-                            <strong>So funktioniert's:</strong> Die Lichter blinken nur noch, wenn sich ein Flugzeug nähert (Umkreis 4km, unter 600m Höhe). Ansonsten bleiben sie aus.
+                        <div class="shadow-note" style="background: var(--color-white);">
+                            <strong>Schweizer Langzeitstudie (11 Jahre, 3.000 Rotmilane):</strong> Je höher die Rotorblätter angebracht sind, desto <em>weniger</em> Kollisionen. Der Rotmilan fliegt beim Suchflug meist unter 80m – bei modernen Anlagen unter der Rotorunterkante.
+                        </div>
+                        <p style="color: var(--color-text-muted); margin: 0; font-size: 0.9375rem;">
+                            <strong>Aber:</strong> Während der Balzzeit fliegen Rotmilane höher. Eine Telemetriestudie zeigt: <strong>18-29% der Flüge</strong> finden dann in Rotorhöhe (80-250m) statt. Deshalb gibt es gezielte Schutzmaßnahmen:
                         </p>
-                        <p style="color: var(--color-text-muted); margin: 0;">
-                            <strong>Ergebnis:</strong> Bis zu <span style="color: var(--color-accent); font-weight: 600;">98% weniger Lichtverschmutzung</span>.
+                        <ul style="color: var(--color-text-muted); margin: 0; padding-left: var(--space-md); font-size: 0.875rem;">
+                            <li><strong>1.500m Mindestabstand</strong> zu Horsten (<span class="tooltip" tabindex="0">Helgoländer Papier<span class="tooltip-content">Fachliche Empfehlung der Länderarbeitsgemeinschaft der Vogelschutzwarten zu Abständen zwischen Windenergieanlagen und Vogellebensräumen.</span></span>)</li>
+                            <li><strong>Automatische Abschaltsysteme</strong> (IdentiFlight, BirdVision) erkennen Greifvögel per Kamera und stoppen die Anlage vor einer Kollision</li>
+                        </ul>
+                        <p style="color: var(--color-text-muted); margin: 0; font-size: 0.875rem; font-style: italic;">
+                            Die Ironie: Wer mit der Höhe gegen Windkraft argumentiert, müsste eigentlich <em>für</em> möglichst hohe Anlagen sein – denn genau die schützen den Rotmilan am besten.
                         </p>
                     </div>
-                    <a href="https://www.wind-energie.de/themen/mensch-und-umwelt/kennzeichnung/" target="_blank" rel="noopener" style="font-size: 0.8125rem; color: var(--color-primary); margin-top: var(--space-sm); display: inline-block;">
-                        → Quelle: Bundesverband WindEnergie
+                    <a href="https://www.presseportal.ch/de/pm/100002863/100936241" target="_blank" rel="noopener" style="font-size: 0.8125rem; color: var(--color-primary); margin-top: var(--space-sm); display: inline-block;">
+                        → Quelle: Schweizer Vogelwarte / Birdlife Schweiz
                     </a>
                 </article>
+
+                <!-- Bat Protection Card -->
+                <article class="info-card">
+                    <h3>
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 3c-1.5 2-3 4-3 7 0 2 1 3 1 5-2 0-4-1-6-3-1 2 0 5 2 7 1-1 3-1 4 0 1 1 2 3 2 5 0-2 1-4 2-5 1-1 3-1 4 0 2-2 3-5 2-7-2 2-4 3-6 3 0-2 1-3 1-5 0-3-1.5-5-3-7z"/>
+                        </svg>
+                        Fledermäuse: Schutz durch Technik
+                    </h3>
+                    <div style="display: flex; flex-direction: column; gap: var(--space-sm);">
+                        <p style="color: var(--color-text-muted); margin: 0;">
+                            <strong>Flughöhen:</strong> 95% aller Fledermausflüge finden unter 144m statt. Die meisten Arten jagen unter 40m (Baumwipfelhöhe).
+                        </p>
+                        <div style="display: flex; gap: var(--space-sm);">
+                            <div style="flex: 1; text-align: center; padding: var(--space-sm); background: var(--color-bg); border-radius: 6px;">
+                                <strong style="color: var(--color-primary); font-size: 1.25rem;">95%</strong>
+                                <p style="font-size: 0.8125rem; color: var(--color-text-muted); margin: 0;">der Flüge unter 144m</p>
+                            </div>
+                            <div style="flex: 1; text-align: center; padding: var(--space-sm); background: var(--color-bg); border-radius: 6px;">
+                                <strong style="color: var(--color-primary); font-size: 1.25rem;">~40m</strong>
+                                <p style="font-size: 0.8125rem; color: var(--color-text-muted); margin: 0;">typische Jagdhöhe</p>
+                            </div>
+                        </div>
+                        <div class="shadow-note" style="background: var(--color-accent-light); border-left-color: var(--color-accent);">
+                            <strong>Betriebssteuerung wirkt:</strong> Moderne Anlagen werden bei niedrigem Wind (&lt;8 m/s) abgeschaltet, wenn Fledermäuse aktiv sind. Ergebnis: Kaum noch Schlagopfer bei nur 1-4% Ertragsverlust.
+                        </div>
+                    </div>
+                    <a href="https://mecklenburg-vorpommern.nabu.de/tiere-und-pflanzen/aktionen-und-projekte/fledermauszug/21333.html" target="_blank" rel="noopener" style="font-size: 0.8125rem; color: var(--color-primary); margin-top: var(--space-sm); display: inline-block;">
+                        → Quelle: <span class="tooltip" tabindex="0">Leibniz-IZW<span class="tooltip-content">Leibniz-Institut für Zoo- und Wildtierforschung in Berlin – führend in der Fledermausforschung.</span></span> Studie
+                    </a>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Klimaschutz Section -->
+    <section class="section" id="klima" style="background: var(--color-bg);">
+        <div class="container">
+            <div class="section-header">
+                <h2>Klimaschutz & Wirtschaft</h2>
+                <p>Was bringt Windkraft für Klima, Region und Gemeinde?</p>
+            </div>
+            <div class="infographic__grid">
 
                 <!-- CO2 Savings Card -->
                 <article class="info-card" style="background: var(--color-accent-light); border-color: #c8dfc6;">
@@ -1730,6 +1821,12 @@
                                 <p style="font-size: 0.8125rem; color: var(--color-text-muted); margin: 0;">Tonnen CO₂ durch Wind vermieden (2024)</p>
                             </div>
                         </div>
+                        <div class="shadow-note" style="background: var(--color-white);">
+                            <strong>Wo stehen wir?</strong> 2024: <strong>59% erneuerbar</strong>, 41% fossil. Klimaziel 2030: <strong>80% erneuerbar</strong>. Plus: E-Autos und Wärmepumpen erhöhen den Strombedarf weiter.
+                        </div>
+                        <p style="color: var(--color-text-muted); margin: 0; font-size: 0.875rem;">
+                            <strong>Rechenbeispiel Stockum:</strong> 7 Anlagen × 8.000t CO₂ = <strong>56.000 Tonnen</strong> weniger CO₂ pro Jahr – das entspricht etwa 5.000 Hin- und Rückflügen nach Mallorca.
+                        </p>
                     </div>
                     <a href="https://www.wind-energie.de/themen/mensch-und-umwelt/klimaschutz/" target="_blank" rel="noopener" style="font-size: 0.8125rem; color: var(--color-primary); margin-top: var(--space-sm); display: inline-block;">
                         → Quelle: <span class="tooltip" tabindex="0">BWE<span class="tooltip-content">Bundesverband WindEnergie – der größte Verband der Windkraft-Branche in Deutschland.</span></span> Klimaschutz
@@ -1760,11 +1857,76 @@
                         <p style="color: var(--color-text-muted); margin: 0; font-size: 0.9375rem;">
                             <strong>Windkraft ändert das:</strong> Jeder Euro, der in lokale Windenergie fließt, bleibt in der Region – als Pacht für Landwirte, Gewerbesteuer für die Gemeinde und Aufträge für lokale Handwerker.
                         </p>
+                        <details style="margin-top: var(--space-sm); background: var(--color-bg); border-radius: 6px; padding: var(--space-sm);">
+                            <summary style="cursor: pointer; font-weight: 600; color: var(--color-primary); font-size: 0.875rem;">Warum gerade das Münsterland?</summary>
+                            <div style="margin-top: var(--space-sm); font-size: 0.875rem; color: var(--color-text-muted);">
+                                <p style="margin: 0;">
+                                    Das Münsterland liegt direkt neben dem <strong>Ruhrgebiet</strong> – einem der größten Stromverbraucher Deutschlands. Kurze Wege bedeuten <strong>weniger Übertragungsverluste</strong> und <strong>weniger Netzausbau-Bedarf</strong>. Das spricht für Windkraft in unserer Region statt nur in Norddeutschland oder Offshore.
+                                </p>
+                            </div>
+                        </details>
                     </div>
                     <a href="https://www.umweltbundesamt.de/daten/energie/primaerenergiegewinnung-importe" target="_blank" rel="noopener" style="font-size: 0.8125rem; color: var(--color-primary); margin-top: var(--space-sm); display: inline-block;">
                         → Quelle: Umweltbundesamt
                     </a>
                 </article>
+
+                <!-- Benefits Card -->
+                <article class="info-card benefits-card">
+                    <h3>
+                        <svg viewBox="0 0 24 24">
+                            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+                            <polyline points="17 6 23 6 23 12"/>
+                        </svg>
+                        Was Nottuln davon hat
+                    </h3>
+                    <div class="benefits-list">
+                        <div class="benefit-item">
+                            <div class="benefit-item__icon">€</div>
+                            <div class="benefit-item__text">
+                                <strong>Gemeindebeteiligung:</strong> 0,2 Cent/kWh an Nottuln (§6 <span class="tooltip" tabindex="0">EEG<span class="tooltip-content">Erneuerbare-Energien-Gesetz: Regelt die Förderung von Wind, Solar & Co. und schreibt Zahlungen an betroffene Gemeinden vor.</span></span>). Laut Stadtwerke Münster: <span class="benefit-item__highlight">sechsstelliger Betrag pro Jahr</span> – nur aus dem Windpark Stockum
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-item__icon">%</div>
+                            <div class="benefit-item__text">
+                                <strong>90% Gewerbesteuer</strong> fließen an die Standortgemeinde (seit 2021 gesetzlich geregelt)
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-item__icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 18px; height: 18px;">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                    <circle cx="9" cy="7" r="4"/>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                                </svg>
+                            </div>
+                            <div class="benefit-item__text">
+                                <strong>Bürgerbeteiligung:</strong> Laut Bürgerenergiegesetz NRW können Nottulner ab 500€ investieren und mitverdienen
+                            </div>
+                        </div>
+                    </div>
+                    <div class="shadow-note" style="margin-top: var(--space-md); background: var(--color-white);">
+                        <strong>Praxisbeispiel Simmerath (Eifel):</strong> Durch ~2 Mio. €/Jahr Windkraft-Einnahmen hat die Gemeinde die niedrigsten Steuern der Region. <a href="https://www.bundeskanzler.de/bk-de/aktuelles/bundeskanzler-windpark-2215404" target="_blank" rel="noopener" style="color: var(--color-primary); font-size: 0.8125rem;">→ Bundeskanzler.de</a>
+                    </div>
+                    <a href="https://www.wirtschaft.nrw/buergerenergiegesetz-nrw" target="_blank" rel="noopener" style="font-size: 0.8125rem; color: var(--color-primary); margin-top: var(--space-sm); display: inline-block;">
+                        → Quelle: Bürgerenergiegesetz NRW
+                    </a>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Umwelt Section -->
+    <section class="section" id="umwelt" style="background: var(--color-white);">
+        <div class="container">
+            <div class="section-header">
+                <h2>Umwelt & Ressourcen</h2>
+                <p>Flächenverbrauch und Recycling – die Fakten.</p>
+            </div>
+            <div class="infographic__grid">
 
                 <!-- Land Use Card -->
                 <article class="info-card">
@@ -1824,6 +1986,54 @@
                     </a>
                 </article>
 
+            </div>
+        </div>
+    </section>
+
+    <!-- Technik Section -->
+    <section class="section" id="technik" style="background: var(--color-bg);">
+        <div class="container">
+            <div class="section-header">
+                <h2>Technik & Betrieb</h2>
+                <p>Wie moderne Windräder funktionieren und gesteuert werden.</p>
+            </div>
+            <div class="infographic__grid">
+
+                <!-- BNK / Red Lights Card -->
+                <article class="info-card">
+                    <h3>
+                        <svg viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="5"/>
+                            <line x1="12" y1="1" x2="12" y2="3"/>
+                            <line x1="12" y1="21" x2="12" y2="23"/>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                            <line x1="1" y1="12" x2="3" y2="12"/>
+                            <line x1="21" y1="12" x2="23" y2="12"/>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                        </svg>
+                        Rote Blinklichter: Problem gelöst
+                    </h3>
+                    <div style="display: flex; flex-direction: column; gap: var(--space-sm);">
+                        <p style="color: var(--color-text-muted); margin: 0;">
+                            Die roten Warnlichter an Windrädern waren ein häufiger Kritikpunkt. Das ist jetzt Vergangenheit:
+                        </p>
+                        <div class="shadow-note" style="background: var(--color-accent-light); border-left-color: var(--color-accent);">
+                            <strong>Seit 1. Januar 2025 Pflicht:</strong> Alle Windräder müssen mit <span class="tooltip" tabindex="0">BNK<span class="tooltip-content">Bedarfsgesteuerte Nachtkennzeichnung: Die roten Warnlichter blinken nur noch, wenn ein Flugzeug in der Nähe ist. Sonst bleiben sie aus.</span></span> ausgestattet sein.
+                        </div>
+                        <p style="color: var(--color-text-muted); margin: 0;">
+                            <strong>So funktioniert's:</strong> Die Lichter blinken nur noch, wenn sich ein Flugzeug nähert (Umkreis 4km, unter 600m Höhe). Ansonsten bleiben sie aus.
+                        </p>
+                        <p style="color: var(--color-text-muted); margin: 0;">
+                            <strong>Ergebnis:</strong> Bis zu <span style="color: var(--color-accent); font-weight: 600;">98% weniger Lichtverschmutzung</span>.
+                        </p>
+                    </div>
+                    <a href="https://www.wind-energie.de/themen/mensch-und-umwelt/kennzeichnung/" target="_blank" rel="noopener" style="font-size: 0.8125rem; color: var(--color-primary); margin-top: var(--space-sm); display: inline-block;">
+                        → Quelle: Bundesverband WindEnergie
+                    </a>
+                </article>
+
                 <!-- Speicher & Netzausbau Card -->
                 <article class="info-card">
                     <h3>
@@ -1847,7 +2057,7 @@
                             </div>
                         </div>
                         <div class="shadow-note">
-                            <strong>Lösungen in Arbeit:</strong> Batteriespeicher wachsen +50%/Jahr. SuedLink (4 <span class="tooltip" tabindex="0">GW<span class="tooltip-content">Gigawatt = 1 Milliarde Watt. Entspricht der Leistung von etwa 4 großen Kohlekraftwerken oder 800 Windrädern.</span></span>) kommt 2028. 10.000 Großspeicher-Projekte mit 660 GWh sind beantragt.
+                            <strong>Lösungen in Arbeit:</strong> Batteriespeicher wachsen +50%/Jahr. <span class="tooltip" tabindex="0">Ultranet<span class="tooltip-content">Gleichstromleitung von NRW nach Baden-Württemberg. 2 GW Kapazität.</span></span> (2 GW) kommt 2026, <span class="tooltip" tabindex="0">SuedLink<span class="tooltip-content">Größtes deutsches Stromleitungsprojekt. Verbindet Windstrom aus dem Norden mit Verbrauchern im Süden. 4 GW Kapazität.</span></span> (4 GW) kommt 2028. 10.000 Großspeicher-Projekte mit 660 GWh sind beantragt.
                         </div>
                         <p style="font-size: 0.875rem; color: var(--color-text-muted); margin: 0;">
                             <strong>Fazit:</strong> Ein Übergangsproblem durch verzögerten Netzausbau – keine grundsätzliche Grenze der Windkraft.
@@ -1889,7 +2099,7 @@
             </div>
 
             <!-- Stillstand-Mythos Section -->
-            <div style="margin-top: var(--space-xl); padding: var(--space-lg); background: var(--color-primary-light); border-radius: var(--border-radius); border: 1px solid var(--color-border);">
+            <div id="stillstand" style="margin-top: var(--space-xl); padding: var(--space-lg); background: var(--color-primary-light); border-radius: var(--border-radius); border: 1px solid var(--color-border);">
                 <h3 style="font-family: var(--font-display); font-size: 1.5rem; color: var(--color-primary-dark); margin-bottom: var(--space-md); display: flex; align-items: center; gap: var(--space-sm);">
                     <svg viewBox="0 0 24 24" style="width: 28px; height: 28px; fill: none; stroke: var(--color-primary); stroke-width: 2;">
                         <circle cx="12" cy="12" r="10"/>
@@ -1928,10 +2138,23 @@
                             <a href="https://www.destatis.de/DE/Presse/Pressemitteilungen/2025/03/PD25_091_43312.html" target="_blank" rel="noopener" style="color: var(--color-primary);">→ Destatis Stromerzeugung 2024</a>
                         </p>
                     </div>
+                    <div style="background: var(--color-white); padding: var(--space-md); border-radius: 8px;">
+                        <h4 style="color: var(--color-primary); margin-bottom: var(--space-xs); font-size: 1rem;">Entschädigung & Netzausbau</h4>
+                        <p style="color: var(--color-text-muted); margin: 0; font-size: 0.9375rem;">
+                            Bei Abregelung erhalten Betreiber <strong>95% Entschädigung</strong> für entgangene Einnahmen – 2024 waren das <strong>554 Mio. €</strong>. Wichtig: Nur für angeschlossene Anlagen. <span class="tooltip" tabindex="0">EEG-Vergütung<span class="tooltip-content">Vergütung nach dem Erneuerbare-Energien-Gesetz. Gibt es ausschließlich für tatsächlich eingespeisten Strom – nicht für stillstehende Anlagen.</span></span> gibt es nur für eingespeisten Strom.
+                        </p>
+                        <p style="color: var(--color-text-muted); margin: var(--space-xs) 0 0 0; font-size: 0.9375rem;">
+                            <strong>Lösung in Sicht:</strong> <span class="tooltip" tabindex="0">SuedLink<span class="tooltip-content">Größtes deutsches Stromleitungsprojekt. Verbindet Windstrom aus dem Norden mit Verbrauchern im Süden. 4 GW Kapazität.</span></span> (2028) und <span class="tooltip" tabindex="0">Ultranet<span class="tooltip-content">Gleichstromleitung von NRW nach Baden-Württemberg. 2 GW Kapazität.</span></span> (2026) schaffen neue Kapazitäten.
+                        </p>
+                        <p style="color: var(--color-text-muted); margin: var(--space-xs) 0 0 0; font-size: 0.8125rem;">
+                            <a href="https://www.tennet.eu/de/projekte/suedlink" target="_blank" rel="noopener" style="color: var(--color-primary);">→ SuedLink</a> ·
+                            <a href="https://www.amprion.net/Netzausbau/Unsere-Projekte/Ultranet/" target="_blank" rel="noopener" style="color: var(--color-primary);">→ Ultranet</a>
+                        </p>
+                    </div>
                 </div>
                 <div style="margin-top: var(--space-md); padding: var(--space-sm); background: var(--color-white); border-radius: 8px; border-left: 4px solid var(--color-primary);">
                     <p style="color: var(--color-text); margin: 0; font-size: 0.9375rem;">
-                        <strong>Fazit:</strong> Windräder stehen still, wenn kein Wind weht – das ist normal, nicht Verschwendung. Die Abregelung wegen Netzengpässen beträgt nur 3,5%. Das Problem ist nicht „zu viel Windkraft", sondern zu wenig Netzausbau. Und für die Klimaziele brauchen wir deutlich mehr Kapazität, nicht weniger.
+                        <strong>Fazit:</strong> Windräder stehen still, wenn kein Wind weht – das ist normal, nicht Verschwendung. Die Abregelung wegen Netzengpässen beträgt nur 3,5%. Das Problem ist nicht „zu viel Windkraft", sondern zu langsamer Netzausbau. Mit SuedLink (2028) und Ultranet (2026) wird sich das deutlich verbessern.
                     </p>
                 </div>
             </div>
@@ -1987,6 +2210,40 @@
                 <p style="font-size: 0.8125rem; color: var(--color-text-muted); margin: var(--space-md) 0 0 0; padding-top: var(--space-sm); border-top: 1px solid #e8dbb3;">
                     <strong>Mein Standpunkt:</strong> Die Sorgen von Anwohnern am Dorfrand sind nachvollziehbar und legitim. Ich wünsche mir nur, dass diese Betroffenheit offen kommuniziert wird – und dass Fakten nicht verzerrt werden.
                 </p>
+            </div>
+
+            <!-- Lokale Fakten zu Nottuln & Münsterland -->
+            <div style="margin-top: var(--space-lg); padding: var(--space-lg); background: var(--color-primary-light); border-radius: var(--border-radius); border: 1px solid var(--color-border);">
+                <h3 style="font-family: var(--font-display); font-size: 1.25rem; color: var(--color-primary-dark); margin-bottom: var(--space-md); display: flex; align-items: center; gap: var(--space-xs);">
+                    <svg viewBox="0 0 24 24" style="width: 24px; height: 24px; stroke: var(--color-primary); fill: none; stroke-width: 2;">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                        <circle cx="12" cy="10" r="3"/>
+                    </svg>
+                    Lokale Fakten: Nottuln & Münsterland
+                </h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-md);">
+                    <div style="background: var(--color-white); border-radius: 6px; padding: var(--space-md);">
+                        <h4 style="color: var(--color-primary); margin: 0 0 var(--space-xs) 0; font-size: 1rem;">Baumberge: Landschafts- oder Naturschutz?</h4>
+                        <p style="font-size: 0.9375rem; color: var(--color-text-muted); margin: 0;">
+                            Die Baumberge sind ein <strong>Landschaftsschutzgebiet</strong>, kein Naturschutzgebiet – ein wichtiger rechtlicher Unterschied. Der Regionalplan (Ziel 5) schützt die <strong>südlichen Höhenlagen</strong> vor WEA. Die geplanten Standorte liegen <strong>nicht in diesen geschützten Bereichen</strong>.
+                        </p>
+                        <a href="https://www.nottuln.de/sessionnet/sessionnetbi/vo0050.php?__kvonr=2006031053" target="_blank" rel="noopener" style="font-size: 0.8125rem; color: var(--color-primary); margin-top: var(--space-xs); display: inline-block;">→ Gemeinde Nottuln</a>
+                    </div>
+                    <div style="background: var(--color-white); border-radius: 6px; padding: var(--space-md);">
+                        <h4 style="color: var(--color-primary); margin: 0 0 var(--space-xs) 0; font-size: 1rem;">Flächenziel: Bereits übererfüllt?</h4>
+                        <p style="font-size: 0.9375rem; color: var(--color-text-muted); margin: 0;">
+                            Das Münsterland hat sein Flächenziel übererfüllt: <strong>15.500 ha</strong> vs. 12.670 ha Ziel. Aber das bedeutet nicht, dass geeignete Standorte nicht genutzt werden dürfen. Die Flächen in Nottuln wurden im Regionalplan als <strong>geeignet identifiziert</strong>.
+                        </p>
+                        <a href="https://www.bezreg-muenster.de/themen/regionalplanung-und-regionalrat/regionalplan-muensterland/windenergie-flaechenbeitragswert" target="_blank" rel="noopener" style="font-size: 0.8125rem; color: var(--color-primary); margin-top: var(--space-xs); display: inline-block;">→ Bezirksregierung Münster</a>
+                    </div>
+                    <div style="background: var(--color-white); border-radius: 6px; padding: var(--space-md);">
+                        <h4 style="color: var(--color-primary); margin: 0 0 var(--space-xs) 0; font-size: 1rem;">Münster vs. Nottuln: Fairer Vergleich?</h4>
+                        <p style="font-size: 0.9375rem; color: var(--color-text-muted); margin: 0;">
+                            Münster: 33-34 WEA bei ~320.000 Einwohnern (303 km²). Nottuln: 9→24 WEA bei ~20.000 Einwohnern (86 km²). Der Vergleich hinkt: Münster ist eine <strong>Stadt mit dichter Bebauung</strong>, Nottuln ist <strong>ländlich mit mehr Freiflächen</strong>. Windräder in der Innenstadt wären unrealistisch.
+                        </p>
+                        <a href="https://www.stadt-muenster.de/klima/erneuerbare-energien/windenergie" target="_blank" rel="noopener" style="font-size: 0.8125rem; color: var(--color-primary); margin-top: var(--space-xs); display: inline-block;">→ Stadt Münster</a>
+                    </div>
+                </div>
             </div>
 
             <!-- Flugblätter & Kritik -->
@@ -2064,7 +2321,7 @@
                 <div style="display: flex; flex-direction: column; gap: var(--space-md);">
 
                     <!-- Point 1: Landscape -->
-                    <div style="display: flex; gap: var(--space-md); align-items: flex-start;">
+                    <div style="display: flex; gap: var(--space-md); align-items: flex-start; background: var(--color-white); padding: var(--space-md); border-radius: var(--border-radius); box-shadow: var(--shadow-sm);">
                         <div style="width: 40px; height: 40px; min-width: 40px; background: var(--color-primary-light); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
                             <svg viewBox="0 0 24 24" style="width: 20px; height: 20px; stroke: var(--color-primary); fill: none; stroke-width: 2;">
                                 <path d="M3 17l6-6 4 4 8-8"/>
@@ -2078,7 +2335,7 @@
                     </div>
 
                     <!-- Point 2: Property Values -->
-                    <div style="display: flex; gap: var(--space-md); align-items: flex-start;">
+                    <div style="display: flex; gap: var(--space-md); align-items: flex-start; background: var(--color-white); padding: var(--space-md); border-radius: var(--border-radius); box-shadow: var(--shadow-sm);">
                         <div style="width: 40px; height: 40px; min-width: 40px; background: var(--color-primary-light); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
                             <svg viewBox="0 0 24 24" style="width: 20px; height: 20px; stroke: var(--color-primary); fill: none; stroke-width: 2;">
                                 <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
@@ -2087,12 +2344,28 @@
                         </div>
                         <div>
                             <h3 style="font-size: 1rem; margin-bottom: var(--space-xs); color: var(--color-primary-dark);">Immobilienwerte können sinken</h3>
-                            <p style="color: var(--color-text-muted); margin: 0;">RWI-Studie (2019): Bis zu 7% Wertverlust innerhalb von 1km, abnehmend mit Entfernung – ab 8-9km kein Effekt mehr. Neuere US-Studie (Berkeley/PIK, 2023): Zeigt Gewöhnungseffekt – Wertverlust nimmt nach 3 Jahren ab. Die Sorge ist berechtigt, aber die Datenlage komplex. <a href="https://www.rwi-essen.de/presse/wissenschaftskommunikation/pressemitteilungen/detail/windraeder-lassen-immobilienpreise-sinken" target="_blank" rel="noopener" style="font-size: 0.8125rem; color: var(--color-primary);">→ RWI-Studie</a></p>
+                            <p style="color: var(--color-text-muted); margin: 0 0 var(--space-sm) 0;">
+                                Die Studienlage zeigt ein differenziertes Bild:
+                            </p>
+                            <div style="display: flex; flex-wrap: wrap; gap: var(--space-sm); margin-bottom: var(--space-sm);">
+                                <div style="flex: 1; min-width: 140px; background: var(--color-bg); padding: var(--space-sm); border-radius: 6px; border-left: 3px solid var(--color-warning);">
+                                    <strong style="font-size: 1.125rem; color: var(--color-text);">7%</strong>
+                                    <p style="font-size: 0.75rem; color: var(--color-text-muted); margin: 0;">Wertverlust in 1km Entfernung (RWI 2019)</p>
+                                </div>
+                                <div style="flex: 1; min-width: 140px; background: var(--color-bg); padding: var(--space-sm); border-radius: 6px; border-left: 3px solid var(--color-success);">
+                                    <strong style="font-size: 1.125rem; color: var(--color-text);">0%</strong>
+                                    <p style="font-size: 0.75rem; color: var(--color-text-muted); margin: 0;">Ab 8-9km kein Effekt mehr</p>
+                                </div>
+                            </div>
+                            <p style="color: var(--color-text-muted); margin: 0; font-size: 0.9375rem;">
+                                <strong>Wichtiger Kontext:</strong> Der Effekt nimmt mit der Entfernung stark ab. Eine US-Studie (Berkeley/PIK, 2023) zeigt zudem einen Gewöhnungseffekt – nach 3 Jahren erholen sich die Preise teilweise. Die Sorge ist berechtigt, aber individuell sehr unterschiedlich.
+                            </p>
+                            <a href="https://www.rwi-essen.de/presse/wissenschaftskommunikation/pressemitteilungen/detail/windraeder-lassen-immobilienpreise-sinken" target="_blank" rel="noopener" style="font-size: 0.8125rem; color: var(--color-primary); display: inline-block; margin-top: var(--space-xs);">→ RWI-Studie</a>
                         </div>
                     </div>
 
                     <!-- Point 3: Legitimate Concerns -->
-                    <div style="display: flex; gap: var(--space-md); align-items: flex-start;">
+                    <div style="display: flex; gap: var(--space-md); align-items: flex-start; background: var(--color-white); padding: var(--space-md); border-radius: var(--border-radius); box-shadow: var(--shadow-sm);">
                         <div style="width: 40px; height: 40px; min-width: 40px; background: var(--color-primary-light); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
                             <svg viewBox="0 0 24 24" style="width: 20px; height: 20px; stroke: var(--color-primary); fill: none; stroke-width: 2;">
                                 <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
@@ -2105,7 +2378,7 @@
                     </div>
 
                     <!-- Point 4: This site has a perspective -->
-                    <div style="display: flex; gap: var(--space-md); align-items: flex-start;">
+                    <div style="display: flex; gap: var(--space-md); align-items: flex-start; background: var(--color-white); padding: var(--space-md); border-radius: var(--border-radius); box-shadow: var(--shadow-sm);">
                         <div style="width: 40px; height: 40px; min-width: 40px; background: var(--color-primary-light); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
                             <svg viewBox="0 0 24 24" style="width: 20px; height: 20px; stroke: var(--color-primary); fill: none; stroke-width: 2;">
                                 <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
@@ -2136,6 +2409,25 @@
                 <p>Diese unabhängigen Quellen haben mir bei meiner Recherche geholfen.</p>
             </div>
             <div class="resources__grid">
+                <a href="/quellen/" class="resource-item" style="background: var(--color-primary); color: white;">
+                    <div class="resource-item__icon" style="background: rgba(255,255,255,0.2);">
+                        <svg viewBox="0 0 24 24" style="stroke: white;">
+                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                            <line x1="12" y1="6" x2="12" y2="12"/>
+                            <line x1="9" y1="9" x2="15" y2="9"/>
+                        </svg>
+                    </div>
+                    <h3 style="color: white;">Quellenverzeichnis</h3>
+                    <p style="color: rgba(255,255,255,0.85);">Alle Quellen dieser Website: Studien, Behörden, Gesetze – übersichtlich sortiert nach Themen.</p>
+                    <span class="resource-item__link" style="color: rgba(255,255,255,0.9);">
+                        windkraft-nottuln.de/quellen
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="9 18 15 12 9 6"/>
+                        </svg>
+                    </span>
+                </a>
+
                 <a href="https://www.wind-energie.de/themen/publikationen/infografiken/" target="_blank" rel="noopener" class="resource-item">
                     <div class="resource-item__icon">
                         <svg viewBox="0 0 24 24">
@@ -2193,6 +2485,48 @@
                     <p>Offizielle Projektseite: Bis zu 7 Anlagen (266m), Strom für ~30.000 Haushalte, Bürgerbeteiligung ab 500€.</p>
                     <span class="resource-item__link">
                         stadtwerke-muenster.de
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                            <polyline points="15 3 21 3 21 9"/>
+                            <line x1="10" y1="14" x2="21" y2="3"/>
+                        </svg>
+                    </span>
+                </a>
+
+                <a href="https://www.nottuln.de/politik-digital/" target="_blank" rel="noopener" class="resource-item">
+                    <div class="resource-item__icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                            <polyline points="14 2 14 8 20 8"/>
+                            <line x1="16" y1="13" x2="8" y2="13"/>
+                            <line x1="16" y1="17" x2="8" y2="17"/>
+                        </svg>
+                    </div>
+                    <h3>Ratsprotokolle Nottuln</h3>
+                    <p>SessionNet: Alle Ratssitzungen, Beschlüsse und Vorlagen der Gemeinde Nottuln – öffentlich einsehbar.</p>
+                    <span class="resource-item__link">
+                        nottuln.de
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                            <polyline points="15 3 21 3 21 9"/>
+                            <line x1="10" y1="14" x2="21" y2="3"/>
+                        </svg>
+                    </span>
+                </a>
+
+                <a href="https://www.kreis-coesfeld.de/sessionnet/sessionnetbi/" target="_blank" rel="noopener" class="resource-item">
+                    <div class="resource-item__icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                            <polyline points="14 2 14 8 20 8"/>
+                            <line x1="16" y1="13" x2="8" y2="13"/>
+                            <line x1="16" y1="17" x2="8" y2="17"/>
+                        </svg>
+                    </div>
+                    <h3>Ratsprotokolle Kreis</h3>
+                    <p>SessionNet: Kreistagssitzungen und Ausschüsse des Kreises Coesfeld – inklusive Stellungnahmen zur Windkraft.</p>
+                    <span class="resource-item__link">
+                        kreis-coesfeld.de
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
                             <polyline points="15 3 21 3 21 9"/>

@@ -100,6 +100,18 @@ Alle folgenden Fakten wurden gegen Originalquellen geprüft:
 - § 9 FStrG: 40m Bauverbot an Autobahnen, 100m Beschränkungszone
 - OVG Berlin-Brandenburg 2024: WEA mit 110m Abstand zu Autobahn genehmigt
 - Münsterland Flächenziel: 12.670 ha (wird mit 15.500 ha übererfüllt)
+- Rotmilan: Suchflug ~40m, selten >80m (Biologische Station Paderborn, 346 Messungen)
+- Rotmilan: Bei 266m-Anlage mit 170m Rotor → Rotorunterkante ~96m
+- Schweizer Studie: 3.000 Rotmilane, 11 Jahre → höhere Anlagen = weniger Kollisionen
+- Fledermäuse: 95% der Flüge unter 144m (Leibniz-IZW)
+- Fledermäuse: Betriebssteuerung (<8 m/s) sehr wirksam, 1-4% Ertragsverlust
+- §36e EEG: Realisierungsfrist 36 Monate + max 18 Monate Verlängerung
+- Abregelungs-Entschädigung: 95% für angeschlossene Anlagen bei Netzengpässen
+- Entschädigungszahlungen 2024: 554 Mio € (nicht 18,5 Mio wie in YT-Videos behauptet)
+- EEG-Vergütung: NUR für tatsächlich eingespeisten Strom (nicht für stillstehende Anlagen)
+- Schattenwurf-Richtung: Sonne nie im Norden → kein Schatten nach Süden
+- Größere Anlagen: langsamere Rotation = weniger optische Unruhe, weniger Anlagen nötig
+- Münsterland → Ruhrgebiet: kurze Wege = weniger Übertragungsverluste, weniger Netzausbau
 
 ## NRW-spezifische Fakten (verifiziert Januar 2026)
 - NRW 1000m-Mindestabstand: **ABGESCHAFFT seit August 2023**
@@ -116,6 +128,9 @@ Alle folgenden Fakten wurden gegen Originalquellen geprüft:
 - Genehmigungsstatus: 9 genehmigt, 9 mit Vorbescheid, 1 im Bauleitverfahren
 - Frühester Baubeginn (Stockum): 2028
 - Gemeindebeteiligung: sechsstelliger Betrag/Jahr (§6 EEG)
+- Baumberge: **Landschaftsschutzgebiet** (NICHT Naturschutzgebiet) - rechtlich wichtiger Unterschied
+- Regionalplan Ziel 5: südliche Höhenlagen der Baumberge geschützt, geplante Standorte NICHT betroffen
+- Münster zum Vergleich: 33-34 WEA, ~320.000 Einwohner, 303 km² (Stadt mit dichter Bebauung)
 
 ### Inhaltliche Standards
 - Sachlich und faktenbasiert bleiben
