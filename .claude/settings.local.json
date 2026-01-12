@@ -33,7 +33,25 @@
       "WebFetch(domain:www.openpetition.de)",
       "WebFetch(domain:www.wiwo.de)",
       "WebFetch(domain:www.woolcock.org.au)",
-      "WebFetch(domain:www.rwi-essen.de)"
+      "WebFetch(domain:www.rwi-essen.de)",
+      "WebFetch(domain:www.reddit.com)",
+      "WebFetch(domain:www.stadt-muenster.de)",
+      "WebFetch(domain:www.zdfheute.de)",
+      "WebFetch(domain:www.bezreg-muenster.de)",
+      "WebFetch(domain:www.kreis-coesfeld.de)",
+      "WebFetch(domain:www.agrarheute.com)",
+      "WebFetch(domain:www.windbranche.de)",
+      "WebFetch(domain:www.bundesnetzagentur.de)",
+      "WebFetch(domain:www.youtube.com)",
+      "WebFetch(domain:www.buzer.de)",
+      "WebFetch(domain:www.clearingstelle-eeg-kwkg.de)",
+      "WebFetch(domain:www.presseportal.ch)",
+      "WebFetch(domain:www.naturschutz-energiewende.de)",
+      "WebFetch(domain:www.next-kraftwerke.de)",
+      "WebFetch(domain:www.topagrar.com)",
+      "WebFetch(domain:www.leibniz-gemeinschaft.de)",
+      "WebFetch(domain:www.bfn.de)",
+      "WebFetch(domain:mecklenburg-vorpommern.nabu.de)"
     ]
   }
 }
