@@ -1,0 +1,1266 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="canonical" href="https://windkraft-nottuln.de/anlagen/">
+    <title>Windkraftanlagen bei Nottuln – 31 Anlagen im 8km-Radius</title>
+    <meta name="description" content="31 Windkraftanlagen im Umkreis von Nottuln mit Standortgüte, Ertragsdaten und interaktiver Karte. Offizielle MaStR-Daten der Bundesnetzagentur.">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://windkraft-nottuln.de/anlagen/">
+    <meta property="og:title" content="Windkraftanlagen bei Nottuln – 31 Anlagen im 8km-Radius">
+    <meta property="og:description" content="Interaktive Karte: 31 Windkraftanlagen im Umkreis von Nottuln (inkl. Billerbeck, Dülmen) mit offiziellen MaStR-Daten.">
+    <meta property="og:locale" content="de_DE">
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --color-primary: #1a5f6a;
+            --color-primary-dark: #134249;
+            --color-primary-light: #e8f4f5;
+            --color-accent: #7da87b;
+            --color-accent-light: #e8f0e7;
+            --color-text: #2d3436;
+            --color-text-muted: #636e72;
+            --color-bg: #fafbfc;
+            --color-white: #ffffff;
+            --color-border: #dfe6e9;
+            --color-warning: #c9a227;
+            --color-warning-light: #fef9e7;
+
+            --font-display: 'DM Serif Display', Georgia, serif;
+            --font-body: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
+
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 1.5rem;
+            --space-lg: 2.5rem;
+            --space-xl: 4rem;
+
+            --max-width: 1200px;
+            --border-radius: 8px;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --color-primary: #5bc0cd;
+                --color-primary-dark: #8ecfd8;
+                --color-primary-light: #1a2e30;
+                --color-accent: #9bc49a;
+                --color-accent-light: #1e2a1e;
+                --color-text: #e8eaed;
+                --color-text-muted: #9aa0a6;
+                --color-bg: #121518;
+                --color-white: #1e2225;
+                --color-border: #3c4043;
+                --color-warning: #f0d861;
+                --color-warning-light: #2a2714;
+            }
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :focus-visible { outline: 2px solid var(--color-primary); outline-offset: 2px; }
+
+        body {
+            font-family: var(--font-body);
+            font-size: 1.0625rem;
+            line-height: 1.7;
+            color: var(--color-text);
+            background-color: var(--color-bg);
+        }
+
+        .container {
+            width: 100%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 var(--space-md);
+        }
+
+        h1, h2, h3 {
+            font-family: var(--font-display);
+            font-weight: 400;
+            line-height: 1.2;
+            color: var(--color-primary-dark);
+        }
+
+        h1 { font-size: clamp(2rem, 5vw, 2.5rem); margin-bottom: var(--space-sm); }
+        h2 { font-size: 1.5rem; margin: var(--space-lg) 0 var(--space-sm); }
+        h3 { font-size: 1.125rem; margin: var(--space-md) 0 var(--space-xs); color: var(--color-primary); }
+        p { margin-bottom: var(--space-sm); }
+        a { color: var(--color-primary); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        /* Header */
+        .header {
+            background: var(--color-white);
+            border-bottom: 1px solid var(--color-border);
+            padding: var(--space-sm) 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .header__inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 var(--space-md);
+        }
+        .header__logo {
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+            text-decoration: none;
+            color: var(--color-primary-dark);
+        }
+        .header__logo-icon {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .header__logo-icon svg { width: 18px; height: 18px; fill: white; }
+        .header__logo-text { font-family: var(--font-display); font-size: 1.25rem; }
+        .header__nav { display: flex; gap: var(--space-md); }
+        .header__nav a { color: var(--color-text-muted); font-weight: 500; font-size: 0.9375rem; }
+        .header__nav a:hover { color: var(--color-primary); text-decoration: none; }
+        .mobile-nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: var(--space-xs); }
+        .mobile-nav-toggle span { display: block; width: 24px; height: 2px; background: var(--color-primary-dark); margin: 5px 0; transition: all 0.3s ease; border-radius: 2px; }
+        .mobile-nav-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .mobile-nav-toggle.active span:nth-child(2) { opacity: 0; }
+        .mobile-nav-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+        @media (max-width: 640px) {
+            .mobile-nav-toggle { display: block; }
+            .header__nav { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--color-white); flex-direction: column; padding: var(--space-md); border-bottom: 1px solid var(--color-border); box-shadow: 0 8px 24px rgba(0,0,0,0.1); gap: var(--space-sm); z-index: 100; }
+            .header__nav.active { display: flex; }
+            .header__nav a { padding: var(--space-xs) 0; border-bottom: 1px solid var(--color-border); }
+            .header__nav a:last-child { border-bottom: none; }
+            .header { position: relative; }
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-bg) 100%);
+            padding: var(--space-xl) 0;
+            text-align: center;
+        }
+        .hero__subtitle {
+            color: var(--color-text-muted);
+            font-size: 1.125rem;
+            max-width: 600px;
+            margin: 0 auto var(--space-md);
+        }
+        .hero__badge {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-xs);
+            background: var(--color-white);
+            border: 1px solid var(--color-border);
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.875rem;
+            color: var(--color-text-muted);
+        }
+        .hero__badge svg {
+            width: 16px;
+            height: 16px;
+            stroke: var(--color-accent);
+            fill: none;
+        }
+
+        /* Explainer */
+        .explainer {
+            padding: var(--space-lg) 0 0;
+        }
+        .explainer__box {
+            background: var(--color-white);
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius);
+            padding: var(--space-lg);
+        }
+        .explainer__box h2 {
+            margin-top: 0;
+            margin-bottom: var(--space-sm);
+        }
+        .explainer__box p {
+            max-width: 800px;
+        }
+        .explainer__note {
+            background: var(--color-warning-light);
+            border-left: 4px solid var(--color-warning);
+            padding: var(--space-sm) var(--space-md);
+            margin-top: var(--space-md);
+            font-size: 0.9375rem;
+        }
+
+        /* Map */
+        .map-section {
+            padding: var(--space-lg) 0;
+        }
+        .map-container {
+            background: var(--color-white);
+            border-radius: var(--border-radius);
+            border: 1px solid var(--color-border);
+            overflow: hidden;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+        }
+        #map {
+            height: 500px;
+            width: 100%;
+        }
+        @media (max-width: 640px) {
+            #map { height: 350px; }
+        }
+        .map-legend {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-lg);
+            padding: var(--space-md);
+            background: var(--color-bg);
+            border-top: 1px solid var(--color-border);
+            flex-wrap: wrap;
+        }
+        .map-legend__item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+            font-size: 0.875rem;
+            color: var(--color-text-muted);
+        }
+        .map-legend__dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+        }
+        .map-legend__dot--betrieb { background: var(--color-primary); }
+        .map-legend__dot--planung { background: var(--color-accent); }
+
+        /* Info Box */
+        .info-box {
+            background: var(--color-warning-light);
+            border: 1px solid var(--color-warning);
+            border-radius: var(--border-radius);
+            padding: var(--space-md);
+            margin: var(--space-lg) 0;
+        }
+        .info-box__title {
+            font-weight: 600;
+            color: var(--color-warning);
+            margin-bottom: var(--space-xs);
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+        }
+        .info-box__title svg {
+            width: 20px;
+            height: 20px;
+            stroke: currentColor;
+            fill: none;
+        }
+        .info-box p {
+            margin: 0;
+            color: var(--color-text);
+        }
+
+        /* Stats */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-md);
+            margin: var(--space-lg) 0;
+        }
+        .stat-card {
+            background: var(--color-white);
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius);
+            padding: var(--space-md);
+            text-align: center;
+        }
+        .stat-card__number {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            color: var(--color-primary-dark);
+            line-height: 1;
+        }
+        .stat-card__label {
+            font-size: 0.875rem;
+            color: var(--color-text-muted);
+            margin-top: var(--space-xs);
+        }
+        .stat-card--accent .stat-card__number { color: var(--color-accent); }
+
+        /* Tables */
+        .data-section {
+            padding: var(--space-lg) 0;
+        }
+        .gemeinde-header {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            margin-top: var(--space-xl);
+            padding-top: var(--space-lg);
+            border-top: 2px solid var(--color-border);
+        }
+        .gemeinde-header:first-of-type {
+            margin-top: 0;
+            padding-top: 0;
+            border-top: none;
+        }
+        .gemeinde-badge {
+            font-family: var(--font-body);
+            font-size: 0.875rem;
+            font-weight: 600;
+            background: var(--color-primary-light);
+            color: var(--color-primary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 2rem;
+        }
+        .table-note {
+            font-size: 0.9375rem;
+            color: var(--color-text-muted);
+            font-style: italic;
+            margin-bottom: var(--space-sm);
+        }
+        .data-table-wrapper {
+            overflow-x: auto;
+            background: var(--color-white);
+            border-radius: var(--border-radius);
+            border: 1px solid var(--color-border);
+        }
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9375rem;
+        }
+        .data-table th,
+        .data-table td {
+            padding: var(--space-sm);
+            text-align: left;
+            border-bottom: 1px solid var(--color-border);
+        }
+        .data-table th {
+            background: var(--color-bg);
+            font-weight: 600;
+            color: var(--color-primary-dark);
+            white-space: nowrap;
+        }
+        .data-table tr:last-child td { border-bottom: none; }
+        .data-table tr:hover td { background: var(--color-primary-light); }
+        .data-table__status {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .data-table__status--betrieb {
+            background: var(--color-primary-light);
+            color: var(--color-primary);
+        }
+        .data-table__status--planung {
+            background: var(--color-accent-light);
+            color: var(--color-accent);
+        }
+
+        /* Ertrag Section */
+        .ertrag-section {
+            background: var(--color-bg);
+            padding: var(--space-xl) 0;
+            border-top: 1px solid var(--color-border);
+        }
+        .ertrag-explainer {
+            background: var(--color-white);
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius);
+            padding: var(--space-md);
+            margin: var(--space-md) 0 var(--space-lg);
+        }
+        .ertrag-scale__bar {
+            display: flex;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: var(--space-xs);
+        }
+        .ertrag-scale__segment {
+            flex: 1;
+            padding: var(--space-xs);
+            text-align: center;
+            font-size: 0.8125rem;
+            font-weight: 600;
+            color: white;
+        }
+        .ertrag-scale__segment--low { background: #e74c3c; }
+        .ertrag-scale__segment--mid { background: #f39c12; }
+        .ertrag-scale__segment--high { background: #27ae60; }
+        .ertrag-scale__segment--top { background: #2980b9; }
+        .ertrag-scale__labels {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.75rem;
+            color: var(--color-text-muted);
+        }
+        .ertrag-note {
+            margin-top: var(--space-md);
+            padding: var(--space-sm);
+            background: var(--color-primary-light);
+            border-radius: 4px;
+            margin-bottom: 0;
+        }
+        .guete {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.875rem;
+        }
+        .guete--low { background: #fdecea; color: #c0392b; }
+        .guete--mid { background: #fef5e7; color: #d68910; }
+        .guete--high { background: #e9f7ef; color: #1e8449; }
+        .ertrag-comparison {
+            margin-top: var(--space-lg);
+            padding-top: var(--space-lg);
+            border-top: 1px solid var(--color-border);
+        }
+
+        /* Source */
+        .source-section {
+            background: var(--color-white);
+            border-top: 1px solid var(--color-border);
+            padding: var(--space-lg) 0;
+            margin-top: var(--space-xl);
+        }
+        .source-card {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            background: var(--color-bg);
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius);
+            padding: var(--space-md);
+        }
+        .source-card__icon {
+            width: 48px;
+            height: 48px;
+            background: var(--color-primary-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .source-card__icon svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--color-primary);
+            fill: none;
+        }
+        .source-card__content { flex: 1; }
+        .source-card__title { font-weight: 600; margin-bottom: 4px; }
+        .source-card__meta { font-size: 0.875rem; color: var(--color-text-muted); }
+
+        /* Footer */
+        .footer { background: var(--color-white); border-top: 1px solid var(--color-border); padding: var(--space-xl) 0 var(--space-lg); }
+        .footer__inner { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: var(--space-lg); }
+        @media (max-width: 768px) { .footer__inner { grid-template-columns: 1fr 1fr; } }
+        @media (max-width: 480px) { .footer__inner { grid-template-columns: 1fr; } }
+        .footer__brand p { color: var(--color-text-muted); font-size: 0.9375rem; margin-top: var(--space-sm); }
+        .footer__col h4 { font-family: var(--font-body); font-weight: 600; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-primary-dark); margin-bottom: var(--space-sm); }
+        .footer__col ul { list-style: none; }
+        .footer__col li { margin-bottom: var(--space-xs); }
+        .footer__col a { color: var(--color-text); text-decoration: none; font-size: 0.9375rem; }
+        .footer__col a:hover { color: var(--color-primary); }
+        .footer__bottom { margin-top: var(--space-xl); padding-top: var(--space-md); border-top: 1px solid var(--color-border); text-align: center; }
+        .footer__bottom p { color: var(--color-text-muted); font-size: 0.875rem; margin: 0; }
+
+        /* Leaflet Popup Styling */
+        .leaflet-popup-content-wrapper {
+            border-radius: var(--border-radius);
+        }
+        .popup-title {
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 8px;
+            color: #134249;
+        }
+        .popup-info {
+            font-size: 0.875rem;
+            line-height: 1.5;
+            color: #2d3436;
+        }
+        .popup-info strong {
+            color: #1a1a1a;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header__inner">
+            <a href="/" class="header__logo">
+                <div class="header__logo-icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                    </svg>
+                </div>
+                <span class="header__logo-text">Windkraft Nottuln</span>
+            </a>
+            <button class="mobile-nav-toggle" aria-label="Menü öffnen" onclick="this.classList.toggle('active'); document.querySelector('.header__nav').classList.toggle('active');">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="header__nav">
+                <a href="/">Startseite</a>
+                <a href="/anlagen/">Anlagen</a>
+                <a href="/faq/">FAQ</a>
+                <a href="/quellen/">Quellen</a>
+                <a href="/impressum/">Impressum</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Windkraftanlagen im Umkreis von Nottuln</h1>
+            <p class="hero__subtitle">Alle Anlagen im 8-km-Radius um Nottuln-Zentrum aus dem offiziellen Marktstammdatenregister der Bundesnetzagentur</p>
+            <div class="hero__badge">
+                <svg viewBox="0 0 24 24" stroke-width="2">
+                    <path d="M9 12l2 2 4-4"/>
+                    <circle cx="12" cy="12" r="10"/>
+                </svg>
+                <span>Datenstand: Januar 2026</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="explainer">
+        <div class="container">
+            <div class="explainer__box">
+                <h2>Was zeigt diese Seite?</h2>
+                <p>
+                    Diese Seite zeigt <strong>alle 31 Windkraftanlagen</strong>, die im Marktstammdatenregister (MaStR) erfasst sind
+                    und deren Koordinaten innerhalb von <strong>8 km um das Nottulner Ortszentrum</strong> (51,93°N, 7,35°E) liegen.
+                </p>
+                <p>
+                    Das umfasst Anlagen in drei Gemeinden: <strong>Nottuln</strong>, <strong>Billerbeck</strong> und <strong>Dülmen</strong>.
+                    Gemeindegrenzen verlaufen oft durch Windparks – die geografische Nähe ist relevanter als die Verwaltungszuordnung.
+                </p>
+                <p>
+                    Zusätzlich zeigen wir <strong>Standortgüte und Ertragsdaten</strong> aus den EEG-Anlagendaten, sofern im MaStR registriert.
+                    <a href="#ertrag">→ Zu den Ertragsdaten</a>
+                </p>
+                <div class="explainer__note">
+                    <strong>Hinweis:</strong> Das geplante <em>Stadtwerke Münster Projekt in Stockum</em> (bis zu 8 Anlagen) ist noch nicht im MaStR erfasst,
+                    da bisher nur ein Vorbescheid vorliegt. Die Eintragung erfolgt nach Erteilung der Genehmigung.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <section class="map-section">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-card__number">13</div>
+                        <div class="stat-card__label">In Betrieb</div>
+                    </div>
+                    <div class="stat-card stat-card--accent">
+                        <div class="stat-card__number">18</div>
+                        <div class="stat-card__label">In Planung (MaStR)</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-card__number">13,3 MW</div>
+                        <div class="stat-card__label">Leistung Bestand</div>
+                    </div>
+                    <div class="stat-card stat-card--accent">
+                        <div class="stat-card__number">102 MW</div>
+                        <div class="stat-card__label">Leistung geplant</div>
+                    </div>
+                </div>
+
+                <div class="map-container">
+                    <div id="map"></div>
+                    <div class="map-legend">
+                        <div class="map-legend__item">
+                            <span class="map-legend__dot map-legend__dot--betrieb"></span>
+                            <span>In Betrieb (13)</span>
+                        </div>
+                        <div class="map-legend__item">
+                            <span class="map-legend__dot map-legend__dot--planung"></span>
+                            <span>In Planung (18)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="data-section">
+            <div class="container">
+                <!-- NOTTULN -->
+                <h2 class="gemeinde-header">Nottuln <span class="gemeinde-badge">11 Anlagen</span></h2>
+
+                <h3>In Betrieb (2)</h3>
+                <div class="data-table-wrapper">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Entfernung</th>
+                                <th>Name / Windpark</th>
+                                <th>Typ</th>
+                                <th>Leistung</th>
+                                <th>Höhe</th>
+                                <th>Baujahr</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>4,3 km</td>
+                                <td>WKA 1 · WP Darup</td>
+                                <td>Enercon E40</td>
+                                <td>0,5 MW</td>
+                                <td>83 m</td>
+                                <td>1998</td>
+                            </tr>
+                            <tr>
+                                <td>4,3 km</td>
+                                <td>WKA 2 · WP Darup</td>
+                                <td>Enercon E-40</td>
+                                <td>0,6 MW</td>
+                                <td>100 m</td>
+                                <td>2002</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>In Planung (9)</h3>
+                <div class="data-table-wrapper">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Entfernung</th>
+                                <th>Name / Windpark</th>
+                                <th>Typ</th>
+                                <th>Leistung</th>
+                                <th>Höhe</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>3,2 km</td>
+                                <td>Nottuln · Nottuln</td>
+                                <td>Enercon E-175 EP5</td>
+                                <td>7,00 MW</td>
+                                <td>200 m</td>
+                            </tr>
+                            <tr>
+                                <td>4,7 km</td>
+                                <td>WEA 1 · Nottuln Hastehausen</td>
+                                <td>Enercon E-138 EP3</td>
+                                <td>4,26 MW</td>
+                                <td>229 m</td>
+                            </tr>
+                            <tr>
+                                <td>5,1 km</td>
+                                <td>175Darup1 · Darup</td>
+                                <td>Enercon E-175 EP5</td>
+                                <td>6,30 MW</td>
+                                <td>250 m</td>
+                            </tr>
+                            <tr>
+                                <td>5,2 km</td>
+                                <td>WEA 2 · BWP Nottuln-Gladbeck</td>
+                                <td>Enercon E 160</td>
+                                <td>5,56 MW</td>
+                                <td>220 m</td>
+                            </tr>
+                            <tr>
+                                <td>5,2 km</td>
+                                <td>WEA 3 · BWP Nottuln-Gladbeck</td>
+                                <td>Enercon E 160</td>
+                                <td>5,56 MW</td>
+                                <td>220 m</td>
+                            </tr>
+                            <tr>
+                                <td>5,3 km</td>
+                                <td>WEA 1 · BWP Nottuln-Gladbeck</td>
+                                <td>Enercon E 160</td>
+                                <td>5,56 MW</td>
+                                <td>220 m</td>
+                            </tr>
+                            <tr>
+                                <td>5,7 km</td>
+                                <td>WEA 7 · Windpark Rorup</td>
+                                <td>Nordex N 175</td>
+                                <td>6,80 MW</td>
+                                <td>266 m</td>
+                            </tr>
+                            <tr>
+                                <td>5,9 km</td>
+                                <td>WEA 5 · Windpark Rorup</td>
+                                <td>Nordex N149</td>
+                                <td>5,70 MW</td>
+                                <td>200 m</td>
+                            </tr>
+                            <tr>
+                                <td>6,3 km</td>
+                                <td>WEA 6 · Windpark Rorup</td>
+                                <td>Nordex N 175</td>
+                                <td>6,80 MW</td>
+                                <td>266 m</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- BILLERBECK -->
+                <h2 class="gemeinde-header">Billerbeck <span class="gemeinde-badge">10 Anlagen</span></h2>
+
+                <h3>In Betrieb (10)</h3>
+                <p class="table-note">Einige dieser Anlagen tragen "Nottuln" im Namen, da Windparks oft über Gemeindegrenzen verlaufen.</p>
+                <div class="data-table-wrapper">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Entfernung</th>
+                                <th>Name / Windpark</th>
+                                <th>Typ</th>
+                                <th>Leistung</th>
+                                <th>Höhe</th>
+                                <th>Baujahr</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>3,1 km</td>
+                                <td>WE 15561948 · Nottuln</td>
+                                <td>GE 1.5 sl</td>
+                                <td>1,50 MW</td>
+                                <td>138 m</td>
+                                <td>2004</td>
+                            </tr>
+                            <tr>
+                                <td>3,5 km</td>
+                                <td>Baumberge 1 · WKA Baumberge</td>
+                                <td>Enercon E40</td>
+                                <td>0,50 MW</td>
+                                <td>68 m</td>
+                                <td>2001</td>
+                            </tr>
+                            <tr>
+                                <td>3,5 km</td>
+                                <td>Baumberge 2 · WKA Baumberge</td>
+                                <td>Enercon E40</td>
+                                <td>0,50 MW</td>
+                                <td>68 m</td>
+                                <td>2001</td>
+                            </tr>
+                            <tr>
+                                <td>4,2 km</td>
+                                <td>WEA 1 (N 70433) · WP Nottuln</td>
+                                <td>Nordex S-77</td>
+                                <td>1,50 MW</td>
+                                <td>138 m</td>
+                                <td>2007</td>
+                            </tr>
+                            <tr>
+                                <td>4,2 km</td>
+                                <td>WEA 2 (N 70432) · WP Nottuln</td>
+                                <td>Nordex S-77</td>
+                                <td>1,50 MW</td>
+                                <td>138 m</td>
+                                <td>2007</td>
+                            </tr>
+                            <tr>
+                                <td>4,5 km</td>
+                                <td>WEA 3 (N 70434) · WP Nottuln</td>
+                                <td>Nordex S-77</td>
+                                <td>1,50 MW</td>
+                                <td>138 m</td>
+                                <td>2007</td>
+                            </tr>
+                            <tr>
+                                <td>5,1 km</td>
+                                <td>WEA 58225 · Billerbeck</td>
+                                <td>Enercon E-58</td>
+                                <td>1,00 MW</td>
+                                <td>100 m</td>
+                                <td>2001</td>
+                            </tr>
+                            <tr>
+                                <td>5,3 km</td>
+                                <td>WEA 58224 · Billerbeck</td>
+                                <td>Enercon E-58</td>
+                                <td>1,00 MW</td>
+                                <td>100 m</td>
+                                <td>2001</td>
+                            </tr>
+                            <tr>
+                                <td>6,1 km</td>
+                                <td>WEA 822747 · Osthellermark</td>
+                                <td>Enercon E-82</td>
+                                <td>2,30 MW</td>
+                                <td>127 m</td>
+                                <td>2012</td>
+                            </tr>
+                            <tr>
+                                <td>7,8 km</td>
+                                <td>WKA · WKA-Schoene</td>
+                                <td>Tacke TW 300</td>
+                                <td>0,30 MW</td>
+                                <td>64 m</td>
+                                <td>1995</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- DÜLMEN -->
+                <h2 class="gemeinde-header">Dülmen <span class="gemeinde-badge">10 Anlagen</span></h2>
+
+                <h3>In Betrieb (1)</h3>
+                <div class="data-table-wrapper">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Entfernung</th>
+                                <th>Name / Windpark</th>
+                                <th>Typ</th>
+                                <th>Leistung</th>
+                                <th>Höhe</th>
+                                <th>Baujahr</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>6,7 km</td>
+                                <td>442479 · Dülmen-Buldern</td>
+                                <td>Enercon E-40</td>
+                                <td>0,60 MW</td>
+                                <td>98 m</td>
+                                <td>2002</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>In Planung (9)</h3>
+                <p class="table-note">Trianel-Windparks Limbergen und Karthaus liegen direkt an der Grenze zu Nottuln.</p>
+                <div class="data-table-wrapper">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Entfernung</th>
+                                <th>Name / Windpark</th>
+                                <th>Typ</th>
+                                <th>Leistung</th>
+                                <th>Höhe</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>4,0 km</td>
+                                <td>WEA L2 · Trianel WP Limbergen</td>
+                                <td>Nordex N149</td>
+                                <td>5,70 MW</td>
+                                <td>180 m</td>
+                            </tr>
+                            <tr>
+                                <td>4,3 km</td>
+                                <td>WEA L3 · Trianel WP Limbergen</td>
+                                <td>Nordex N149</td>
+                                <td>5,70 MW</td>
+                                <td>180 m</td>
+                            </tr>
+                            <tr>
+                                <td>5,6 km</td>
+                                <td>WEA K1 · Trianel WP Karthaus</td>
+                                <td>Nordex N149</td>
+                                <td>5,70 MW</td>
+                                <td>180 m</td>
+                            </tr>
+                            <tr>
+                                <td>5,8 km</td>
+                                <td>WEA K2 · Trianel WP Karthaus</td>
+                                <td>Nordex N149</td>
+                                <td>5,70 MW</td>
+                                <td>180 m</td>
+                            </tr>
+                            <tr>
+                                <td>7,1 km</td>
+                                <td>E160 · Windpark Empte</td>
+                                <td>Enercon E 160 EP5</td>
+                                <td>5,56 MW</td>
+                                <td>200 m</td>
+                            </tr>
+                            <tr>
+                                <td>7,4 km</td>
+                                <td>E175 · Windenergiegemeinschaft</td>
+                                <td>Enercon E 175 EP5</td>
+                                <td>6,00 MW</td>
+                                <td>250 m</td>
+                            </tr>
+                            <tr>
+                                <td>7,5 km</td>
+                                <td>WEA 1 · Windpark Hangenau</td>
+                                <td>Enercon E-138 EP3</td>
+                                <td>4,26 MW</td>
+                                <td>200 m</td>
+                            </tr>
+                            <tr>
+                                <td>7,7 km</td>
+                                <td>WEA 2 · Windpark Hangenau</td>
+                                <td>Enercon E-138 EP3</td>
+                                <td>4,26 MW</td>
+                                <td>200 m</td>
+                            </tr>
+                            <tr>
+                                <td>7,7 km</td>
+                                <td>WEA 5 · Dülmen Hangenau</td>
+                                <td>Enercon E-175 EP5</td>
+                                <td>6,00 MW</td>
+                                <td>220 m</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Größenvergleich -->
+                <h2>Größenvergleich: Bestand vs. Geplant</h2>
+                <p>Moderne Windkraftanlagen sind deutlich größer und leistungsstärker. Eine neue Anlage ersetzt mehrere alte.</p>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-card__number">Ø 1,0 MW</div>
+                        <div class="stat-card__label">Bestand (Durchschnitt)</div>
+                    </div>
+                    <div class="stat-card stat-card--accent">
+                        <div class="stat-card__number">Ø 5,7 MW</div>
+                        <div class="stat-card__label">Geplant (Durchschnitt)</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-card__number">64–138 m</div>
+                        <div class="stat-card__label">Höhe Bestand</div>
+                    </div>
+                    <div class="stat-card stat-card--accent">
+                        <div class="stat-card__number">180–266 m</div>
+                        <div class="stat-card__label">Höhe geplant</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Standortgüte und Ertrag -->
+        <section class="ertrag-section" id="ertrag">
+            <div class="container">
+                <h2>Standortgüte & geschätzte Erträge</h2>
+                <p>Die <strong>Standortgüte</strong> gibt an, wie viel Prozent des bundesweiten Referenzertrags an diesem Standort erwartet wird. Das Münsterland ist windärmer als z.B. die Küste.</p>
+
+                <div class="ertrag-explainer">
+                    <div class="ertrag-scale">
+                        <div class="ertrag-scale__bar">
+                            <div class="ertrag-scale__segment ertrag-scale__segment--low">50–70%</div>
+                            <div class="ertrag-scale__segment ertrag-scale__segment--mid">70–90%</div>
+                            <div class="ertrag-scale__segment ertrag-scale__segment--high">90–110%</div>
+                            <div class="ertrag-scale__segment ertrag-scale__segment--top">&gt;110%</div>
+                        </div>
+                        <div class="ertrag-scale__labels">
+                            <span>Windarm (Binnenland)</span>
+                            <span>Durchschnitt</span>
+                            <span>Gut</span>
+                            <span>Küste/Höhe</span>
+                        </div>
+                    </div>
+                    <p class="ertrag-note">
+                        <strong>Raum Nottuln: Ø 62%</strong> – typisch für das Münsterland. Moderne, höhere Anlagen kompensieren die geringere Windstärke durch größere Rotoren.
+                    </p>
+                </div>
+
+                <h3>Anlagen mit Standortgüte-Daten (aus MaStR)</h3>
+                <div class="data-table-wrapper">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Anlage</th>
+                                <th>Windpark</th>
+                                <th>Leistung</th>
+                                <th>Standortgüte</th>
+                                <th>~Jahresertrag</th>
+                                <th>Gemeinde</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>WEA 1</td>
+                                <td>BWP Nottuln-Gladbeck</td>
+                                <td>5,56 MW</td>
+                                <td><span class="guete guete--low">58,0%</span></td>
+                                <td>~7.100 MWh</td>
+                                <td>Nottuln</td>
+                            </tr>
+                            <tr>
+                                <td>WEA 2</td>
+                                <td>BWP Nottuln-Gladbeck</td>
+                                <td>5,56 MW</td>
+                                <td><span class="guete guete--low">51,6%</span></td>
+                                <td>~6.300 MWh</td>
+                                <td>Nottuln</td>
+                            </tr>
+                            <tr>
+                                <td>WEA 3</td>
+                                <td>BWP Nottuln-Gladbeck</td>
+                                <td>5,56 MW</td>
+                                <td><span class="guete guete--low">57,1%</span></td>
+                                <td>~7.000 MWh</td>
+                                <td>Nottuln</td>
+                            </tr>
+                            <tr>
+                                <td>WEA 1</td>
+                                <td>Windpark Hangenau</td>
+                                <td>4,26 MW</td>
+                                <td><span class="guete guete--mid">72,2%</span></td>
+                                <td>~6.800 MWh</td>
+                                <td>Dülmen</td>
+                            </tr>
+                            <tr>
+                                <td>WEA 2</td>
+                                <td>Windpark Hangenau</td>
+                                <td>4,26 MW</td>
+                                <td><span class="guete guete--mid">71,1%</span></td>
+                                <td>~6.700 MWh</td>
+                                <td>Dülmen</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="table-note">
+                    Berechnung: Leistung × 2.200 Volllaststunden × Standortgüte. Die meisten Anlagen (26 von 31) haben noch keine Standortgüte im MaStR registriert.
+                </p>
+
+                <div class="ertrag-comparison">
+                    <h3>Was produzieren die Anlagen?</h3>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-card__number">~34.000</div>
+                            <div class="stat-card__label">MWh/Jahr (5 Anlagen mit Daten)</div>
+                        </div>
+                        <div class="stat-card stat-card--accent">
+                            <div class="stat-card__number">~9.700</div>
+                            <div class="stat-card__label">Haushalte versorgt (bei 3.500 kWh/HH)</div>
+                        </div>
+                    </div>
+                    <p class="table-note">
+                        Hochrechnung auf alle 18 geplanten Anlagen (bei Ø 62% Standortgüte): ~140.000 MWh/Jahr ≈ 40.000 Haushalte
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="source-section">
+            <div class="container">
+                <h2>Datenquelle</h2>
+                <div class="source-card">
+                    <div class="source-card__icon">
+                        <svg viewBox="0 0 24 24" stroke-width="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                            <polyline points="14 2 14 8 20 8"/>
+                            <line x1="16" y1="13" x2="8" y2="13"/>
+                            <line x1="16" y1="17" x2="8" y2="17"/>
+                            <polyline points="10 9 9 9 8 9"/>
+                        </svg>
+                    </div>
+                    <div class="source-card__content">
+                        <div class="source-card__title">Marktstammdatenregister (MaStR)</div>
+                        <div class="source-card__meta">
+                            Bundesnetzagentur · <a href="https://www.marktstammdatenregister.de/MaStR/Einheit/Einheiten/ErweiterteOeffentlicheEinheitenuebersicht" target="_blank" rel="noopener">marktstammdatenregister.de</a>
+                            <br>Öffentliches Register aller Stromerzeugungsanlagen in Deutschland. Die Daten (inkl. EEG-Anlagendaten mit Standortgüte) wurden aus dem Gesamtdatenexport vom Januar 2026 extrahiert.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <div class="footer__brand">
+                    <a href="/" class="header__logo">
+                        <div class="header__logo-icon">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                            </svg>
+                        </div>
+                        <span class="header__logo-text">Windkraft Nottuln</span>
+                    </a>
+                    <p>Eine private Initiative für mehr Fakten zur Windenergie in Nottuln, Kreis Coesfeld.</p>
+                </div>
+                <div class="footer__col">
+                    <h4>Inhalte</h4>
+                    <ul>
+                        <li><a href="/">Startseite</a></li>
+                        <li><a href="/anlagen/">Anlagen</a></li>
+                        <li><a href="/faq/">Häufige Fragen</a></li>
+                        <li><a href="/quellen/">Quellenverzeichnis</a></li>
+                    </ul>
+                </div>
+                <div class="footer__col">
+                    <h4>Externe Quellen</h4>
+                    <ul>
+                        <li><a href="https://www.marktstammdatenregister.de" target="_blank" rel="noopener">Marktstammdatenregister</a></li>
+                        <li><a href="https://www.nottuln.de/leben-in-nottuln/klimaschutz-energie-umwelt/windenergie-nottuln" target="_blank" rel="noopener">Gemeinde Nottuln</a></li>
+                        <li><a href="https://www.prowindcoe.de/" target="_blank" rel="noopener">ProWindCOE</a></li>
+                    </ul>
+                </div>
+                <div class="footer__col">
+                    <h4>Rechtliches</h4>
+                    <ul>
+                        <li><a href="/impressum/">Impressum</a></li>
+                        <li><a href="/datenschutz/">Datenschutz</a></li>
+                        <li><a href="https://github.com/lmachens/windkraft-nottuln" target="_blank" rel="noopener">GitHub</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>© 2026 Windkraft Nottuln · <a href="https://github.com/lmachens/windkraft-nottuln/blob/main/LICENSE" target="_blank" rel="noopener" style="color: inherit;">MIT-Lizenz</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+    <script>
+        // Karte initialisieren (Zentrum: Nottuln)
+        const map = L.map('map').setView([51.91, 7.33], 12);
+
+        // OpenStreetMap Tiles
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 18,
+            attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }).addTo(map);
+
+        // 8km Radius-Kreis um Nottuln-Zentrum
+        L.circle([51.93, 7.35], {
+            radius: 8000,
+            color: '#1a5f6a',
+            fillColor: '#1a5f6a',
+            fillOpacity: 0.05,
+            weight: 2,
+            dashArray: '8, 8'
+        }).addTo(map);
+
+        // Marker-Icons
+        const betriebIcon = L.divIcon({
+            className: 'custom-marker',
+            html: '<div style="background: #1a5f6a; width: 22px; height: 22px; border-radius: 50%; border: 3px solid white; box-shadow: 0 2px 6px rgba(0,0,0,0.3);"></div>',
+            iconSize: [22, 22],
+            iconAnchor: [11, 11]
+        });
+
+        const planungIcon = L.divIcon({
+            className: 'custom-marker',
+            html: '<div style="background: #7da87b; width: 22px; height: 22px; border-radius: 50%; border: 3px solid white; box-shadow: 0 2px 6px rgba(0,0,0,0.3);"></div>',
+            iconSize: [22, 22],
+            iconAnchor: [11, 11]
+        });
+
+        // Alle Anlagen im 8km-Radius (aus MaStR-Daten Januar 2026)
+        const inBetrieb = [
+            // Nottuln (2)
+            { name: "WKA 1", park: "WP Darup", typ: "Enercon E40", mw: "0,5 MW", hoehe: "83 m", jahr: 1998, gemeinde: "Nottuln", coords: [51.943573, 7.291765] },
+            { name: "WKA 2", park: "WP Darup", typ: "Enercon E-40", mw: "0,6 MW", hoehe: "100 m", jahr: 2002, gemeinde: "Nottuln", coords: [51.943573, 7.291765] },
+            // Billerbeck (10)
+            { name: "WE 15561948", park: "Nottuln", typ: "GE 1.5 sl", mw: "1,50 MW", hoehe: "138 m", jahr: 2004, gemeinde: "Billerbeck", coords: [51.903047, 7.363029] },
+            { name: "Baumberge 1", park: "WKA Baumberge", typ: "Enercon E40", mw: "0,50 MW", hoehe: "68 m", jahr: 2001, gemeinde: "Billerbeck", coords: [51.959853, 7.364432] },
+            { name: "Baumberge 2", park: "WKA Baumberge", typ: "Enercon E40", mw: "0,50 MW", hoehe: "68 m", jahr: 2001, gemeinde: "Billerbeck", coords: [51.959728, 7.365532] },
+            { name: "WEA 1 (N 70433)", park: "WP Nottuln", typ: "Nordex S-77", mw: "1,50 MW", hoehe: "138 m", jahr: 2007, gemeinde: "Billerbeck", coords: [51.894006, 7.368403] },
+            { name: "WEA 2 (N 70432)", park: "WP Nottuln", typ: "Nordex S-77", mw: "1,50 MW", hoehe: "138 m", jahr: 2007, gemeinde: "Billerbeck", coords: [51.895542, 7.374860] },
+            { name: "WEA 3 (N 70434)", park: "WP Nottuln", typ: "Nordex S-77", mw: "1,50 MW", hoehe: "138 m", jahr: 2007, gemeinde: "Billerbeck", coords: [51.891310, 7.367177] },
+            { name: "WEA 58225", park: "Billerbeck", typ: "Enercon E-58", mw: "1,00 MW", hoehe: "100 m", jahr: 2001, gemeinde: "Billerbeck", coords: [51.946335, 7.280679] },
+            { name: "WEA 58224", park: "Billerbeck", typ: "Enercon E-58", mw: "1,00 MW", hoehe: "100 m", jahr: 2001, gemeinde: "Billerbeck", coords: [51.945439, 7.277192] },
+            { name: "WEA 822747", park: "Osthellermark", typ: "Enercon E-82", mw: "2,30 MW", hoehe: "127 m", jahr: 2012, gemeinde: "Billerbeck", coords: [51.951970, 7.267970] },
+            { name: "WKA", park: "WKA-Schoene", typ: "Tacke TW 300", mw: "0,30 MW", hoehe: "64 m", jahr: 1995, gemeinde: "Billerbeck", coords: [52.000360, 7.356250] },
+            // Dülmen (1)
+            { name: "442479", park: "Dülmen-Buldern", typ: "Enercon E-40", mw: "0,60 MW", hoehe: "98 m", jahr: 2002, gemeinde: "Dülmen", coords: [51.875723, 7.391927] }
+        ];
+
+        const inPlanung = [
+            // Nottuln (9)
+            { name: "Nottuln", park: "Nottuln", typ: "Enercon E-175 EP5", mw: "7,00 MW", hoehe: "200 m", gemeinde: "Nottuln", coords: [51.902572, 7.362762] },
+            { name: "WEA 1", park: "Nottuln Hastehausen", typ: "Enercon E-138 EP3", mw: "4,26 MW", hoehe: "229 m", gemeinde: "Nottuln", coords: [51.945912, 7.286183] },
+            { name: "175Darup1", park: "Darup", typ: "Enercon E-175 EP5", mw: "6,30 MW", hoehe: "250 m", gemeinde: "Nottuln", coords: [51.944930, 7.279971] },
+            { name: "WEA 2", park: "BWP Nottuln-Gladbeck", typ: "Enercon E 160", mw: "5,56 MW", hoehe: "220 m", gemeinde: "Nottuln", coords: [51.905201, 7.285756] },
+            { name: "WEA 3", park: "BWP Nottuln-Gladbeck", typ: "Enercon E 160", mw: "5,56 MW", hoehe: "220 m", gemeinde: "Nottuln", coords: [51.902486, 7.289176] },
+            { name: "WEA 1", park: "BWP Nottuln-Gladbeck", typ: "Enercon E 160", mw: "5,56 MW", hoehe: "220 m", gemeinde: "Nottuln", coords: [51.906916, 7.281882] },
+            { name: "WEA 7", park: "Windpark Rorup", typ: "Nordex N 175", mw: "6,80 MW", hoehe: "266 m", gemeinde: "Nottuln", coords: [51.941674, 7.269063] },
+            { name: "WEA 5", park: "Windpark Rorup", typ: "Nordex N149", mw: "5,70 MW", hoehe: "200 m", gemeinde: "Nottuln", coords: [51.926070, 7.264374] },
+            { name: "WEA 6", park: "Windpark Rorup", typ: "Nordex N 175", mw: "6,80 MW", hoehe: "266 m", gemeinde: "Nottuln", coords: [51.938969, 7.260005] },
+            // Dülmen (9)
+            { name: "WEA L2", park: "Trianel WP Limbergen", typ: "Nordex N149", mw: "5,70 MW", hoehe: "180 m", gemeinde: "Dülmen", coords: [51.895584, 7.335568] },
+            { name: "WEA L3", park: "Trianel WP Limbergen", typ: "Nordex N149", mw: "5,70 MW", hoehe: "180 m", gemeinde: "Dülmen", coords: [51.892361, 7.335266] },
+            { name: "WEA K1", park: "Trianel WP Karthaus", typ: "Nordex N149", mw: "5,70 MW", hoehe: "180 m", gemeinde: "Dülmen", coords: [51.882056, 7.323281] },
+            { name: "WEA K2", park: "Trianel WP Karthaus", typ: "Nordex N149", mw: "5,70 MW", hoehe: "180 m", gemeinde: "Dülmen", coords: [51.879534, 7.327996] },
+            { name: "E160", park: "Windpark Empte", typ: "Enercon E 160 EP5", mw: "5,56 MW", hoehe: "200 m", gemeinde: "Dülmen", coords: [51.882181, 7.282084] },
+            { name: "E175", park: "Windenergiegemeinschaft", typ: "Enercon E 175 EP5", mw: "6,00 MW", hoehe: "250 m", gemeinde: "Dülmen", coords: [51.881470, 7.275352] },
+            { name: "WEA 1", park: "Windpark Hangenau", typ: "Enercon E-138 EP3", mw: "4,26 MW", hoehe: "200 m", gemeinde: "Dülmen", coords: [51.876898, 7.416293] },
+            { name: "WEA 2", park: "Windpark Hangenau", typ: "Enercon E-138 EP3", mw: "4,26 MW", hoehe: "200 m", gemeinde: "Dülmen", coords: [51.876199, 7.421795] },
+            { name: "WEA 5", park: "Dülmen Hangenau", typ: "Enercon E-175 EP5", mw: "6,00 MW", hoehe: "220 m", gemeinde: "Dülmen", coords: [51.869017, 7.404282] }
+        ];
+
+        // Popup-Content erstellen
+        function createPopup(anlage, status) {
+            const statusClass = status === 'betrieb' ? 'color: #1a5f6a' : 'color: #7da87b';
+            const statusText = status === 'betrieb' ? 'In Betrieb' : 'In Planung';
+            let html = `
+                <div class="popup-title">${anlage.name}</div>
+                <div class="popup-info">
+                    <strong>Windpark:</strong> ${anlage.park}<br>
+                    <strong>Gemeinde:</strong> ${anlage.gemeinde}<br>
+                    <strong>Typ:</strong> ${anlage.typ}<br>
+                    <strong>Leistung:</strong> ${anlage.mw}<br>
+                    <strong>Höhe:</strong> ${anlage.hoehe}<br>
+            `;
+            if (anlage.jahr) {
+                html += `<strong>Baujahr:</strong> ${anlage.jahr}<br>`;
+            }
+            html += `<span style="${statusClass}; font-weight: 600;">${statusText}</span></div>`;
+            return html;
+        }
+
+        // Marker hinzufügen
+        inBetrieb.forEach(anlage => {
+            L.marker(anlage.coords, { icon: betriebIcon })
+                .addTo(map)
+                .bindPopup(createPopup(anlage, 'betrieb'));
+        });
+
+        inPlanung.forEach(anlage => {
+            L.marker(anlage.coords, { icon: planungIcon })
+                .addTo(map)
+                .bindPopup(createPopup(anlage, 'planung'));
+        });
+
+        // Alle Marker in Bounds einschließen
+        const allCoords = [...inBetrieb.map(a => a.coords), ...inPlanung.map(a => a.coords)];
+        const bounds = L.latLngBounds(allCoords);
+        map.fitBounds(bounds.pad(0.1));
+    </script>
+</body>
+</html>

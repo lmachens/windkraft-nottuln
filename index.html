@@ -1349,6 +1349,110 @@
             font-size: 0.875rem;
             margin: 0;
         }
+
+        /* ===== ANLAGEN TEASER ===== */
+        .anlagen-teaser {
+            background: var(--color-white);
+            border-top: 1px solid var(--color-border);
+            padding: var(--space-xl) 0;
+        }
+
+        .anlagen-teaser__card {
+            display: flex;
+            align-items: center;
+            gap: var(--space-lg);
+            background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-bg) 100%);
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius);
+            padding: var(--space-lg);
+        }
+
+        @media (max-width: 768px) {
+            .anlagen-teaser__card {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        .anlagen-teaser__icon {
+            width: 80px;
+            height: 80px;
+            min-width: 80px;
+            background: var(--color-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .anlagen-teaser__icon svg {
+            width: 40px;
+            height: 40px;
+            stroke: white;
+        }
+
+        .anlagen-teaser__content {
+            flex: 1;
+        }
+
+        .anlagen-teaser__content h2 {
+            margin-bottom: var(--space-xs);
+        }
+
+        .anlagen-teaser__content p {
+            color: var(--color-text-muted);
+            margin-bottom: var(--space-sm);
+        }
+
+        .anlagen-teaser__stats {
+            display: flex;
+            gap: var(--space-md);
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 768px) {
+            .anlagen-teaser__stats {
+                justify-content: center;
+            }
+        }
+
+        .anlagen-teaser__stat {
+            font-size: 0.9375rem;
+            color: var(--color-primary);
+        }
+
+        .anlagen-teaser__stat strong {
+            font-size: 1.25rem;
+        }
+
+        .anlagen-teaser__stat--accent {
+            color: var(--color-accent);
+        }
+
+        .anlagen-teaser__link {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-xs);
+            background: var(--color-primary);
+            color: white;
+            padding: var(--space-sm) var(--space-md);
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            text-decoration: none;
+            transition: background 0.2s ease, transform 0.2s ease;
+            white-space: nowrap;
+        }
+
+        .anlagen-teaser__link:hover {
+            background: var(--color-primary-dark);
+            transform: translateX(4px);
+            text-decoration: none;
+        }
+
+        .anlagen-teaser__link svg {
+            width: 20px;
+            height: 20px;
+        }
     </style>
 </head>
 <body>
@@ -1373,6 +1477,7 @@
                 <a href="#natur">Natur</a>
                 <a href="#klima">Klima</a>
                 <a href="#technik">Technik</a>
+                <a href="/anlagen/">Anlagen</a>
                 <a href="/faq/">FAQ</a>
                 <a href="/quellen/">Quellen</a>
                 <a href="/impressum/">Impressum</a>
@@ -2309,6 +2414,34 @@
                 <p style="font-size: 0.8125rem; color: var(--color-text-muted); margin-top: var(--space-md); margin-bottom: 0;">
                     Artenschutz (Greifvögel) wird im Vogelschlag-Abschnitt angesprochen. Diese Seite erhebt keinen Anspruch auf Vollständigkeit.
                 </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Anlagen Teaser -->
+    <section class="anlagen-teaser" id="anlagen">
+        <div class="container">
+            <div class="anlagen-teaser__card">
+                <div class="anlagen-teaser__icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <polygon points="12,2 12,12 19,12"/>
+                    </svg>
+                </div>
+                <div class="anlagen-teaser__content">
+                    <h2>Windkraftanlagen im Umkreis</h2>
+                    <p>Interaktive Karte mit allen 31 Anlagen im 8-km-Radius (Nottuln, Billerbeck, Dülmen) aus dem offiziellen Marktstammdatenregister.</p>
+                    <div class="anlagen-teaser__stats">
+                        <span class="anlagen-teaser__stat"><strong>13</strong> in Betrieb (13 MW)</span>
+                        <span class="anlagen-teaser__stat anlagen-teaser__stat--accent"><strong>18</strong> in Planung (102 MW)</span>
+                    </div>
+                </div>
+                <a href="/anlagen/" class="anlagen-teaser__link">
+                    Zur Karte
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
             </div>
         </div>
     </section>
