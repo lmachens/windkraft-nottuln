@@ -248,6 +248,7 @@
         }
         .map-legend__dot--betrieb { background: var(--color-primary); }
         .map-legend__dot--planung { background: var(--color-accent); }
+        .map-legend__dot--stadtwerke { background: #e67e22; }
 
         /* Info Box */
         .info-box {
@@ -603,7 +604,11 @@
                         </div>
                         <div class="map-legend__item">
                             <span class="map-legend__dot map-legend__dot--planung"></span>
-                            <span>In Planung (18)</span>
+                            <span>In Planung/MaStR (18)</span>
+                        </div>
+                        <div class="map-legend__item">
+                            <span class="map-legend__dot map-legend__dot--stadtwerke"></span>
+                            <span>Stadtwerke Münster (7)</span>
                         </div>
                     </div>
                 </div>
@@ -1181,6 +1186,13 @@
             iconAnchor: [11, 11]
         });
 
+        const stadtwerkeIcon = L.divIcon({
+            className: 'custom-marker',
+            html: '<div style="background: #e67e22; width: 22px; height: 22px; border-radius: 50%; border: 3px solid white; box-shadow: 0 2px 6px rgba(0,0,0,0.3);"></div>',
+            iconSize: [22, 22],
+            iconAnchor: [11, 11]
+        });
+
         // Alle Anlagen im 8km-Radius (aus MaStR-Daten Januar 2026)
         const inBetrieb = [
             // Nottuln (2)
@@ -1224,19 +1236,46 @@
             { name: "WEA 5", park: "Dülmen Hangenau", typ: "Enercon E-175 EP5", mw: "6,00 MW", hoehe: "220 m", gemeinde: "Dülmen", coords: [51.869017, 7.404282] }
         ];
 
+        // Stadtwerke Münster - Projekt Stockum (7 geplante Anlagen, noch nicht im MaStR)
+        // Technische Daten noch nicht veröffentlicht, nur Standorte bekannt
+        const stadtwerkeStockum = [
+            { name: "WEA 1", park: "Stockum", gemeinde: "Nottuln", coords: [51.923481, 7.319295] },
+            { name: "WEA 2", park: "Stockum", gemeinde: "Nottuln", coords: [51.921166, 7.324182] },
+            { name: "WEA 3", park: "Stockum", gemeinde: "Nottuln", coords: [51.917956, 7.315968] },
+            { name: "WEA 4", park: "Stockum", gemeinde: "Nottuln", coords: [51.916918, 7.321997] },
+            { name: "WEA 5", park: "Stockum", gemeinde: "Nottuln", coords: [51.929896, 7.321571] },
+            { name: "WEA 6", park: "Stockum", gemeinde: "Nottuln", coords: [51.910355, 7.327098] },
+            { name: "WEA 7", park: "Stockum", gemeinde: "Nottuln", coords: [51.911087, 7.337525] }
+        ];
+
         // Popup-Content erstellen
         function createPopup(anlage, status) {
-            const statusClass = status === 'betrieb' ? 'color: #1a5f6a' : 'color: #7da87b';
-            const statusText = status === 'betrieb' ? 'In Betrieb' : 'In Planung';
+            let statusClass, statusText;
+            if (status === 'betrieb') {
+                statusClass = 'color: #1a5f6a';
+                statusText = 'In Betrieb';
+            } else if (status === 'stadtwerke') {
+                statusClass = 'color: #e67e22';
+                statusText = 'Geplant (Stadtwerke Münster)';
+            } else {
+                statusClass = 'color: #7da87b';
+                statusText = 'In Planung (MaStR)';
+            }
             let html = `
                 <div class="popup-title">${anlage.name}</div>
                 <div class="popup-info">
                     <strong>Windpark:</strong> ${anlage.park}<br>
                     <strong>Gemeinde:</strong> ${anlage.gemeinde}<br>
-                    <strong>Typ:</strong> ${anlage.typ}<br>
-                    <strong>Leistung:</strong> ${anlage.mw}<br>
-                    <strong>Höhe:</strong> ${anlage.hoehe}<br>
             `;
+            if (anlage.typ) {
+                html += `<strong>Typ:</strong> ${anlage.typ}<br>`;
+            }
+            if (anlage.mw) {
+                html += `<strong>Leistung:</strong> ${anlage.mw}<br>`;
+            }
+            if (anlage.hoehe) {
+                html += `<strong>Höhe:</strong> ${anlage.hoehe}<br>`;
+            }
             if (anlage.jahr) {
                 html += `<strong>Baujahr:</strong> ${anlage.jahr}<br>`;
             }
@@ -1257,8 +1296,14 @@
                 .bindPopup(createPopup(anlage, 'planung'));
         });
 
+        stadtwerkeStockum.forEach(anlage => {
+            L.marker(anlage.coords, { icon: stadtwerkeIcon })
+                .addTo(map)
+                .bindPopup(createPopup(anlage, 'stadtwerke'));
+        });
+
         // Alle Marker in Bounds einschließen
-        const allCoords = [...inBetrieb.map(a => a.coords), ...inPlanung.map(a => a.coords)];
+        const allCoords = [...inBetrieb.map(a => a.coords), ...inPlanung.map(a => a.coords), ...stadtwerkeStockum.map(a => a.coords)];
         const bounds = L.latLngBounds(allCoords);
         map.fitBounds(bounds.pad(0.1));
     </script>
