@@ -208,6 +208,10 @@ Gleiche Fakten können auf mehreren Seiten vorkommen:
 
 **Regel:** Bei Fakten-Änderungen IMMER grep über alle .html-Dateien!
 
+## Schreibstil
+- **KEINE Bindestriche als Aufzählungszeichen** in Texten für Social Media, E-Mails, Leserbriefe etc. (wirkt KI-generiert)
+- Fließtext bevorzugen, natürlicher Schreibstil
+
 ## Git Commits
 - **KEINE "Generated with Claude Code" Zeile** in Commit-Nachrichten
 - **KEIN Co-Authored-By** in Commit-Nachrichten
