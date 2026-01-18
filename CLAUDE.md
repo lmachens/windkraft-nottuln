@@ -79,7 +79,7 @@ Alle folgenden Fakten wurden gegen Originalquellen geprüft:
 - EPBT: 2,5-4,5 Monate (UBA)
 - 106 Mio. t CO2 durch Wind vermieden (2024)
 - 70% Energieimportabhängigkeit, ~70-76 Mrd. €/Jahr
-- TA Lärm: 50/35 dB(A) für reine Wohngebiete
+- TA Lärm nachts: 35 dB(A) reines WG, 40 dB(A) allg. WG, 45 dB(A) Misch-/Außenbereich
 - BNK: bis zu 98% weniger Lichtemissionen
 - Flächenverbrauch: ~0,5 ha versiegelt, 97% weiter nutzbar
 - Recycling: ~90%

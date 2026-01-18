@@ -683,6 +683,9 @@
             border-radius: 4px;
             border-left: 3px solid var(--color-primary);
         }
+        .shadow-note a {
+            color: var(--color-primary);
+        }
 
         /* Infraschall Comparison */
         .infraschall-viz {
@@ -1698,16 +1701,20 @@
                         </p>
                         <div style="display: flex; flex-direction: column; gap: var(--space-xs);">
                             <div style="display: flex; justify-content: space-between; padding: var(--space-xs); background: var(--color-bg); border-radius: 4px;">
-                                <span style="color: var(--color-text-muted);">Wohngebiet tags</span>
-                                <span class="tooltip" tabindex="0"><strong style="color: var(--color-text);">max. 50 dB(A)</strong><span class="tooltip-content">Dezibel (dB) misst Lautstärke. Das (A) passt die Messung ans menschliche Ohr an. 50 dB ist etwa so laut wie eine normale Unterhaltung.</span></span>
+                                <span style="color: var(--color-text-muted);">Reines Wohngebiet</span>
+                                <span class="tooltip" tabindex="0"><strong style="color: var(--color-text);">35 dB(A) nachts</strong><span class="tooltip-content">Gilt für Gebiete mit ausschließlicher Wohnnutzung laut Bebauungsplan.</span></span>
                             </div>
                             <div style="display: flex; justify-content: space-between; padding: var(--space-xs); background: var(--color-bg); border-radius: 4px;">
-                                <span style="color: var(--color-text-muted);">Wohngebiet nachts</span>
-                                <span class="tooltip" tabindex="0"><strong style="color: var(--color-text);">max. 35 dB(A)</strong><span class="tooltip-content">35 dB ist etwa so laut wie Flüstern oder ein leiser Kühlschrank. Gemessen wird außen am Gebäude, nicht im Schlafzimmer.</span></span>
+                                <span style="color: var(--color-text-muted);">Allg. Wohngebiet</span>
+                                <span class="tooltip" tabindex="0"><strong style="color: var(--color-text);">40 dB(A) nachts</strong><span class="tooltip-content">Gilt für Wohngebiete mit vereinzelten Läden, Praxen etc.</span></span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; padding: var(--space-xs); background: var(--color-bg); border-radius: 4px;">
+                                <span style="color: var(--color-text-muted);">Misch-/Außenbereich</span>
+                                <span class="tooltip" tabindex="0"><strong style="color: var(--color-text);">45 dB(A) nachts</strong><span class="tooltip-content">Gilt für Mischgebiete und den ländlichen Außenbereich (§35 BauGB), wo die meisten Windräder stehen.</span></span>
                             </div>
                         </div>
                         <div class="shadow-note">
-                            <strong>Zum Vergleich:</strong> In 500m Entfernung liegt ein modernes Windrad bei etwa 35-45 dB(A) – vergleichbar mit einem Kühlschrank.
+                            <strong>Welcher Wert gilt für Sie?</strong> Das hängt vom <a href="https://www.o-sp.de/nottuln/karte" target="_blank" rel="noopener">Bebauungsplan</a> ab. Im ländlichen Außenbereich, wo die meisten Windräder stehen, gelten meist 45 dB(A).
                         </div>
                         <p style="color: var(--color-text-muted); margin: 0; font-size: 0.875rem;">
                             <strong>Typische Abstände:</strong> Die TA Lärm schreibt keine festen Abstände vor, sondern Schallpegel. In der Praxis ergeben sich daraus <strong>500–800m</strong> zu Wohngebieten – je nach Anlagentyp und Gebietsart.
