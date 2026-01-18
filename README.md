@@ -30,6 +30,16 @@ Diese Website bietet quellenbasierte Informationen zu Windenergie in Nottuln und
 - Keine Cookies, kein Tracking
 - Hosting: GitHub Pages
 
+## KI-Unterstützung
+
+Diese Website wurde mit Unterstützung von [Claude](https://claude.ai) (Anthropic) erstellt. Die KI hilft bei:
+
+- Recherche und Quellenprüfung
+- Strukturierung und Formulierung von Texten
+- Technischer Umsetzung (HTML/CSS) mit dem [Frontend Design Skill](https://github.com/anthropics/claude-code/blob/main/plugins/frontend-design/skills/frontend-design/SKILL.md)
+
+**Alle Fakten werden manuell gegen Originalquellen verifiziert.** Die redaktionelle Verantwortung liegt beim Autor.
+
 ## Mitmachen
 
 Fehler gefunden? Quelle veraltet? PRs und Issues sind willkommen.
