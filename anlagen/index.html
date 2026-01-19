@@ -44,6 +44,28 @@
         .measuring-active {
             cursor: crosshair !important;
         }
+        /* Abstandslinien-Labels */
+        .distance-label {
+            background: transparent;
+            border: none;
+            text-align: center;
+        }
+        .distance-label span {
+            background: white;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 11px;
+            font-weight: 600;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+        }
+        .ffh-label span {
+            color: #d97706;
+            border: 1px solid #d97706;
+        }
+        .nsg-label span {
+            color: #059669;
+            border: 1px solid #059669;
+        }
     </style>
 
     <!-- Fonts -->
@@ -1477,21 +1499,87 @@
             layer.bindPopup(popup);
         }
 
-        // Create layers (not added to map by default - user can enable via control)
+        // Schutzgebiete-Layer (standardmäßig aktiv)
         const ffhLayer = L.geoJson(ffhData, {
             style: ffhStyle,
             onEachFeature: onEachFFH
-        });
+        }).addTo(map);
 
         const nsgLayer = L.geoJson(nsgData, {
             style: nsgStyle,
             onEachFeature: onEachNSG
+        }).addTo(map);
+
+        // === Abstandslinien zu Schutzgebieten ===
+        const distanceLines = L.layerGroup();
+
+        // FFH-Abstandslinien (orange) - kürzeste Entfernung zur Grenze
+        const ffhLines = [
+            { wea: "WEA 1", from: [51.923481, 7.319295], to: [51.91478, 7.30815], dist: 1235, area: "DE-4009-301" },
+            { wea: "WEA 2", from: [51.921166, 7.324182], to: [51.91461, 7.30836], dist: 1310, area: "DE-4009-301" },
+            { wea: "WEA 3", from: [51.917956, 7.315968], to: [51.91461, 7.30836], dist: 642, area: "DE-4009-301" },
+            { wea: "WEA 4", from: [51.916918, 7.321997], to: [51.91082, 7.31481], dist: 839, area: "DE-4009-301" },
+            { wea: "WEA 5", from: [51.929896, 7.321571], to: [51.91478, 7.30815], dist: 1918, area: "DE-4009-301" },
+            { wea: "WEA 6", from: [51.910355, 7.327098], to: [51.90948, 7.31536], dist: 813, area: "DE-4009-301" },
+            { wea: "WEA 7", from: [51.911087, 7.337525], to: [51.90948, 7.31536], dist: 1535, area: "DE-4009-301" },
+        ];
+
+        ffhLines.forEach(line => {
+            L.polyline([line.from, line.to], {
+                color: '#d97706',
+                weight: 2,
+                dashArray: '5, 5',
+                opacity: 0.8
+            }).addTo(distanceLines);
+
+            const midLat = (line.from[0] + line.to[0]) / 2;
+            const midLon = (line.from[1] + line.to[1]) / 2;
+            L.marker([midLat, midLon], {
+                icon: L.divIcon({
+                    className: 'distance-label ffh-label',
+                    html: '<span>' + line.dist + 'm</span>',
+                    iconSize: [50, 20],
+                    iconAnchor: [25, 10]
+                })
+            }).addTo(distanceLines);
+        });
+
+        // NSG-Abstandslinien (grün) - kürzeste Entfernung zur Grenze
+        const nsgLines = [
+            { wea: "WEA 1", from: [51.923481, 7.319295], to: [51.91677, 7.32508], dist: 846, area: "COE-048" },
+            { wea: "WEA 2", from: [51.921166, 7.324182], to: [51.91677, 7.32508], dist: 493, area: "COE-048" },
+            { wea: "WEA 3", from: [51.917956, 7.315968], to: [51.91677, 7.32508], dist: 641, area: "COE-048" },
+            { wea: "WEA 4", from: [51.916918, 7.321997], to: [51.91677, 7.32508], dist: 213, area: "COE-048" },
+            { wea: "WEA 5", from: [51.929896, 7.321571], to: [51.93331, 7.31997], dist: 396, area: "COE-049" },
+            { wea: "WEA 6", from: [51.910355, 7.327098], to: [51.91398, 7.32610], dist: 409, area: "COE-048" },
+            { wea: "WEA 7", from: [51.911087, 7.337525], to: [51.91400, 7.32621], dist: 843, area: "COE-048" },
+        ];
+
+        nsgLines.forEach(line => {
+            L.polyline([line.from, line.to], {
+                color: '#059669',
+                weight: 2,
+                dashArray: '5, 5',
+                opacity: 0.8
+            }).addTo(distanceLines);
+
+            const midLat = (line.from[0] + line.to[0]) / 2;
+            const midLon = (line.from[1] + line.to[1]) / 2;
+            L.marker([midLat, midLon], {
+                icon: L.divIcon({
+                    className: 'distance-label nsg-label',
+                    html: '<span>' + line.dist + 'm</span>',
+                    iconSize: [50, 20],
+                    iconAnchor: [25, 10]
+                })
+            }).addTo(distanceLines);
         });
 
         // Layer Control
         const overlays = {
             "FFH-Gebiete (15)": ffhLayer,
             "Naturschutzgebiete (42)": nsgLayer,
+            "Abstände Schutzgebiete": distanceLines,
             "Bebauungspläne (223)": bPlanLayer,
             "Flächennutzungsplan (12)": fnpLayer,
             "Außenbereichssatzung (1)": saLayer,
