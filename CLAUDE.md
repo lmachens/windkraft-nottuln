@@ -109,7 +109,9 @@ Alle folgenden Fakten wurden gegen Originalquellen geprüft:
 - Fledermäuse: Gefährdete Arten = Abendsegler, Rauhaut-, Zwergfledermaus (fliegen hoch, 80% der Schlagopfer)
 - Fledermäuse: NICHT gefährdet = Bechstein-, Mopsfledermaus (fliegen 1-5m bodennah, keine Schlagopfer in RENEBAT)
 - Fledermäuse: Schutzmaßnahmen = Gondelmonitoring + ProBat-Software (bundesweiter Standard seit 2014)
-- Fledermäuse: Abschaltung bei Wind <6,5 m/s, Temp >10°C, April-Oktober, Ertragsverlust 1-4%
+- Fledermäuse: Fliegen nur bei Wind <8 m/s (NABU), Abschaltung laut NRW-Leitfaden bei <6,5 m/s
+- Fledermäuse: Abschaltparameter: April-Oktober, Temp >10°C, 1h vor Sonnenuntergang bis Sonnenaufgang
+- Fledermäuse: Ertragsverlust durch Abschaltung: 1-4%
 - Fledermäuse: Mindestabstand zu Quartieren 500m, zu Wochenstuben 1.000m
 - Bechsteinfledermaus: Erhaltungsziel im FFH-Gebiet "Roruper Holz mit Kestenbusch" (DE-4009-301), 642m von Stockum-WKA
 - Bechsteinfledermaus: Flughöhe 1-5m, Kollisionsrisiko an WKA "unwahrscheinlich" (KNE)
