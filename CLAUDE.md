@@ -104,7 +104,15 @@ Alle folgenden Fakten wurden gegen Originalquellen geprüft:
 - Rotmilan: Bei 266m-Anlage mit 170m Rotor → Rotorunterkante ~96m
 - Schweizer Studie: 3.000 Rotmilane, 11 Jahre → höhere Anlagen = weniger Kollisionen
 - Fledermäuse: 95% der Flüge unter 144m (Leibniz-IZW)
-- Fledermäuse: Betriebssteuerung (<8 m/s) sehr wirksam, 1-4% Ertragsverlust
+- Fledermäuse: Barotrauma (Lungen platzen durch Unterdruck) - 90% der Toten mit inneren Blutungen (Baerwald 2008)
+- Fledermäuse: Vögel NICHT betroffen durch Barotrauma (andere Lungenstruktur)
+- Fledermäuse: Gefährdete Arten = Abendsegler, Rauhaut-, Zwergfledermaus (fliegen hoch, 80% der Schlagopfer)
+- Fledermäuse: NICHT gefährdet = Bechstein-, Mopsfledermaus (fliegen 1-5m bodennah, keine Schlagopfer in RENEBAT)
+- Fledermäuse: Schutzmaßnahmen = Gondelmonitoring + ProBat-Software (bundesweiter Standard seit 2014)
+- Fledermäuse: Abschaltung bei Wind <6,5 m/s, Temp >10°C, April-Oktober, Ertragsverlust 1-4%
+- Fledermäuse: Mindestabstand zu Quartieren 500m, zu Wochenstuben 1.000m
+- Bechsteinfledermaus: Erhaltungsziel im FFH-Gebiet "Roruper Holz mit Kestenbusch" (DE-4009-301), 642m von Stockum-WKA
+- Bechsteinfledermaus: Flughöhe 1-5m, Kollisionsrisiko an WKA "unwahrscheinlich" (KNE)
 - §36e EEG: Realisierungsfrist 36 Monate + max 18 Monate Verlängerung
 - Abregelungs-Entschädigung: 95% für angeschlossene Anlagen bei Netzengpässen
 - Entschädigungszahlungen 2024: 554 Mio € (nicht 18,5 Mio wie in YT-Videos behauptet)
