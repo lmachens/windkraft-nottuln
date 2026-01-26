@@ -121,6 +121,18 @@ Alle folgenden Fakten wurden gegen Originalquellen geprüft:
 - Schattenwurf-Richtung: Sonne nie im Norden → kein Schatten nach Süden
 - Größere Anlagen: langsamere Rotation = weniger optische Unruhe, weniger Anlagen nötig
 - Münsterland → Ruhrgebiet: kurze Wege = weniger Übertragungsverluste, weniger Netzausbau
+- Deutschland Pro-Kopf CO₂: 9,7t/Jahr vs. Weltdurchschnitt ~5t (klimafakten.de)
+- Deutschland historische Emissionen: 7,3% der kumulierten globalen CO₂-Emissionen seit 1850 (klimafakten.de)
+- Deutschland: größter CO₂-Emittent in Europa, Top 10 weltweit (Destatis)
+- BVerfG 2021 (1 BvR 2656/18): Staat kann sich Verantwortung nicht durch Verweis auf andere Staaten entziehen
+- Stromgestehungskosten 2024: Wind/Solar 4,1-9,2 ct/kWh vs. Kernkraft-Neubau 13,6-49,0 ct/kWh vs. Braunkohle 15,1-25,7 ct/kWh (Fraunhofer ISE)
+- Kernkraft-Neubau: Fraunhofer-ISE-Werte OHNE Rückbau/Endlagerung
+- Hinkley Point C: Strike Price von 10,3 ct auf ~15 ct/kWh (inflationsbereinigt), Baukosten 18→43-48 Mrd. £, Baubeginn 2018, Inbetriebnahme frühestens 2029 (IWR, EDF)
+- EEG-Förderung 2025: ~17 Mrd €/Jahr (überwiegend alte Verträge mit hohen Vergütungssätzen)
+- Fossile Importe 2024: 69-76 Mrd €/Jahr (AG Energiebilanzen, KfW)
+- Klimaschäden Deutschland 2000-2021: mind. 145 Mrd € (BMWK-Studie)
+- Klimaschäden Prognose 2022-2050: 280-900 Mrd € (IÖW/Prognos/GWS)
+- Ahrtal-Flut 2021: >40 Mrd € Gesamtschaden, 180+ Tote (bpb)
 
 ## NRW-spezifische Fakten (verifiziert Januar 2026)
 - NRW 1000m-Mindestabstand: **ABGESCHAFFT seit August 2023**
