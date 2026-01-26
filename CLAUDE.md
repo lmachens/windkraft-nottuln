@@ -88,7 +88,7 @@ Alle folgenden Fakten wurden gegen Originalquellen geprüft:
 - Abregelung 2024: 9,4 TWh (3,5% der EE-Produktion) wegen Netzengpässen
 - Strommix 2024: 59,4% erneuerbar, 40,6% fossil (Destatis)
 - Klimaziel 2030: 80% EE (EEG 2023, §1 Abs. 2)
-- Volllaststunden Onshore: 2.000-3.000h/Jahr (Fraunhofer)
+- Volllaststunden Onshore: 1.800-3.200h/Jahr je nach Standort (Fraunhofer ISE); Flottendurchschnitt ~1.750h (inkl. alter Kleinanlagen); neue 250m+-Anlagen ~2.500h (Fraunhofer IEE Windmonitor)
 - Technische Verfügbarkeit Onshore: ~98%
 - Negative Strompreise 2024: 457 Stunden
 - Speicherkapazität Ende 2024: ~57 GWh (19 GWh Batterie + 38 GWh Pumpspeicher)
@@ -102,7 +102,7 @@ Alle folgenden Fakten wurden gegen Originalquellen geprüft:
 - Münsterland Flächenziel: 12.670 ha (wird mit 15.500 ha übererfüllt)
 - Rotmilan: Suchflug ~40m, selten >80m (Biologische Station Paderborn, 346 Messungen)
 - Rotmilan: Bei 266m-Anlage mit 170m Rotor → Rotorunterkante ~96m
-- Schweizer Studie: 3.000 Rotmilane, 11 Jahre → höhere Anlagen = weniger Kollisionen
+- Skrabal et al. 2025 (Biological Conservation): 3.000 Rotmilane, 11 Jahre → höherer Rotor-Boden-Abstand = weniger Kollisionen, ABER größerer Rotordurchmesser = MEHR Kollisionen (25,5m mehr = 5-faches Risiko). Entscheidend ist Clearance, nicht Gesamthöhe
 - Fledermäuse: 95% der Flüge unter 144m (Leibniz-IZW)
 - Fledermäuse: Barotrauma (Lungen platzen durch Unterdruck) - 90% der Toten mit inneren Blutungen (Baerwald 2008)
 - Fledermäuse: Vögel NICHT betroffen durch Barotrauma (andere Lungenstruktur)
