@@ -67,6 +67,7 @@ Faktenbasierte Aufklärung über Windkraft mit verifizierten Quellen.
 - Studien nicht vermischen (RWI-Studie ≠ Berkeley/PIK-Studie)
 - Bauzeit "2-4 Wochen" war FALSCH → korrekt: "3-6 Monate" (Fundament, Aufbau, Netzanschluss)
 - Bestehende WEA "7" war VERALTET → korrekt: "9" (davon 6 bleiben, 3 Repowering) - Quelle: nottuln.de
+- Kranich-Flughöhe "50-250m bei Schlechtwetter" war FALSCH attributiert → 50-250m ist die NORMALE Flughöhe über Deutschland (NABU), nicht nur bei Schlechtwetter. kraniche.de sagt nur "50-2.000m Variation" und "~300m Durchschnitt" (gesamte Zugroute)
 
 ## Verifizierte Fakten (Stand: Januar 2026)
 Alle folgenden Fakten wurden gegen Originalquellen geprüft:
@@ -114,15 +115,16 @@ Alle folgenden Fakten wurden gegen Originalquellen geprüft:
 - Fledermäuse: Mindestabstand zu Quartieren 500m, zu Wochenstuben 1.000m
 - Bechsteinfledermaus: Erhaltungsziel im FFH-Gebiet "Roruper Holz mit Kestenbusch" (DE-4009-301), 642m von Stockum-WKA
 - Bechsteinfledermaus: Flughöhe 1-5m, Kollisionsrisiko an WKA "unwahrscheinlich" (KNE)
-- Kranich: Durchschnittliche Flughöhe ~300m (GPS-Studie, kraniche.de, 7 besenderte Kraniche)
-- Kranich: Bei Schlechtwetter/Nebel 50-250m über Grund (Stiftung Kranichland)
+- Kranich: Über Deutschland typischerweise 50-250m Flughöhe nach der Ostseeüberquerung (NABU, nabu.de/kranichzug-aktuell)
+- Kranich: Über die gesamte Zugroute gemittelt ~300m (kraniche.de, GPS-Studie mit 7 Kranichen, Variation 50-2.000m)
+- Kranich: Bei Schlechtwetter (Nebel, tiefe Wolken) zusätzlich erhöhtes Risiko durch eingeschränkte Sicht
 - Kranich: 54 Schlagopfer in DE seit 2002 (Vogelschutzwarte Brandenburg/Dürr-Kartei)
 - Kranich: Kollisionsgefährdung "sehr gering" (LfU Brandenburg 2020)
 - Kranich: Bis 50.000 über NRW an guten Zugtagen (NABU NRW)
 - Kranich: NRW 1.000m Ausschlussbereich um Brutplätze
 - Kranich: ~28 Brutpaare in NRW (Stand 2022)
 - Wildgänse: Meidedistanz 200-600m (Fritz et al. 2020: 200m in Wesel NRW; Kruckenberg 1999: 400-600m Ostfriesland)
-- Wildgänse: Nur 4 Blässgans-Schlagopfer deutschlandweit (Dürr-Kartei, Stand 2015)
+- Wildgänse: 4 Blässgans-Schlagopfer deutschlandweit (Dürr-Kartei, Stand Dezember 2015 – aktuelle Zahl möglicherweise leicht höher)
 - Wildgänse: 120.000-200.000 Blässgänse überwintern jährlich in NRW
 - Wildgänse: Hauptgefährdung = Lebensraumverlust (Meidung Rastflächen), NICHT Kollision
 - Zugvögel Umweg-Energiekosten: 0,04% der Zugstrecke (Masden et al. 2009, Uni Glasgow, ICES Journal)
