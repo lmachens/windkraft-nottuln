@@ -169,6 +169,18 @@ Alle folgenden Fakten wurden gegen Originalquellen geprüft:
 - Regionalplan Ziel 5: südliche Höhenlagen der Baumberge geschützt, geplante Standorte NICHT betroffen
 - Münster zum Vergleich: 33-34 WEA, ~320.000 Einwohner, 303 km² (Stadt mit dichter Bebauung)
 
+### Lokale Opposition
+- **Gegenwind Nottuln** (gegenwind-nottuln@outlook.de) + **Windsinn Nottuln** (windsinn-nottuln.info): Bürgerinitiativen gegen den Windpark
+- Petition "STOPP der Münsteraner Mega-Windräder in Nottuln": 1.714 Unterschriften (abgeschlossen), davon 1.141 aus Nottuln (5,7% der Einwohner)
+- **Offener Brief an Aufsichtsrat Stadtwerke Münster** (Jan 2026, Datei: local/offener-brief-aufsichtsrat.txt):
+  - 13 Fragen an den Aufsichtsrat, Unterzeichner: Dr. Rolf Gerlach, Axel Winkler, Thomas Schmidt, Beatrice Baumgürtel, Rainer Schoof, Ruth Winkler, Dr. Ralf Hubo u.a.
+  - Hauptargumente: Finanz-/Haftungsdruck auf Aufsichtsräte, E.ON-CEO Birnbaum warnt vor Überkapazitäten (2,8 Mrd. € für nicht eingespeisten Strom), Stadtwerke brauchen nur 25 MW aber wollen 54,4 MW in Nottuln, aggressive Wachstumsstrategie, Schulden +195%
+  - Anschuldigung ohne Belege: Vergrämung/Tötung geschützter Tierarten zur Genehmigungsvorbereitung (Frage 12)
+  - Zitate: Projektleiter Wieda "Widerstand ist Teil des Geschäfts", "Wenn wir bauen können, bauen wir!"; Pressesprecherin Polenz: LSG sei "wirklich sehr, sehr schöne Ecke"
+  - CDU-MdB Henrichmann: "Beigeschmack" bei Timing der Vorbescheide
+  - Ton: aggressiv, einschüchternd ("auf die Finger schauen", "alle Möglichkeiten des Rechtsstaates ausschöpfen")
+- **Antwort an Winklers** (Datei: local/antwort-winkler.txt): Sachliche Antwort auf E-Mail von Ruth & Axel Winkler
+
 ### Inhaltliche Standards
 - Sachlich und faktenbasiert bleiben
 - Keine emotionale oder aktivistische Sprache
