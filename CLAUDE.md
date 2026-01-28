@@ -154,6 +154,12 @@ Alle folgenden Fakten wurden gegen Originalquellen geprüft:
 - NRW 1000m-Mindestabstand: **ABGESCHAFFT seit August 2023**
 - Aktuell gelten nur: Immissionsschutz (TA Lärm, Schattenwurf) + optisch bedrängende Wirkung (2-3× Anlagenhöhe)
 - Bei 267m-Anlagen: ca. 530-800m Abstand nach "optisch bedrängend"-Regel
+- **§36a LPLG NRW** (Windenergie-Moratorium): In Kraft seit **15. Februar 2025**
+- Pausiert Genehmigungen **außerhalb** geplanter Windenergiegebiete für 12 Monate (verlängerbar)
+- Ausnahmen: Repowering nach §16b BImSchG, Anträge mit vollständigen Unterlagen vor 15. April 2024
+- "Wildwuchs" = Landesregierungs-Begriff für unkontrollierten Zubau außerhalb geplanter Gebiete
+- Quelle: wirtschaft.nrw/verlaengerung-des-ss-36a-lplg-um-weitere-sechs-monate
+- Regionalplan Münsterland: 277 Windenergiegebiete, ca. 15.750 ha, rechtswirksam seit 17. April 2025
 
 ## Nottuln-spezifische Fakten (verifiziert Januar 2026, Quelle: nottuln.de)
 - Bestehende Anlagen: **9 WEA** im Gemeindegebiet (davon 6 bleiben, 3 Repowering)
@@ -164,6 +170,9 @@ Alle folgenden Fakten wurden gegen Originalquellen geprüft:
 - Betreiber: Stadtwerke Münster, Bürgerwind Nottuln-Gladbeck, Bürgerwind Roruper Berg, u.a.
 - Genehmigungsstatus: 9 genehmigt, 9 mit Vorbescheid, 1 im Bauleitverfahren
 - Frühester Baubeginn (Stockum): 2028
+- **Flächennutzungsplan aufgehoben**: Nottuln hat FNP aufgehoben, "um der Windenergie deutlich mehr Raum zu geben" (Kreis Coesfeld)
+- **Vorbescheide rechtmäßig** (Kreis Coesfeld Stellungnahme 18.09.2025): Erteilt auf Grundlage der damals geltenden Rechtslage, vor §36a LPLG NRW. Kreis war verpflichtet, positiv zu bescheiden.
+- **Stockum nicht von §36a betroffen**: Anträge vor Stichtag (15. April 2024) eingereicht
 - Gemeindebeteiligung: sechsstelliger Betrag/Jahr (§6 EEG)
 - Baumberge: **Landschaftsschutzgebiet** (NICHT Naturschutzgebiet) - rechtlich wichtiger Unterschied
 - Regionalplan Ziel 5: südliche Höhenlagen der Baumberge geschützt, geplante Standorte NICHT betroffen
