@@ -174,6 +174,13 @@ Alle folgenden Fakten wurden gegen Originalquellen geprüft:
 - **Vorbescheide rechtmäßig** (Kreis Coesfeld Stellungnahme 18.09.2025): Erteilt auf Grundlage der damals geltenden Rechtslage, vor §36a LPLG NRW. Kreis war verpflichtet, positiv zu bescheiden.
 - **Stockum nicht von §36a betroffen**: Anträge vor Stichtag (15. April 2024) eingereicht
 - Gemeindebeteiligung: sechsstelliger Betrag/Jahr (§6 EEG)
+- **Nottuln.Wind GmbH**: Gesellschaft für Bürgerbeteiligung an Erneuerbaren Energien
+  - Gründungsbeschluss gefasst (Februar 2026)
+  - Sondersitzung Rat 10.02.2026: Beschluss über Gesellschaftsvertrag (Vorgabe Kommunalaufsicht)
+  - Nach Beschluss + notarieller Beurkundung → Geschäftstätigkeit startet
+  - Aufgaben: Beteiligungsmöglichkeiten verwalten, digitale Beteiligungsplattform
+  - Quellen: Facebook @gemeindenottuln (08.02.2026), SessionNet Vorlage 151/2025
+  - Registrierung für Interessenten: buergerwind@nottuln.de
 - Baumberge: **Landschaftsschutzgebiet** (NICHT Naturschutzgebiet) - rechtlich wichtiger Unterschied
 - Regionalplan Ziel 5: südliche Höhenlagen der Baumberge geschützt, geplante Standorte NICHT betroffen
 - Münster zum Vergleich: 33-34 WEA, ~320.000 Einwohner, 303 km² (Stadt mit dichter Bebauung)
