@@ -85,7 +85,7 @@ Alle folgenden Fakten wurden gegen Originalquellen geprüft:
 - Flächenverbrauch: ~0,5 ha versiegelt, 97% weiter nutzbar
 - Recycling: ~90%
 - Bauzeit pro Anlage: 3-6 Monate (Fundament, Aufbau, Netzanschluss)
-- Immobilienwerte: 7% Verlust in 1km (RWI), ab 8-9km kein Effekt
+- Immobilienwerte: 7% durchschnittlich, bis 23% für ältere Häuser (Baujahr vor 1950) im ländlichen Raum in 1km (RWI 2019), ab 8-9km kein Effekt
 - Abregelung 2024: 9,4 TWh (3,5% der EE-Produktion) wegen Netzengpässen
 - Strommix 2024: 59,4% erneuerbar, 40,6% fossil (Destatis)
 - Klimaziel 2030: 80% EE (EEG 2023, §1 Abs. 2)
@@ -258,7 +258,7 @@ Gleiche Fakten können auf mehreren Seiten vorkommen:
 | Fakt | index.html | faq/index.html | Aktualisieren |
 |------|------------|----------------|---------------|
 | Infraschall 3,5h Auto | ✓ | ✓ | beide |
-| Immobilienwerte 7%/1km | ✓ | ✓ | beide |
+| Immobilienwerte 7-23%/1km | ✓ | ✓ | beide |
 | Abregelung 3,5% | ✓ | ✓ | beide |
 | Vogelschlag-Zahlen | ✓ | ✓ | beide |
 | Schattenwurf 8h | ✓ | ✓ | beide |
