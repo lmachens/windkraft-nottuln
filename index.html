@@ -139,6 +139,7 @@
 
         html {
             scroll-behavior: smooth;
+            overflow-x: hidden;
         }
 
         body {
@@ -148,6 +149,7 @@
             color: var(--color-text);
             background-color: var(--color-bg);
             -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
         }
 
         .container {
@@ -168,6 +170,15 @@
         h2 { font-size: clamp(1.75rem, 4vw, 2.5rem); margin-bottom: var(--space-md); }
         h3 { font-size: 1.25rem; color: var(--color-primary); }
         p { margin-bottom: var(--space-sm); }
+
+        ul, ol {
+            margin: 0 0 var(--space-sm) 0;
+            padding-left: var(--space-md);
+        }
+
+        li {
+            margin-bottom: var(--space-xs);
+        }
 
         /* ===== HEADER ===== */
         .header {

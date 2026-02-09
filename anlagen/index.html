@@ -121,6 +121,10 @@
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         :focus-visible { outline: 2px solid var(--color-primary); outline-offset: 2px; }
 
+        html, body {
+            overflow-x: hidden;
+        }
+
         body {
             font-family: var(--font-body);
             font-size: 1.0625rem;
@@ -147,6 +151,16 @@
         h2 { font-size: 1.5rem; margin: var(--space-lg) 0 var(--space-sm); }
         h3 { font-size: 1.125rem; margin: var(--space-md) 0 var(--space-xs); color: var(--color-primary); }
         p { margin-bottom: var(--space-sm); }
+
+        ul, ol {
+            margin: 0 0 var(--space-sm) 0;
+            padding-left: var(--space-md);
+        }
+
+        li {
+            margin-bottom: var(--space-xs);
+        }
+
         a { color: var(--color-primary); text-decoration: none; }
         a:hover { text-decoration: underline; }
 

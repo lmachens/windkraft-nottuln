@@ -206,6 +206,10 @@
         :focus-visible { outline: 2px solid var(--color-primary); outline-offset: 2px; }
         a:focus-visible, button:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 2px; border-radius: 2px; }
 
+        html, body {
+            overflow-x: hidden;
+        }
+
         body {
             font-family: var(--font-body);
             font-size: 1.0625rem;
@@ -220,6 +224,15 @@
         h1 { font-size: 2.5rem; margin-bottom: var(--space-md); }
         h2 { font-size: 1.5rem; margin: var(--space-lg) 0 var(--space-sm); }
         p { margin-bottom: var(--space-sm); }
+
+        ul, ol {
+            margin: 0 0 var(--space-sm) 0;
+            padding-left: var(--space-md);
+        }
+
+        li {
+            margin-bottom: var(--space-xs);
+        }
 
         a { color: var(--color-primary); text-decoration: none; }
         a:hover { text-decoration: underline; }

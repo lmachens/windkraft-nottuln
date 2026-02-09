@@ -112,7 +112,10 @@
             outline-offset: 2px;
         }
 
-        html { scroll-behavior: smooth; }
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
 
         body {
             font-family: var(--font-body);
@@ -121,6 +124,7 @@
             color: var(--color-text);
             background-color: var(--color-bg);
             -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
         }
 
         .container {
@@ -145,6 +149,15 @@
         h2 { font-size: clamp(1.5rem, 3.5vw, 2rem); margin-bottom: var(--space-md); margin-top: var(--space-xl); }
         h3 { font-size: 1.25rem; color: var(--color-primary); margin-bottom: var(--space-sm); margin-top: var(--space-lg); }
         p { margin-bottom: var(--space-sm); }
+
+        ul, ol {
+            margin: 0 0 var(--space-sm) 0;
+            padding-left: var(--space-md);
+        }
+
+        li {
+            margin-bottom: var(--space-xs);
+        }
 
         a { color: var(--color-primary); }
         a:hover { color: var(--color-primary-dark); }
@@ -416,11 +429,18 @@
 
         .info-card ul {
             margin: 0;
-            padding-left: var(--space-md);
+            padding-left: var(--space-lg);
         }
 
         .info-card li {
             margin-bottom: var(--space-xs);
+        }
+
+        @media (max-width: 640px) {
+            .info-card ul {
+                padding-left: var(--space-md);
+                list-style-position: inside;
+            }
         }
 
         /* Comparison Table */
