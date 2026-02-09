@@ -933,6 +933,24 @@
             stroke: var(--color-accent);
         }
 
+        /* Highlighted resource item (e.g., Quellenverzeichnis) */
+        .resource-item--highlight {
+            background: var(--color-primary-light);
+            border: 2px solid var(--color-primary);
+        }
+
+        .resource-item--highlight h3 {
+            color: var(--color-primary-dark);
+        }
+
+        .resource-item--highlight p {
+            color: var(--color-text);
+        }
+
+        .resource-item--highlight:hover {
+            background: var(--color-white);
+        }
+
         /* Resources Section Dark Mode */
         @media (prefers-color-scheme: dark) {
             .resources { background: #1a1f22; }
@@ -946,6 +964,12 @@
             .resource-item__link svg { stroke: #7dd87a; }
             .resource-item__icon { background: rgba(125, 216, 122, 0.15); }
             .resource-item__icon svg { stroke: #7dd87a; }
+
+            /* Highlighted item in dark mode */
+            .resource-item--highlight { background: var(--color-primary-light); border-color: var(--color-primary); }
+            .resource-item--highlight h3 { color: var(--color-primary); }
+            .resource-item--highlight p { color: var(--color-text); }
+            .resource-item--highlight:hover { background: #253035; }
         }
 
         /* ===== CTA SECTION ===== */
@@ -1353,6 +1377,124 @@
             margin: 0;
         }
 
+        /* ===== PETITION TEASER ===== */
+        .petition-teaser {
+            background: linear-gradient(135deg, var(--color-accent-light) 0%, var(--color-primary-light) 100%);
+            padding: var(--space-lg) 0;
+        }
+
+        .petition-teaser__card {
+            display: grid;
+            grid-template-columns: auto 1fr auto auto;
+            align-items: center;
+            gap: var(--space-md);
+            background: var(--color-white);
+            border: 2px solid var(--color-accent);
+            border-radius: var(--border-radius);
+            padding: var(--space-md) var(--space-lg);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(125, 168, 123, 0.15);
+        }
+
+        .petition-teaser__card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(125, 168, 123, 0.25);
+            border-color: var(--color-primary);
+        }
+
+        .petition-teaser__badge {
+            background: var(--color-accent);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 0.375rem 0.75rem;
+            border-radius: 4px;
+            white-space: nowrap;
+        }
+
+        .petition-teaser__content h2 {
+            font-size: 1.25rem;
+            margin-bottom: 0;
+            color: var(--color-primary-dark);
+        }
+
+        .petition-teaser__content p {
+            font-size: 0.9375rem;
+            color: var(--color-text-muted);
+            margin: var(--space-xs) 0 0 0;
+        }
+
+        .petition-teaser__stats {
+            display: flex;
+            gap: var(--space-md);
+        }
+
+        .petition-teaser__stat {
+            font-size: 0.875rem;
+            color: var(--color-text-muted);
+            white-space: nowrap;
+        }
+
+        .petition-teaser__stat strong {
+            color: var(--color-primary);
+            font-size: 1rem;
+        }
+
+        .petition-teaser__arrow {
+            width: 40px;
+            height: 40px;
+            background: var(--color-primary-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .petition-teaser__arrow svg {
+            width: 20px;
+            height: 20px;
+            stroke: var(--color-primary);
+            transition: transform 0.2s ease;
+        }
+
+        .petition-teaser__card:hover .petition-teaser__arrow {
+            background: var(--color-primary);
+        }
+
+        .petition-teaser__card:hover .petition-teaser__arrow svg {
+            stroke: white;
+            transform: translateX(4px);
+        }
+
+        @media (max-width: 900px) {
+            .petition-teaser__card {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: var(--space-sm);
+            }
+            .petition-teaser__badge {
+                justify-self: center;
+            }
+            .petition-teaser__stats {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            .petition-teaser__arrow {
+                justify-self: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .petition-teaser__stats {
+                flex-direction: column;
+                gap: var(--space-xs);
+            }
+        }
+
         /* ===== ANLAGEN TEASER ===== */
         .anlagen-teaser {
             background: var(--color-white);
@@ -1456,6 +1598,241 @@
             width: 20px;
             height: 20px;
         }
+
+        /* ========================================
+           STICKY SIDEBAR NAVIGATION
+           ======================================== */
+
+        .sidebar-nav {
+            position: fixed;
+            left: max(calc((100vw - var(--max-width)) / 2 - 200px), 20px);
+            top: 50%;
+            transform: translateY(-50%);
+            width: 180px;
+            z-index: 50;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            background: var(--color-bg);
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius);
+            padding: var(--space-sm);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .sidebar-nav.visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        @media (max-width: 1400px) {
+            .sidebar-nav {
+                left: 12px;
+                width: 160px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .sidebar-nav {
+                display: none;
+            }
+        }
+
+        .sidebar-nav__label {
+            font-size: 0.625rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--color-text-muted);
+            margin-bottom: var(--space-xs);
+            padding-left: var(--space-sm);
+        }
+
+        .sidebar-nav__list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            position: relative;
+        }
+
+        .sidebar-nav__list::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 4px;
+            bottom: 4px;
+            width: 2px;
+            background: var(--color-border);
+            border-radius: 1px;
+        }
+
+        .sidebar-nav__item {
+            position: relative;
+        }
+
+        .sidebar-nav__link {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 12px;
+            color: var(--color-text-muted);
+            text-decoration: none;
+            font-size: 0.8125rem;
+            line-height: 1.3;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+            transition: all 0.2s ease;
+            position: relative;
+        }
+
+        .sidebar-nav__link::before {
+            content: '';
+            position: absolute;
+            left: -1px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 0;
+            background: var(--color-primary);
+            border-radius: 2px;
+            transition: height 0.2s ease;
+        }
+
+        .sidebar-nav__link:hover {
+            color: var(--color-primary);
+            background: var(--color-primary-light);
+            text-decoration: none;
+        }
+
+        .sidebar-nav__link.active {
+            color: var(--color-primary);
+            font-weight: 600;
+        }
+
+        .sidebar-nav__link.active::before {
+            height: 20px;
+        }
+
+        .sidebar-nav__icon {
+            width: 16px;
+            height: 16px;
+            flex-shrink: 0;
+            opacity: 0.6;
+        }
+
+        .sidebar-nav__link.active .sidebar-nav__icon {
+            opacity: 1;
+        }
+
+        .sidebar-nav__text {
+            flex: 1;
+        }
+
+        .sidebar-nav__progress {
+            margin-top: var(--space-sm);
+            padding-top: var(--space-sm);
+            border-top: 1px solid var(--color-border);
+            font-size: 0.6875rem;
+            color: var(--color-text-muted);
+        }
+
+        .sidebar-nav__progress-bar {
+            height: 2px;
+            background: var(--color-border);
+            border-radius: 1px;
+            margin-top: 4px;
+            overflow: hidden;
+        }
+
+        .sidebar-nav__progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+            border-radius: 1px;
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        /* Mobile Floating Nav */
+        .mobile-section-nav {
+            display: none;
+            position: fixed;
+            bottom: var(--space-md);
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 90;
+            background: var(--color-white);
+            border: 1px solid var(--color-border);
+            border-radius: 2rem;
+            padding: 6px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15), 0 0 0 1px rgba(0,0,0,0.05);
+            max-width: calc(100% - var(--space-lg));
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .mobile-section-nav.visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        @media (max-width: 1200px) {
+            .mobile-section-nav {
+                display: flex;
+                align-items: center;
+                gap: 2px;
+            }
+        }
+
+        .mobile-section-nav__btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: transparent;
+            border: none;
+            color: var(--color-text-muted);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+        }
+
+        .mobile-section-nav__btn svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .mobile-section-nav__btn:hover {
+            background: var(--color-primary-light);
+            color: var(--color-primary);
+        }
+
+        .mobile-section-nav__btn.active {
+            background: var(--color-primary);
+            color: white;
+        }
+
+        .mobile-section-nav__btn.active svg {
+            fill: white;
+        }
+
+        .mobile-section-nav__divider {
+            width: 1px;
+            height: 20px;
+            background: var(--color-border);
+            margin: 0 4px;
+        }
+
+        .mobile-section-nav__label {
+            font-size: 0.6875rem;
+            color: var(--color-text-muted);
+            padding: 0 8px;
+            white-space: nowrap;
+            max-width: 90px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
     </style>
 </head>
 <body>
@@ -1481,12 +1858,55 @@
                 <a href="#klima">Klima</a>
                 <a href="#technik">Technik</a>
                 <a href="/anlagen/">Anlagen</a>
+                <a href="/petition/">Petition</a>
                 <a href="/faq/">FAQ</a>
                 <a href="/quellen/">Quellen</a>
-                <a href="/impressum/">Impressum</a>
             </nav>
         </div>
     </header>
+
+    <!-- Sidebar Navigation (Desktop) -->
+    <aside class="sidebar-nav" aria-label="Seitennavigation">
+        <div class="sidebar-nav__label">Themen</div>
+        <ul class="sidebar-nav__list">
+            <li class="sidebar-nav__item">
+                <a href="#gesundheit" class="sidebar-nav__link" data-section="gesundheit">
+                    <svg class="sidebar-nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                    <span class="sidebar-nav__text">Gesundheit</span>
+                </a>
+            </li>
+            <li class="sidebar-nav__item">
+                <a href="#natur" class="sidebar-nav__link" data-section="natur">
+                    <svg class="sidebar-nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22c-4.97 0-9-2.69-9-6v-2c0-3.31 4.03-6 9-6s9 2.69 9 6v2c0 3.31-4.03 6-9 6z"/><path d="M12 14c2.76 0 5-1.12 5-2.5S14.76 9 12 9s-5 1.12-5 2.5S9.24 14 12 14z"/><path d="M12 2v6"/></svg>
+                    <span class="sidebar-nav__text">Artenschutz</span>
+                </a>
+            </li>
+            <li class="sidebar-nav__item">
+                <a href="#klima" class="sidebar-nav__link" data-section="klima">
+                    <svg class="sidebar-nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                    <span class="sidebar-nav__text">Klimaschutz</span>
+                </a>
+            </li>
+            <li class="sidebar-nav__item">
+                <a href="#umwelt" class="sidebar-nav__link" data-section="umwelt">
+                    <svg class="sidebar-nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22c5.52 0 10-4.48 10-10S17.52 2 12 2 2 6.48 2 12s4.48 10 10 10z"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                    <span class="sidebar-nav__text">Umwelt</span>
+                </a>
+            </li>
+            <li class="sidebar-nav__item">
+                <a href="#technik" class="sidebar-nav__link" data-section="technik">
+                    <svg class="sidebar-nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                    <span class="sidebar-nav__text">Technik</span>
+                </a>
+            </li>
+        </ul>
+        <div class="sidebar-nav__progress">
+            <span>Lesefortschritt</span>
+            <div class="sidebar-nav__progress-bar">
+                <div class="sidebar-nav__progress-fill"></div>
+            </div>
+        </div>
+    </aside>
 
     <!-- Hero Section -->
     <section class="hero">
@@ -1518,6 +1938,29 @@
         <a href="#technik" class="quick-nav__pill">Technik</a>
         <a href="#ressourcen" class="quick-nav__pill">Ressourcen</a>
     </nav>
+
+    <!-- Petition Analysis Teaser -->
+    <section class="petition-teaser">
+        <div class="container">
+            <a href="/petition/" class="petition-teaser__card">
+                <div class="petition-teaser__badge">Faktencheck</div>
+                <div class="petition-teaser__content">
+                    <h2>Die Windkraft-Petition im Check</h2>
+                    <p>Petitionstext, 9 News-Meldungen und 630 Kommentare geprüft: Was stimmt, was nicht?</p>
+                </div>
+                <div class="petition-teaser__stats">
+                    <span class="petition-teaser__stat"><strong>1.714</strong> Unterschriften</span>
+                    <span class="petition-teaser__stat"><strong>4</strong> Teile</span>
+                    <span class="petition-teaser__stat"><strong>21</strong> Quellen</span>
+                </div>
+                <div class="petition-teaser__arrow">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </div>
+            </a>
+        </div>
+    </section>
 
     <!-- About Section -->
     <section class="about">
@@ -2771,7 +3214,7 @@
                 <p>Diese unabhängigen Quellen haben mir bei meiner Recherche geholfen.</p>
             </div>
             <div class="resources__grid">
-                <a href="/quellen/" class="resource-item" style="background: var(--color-primary-light); border: 2px solid var(--color-primary);">
+                <a href="/quellen/" class="resource-item resource-item--highlight">
                     <div class="resource-item__icon" style="background: var(--color-primary);">
                         <svg viewBox="0 0 24 24" style="stroke: white;">
                             <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
@@ -2780,7 +3223,7 @@
                             <line x1="9" y1="9" x2="15" y2="9"/>
                         </svg>
                     </div>
-                    <h3 style="color: var(--color-primary-dark);">Quellenverzeichnis</h3>
+                    <h3>Quellenverzeichnis</h3>
                     <p>Alle Quellen dieser Website: Studien, Behörden, Gesetze – übersichtlich sortiert nach Themen.</p>
                     <span class="resource-item__link">
                         windkraft-nottuln.de/quellen
@@ -2992,6 +3435,117 @@
         </div>
     </section>
 
+    <!-- Mobile Section Navigation -->
+    <nav class="mobile-section-nav" aria-label="Kapitelnavigation">
+        <a href="#gesundheit" class="mobile-section-nav__btn" data-section="gesundheit" title="Gesundheit">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </a>
+        <a href="#natur" class="mobile-section-nav__btn" data-section="natur" title="Artenschutz">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22c-4.97 0-9-2.69-9-6v-2c0-3.31 4.03-6 9-6s9 2.69 9 6v2c0 3.31-4.03 6-9 6z"/><path d="M12 2v6"/></svg>
+        </a>
+        <a href="#klima" class="mobile-section-nav__btn" data-section="klima" title="Klimaschutz">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        </a>
+        <a href="#umwelt" class="mobile-section-nav__btn" data-section="umwelt" title="Umwelt">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22c5.52 0 10-4.48 10-10S17.52 2 12 2 2 6.48 2 12s4.48 10 10 10z"/><path d="M2 12h20"/></svg>
+        </a>
+        <a href="#technik" class="mobile-section-nav__btn" data-section="technik" title="Technik">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9c.26.604.852.997 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+        </a>
+        <div class="mobile-section-nav__divider"></div>
+        <span class="mobile-section-nav__label"></span>
+    </nav>
+
+    <!-- Scroll Spy & Navigation Script -->
+    <script>
+    (function() {
+        const sections = ['gesundheit', 'natur', 'klima', 'umwelt', 'technik'];
+        const sectionNames = {
+            'gesundheit': 'Gesundheit',
+            'natur': 'Artenschutz',
+            'klima': 'Klimaschutz',
+            'umwelt': 'Umwelt',
+            'technik': 'Technik'
+        };
+
+        const sidebarNav = document.querySelector('.sidebar-nav');
+        const sidebarLinks = document.querySelectorAll('.sidebar-nav__link');
+        const mobileButtons = document.querySelectorAll('.mobile-section-nav__btn');
+        const mobileNav = document.querySelector('.mobile-section-nav');
+        const mobileLabel = document.querySelector('.mobile-section-nav__label');
+        const progressFill = document.querySelector('.sidebar-nav__progress-fill');
+
+        function updateActiveSection() {
+            const scrollPos = window.scrollY + 150;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollPercent = Math.min((window.scrollY / docHeight) * 100, 100);
+
+            if (progressFill) {
+                progressFill.style.width = scrollPercent + '%';
+            }
+
+            // Show/hide navigation based on scroll
+            const showNav = window.scrollY > 500;
+            if (sidebarNav) {
+                sidebarNav.classList.toggle('visible', showNav);
+            }
+            if (mobileNav) {
+                mobileNav.classList.toggle('visible', showNav);
+            }
+
+            // Find active section
+            let activeSection = sections[0];
+            for (const sectionId of sections) {
+                const section = document.getElementById(sectionId);
+                if (section && section.offsetTop <= scrollPos) {
+                    activeSection = sectionId;
+                }
+            }
+
+            // Update sidebar
+            sidebarLinks.forEach(link => {
+                link.classList.toggle('active', link.dataset.section === activeSection);
+            });
+
+            // Update mobile
+            mobileButtons.forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.section === activeSection);
+            });
+
+            if (mobileLabel) {
+                mobileLabel.textContent = sectionNames[activeSection];
+            }
+        }
+
+        let ticking = false;
+        window.addEventListener('scroll', function() {
+            if (!ticking) {
+                window.requestAnimationFrame(function() {
+                    updateActiveSection();
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
+
+        updateActiveSection();
+
+        // Smooth scroll
+        [...sidebarLinks, ...mobileButtons].forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').slice(1);
+                const target = document.getElementById(targetId);
+                if (target) {
+                    const offset = 80;
+                    const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                    window.scrollTo({ top, behavior: 'smooth' });
+                }
+            });
+        });
+    })();
+    </script>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -3020,7 +3574,7 @@
                     <ul>
                         <li><a href="https://www.bund.net/themen/aktuelles/detail-aktuelles/news/argumente-fuer-windenergie-fakten-statt-mythen/" target="_blank" rel="noopener">BUND Faktencheck</a></li>
                         <li><a href="https://www.umweltbundesamt.de" target="_blank" rel="noopener">Umweltbundesamt</a></li>
-                        <li><a href="https://www.prowindcoe.de/" target="_blank" rel="noopener">ProWindCOE</a></li>
+                        <li><a href="https://www.nottuln.de/leben-in-nottuln/klimaschutz-energie-umwelt/windenergie-nottuln" target="_blank" rel="noopener">Gemeinde Nottuln</a></li>
                     </ul>
                 </div>
                 <div class="footer__col">
