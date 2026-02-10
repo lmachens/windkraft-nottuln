@@ -92,11 +92,13 @@ Alle folgenden Fakten wurden gegen Originalquellen geprüft:
 - Volllaststunden Onshore: 1.800-3.200h/Jahr je nach Standort (Fraunhofer ISE); Flottendurchschnitt ~1.750h (inkl. alter Kleinanlagen); neue 250m+-Anlagen ~2.500h (Fraunhofer IEE Windmonitor)
 - Technische Verfügbarkeit Onshore: ~98%
 - Negative Strompreise 2024: 457 Stunden
-- Speicherkapazität Ende 2024: ~57 GWh (19 GWh Batterie + 38 GWh Pumpspeicher)
+- Speicherkapazität Ende 2025: ~65,5 GWh (25,5 GWh Batterie + 40 GWh Pumpspeicher)
+- Speicherkapazität Ende 2024 (vorher): ~57 GWh (19 GWh Batterie + 38 GWh Pumpspeicher)
 - Speicherbedarf 2030: ~100 GWh (Fraunhofer ISE)
-- Batteriespeicher-Wachstum: +50%/Jahr
-- SuedLink (4 GW): Fertigstellung 2028
-- Ultranet (2 GW): Fertigstellung 2026
+- Batteriespeicher-Wachstum 2025: +38%
+- Netzengpasskosten-Trend: 4.200 Mio. (2022) → 3.335 Mio. (2023) → 2.776 Mio. (2024), davon 554 Mio. (20%) EE-Entschädigungen
+- SuedLink (4 GW): Seit Oktober 2024 vollständig genehmigt, in 6 Bundesländern im Bau, Fertigstellung Ende 2028
+- Ultranet (2 GW): Seit Oktober 2025 vollständig genehmigt, Bau läuft, Fertigstellung Ende 2026
 - Auckland ist in Neuseeland, NICHT Australien
 - § 9 FStrG: 40m Bauverbot an Autobahnen, 100m Beschränkungszone
 - OVG Berlin-Brandenburg 2024: WEA mit 110m Abstand zu Autobahn genehmigt
@@ -170,7 +172,14 @@ Alle folgenden Fakten wurden gegen Originalquellen geprüft:
 - Betreiber: Stadtwerke Münster, Bürgerwind Nottuln-Gladbeck, Bürgerwind Roruper Berg, u.a.
 - Genehmigungsstatus: 9 genehmigt, 9 mit Vorbescheid, 1 im Bauleitverfahren
 - Frühester Baubeginn (Stockum): 2028
-- **Flächennutzungsplan aufgehoben**: Nottuln hat FNP aufgehoben, "um der Windenergie deutlich mehr Raum zu geben" (Kreis Coesfeld)
+- **FNP-Aufhebung (86. FNP-Änderung):**
+  - 45. FNP-Änderung (2004): 2 Konzentrationszonen (Buxtrup/Horst, Hastehausen) – nie wirksam (BVerwG 2020, Bekanntmachungsmangel)
+  - Aufstellungsbeschluss: 21.06.2022 (18:5:3)
+  - Ausschuss PuB: 20.06.2023 (einstimmig 12:0:0)
+  - Feststellungsbeschluss: 19.09.2023 (22:5:1)
+  - Rechtskraft: 09.11.2023
+  - Ziel: „Der Windenergienutzung im Gemeindegebiet mehr Raum geben" (Kreis Coesfeld)
+  - Quellen: SessionNet Vorlage 126/2023, zusammenfassende Erklärung PDF
 - **Vorbescheide rechtmäßig** (Kreis Coesfeld Stellungnahme 18.09.2025): Erteilt auf Grundlage der damals geltenden Rechtslage, vor §36a LPLG NRW. Kreis war verpflichtet, positiv zu bescheiden.
 - **Stockum nicht von §36a betroffen**: Anträge vor Stichtag (15. April 2024) eingereicht
 - Gemeindebeteiligung: sechsstelliger Betrag/Jahr (§6 EEG)
