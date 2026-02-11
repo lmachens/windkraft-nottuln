@@ -383,14 +383,6 @@
             font-size: 0.8125rem;
             color: var(--color-text-muted);
         }
-        .map-info__footer summary {
-            cursor: pointer;
-            font-weight: 600;
-            color: var(--color-text-muted);
-        }
-        .map-info__footer summary:hover {
-            color: var(--color-primary);
-        }
         .map-info__footer-grid {
             display: flex;
             flex-wrap: wrap;
@@ -780,8 +772,6 @@
                             </div>
                         </div>
                         <div class="map-info__footer">
-                            <details>
-                                <summary>Weitere Kartenebenen (Bauleitplanung, Anlagen)</summary>
                                 <div class="map-info__footer-grid">
                                     <div class="map-info__footer-item">
                                         <span class="map-info__footer-dot" style="background: var(--color-primary);"></span> In Betrieb (13)
@@ -802,7 +792,11 @@
                                 <p style="margin-top: var(--space-xs);">
                                     Bauleitplanung: <a href="https://www.o-sp.de/nottuln/karte" target="_blank" rel="noopener" style="color: var(--color-primary);">o-sp.de/nottuln</a>
                                 </p>
-                            </details>
+                                <p style="margin-top: var(--space-xs);">
+                                    <strong>Abstände zu FFH/NSG:</strong> Zeigt die Luftlinie jeder WEA zur nächsten FFH- bzw. NSG-Grenze.
+                                    Es gibt keinen pauschalen Mindestabstand — die Verträglichkeit wird im Genehmigungsverfahren
+                                    einzelfallbezogen geprüft (FFH-Verträglichkeitsprüfung, artenschutzrechtliche Prüfung).
+                                </p>
                         </div>
                     </div>
                 </div>
@@ -1665,77 +1659,85 @@
             onEachFeature: onEachLSG
         }).addTo(map);
 
-        // === Abstandslinien zu Schutzgebieten ===
+        // === Abstandslinien zu Schutzgebieten (dynamisch berechnet) ===
         const distanceLines = L.layerGroup();
 
-        // FFH-Abstandslinien (orange) - kürzeste Entfernung zur Grenze
-        const ffhLines = [
-            { wea: "WEA 1", from: [51.923481, 7.319295], to: [51.91478, 7.30815], dist: 1235, area: "DE-4009-301" },
-            { wea: "WEA 2", from: [51.921166, 7.324182], to: [51.91461, 7.30836], dist: 1310, area: "DE-4009-301" },
-            { wea: "WEA 3", from: [51.917956, 7.315968], to: [51.91461, 7.30836], dist: 642, area: "DE-4009-301" },
-            { wea: "WEA 4", from: [51.916918, 7.321997], to: [51.91082, 7.31481], dist: 839, area: "DE-4009-301" },
-            { wea: "WEA 5", from: [51.929896, 7.321571], to: [51.91478, 7.30815], dist: 1918, area: "DE-4009-301" },
-            { wea: "WEA 6", from: [51.910355, 7.327098], to: [51.90948, 7.31536], dist: 813, area: "DE-4009-301" },
-            { wea: "WEA 7", from: [51.911087, 7.337525], to: [51.90948, 7.31536], dist: 1535, area: "DE-4009-301" },
+        // Haversine-Distanz zwischen zwei Punkten (in Metern)
+        function haversineDistance(lat1, lon1, lat2, lon2) {
+            const R = 6371000;
+            const toRad = x => x * Math.PI / 180;
+            const dLat = toRad(lat2 - lat1);
+            const dLon = toRad(lon2 - lon1);
+            const a = Math.sin(dLat / 2) ** 2 + Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) * Math.sin(dLon / 2) ** 2;
+            return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+        }
+
+        // Kürzeste Distanz von einem Punkt zur nächsten Polygon-Kante eines GeoJSON
+        function minDistToGeoJson(lat, lon, geojsonData) {
+            let minDist = Infinity;
+            let closestPoint = null;
+            let closestFeatureId = null;
+            geojsonData.features.forEach(feature => {
+                const fid = feature.properties.localid || feature.properties.domainobje;
+                const coords = feature.geometry.type === 'MultiPolygon'
+                    ? feature.geometry.coordinates.flat(1)
+                    : feature.geometry.coordinates;
+                coords.forEach(ring => {
+                    ring.forEach(pt => {
+                        const d = haversineDistance(lat, lon, pt[1], pt[0]);
+                        if (d < minDist) {
+                            minDist = d;
+                            closestPoint = [pt[1], pt[0]];
+                            closestFeatureId = fid;
+                        }
+                    });
+                });
+            });
+            return { dist: Math.round(minDist), point: closestPoint, featureId: closestFeatureId };
+        }
+
+        // Alle WEA sammeln (ohne Duplikate: stadtwerkeStockum ist Subset von inPlanung-Konzept)
+        const alleWEA = [
+            ...inBetrieb.map(a => ({ name: a.name, park: a.park, coords: a.coords })),
+            ...inPlanung.map(a => ({ name: a.name, park: a.park, coords: a.coords })),
+            ...stadtwerkeStockum.map(a => ({ name: a.name, park: a.park, coords: a.coords }))
         ];
 
-        ffhLines.forEach(line => {
-            L.polyline([line.from, line.to], {
-                color: '#d97706',
-                weight: 2,
-                dashArray: '5, 5',
-                opacity: 0.8
-            }).addTo(distanceLines);
+        // Abstandslinien + Labels für ein GeoJSON-Dataset erzeugen
+        function addDistanceLines(weaList, geojsonData, color, cssClass, maxDist) {
+            weaList.forEach(wea => {
+                const result = minDistToGeoJson(wea.coords[0], wea.coords[1], geojsonData);
+                if (result.dist > maxDist) return;
+                L.polyline([wea.coords, result.point], {
+                    color: color,
+                    weight: 2,
+                    dashArray: '5, 5',
+                    opacity: 0.8
+                }).addTo(distanceLines);
+                const midLat = (wea.coords[0] + result.point[0]) / 2;
+                const midLon = (wea.coords[1] + result.point[1]) / 2;
+                L.marker([midLat, midLon], {
+                    icon: L.divIcon({
+                        className: 'distance-label ' + cssClass,
+                        html: '<span>' + result.dist + 'm</span>',
+                        iconSize: [50, 20],
+                        iconAnchor: [25, 10]
+                    })
+                }).addTo(distanceLines);
+            });
+        }
 
-            const midLat = (line.from[0] + line.to[0]) / 2;
-            const midLon = (line.from[1] + line.to[1]) / 2;
-            L.marker([midLat, midLon], {
-                icon: L.divIcon({
-                    className: 'distance-label ffh-label',
-                    html: '<span>' + line.dist + 'm</span>',
-                    iconSize: [50, 20],
-                    iconAnchor: [25, 10]
-                })
-            }).addTo(distanceLines);
-        });
-
-        // NSG-Abstandslinien (grün) - kürzeste Entfernung zur Grenze
-        const nsgLines = [
-            { wea: "WEA 1", from: [51.923481, 7.319295], to: [51.91677, 7.32508], dist: 846, area: "COE-048" },
-            { wea: "WEA 2", from: [51.921166, 7.324182], to: [51.91677, 7.32508], dist: 493, area: "COE-048" },
-            { wea: "WEA 3", from: [51.917956, 7.315968], to: [51.91677, 7.32508], dist: 641, area: "COE-048" },
-            { wea: "WEA 4", from: [51.916918, 7.321997], to: [51.91677, 7.32508], dist: 213, area: "COE-048" },
-            { wea: "WEA 5", from: [51.929896, 7.321571], to: [51.93331, 7.31997], dist: 396, area: "COE-049" },
-            { wea: "WEA 6", from: [51.910355, 7.327098], to: [51.91398, 7.32610], dist: 409, area: "COE-048" },
-            { wea: "WEA 7", from: [51.911087, 7.337525], to: [51.91400, 7.32621], dist: 843, area: "COE-048" },
-        ];
-
-        nsgLines.forEach(line => {
-            L.polyline([line.from, line.to], {
-                color: '#059669',
-                weight: 2,
-                dashArray: '5, 5',
-                opacity: 0.8
-            }).addTo(distanceLines);
-
-            const midLat = (line.from[0] + line.to[0]) / 2;
-            const midLon = (line.from[1] + line.to[1]) / 2;
-            L.marker([midLat, midLon], {
-                icon: L.divIcon({
-                    className: 'distance-label nsg-label',
-                    html: '<span>' + line.dist + 'm</span>',
-                    iconSize: [50, 20],
-                    iconAnchor: [25, 10]
-                })
-            }).addTo(distanceLines);
-        });
+        // FFH-Abstandslinien (orange) - max 3 km
+        addDistanceLines(alleWEA, ffhData, '#d97706', 'ffh-label', 3000);
+        // NSG-Abstandslinien (grün) - max 3 km
+        addDistanceLines(alleWEA, nsgData, '#059669', 'nsg-label', 3000);
 
         // Layer Control
         const overlays = {
             "FFH-Gebiete (5)": ffhLayer,
             "Naturschutzgebiete (42)": nsgLayer,
             "Landschaftsschutzgebiete (25)": lsgLayer,
-            "Abstände Schutzgebiete": distanceLines,
+            "Abstände zu FFH/NSG": distanceLines,
             "Bebauungspläne (223)": bPlanLayer,
             "Flächennutzungsplan (12)": fnpLayer,
             "Außenbereichssatzung (1)": saLayer,
