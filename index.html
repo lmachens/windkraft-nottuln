@@ -584,6 +584,9 @@
             .infographic__grid {
                 grid-template-columns: 1fr;
             }
+            .info-card .card-columns {
+                grid-template-columns: 1fr !important;
+            }
         }
 
         .info-card {
@@ -2137,9 +2140,17 @@
                         <div class="shadow-note">
                             <strong>Uni Bayreuth (2020):</strong> „3,5 Stunden Autofahrt setzen Sie genauso viel <span class="tooltip" tabindex="0">Infraschall<span class="tooltip-content">Sehr tiefe Töne unter 20 Hz, die Menschen nicht hören können. Entsteht z.B. bei Wind, Verkehr, Waschmaschinen – und auch bei Windrädern.</span></span>energie aus wie 27 Jahre Aufenthalt in 300m Abstand zu einem Windrad." Der Infraschall von Windrädern liegt deutlich unter der menschlichen <span class="tooltip" tabindex="0">Wahrnehmungsschwelle<span class="tooltip-content">Die Grenze, ab der Menschen etwas spüren oder hören können. Infraschall von Windrädern ist so schwach, dass der Körper ihn nicht wahrnimmt.</span></span>.
                         </div>
-                        <a href="https://www.bayceer.uni-bayreuth.de/infraschall/de/forschung/gru/html.php?id_obj=157452" target="_blank" rel="noopener" style="font-size: 0.8125rem; color: var(--color-primary);">
-                            → Quelle: Uni Bayreuth Infraschall-Studie
-                        </a>
+                        <p style="font-size: 0.8125rem; color: var(--color-text-muted); margin: var(--space-xs) 0 0 0;">
+                            Bestätigt durch eine Metaanalyse von über 400 Studien (McKenna et al. 2025, <em>Joule</em>): „Für moderne Windräder gibt es keinen nachweisbaren Zusammenhang mit tieffrequentem Lärm."
+                        </p>
+                        <div style="font-size: 0.8125rem; display: flex; flex-direction: column; gap: 2px; margin-top: var(--space-xs);">
+                            <a href="https://www.bayceer.uni-bayreuth.de/infraschall/de/forschung/gru/html.php?id_obj=157452" target="_blank" rel="noopener" style="color: var(--color-primary);">
+                                → Uni Bayreuth Infraschall-Studie
+                            </a>
+                            <a href="https://www.cell.com/joule/fulltext/S2542-4351(24)00513-0" target="_blank" rel="noopener" style="color: var(--color-primary);">
+                                → McKenna et al. 2025 (Joule, 400+ Studien)
+                            </a>
+                        </div>
                     </div>
                 </article>
 
@@ -2240,87 +2251,98 @@
             </div>
             <div class="infographic__grid">
 
-                <!-- Bird Strike Card -->
-                <article class="info-card">
-                    <h3>
-                        <svg viewBox="0 0 24 24">
-                            <path d="M12 19c-4 0-7-2-9-5 2-3 5-5 9-5s7 2 9 5c-2 3-5 5-9 5z"/>
-                            <circle cx="12" cy="14" r="3"/>
-                        </svg>
-                        Vogelschlag: Die Zahlen im Kontext
-                    </h3>
-                    <div style="display: flex; flex-direction: column; gap: var(--space-sm);">
-                        <p style="color: var(--color-text-muted); margin: 0;">
-                            Jährliche Vogeltode in Deutschland nach Ursache:
-                        </p>
-                        <div style="display: flex; flex-direction: column; gap: var(--space-xs);">
-                            <div style="display: flex; justify-content: space-between; padding: var(--space-xs); background: var(--color-bg); border-radius: 4px;">
-                                <span style="color: var(--color-text-muted);">Glasscheiben</span>
-                                <strong style="color: var(--color-text);">100-115 Mio.</strong>
-                            </div>
-                            <div style="display: flex; justify-content: space-between; padding: var(--space-xs); background: var(--color-bg); border-radius: 4px;">
-                                <span style="color: var(--color-text-muted);">Hauskatzen</span>
-                                <strong style="color: var(--color-text);">20-100 Mio.</strong>
-                            </div>
-                            <div style="display: flex; justify-content: space-between; padding: var(--space-xs); background: var(--color-bg); border-radius: 4px;">
-                                <span style="color: var(--color-text-muted);">Straßenverkehr</span>
-                                <strong style="color: var(--color-text);">70 Mio.</strong>
-                            </div>
-                            <div style="display: flex; justify-content: space-between; padding: var(--space-xs); background: var(--color-primary-light); border-radius: 4px;">
-                                <span style="color: var(--color-primary-dark);">Windkraftanlagen</span>
-                                <strong style="color: var(--color-primary-dark);">~0,1 Mio.</strong>
-                            </div>
-                        </div>
-                        <p style="color: var(--color-text-muted); margin: 0; font-size: 0.875rem;">
-                            Windkraft verursacht &lt;0,1% der Vogeltode. Für Greifvögel wie den Rotmilan ist die Situation differenzierter.
-                        </p>
-                    </div>
-                    <a href="https://www.nabu.de/tiere-und-pflanzen/voegel/gefaehrdungen/24661.html" target="_blank" rel="noopener" style="font-size: 0.8125rem; color: var(--color-primary); margin-top: var(--space-sm); display: inline-block;">
-                        → Quelle: <span class="tooltip" tabindex="0">NABU<span class="tooltip-content">Naturschutzbund Deutschland – einer der größten Umweltverbände Deutschlands mit über 900.000 Mitgliedern.</span></span>
-                    </a>
-                </article>
-
-                <!-- Rotmilan Card -->
-                <article class="info-card" style="background: var(--color-warning-light); border-color: #e8dbb3;">
+                <!-- Vögel & Windkraft – Full-width Card -->
+                <article class="info-card" style="grid-column: 1 / -1; background: var(--color-warning-light); border-color: #e8dbb3;">
                     <h3>
                         <svg viewBox="0 0 24 24" style="stroke: var(--color-warning);">
                             <path d="M12 2L2 7l10 5 10-5-10-5z"/>
                             <path d="M2 17l10 5 10-5"/>
                             <path d="M2 12l10 5 10-5"/>
                         </svg>
-                        <span class="tooltip" tabindex="0">Rotmilan<span class="tooltip-content">Greifvogel mit gegabeltem Schwanz. Deutschland beherbergt über 50% des weltweiten Bestands – eine besondere Verantwortung.</span></span>: Was die Forschung zeigt
+                        Vögel &amp; Windkraft: Zahlen, Forschung, Schutz
                     </h3>
-                    <div style="display: flex; flex-direction: column; gap: var(--space-sm);">
-                        <p style="color: var(--color-text-muted); margin: 0;">
-                            Der Rotmilan ist ein häufiges Argument gegen Windkraft. Die Wissenschaft zeigt ein differenziertes Bild:
-                        </p>
-                        <div style="display: flex; gap: var(--space-sm); flex-wrap: wrap;">
-                            <div style="flex: 1; min-width: 120px; text-align: center; padding: var(--space-sm); background: var(--color-white); border-radius: 8px;">
-                                <span style="font-family: var(--font-display); font-size: 1.5rem; color: var(--color-warning);">~40m</span>
-                                <p style="font-size: 0.75rem; color: var(--color-text-muted); margin: 0;">Flughöhe beim Jagen</p>
+                    <div class="card-columns" style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-lg);">
+
+                        <!-- Linke Spalte: Vogelschlag-Kontext -->
+                        <div style="display: flex; flex-direction: column; gap: var(--space-sm);">
+                            <h4 style="margin: 0; font-size: 1rem; color: var(--color-text);">
+                                <svg viewBox="0 0 24 24" style="width: 18px; height: 18px; stroke: var(--color-primary); fill: none; stroke-width: 2; vertical-align: middle; margin-right: 4px;">
+                                    <path d="M12 19c-4 0-7-2-9-5 2-3 5-5 9-5s7 2 9 5c-2 3-5 5-9 5z"/>
+                                    <circle cx="12" cy="14" r="3"/>
+                                </svg>
+                                Vogelschlag im Kontext
+                            </h4>
+                            <p style="color: var(--color-text-muted); margin: 0;">
+                                Jährliche Vogeltode in Deutschland nach Ursache:
+                            </p>
+                            <div style="display: flex; flex-direction: column; gap: var(--space-xs);">
+                                <div style="display: flex; justify-content: space-between; padding: var(--space-xs); background: var(--color-white); border-radius: 4px;">
+                                    <span style="color: var(--color-text-muted);">Glasscheiben</span>
+                                    <strong style="color: var(--color-text);">100-115 Mio.</strong>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; padding: var(--space-xs); background: var(--color-white); border-radius: 4px;">
+                                    <span style="color: var(--color-text-muted);">Hauskatzen</span>
+                                    <strong style="color: var(--color-text);">20-100 Mio.</strong>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; padding: var(--space-xs); background: var(--color-white); border-radius: 4px;">
+                                    <span style="color: var(--color-text-muted);">Straßenverkehr</span>
+                                    <strong style="color: var(--color-text);">70 Mio.</strong>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; padding: var(--space-xs); background: var(--color-primary-light); border-radius: 4px;">
+                                    <span style="color: var(--color-primary-dark);">Windkraftanlagen</span>
+                                    <strong style="color: var(--color-primary-dark);">~0,1 Mio.</strong>
+                                </div>
                             </div>
-                            <div style="flex: 1; min-width: 120px; text-align: center; padding: var(--space-sm); background: var(--color-white); border-radius: 8px;">
-                                <span style="font-family: var(--font-display); font-size: 1.5rem; color: var(--color-primary);">~96m</span>
-                                <p style="font-size: 0.75rem; color: var(--color-text-muted); margin: 0;">Rotorunterkante (266m-Anlage)</p>
+                            <p style="color: var(--color-text-muted); margin: 0; font-size: 0.875rem;">
+                                Windkraft verursacht &lt;0,1% der Vogeltode. Für Greifvögel wie den Rotmilan ist die Situation differenzierter.
+                            </p>
+                            <div class="shadow-note" style="background: var(--color-white); margin-top: var(--space-xs);">
+                                <strong>Todesursachen im Vergleich:</strong> Das EU-Forschungsprojekt <span class="tooltip" tabindex="0">LIFE EUROKITE<span class="tooltip-content">EU-Projekt (2019–2027) zum Schutz des Rotmilans. Über 3.000 Tiere in 12 Ländern mit GPS-Sendern ausgestattet, Todesursachen systematisch erfasst.</span></span> hat über 3.000 Rotmilane mit GPS-Sendern ausgestattet. Zwischenergebnisse für Deutschland (n=121): Häufigste Todesursachen sind natürliche Fressfeinde (41%), Schienenverkehr (12%) und Straßenverkehr (10%). WEA-Kollisionen machen etwa <strong>8%</strong> aus.
+                                <p style="font-size: 0.8125rem; color: var(--color-text-muted); margin: var(--space-xs) 0 0 0; font-style: italic;">Einordnung: Die Daten sind Zwischenergebnisse (Wingspan-Konferenz 2024); eine peer-reviewed Publikation zur Todesursachen-Rangfolge steht noch aus. Das Projekt selbst stuft WEA als „signifikante menschengemachte Todesursache" ein – aber nicht als die häufigste.</p>
+                            </div>
+                            <div style="font-size: 0.8125rem; margin-top: auto;">
+                                → Quellen: <a href="https://www.nabu.de/tiere-und-pflanzen/voegel/gefaehrdungen/24661.html" target="_blank" rel="noopener" style="color: var(--color-primary);"><span class="tooltip" tabindex="0">NABU<span class="tooltip-content">Naturschutzbund Deutschland – einer der größten Umweltverbände Deutschlands mit über 900.000 Mitgliedern.</span></span></a>,
+                                <a href="https://www.life-eurokite.eu/en/our-birds/numbers-facts.html" target="_blank" rel="noopener" style="color: var(--color-primary);">LIFE EUROKITE</a>
                             </div>
                         </div>
-                        <div class="shadow-note" style="background: var(--color-white);">
-                            <strong>Europäische Langzeitstudie</strong> (Skrabal et al. 2025, <em>Biological Conservation</em>, 11 Jahre, 3.000 besenderte Rotmilane): Je höher die Rotorblätter angebracht sind (<span class="tooltip" tabindex="0">Rotor-Boden-Abstand<span class="tooltip-content">Abstand zwischen dem tiefsten Punkt der Rotorblätter und dem Boden. Auch „Clearance" genannt.</span></span>), desto <em>weniger</em> Kollisionen. <strong>Aber:</strong> Größere Rotordurchmesser <em>erhöhen</em> das Risiko – 25,5m mehr Durchmesser verfünffachen die Kollisionswahrscheinlichkeit. Entscheidend ist nicht die Gesamthöhe, sondern das Verhältnis von Nabenhöhe zu Rotordurchmesser.
+
+                        <!-- Rechte Spalte: Rotmilan -->
+                        <div style="display: flex; flex-direction: column; gap: var(--space-sm);">
+                            <h4 style="margin: 0; font-size: 1rem; color: var(--color-text);">
+                                <span class="tooltip" tabindex="0">Rotmilan<span class="tooltip-content">Greifvogel mit gegabeltem Schwanz. Deutschland beherbergt über 50% des weltweiten Bestands – eine besondere Verantwortung.</span></span>: Was die Forschung zeigt
+                            </h4>
+                            <p style="color: var(--color-text-muted); margin: 0;">
+                                Der Rotmilan ist ein häufiges Argument gegen Windkraft. Die Wissenschaft zeigt ein differenziertes Bild:
+                            </p>
+                            <div style="display: flex; gap: var(--space-sm); flex-wrap: wrap;">
+                                <div style="flex: 1; min-width: 120px; text-align: center; padding: var(--space-sm); background: var(--color-white); border-radius: 8px;">
+                                    <span style="font-family: var(--font-display); font-size: 1.5rem; color: var(--color-warning);">~40m</span>
+                                    <p style="font-size: 0.75rem; color: var(--color-text-muted); margin: 0;">Flughöhe beim Jagen</p>
+                                </div>
+                                <div style="flex: 1; min-width: 120px; text-align: center; padding: var(--space-sm); background: var(--color-white); border-radius: 8px;">
+                                    <span style="font-family: var(--font-display); font-size: 1.5rem; color: var(--color-primary);">~96m</span>
+                                    <p style="font-size: 0.75rem; color: var(--color-text-muted); margin: 0;">Rotorunterkante (266m-Anlage)</p>
+                                </div>
+                            </div>
+                            <div class="shadow-note" style="background: var(--color-white);">
+                                <strong>Europäische Langzeitstudie</strong> (Skrabal et al. 2025, <em>Biological Conservation</em>, 11 Jahre, 3.000 besenderte Rotmilane): Je höher die Rotorblätter angebracht sind (<span class="tooltip" tabindex="0">Rotor-Boden-Abstand<span class="tooltip-content">Abstand zwischen dem tiefsten Punkt der Rotorblätter und dem Boden. Auch „Clearance" genannt.</span></span>), desto <em>weniger</em> Kollisionen. <strong>Aber:</strong> Größere Rotordurchmesser <em>erhöhen</em> das Risiko – 25,5m mehr Durchmesser verfünffachen die Kollisionswahrscheinlichkeit. Entscheidend ist nicht die Gesamthöhe, sondern das Verhältnis von Nabenhöhe zu Rotordurchmesser.
+                            </div>
+                            <p style="color: var(--color-text-muted); margin: 0; font-size: 0.9375rem;">
+                                <strong>Aber:</strong> Während der Balzzeit fliegen Rotmilane höher. Eine Telemetriestudie zeigt: <strong>18-29% der Flüge</strong> finden dann in Rotorhöhe (80-250m) statt. Deshalb gibt es gezielte Schutzmaßnahmen:
+                            </p>
+                            <ul style="color: var(--color-text-muted); margin: 0; padding-left: var(--space-md); font-size: 0.875rem;">
+                                <li><strong>1.500m Mindestabstand</strong> zu Horsten (<span class="tooltip" tabindex="0">Helgoländer Papier<span class="tooltip-content">Fachliche Empfehlung der Länderarbeitsgemeinschaft der Vogelschutzwarten zu Abständen zwischen Windenergieanlagen und Vogellebensräumen.</span></span>)</li>
+                                <li><strong>Automatische Abschaltsysteme</strong> (IdentiFlight, BirdVision) erkennen Greifvögel per Kamera und stoppen die Anlage vor einer Kollision</li>
+                            </ul>
+                            <p style="color: var(--color-text-muted); margin: 0; font-size: 0.875rem; font-style: italic;">
+                                Für den Artenschutz entscheidend: der Abstand zwischen Boden und Rotorunterkante. Bei den in Nottuln geplanten 266m-Anlagen liegt dieser bei ~96m – weit über der üblichen Flughöhe des Rotmilans.
+                            </p>
+                            <div style="font-size: 0.8125rem; margin-top: auto;">
+                                → Quelle: <a href="https://www.presseportal.ch/de/pm/100002863/100936241" target="_blank" rel="noopener" style="color: var(--color-primary);">Skrabal et al. 2025 / Schweizer Vogelwarte</a>
+                            </div>
                         </div>
-                        <p style="color: var(--color-text-muted); margin: 0; font-size: 0.9375rem;">
-                            <strong>Aber:</strong> Während der Balzzeit fliegen Rotmilane höher. Eine Telemetriestudie zeigt: <strong>18-29% der Flüge</strong> finden dann in Rotorhöhe (80-250m) statt. Deshalb gibt es gezielte Schutzmaßnahmen:
-                        </p>
-                        <ul style="color: var(--color-text-muted); margin: 0; padding-left: var(--space-md); font-size: 0.875rem;">
-                            <li><strong>1.500m Mindestabstand</strong> zu Horsten (<span class="tooltip" tabindex="0">Helgoländer Papier<span class="tooltip-content">Fachliche Empfehlung der Länderarbeitsgemeinschaft der Vogelschutzwarten zu Abständen zwischen Windenergieanlagen und Vogellebensräumen.</span></span>)</li>
-                            <li><strong>Automatische Abschaltsysteme</strong> (IdentiFlight, BirdVision) erkennen Greifvögel per Kamera und stoppen die Anlage vor einer Kollision</li>
-                        </ul>
-                        <p style="color: var(--color-text-muted); margin: 0; font-size: 0.875rem; font-style: italic;">
-                            Für den Artenschutz entscheidend: der Abstand zwischen Boden und Rotorunterkante. Bei den in Nottuln geplanten 266m-Anlagen liegt dieser bei ~96m – weit über der üblichen Flughöhe des Rotmilans.
-                        </p>
+
                     </div>
-                    <a href="https://www.presseportal.ch/de/pm/100002863/100936241" target="_blank" rel="noopener" style="font-size: 0.8125rem; color: var(--color-primary); margin-top: var(--space-sm); display: inline-block;">
-                        → Quelle: Skrabal et al. 2025 / Schweizer Vogelwarte
-                    </a>
                 </article>
 
                 <!-- Bat Protection Card -->

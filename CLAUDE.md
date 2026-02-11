@@ -105,7 +105,9 @@ Alle folgenden Fakten wurden gegen Originalquellen geprüft:
 - Münsterland Flächenziel: 12.670 ha (wird mit 15.500 ha übererfüllt)
 - Rotmilan: Suchflug ~40m, selten >80m (Biologische Station Paderborn, 346 Messungen)
 - Rotmilan: Bei 266m-Anlage mit 170m Rotor → Rotorunterkante ~96m
-- Skrabal et al. 2025 (Biological Conservation): 3.000 Rotmilane, 11 Jahre → höherer Rotor-Boden-Abstand = weniger Kollisionen, ABER größerer Rotordurchmesser = MEHR Kollisionen (25,5m mehr = 5-faches Risiko). Entscheidend ist Clearance, nicht Gesamthöhe
+- Skrabal et al. 2025 (Biological Conservation, DOI: 10.1016/j.biocon.2025.111482): 3.000 Rotmilane, 11 Jahre → höherer Rotor-Boden-Abstand = weniger Kollisionen, ABER größerer Rotordurchmesser = MEHR Kollisionen (25,5m mehr = 5-faches Risiko). Entscheidend ist Clearance, nicht Gesamthöhe
+- LIFE EUROKITE (EU-Projekt LIFE18 NAT/AT/000048, 2019-2027): 3.070 besenderte Rotmilane, Todesursachen Deutschland (n=121): Fressfeinde 41%, Schienenverkehr 12%, Straßenverkehr 10%, WEA 8%. Europaweit WEA ~4%. ZWISCHENERGEBNISSE (Wingspan-Konferenz Okt 2024), Peer-Review zur Todesursachen-Rangfolge AUSSTEHEND. Projekt selbst: WEA = "significant man-made cause of mortality"
+- McKenna et al. 2025 (Joule, DOI: 10.1016/j.joule.2024.11.016): Metaanalyse 400+ Studien. Infraschall: "No correlation with low-frequency noise with today's turbines". Schlagschatten: "Keine solide wissenschaftliche Grundlage" für Gesundheitseffekte. Vogelschlag: "not substantial" im Gesamtbild. 24 Autoren, 7 Länder, Open Access
 - Fledermäuse: 95% der Flüge unter 144m (Leibniz-IZW)
 - Fledermäuse: Barotrauma (Lungen platzen durch Unterdruck) - 90% der Toten mit inneren Blutungen (Baerwald 2008)
 - Fledermäuse: Vögel NICHT betroffen durch Barotrauma (andere Lungenstruktur)
