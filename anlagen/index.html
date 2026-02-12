@@ -345,6 +345,23 @@
         .map-info__card--ffh { border-left-color: #f59e0b; }
         .map-info__card--nsg { border-left-color: #10b981; }
         .map-info__card--lsg { border-left-color: #22c55e; }
+        .map-info__card--web { border-left-color: #0ea5e9; }
+        .map-info__tag--plan {
+            background: #eff6ff;
+            color: #1d4ed8;
+        }
+        @media (prefers-color-scheme: dark) {
+            .map-info__tag--plan { background: #172554; color: #60a5fa; }
+        }
+        .web-label span {
+            background: rgba(14,165,233,0.85);
+            color: #fff;
+            padding: 1px 5px;
+            border-radius: 3px;
+            font-size: 11px;
+            font-weight: 600;
+            white-space: nowrap;
+        }
         .map-info__card-title {
             font-weight: 700;
             margin-bottom: 0.25rem;
@@ -767,10 +784,16 @@
                             </div>
                             <div class="map-info__card map-info__card--lsg">
                                 <div class="map-info__card-title">Landschaftsschutzgebiete <span>(25)</span></div>
-                                <p>Schutz des Landschaftsbilds. Großflächig, oft über 40% der Gemeindefläche.</p>
-                                <span class="map-info__tag map-info__tag--yes">WEA zulässig seit 2023</span>
+                                <p>Schutz des Landschaftsbilds. Großflächig, oft über 40% der Gemeindefläche. WEA waren hier von 2023 bis April 2025 übergangsweise zulässig (§26 BNatSchG).</p>
+                                <span class="map-info__tag map-info__tag--yes">WEA zulässig 2023–2025</span>
                             </div>
                         </div>
+                        <div class="map-info__card map-info__card--web" style="margin-top: var(--space-sm);">
+                                <div class="map-info__card-title">Windenergiebereiche <span>(3 in Nottuln, 61 ha)</span></div>
+                                <p>Vorrangflächen aus dem Regionalplan Münsterland (festgestellt 17.04.2025). Nur hier dürfen neue WEA privilegiert errichtet werden — auch in LSG. Die aktuell geplanten 18 Anlagen wurden vor der Feststellung beantragt und genießen Bestandsschutz.</p>
+                                <span class="map-info__tag map-info__tag--yes">WEA zulässig</span>
+                                <span class="map-info__tag map-info__tag--plan">Regionalplan 2025</span>
+                            </div>
                         <div class="map-info__footer">
                                 <div class="map-info__footer-grid">
                                     <div class="map-info__footer-item">
@@ -1659,6 +1682,47 @@
             onEachFeature: onEachLSG
         }).addTo(map);
 
+        // === Windenergiebereiche (Regionalplan Münsterland 2025) ===
+        // Quelle: Bezirksregierung Münster, Geodaten Regionalplan (EPSG:25832 → WGS84)
+        const webData = {"type":"FeatureCollection","features":[{"type":"Feature","properties":{"name":"Nottuln 1","size_ha":20},"geometry":{"type":"Polygon","coordinates":[[[7.42799,51.92919],[7.42852,51.92942],[7.42913,51.9295],[7.42966,51.92939],[7.43012,51.92921],[7.43019,51.92907],[7.43028,51.92894],[7.43037,51.9288],[7.43027,51.92844],[7.42979,51.92739],[7.42971,51.92723],[7.42963,51.92707],[7.42957,51.92691],[7.42951,51.92675],[7.42947,51.92658],[7.42945,51.92648],[7.42941,51.92632],[7.42916,51.9255],[7.42885,51.92512],[7.42852,51.92494],[7.42808,51.92473],[7.42784,51.92467],[7.4276,51.92461],[7.42737,51.92455],[7.42713,51.92448],[7.42691,51.9244],[7.42669,51.92432],[7.42647,51.92424],[7.42626,51.92415],[7.42613,51.92409],[7.426,51.92402],[7.42566,51.92385],[7.42553,51.92378],[7.4251,51.92351],[7.42471,51.92322],[7.42437,51.9229],[7.42408,51.92257],[7.42384,51.92222],[7.42348,51.92198],[7.42312,51.92191],[7.42263,51.92198],[7.42243,51.92208],[7.42222,51.92218],[7.42201,51.92228],[7.42179,51.92237],[7.42164,51.92242],[7.42157,51.92245],[7.42126,51.92256],[7.42111,51.92261],[7.42055,51.92277],[7.42018,51.92285],[7.41983,51.92315],[7.41982,51.9234],[7.41997,51.92357],[7.42056,51.92377],[7.42082,51.92379],[7.42108,51.92382],[7.42134,51.92385],[7.4216,51.92389],[7.42185,51.92394],[7.4221,51.92399],[7.42234,51.92405],[7.42259,51.92412],[7.42276,51.92417],[7.42321,51.92431],[7.42373,51.92452],[7.42422,51.92475],[7.42467,51.92501],[7.42507,51.92529],[7.42544,51.92559],[7.42575,51.92592],[7.42602,51.92626],[7.42623,51.92662],[7.42639,51.92698],[7.42649,51.92736],[7.42671,51.92803],[7.42676,51.92842],[7.42691,51.92868],[7.4274,51.92898],[7.42799,51.92919]]]}},{"type":"Feature","properties":{"name":"Nottuln 3","size_ha":32},"geometry":{"type":"Polygon","coordinates":[[[7.37367,51.89346],[7.37325,51.89336],[7.37281,51.89345],[7.37223,51.89375],[7.37176,51.89385],[7.37123,51.89366],[7.36976,51.89282],[7.36891,51.89326],[7.36867,51.89328],[7.36851,51.89328],[7.36819,51.89313],[7.36743,51.89347],[7.36741,51.89348],[7.3673,51.8935],[7.36617,51.89411],[7.36561,51.89446],[7.36561,51.89462],[7.36584,51.89478],[7.36659,51.89531],[7.36659,51.89558],[7.36656,51.89613],[7.36659,51.89637],[7.36634,51.89824],[7.36582,51.89854],[7.36575,51.89867],[7.36586,51.89887],[7.36629,51.89921],[7.36652,51.89928],[7.36696,51.89914],[7.36811,51.89856],[7.36845,51.89847],[7.36895,51.89836],[7.37152,51.89814],[7.37208,51.89803],[7.37244,51.89794],[7.37307,51.89759],[7.37338,51.89744],[7.37345,51.89737],[7.37591,51.89599],[7.3763,51.89565],[7.37626,51.89533],[7.37367,51.89346]]]}},{"type":"Feature","properties":{"name":"Nottuln 2","size_ha":9},"geometry":{"type":"Polygon","coordinates":[[[7.28566,51.94751],[7.28615,51.94698],[7.28622,51.94698],[7.28663,51.94696],[7.28696,51.9469],[7.28713,51.9468],[7.28732,51.94656],[7.28708,51.94635],[7.28696,51.94611],[7.28793,51.94505],[7.28753,51.94438],[7.28698,51.94417],[7.28636,51.94394],[7.28515,51.94399],[7.2839,51.94518],[7.2823,51.94686],[7.28279,51.94706],[7.28296,51.94711],[7.2832,51.94715],[7.28428,51.94738],[7.28522,51.94763],[7.2854,51.94768],[7.28566,51.94751]]]}}]};
+
+        function webStyle(feature) {
+            return {
+                fillColor: '#0ea5e9',
+                fillOpacity: 0.2,
+                color: '#0284c7',
+                weight: 2.5,
+                opacity: 0.9,
+                dashArray: '8, 4'
+            };
+        }
+
+        function onEachWEB(feature, layer) {
+            const p = feature.properties;
+            layer.bindPopup(
+                '<strong style="color: #0284c7;">Windenergiebereich (Regionalplan)</strong><br>' +
+                p.name + ' — ' + p.size_ha + ' ha' +
+                '<br><span style="font-size: 0.85em; color: var(--color-text-muted);">Festgestellt 17.04.2025. Neue WEA nur noch hier privilegiert.</span>'
+            );
+            // Label im Polygon-Zentrum
+            const bounds = layer.getBounds();
+            const center = bounds.getCenter();
+            L.marker(center, {
+                icon: L.divIcon({
+                    className: 'web-label',
+                    html: '<span>' + p.name + ' (' + p.size_ha + ' ha)</span>',
+                    iconSize: null
+                }),
+                interactive: false
+            }).addTo(webLayer);
+        }
+
+        const webLayer = L.layerGroup();
+        L.geoJson(webData, {
+            style: webStyle,
+            onEachFeature: onEachWEB
+        }).addTo(webLayer);
+
         // === Abstandslinien zu Schutzgebieten (dynamisch berechnet) ===
         const distanceLines = L.layerGroup();
 
@@ -1737,6 +1801,7 @@
             "FFH-Gebiete (5)": ffhLayer,
             "Naturschutzgebiete (42)": nsgLayer,
             "Landschaftsschutzgebiete (25)": lsgLayer,
+            "Windenergiebereiche (3)": webLayer,
             "Abstände zu FFH/NSG": distanceLines,
             "Bebauungspläne (223)": bPlanLayer,
             "Flächennutzungsplan (12)": fnpLayer,
