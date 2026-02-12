@@ -207,7 +207,7 @@
         .mobile-nav-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
         .mobile-nav-toggle.active span:nth-child(2) { opacity: 0; }
         .mobile-nav-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
-        @media (max-width: 640px) {
+        @media (max-width: 850px) {
             .mobile-nav-toggle { display: block; }
             .header__nav { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--color-white); flex-direction: column; padding: var(--space-md); border-bottom: 1px solid var(--color-border); box-shadow: 0 8px 24px rgba(0,0,0,0.1); gap: var(--space-sm); z-index: 100; }
             .header__nav.active { display: flex; }
@@ -288,6 +288,15 @@
         }
         @media (max-width: 640px) {
             #map { height: 350px; }
+            .leaflet-control-layers-toggle {
+                width: 40px;
+                height: 40px;
+                background-size: 24px 24px;
+            }
+            .leaflet-control-layers-expanded {
+                max-height: 280px;
+                overflow-y: auto;
+            }
         }
         .map-legend {
             display: flex;
@@ -697,6 +706,7 @@
                 <a href="/anlagen/">Anlagen</a>
                 <a href="/petition/">Petition</a>
                 <a href="/faq/">FAQ</a>
+                <a href="/gesetze/">Gesetze</a>
                 <a href="/quellen/">Quellen</a>
             </nav>
         </div>
@@ -1342,6 +1352,7 @@
                         <li><a href="/">Startseite</a></li>
                         <li><a href="/anlagen/">Anlagen</a></li>
                         <li><a href="/faq/">Häufige Fragen</a></li>
+                        <li><a href="/gesetze/">Gesetze & Verfahren</a></li>
                         <li><a href="/quellen/">Quellenverzeichnis</a></li>
                     </ul>
                 </div>
@@ -1808,7 +1819,8 @@
             "Außenbereichssatzung (1)": saLayer,
             "Örtl. Bauvorschrift (2)": oebLayer
         };
-        L.control.layers(null, overlays, { collapsed: false, position: 'topright' }).addTo(map);
+        var isMobile = window.matchMedia('(max-width: 640px)').matches;
+        L.control.layers(null, overlays, { collapsed: isMobile, position: 'topright' }).addTo(map);
 
         // Entfernungsmessung (Lineal-Tool)
         const ruler = L.control.ruler({

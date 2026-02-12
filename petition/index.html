@@ -245,7 +245,7 @@
         .mobile-nav-toggle.active span:nth-child(2) { opacity: 0; }
         .mobile-nav-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
 
-        @media (max-width: 640px) {
+        @media (max-width: 850px) {
             .mobile-nav-toggle { display: block; }
             .header__nav {
                 display: none;
@@ -714,40 +714,49 @@
            STICKY SIDEBAR NAVIGATION
            ======================================== */
 
-        .page-wrapper {
-            display: flex;
-            gap: var(--space-lg);
-            max-width: calc(var(--max-width-content) + 280px);
-            margin: 0 auto;
-            padding: 0 var(--space-md);
-        }
-
-        .page-wrapper .container--narrow {
-            padding: 0;
-            flex: 1;
-            min-width: 0;
-        }
-
-        /* Sidebar */
+        /* Sidebar (Fixed) */
         .sidebar-nav {
-            width: 220px;
-            flex-shrink: 0;
-            position: relative;
+            position: fixed;
+            left: max(calc((100vw - var(--max-width)) / 2 - 200px), 20px);
+            top: 50%;
+            transform: translateY(-50%);
+            width: 180px;
+            z-index: 50;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            background: var(--color-bg);
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius);
+            padding: var(--space-sm);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
         }
 
-        .sidebar-nav__sticky {
-            position: sticky;
-            top: calc(60px + var(--space-md));
-            padding: var(--space-md) 0;
+        .sidebar-nav.visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        @media (max-width: 1400px) {
+            .sidebar-nav {
+                left: 12px;
+                width: 160px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .sidebar-nav {
+                display: none;
+            }
         }
 
         .sidebar-nav__label {
-            font-size: 0.6875rem;
+            font-size: 0.625rem;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.1em;
+            letter-spacing: 0.12em;
             color: var(--color-text-muted);
-            margin-bottom: var(--space-sm);
+            margin-bottom: var(--space-xs);
             padding-left: var(--space-sm);
         }
 
@@ -776,13 +785,13 @@
 
         .sidebar-nav__link {
             display: flex;
-            align-items: flex-start;
-            gap: var(--space-xs);
-            padding: var(--space-xs) var(--space-sm);
+            align-items: center;
+            gap: 8px;
+            padding: 6px 12px;
             color: var(--color-text-muted);
             text-decoration: none;
-            font-size: 0.875rem;
-            line-height: 1.4;
+            font-size: 0.8125rem;
+            line-height: 1.3;
             border-radius: 0 var(--border-radius) var(--border-radius) 0;
             transition: all 0.2s ease;
             position: relative;
@@ -813,15 +822,15 @@
         }
 
         .sidebar-nav__link.active::before {
-            height: 24px;
+            height: 20px;
         }
 
         .sidebar-nav__number {
             font-family: var(--font-display);
             font-size: 0.75rem;
             color: var(--color-text-muted);
-            min-width: 1.25rem;
-            opacity: 0.7;
+            min-width: 16px;
+            opacity: 0.6;
         }
 
         .sidebar-nav__link.active .sidebar-nav__number {
@@ -833,45 +842,30 @@
             flex: 1;
         }
 
-        /* Progress indicator at bottom */
         .sidebar-nav__progress {
-            margin-top: var(--space-md);
-            padding: var(--space-sm);
-            background: var(--color-bg);
-            border-radius: var(--border-radius);
-            font-size: 0.75rem;
+            margin-top: var(--space-sm);
+            padding-top: var(--space-sm);
+            border-top: 1px solid var(--color-border);
+            font-size: 0.6875rem;
             color: var(--color-text-muted);
         }
 
         .sidebar-nav__progress-bar {
-            height: 3px;
+            height: 2px;
             background: var(--color-border);
-            border-radius: 2px;
-            margin-top: var(--space-xs);
+            border-radius: 1px;
+            margin-top: 4px;
             overflow: hidden;
         }
 
         .sidebar-nav__progress-fill {
             height: 100%;
             background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
-            border-radius: 2px;
+            border-radius: 1px;
             width: 0%;
             transition: width 0.3s ease;
         }
 
-        /* Hide on smaller screens */
-        @media (max-width: 1024px) {
-            .sidebar-nav {
-                display: none;
-            }
-            .page-wrapper {
-                display: block;
-                padding: 0;
-            }
-            .page-wrapper .container--narrow {
-                padding: 0 var(--space-md);
-            }
-        }
 
         /* ========================================
            MOBILE FLOATING NAV
@@ -887,12 +881,20 @@
             background: var(--color-white);
             border: 1px solid var(--color-border);
             border-radius: 2rem;
-            padding: var(--space-xs);
+            padding: 6px;
             box-shadow: 0 4px 20px rgba(0,0,0,0.15), 0 0 0 1px rgba(0,0,0,0.05);
             max-width: calc(100% - var(--space-lg));
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease, transform 0.3s ease;
         }
 
-        @media (max-width: 1024px) {
+        .mobile-section-nav.visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        @media (max-width: 1200px) {
             .mobile-section-nav {
                 display: flex;
                 align-items: center;
@@ -944,33 +946,6 @@
             text-overflow: ellipsis;
         }
 
-        /* Hide mobile nav when at very top */
-        .mobile-section-nav.hidden {
-            opacity: 0;
-            pointer-events: none;
-            transform: translateX(-50%) translateY(20px);
-        }
-
-        .mobile-section-nav {
-            transition: opacity 0.3s ease, transform 0.3s ease;
-        }
-
-        /* Remove old inline navigation styles */
-        .old-nav-inline {
-            display: none;
-        }
-
-        @media (min-width: 1025px) {
-            .old-nav-inline {
-                display: none;
-            }
-        }
-
-        @media (max-width: 1024px) {
-            .old-nav-inline {
-                display: block;
-            }
-        }
     </style>
 </head>
 <body>
@@ -995,6 +970,7 @@
                 <a href="/anlagen/">Anlagen</a>
                 <a href="/petition/">Petition</a>
                 <a href="/faq/">FAQ</a>
+                <a href="/gesetze/">Gesetze</a>
                 <a href="/quellen/">Quellen</a>
             </nav>
         </div>
@@ -1011,48 +987,7 @@
 
     <!-- Main Content -->
     <main class="main-content">
-        <div class="page-wrapper">
-
-            <!-- Sidebar Navigation (Desktop) -->
-            <aside class="sidebar-nav" aria-label="Seitennavigation">
-                <div class="sidebar-nav__sticky">
-                    <div class="sidebar-nav__label">Inhalt</div>
-                    <ul class="sidebar-nav__list">
-                        <li class="sidebar-nav__item">
-                            <a href="#petitionstext" class="sidebar-nav__link" data-section="petitionstext">
-                                <span class="sidebar-nav__number">1</span>
-                                <span class="sidebar-nav__text">Petitionstext</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-nav__item">
-                            <a href="#news" class="sidebar-nav__link" data-section="news">
-                                <span class="sidebar-nav__number">2</span>
-                                <span class="sidebar-nav__text">News-Meldungen</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-nav__item">
-                            <a href="#kommentare" class="sidebar-nav__link" data-section="kommentare">
-                                <span class="sidebar-nav__number">3</span>
-                                <span class="sidebar-nav__text">Kommentare</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-nav__item">
-                            <a href="#argumente" class="sidebar-nav__link" data-section="argumente">
-                                <span class="sidebar-nav__number">4</span>
-                                <span class="sidebar-nav__text">Pro & Contra</span>
-                            </a>
-                        </li>
-                    </ul>
-                    <div class="sidebar-nav__progress">
-                        <span class="sidebar-nav__progress-text">Lesefortschritt</span>
-                        <div class="sidebar-nav__progress-bar">
-                            <div class="sidebar-nav__progress-fill"></div>
-                        </div>
-                    </div>
-                </div>
-            </aside>
-
-            <div class="container--narrow">
+        <div class="container container--narrow">
 
             <!-- Stats -->
             <div class="stats-grid">
@@ -1069,17 +1004,6 @@
                     <div class="stat-card__label">analysierte Kommentare</div>
                 </div>
             </div>
-
-            <!-- Navigation (Mobile only - shown inline) -->
-            <nav class="old-nav-inline" style="background: var(--color-white); border: 1px solid var(--color-border); border-radius: var(--border-radius); padding: var(--space-md); margin-bottom: var(--space-xl);">
-                <strong style="display: block; margin-bottom: var(--space-sm); color: var(--color-primary-dark);">Auf dieser Seite:</strong>
-                <ol style="margin: 0; padding-left: var(--space-md);">
-                    <li><a href="#petitionstext">Faktencheck: Der Petitionstext</a></li>
-                    <li><a href="#news">Faktencheck: Die News-Meldungen</a></li>
-                    <li><a href="#kommentare">Was die Unterzeichner schreiben</a></li>
-                    <li><a href="#argumente">Pro & Contra Argumente</a></li>
-                </ol>
-            </nav>
 
             <!-- ============================================ -->
             <!-- TEIL 1: FAKTENCHECK PETITIONSTEXT -->
@@ -1707,12 +1631,47 @@
                 <p style="margin-bottom: 0;"><a href="mailto:kontakt@windkraft-nottuln.de" style="font-weight: 600;">kontakt@windkraft-nottuln.de</a></p>
             </div>
 
-            </div><!-- /.container--narrow -->
-        </div><!-- /.page-wrapper -->
+        </div>
     </main>
 
+    <!-- Sidebar Navigation (Desktop, fixed) -->
+    <aside class="sidebar-nav" aria-label="Seitennavigation">
+        <div class="sidebar-nav__label">Inhalt</div>
+        <ul class="sidebar-nav__list">
+            <li class="sidebar-nav__item">
+                <a href="#petitionstext" class="sidebar-nav__link" data-section="petitionstext">
+                    <span class="sidebar-nav__number">1</span>
+                    <span class="sidebar-nav__text">Petitionstext</span>
+                </a>
+            </li>
+            <li class="sidebar-nav__item">
+                <a href="#news" class="sidebar-nav__link" data-section="news">
+                    <span class="sidebar-nav__number">2</span>
+                    <span class="sidebar-nav__text">News-Meldungen</span>
+                </a>
+            </li>
+            <li class="sidebar-nav__item">
+                <a href="#kommentare" class="sidebar-nav__link" data-section="kommentare">
+                    <span class="sidebar-nav__number">3</span>
+                    <span class="sidebar-nav__text">Kommentare</span>
+                </a>
+            </li>
+            <li class="sidebar-nav__item">
+                <a href="#argumente" class="sidebar-nav__link" data-section="argumente">
+                    <span class="sidebar-nav__number">4</span>
+                    <span class="sidebar-nav__text">Pro & Contra</span>
+                </a>
+            </li>
+        </ul>
+        <div class="sidebar-nav__progress">Lesefortschritt
+            <div class="sidebar-nav__progress-bar">
+                <div class="sidebar-nav__progress-fill"></div>
+            </div>
+        </div>
+    </aside>
+
     <!-- Mobile Section Navigation -->
-    <nav class="mobile-section-nav hidden" aria-label="Kapitelnavigation">
+    <nav class="mobile-section-nav" aria-label="Kapitelnavigation">
         <a href="#petitionstext" class="mobile-section-nav__btn" data-section="petitionstext" title="Teil 1: Petitionstext">1</a>
         <a href="#news" class="mobile-section-nav__btn" data-section="news" title="Teil 2: News">2</a>
         <a href="#kommentare" class="mobile-section-nav__btn" data-section="kommentare" title="Teil 3: Kommentare">3</a>
@@ -1732,31 +1691,29 @@
             'argumente': 'Pro & Contra'
         };
 
-        // Get all nav links
+        const sidebarNav = document.querySelector('.sidebar-nav');
         const sidebarLinks = document.querySelectorAll('.sidebar-nav__link');
         const mobileButtons = document.querySelectorAll('.mobile-section-nav__btn');
         const mobileNav = document.querySelector('.mobile-section-nav');
         const mobileLabel = document.querySelector('.mobile-section-nav__label');
         const progressFill = document.querySelector('.sidebar-nav__progress-fill');
 
-        // Scroll spy
         function updateActiveSection() {
-            const scrollPos = window.scrollY + 120;
+            const scrollPos = window.scrollY + 150;
             const docHeight = document.documentElement.scrollHeight - window.innerHeight;
             const scrollPercent = Math.min((window.scrollY / docHeight) * 100, 100);
 
-            // Update progress bar
             if (progressFill) {
                 progressFill.style.width = scrollPercent + '%';
             }
 
-            // Show/hide mobile nav based on scroll position
+            // Show/hide navigation based on scroll
+            const showNav = window.scrollY > 500;
+            if (sidebarNav) {
+                sidebarNav.classList.toggle('visible', showNav);
+            }
             if (mobileNav) {
-                if (window.scrollY > 400) {
-                    mobileNav.classList.remove('hidden');
-                } else {
-                    mobileNav.classList.add('hidden');
-                }
+                mobileNav.classList.toggle('visible', showNav);
             }
 
             // Find active section
@@ -1768,25 +1725,14 @@
                 }
             }
 
-            // Update sidebar links
             sidebarLinks.forEach(link => {
-                if (link.dataset.section === activeSection) {
-                    link.classList.add('active');
-                } else {
-                    link.classList.remove('active');
-                }
+                link.classList.toggle('active', link.dataset.section === activeSection);
             });
 
-            // Update mobile buttons
             mobileButtons.forEach(btn => {
-                if (btn.dataset.section === activeSection) {
-                    btn.classList.add('active');
-                } else {
-                    btn.classList.remove('active');
-                }
+                btn.classList.toggle('active', btn.dataset.section === activeSection);
             });
 
-            // Update mobile label
             if (mobileLabel) {
                 mobileLabel.textContent = sectionNames[activeSection];
             }
@@ -1848,6 +1794,7 @@
                     <ul>
                         <li><a href="/#fakten">Faktenchecks</a></li>
                         <li><a href="/faq/">Häufige Fragen</a></li>
+                        <li><a href="/gesetze/">Gesetze & Verfahren</a></li>
                         <li><a href="/quellen/">Quellenverzeichnis</a></li>
                     </ul>
                 </div>
