@@ -314,34 +314,6 @@
             animation: fadeInUp 0.6s ease-out 0.2s backwards;
         }
 
-        .hero__cta {
-            display: inline-flex;
-            align-items: center;
-            gap: var(--space-xs);
-            background: var(--color-primary);
-            color: var(--color-white);
-            padding: 0.875rem 1.75rem;
-            border-radius: var(--border-radius);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            animation: fadeInUp 0.6s ease-out 0.3s backwards;
-        }
-
-        .hero__cta:hover {
-            background: var(--color-primary-dark);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(26, 95, 106, 0.25);
-        }
-
-        .hero__cta svg {
-            width: 18px;
-            height: 18px;
-            transition: transform 0.2s ease;
-        }
-
-        .hero__cta:hover svg { transform: translateX(4px); }
 
         @keyframes fadeInUp {
             from { opacity: 0; transform: translateY(20px); }
@@ -2055,6 +2027,12 @@
                     <span class="sidebar-nav__text">Technik</span>
                 </a>
             </li>
+            <li class="sidebar-nav__item">
+                <a href="#ressourcen" class="sidebar-nav__link" data-section="ressourcen">
+                    <svg class="sidebar-nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 21l-6-6m2-5a7 7 0 1 1-14 0 7 7 0 0 1 14 0z"/></svg>
+                    <span class="sidebar-nav__text">Recherchieren</span>
+                </a>
+            </li>
         </ul>
         <div class="sidebar-nav__progress">
             <span>Lesefortschritt</span>
@@ -2071,12 +2049,6 @@
             <div class="hero__badge">Von einem Nottulner für Nottulner</div>
             <h1>Windkraft in Nottuln – Die Fakten</h1>
             <p class="hero__subtitle">Die Plakate an den Ortseingängen haben Fragen aufgeworfen. Also habe ich recherchiert – und möchte teilen, was ich über Windenergie im Kreis Coesfeld herausgefunden habe.</p>
-            <a href="#fakten" class="hero__cta">
-                Zu den Fakten
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M5 12h14M12 5l7 7-7 7"/>
-                </svg>
-            </a>
         </div>
         <div class="scroll-indicator">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -2089,10 +2061,11 @@
     <nav class="quick-nav">
         <span class="quick-nav__label">Direkt zu:</span>
         <a href="#gesundheit" class="quick-nav__pill">Gesundheit</a>
-        <a href="#natur" class="quick-nav__pill">Natur</a>
-        <a href="#klima" class="quick-nav__pill">Klima</a>
+        <a href="#natur" class="quick-nav__pill">Artenschutz</a>
+        <a href="#klima" class="quick-nav__pill">Klimaschutz</a>
+        <a href="#umwelt" class="quick-nav__pill">Umwelt</a>
         <a href="#technik" class="quick-nav__pill">Technik</a>
-        <a href="#ressourcen" class="quick-nav__pill">Ressourcen</a>
+        <a href="#ressourcen" class="quick-nav__pill">Recherchieren</a>
     </nav>
 
     <!-- Petition Analysis Teaser -->
@@ -3682,6 +3655,9 @@
         <a href="#technik" class="mobile-section-nav__btn" data-section="technik" title="Technik">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9c.26.604.852.997 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
         </a>
+        <a href="#ressourcen" class="mobile-section-nav__btn" data-section="ressourcen" title="Recherchieren">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 21l-6-6m2-5a7 7 0 1 1-14 0 7 7 0 0 1 14 0z"/></svg>
+        </a>
         <div class="mobile-section-nav__divider"></div>
         <span class="mobile-section-nav__label"></span>
     </nav>
@@ -3689,13 +3665,14 @@
     <!-- Scroll Spy & Navigation Script -->
     <script>
     (function() {
-        const sections = ['gesundheit', 'natur', 'klima', 'umwelt', 'technik'];
+        const sections = ['gesundheit', 'natur', 'klima', 'umwelt', 'technik', 'ressourcen'];
         const sectionNames = {
             'gesundheit': 'Gesundheit',
             'natur': 'Artenschutz',
             'klima': 'Klimaschutz',
             'umwelt': 'Umwelt',
-            'technik': 'Technik'
+            'technik': 'Technik',
+            'ressourcen': 'Recherchieren'
         };
 
         const sidebarNav = document.querySelector('.sidebar-nav');
