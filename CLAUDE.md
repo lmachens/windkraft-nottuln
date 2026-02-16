@@ -161,11 +161,16 @@ Alle folgenden Fakten wurden gegen Originalquellen geprüft:
 - Finanzierung über **Netzentgelte** (Stromrechnung), NICHT über Steuern/Bundeshaushalt
 - Trend: 4,2 Mrd. (2022) → 3,3 Mrd. (2023) → 2,8 Mrd. (2024)
 - 96,5% des EE-Stroms kommen beim Verbraucher an (3,5% abgeregelt = 9,4 TWh)
-- Quelle: https://www.smard.de/page/home/topic-article/5892/213288
+- SAIDI 2024: **11,7 Minuten** durchschnittliche Stromunterbrechung/Jahr (Vorjahr: 12,8 Min., 10-Jahres-Schnitt: 12,7 Min.)
+- BNetzA: "Deutsches Stromnetz eines der zuverlässigsten im europäischen Vergleich", "keine negativen Tendenzen" durch EE-Ausbau
+- Quelle SMARD: https://www.smard.de/page/home/topic-article/5892/213288
+- Quelle SAIDI: https://www.bundesnetzagentur.de/SharedDocs/Pressemitteilungen/DE/2025/20251009_Saidi_Strom.html
 
 ## Internationaler Vergleich EE (verifiziert Februar 2026)
 - EE-Anteil Bruttostromverbrauch 2024 (Eurostat): DK 79,7%, PT 65,8%, ES 59,7%, DE 54,1%, UK 50,8%, EU-Schnitt 47,5%
 - Destatis (59,4%) misst Bruttostromerzeugung, Eurostat (54,1%) misst Bruttostromverbrauch - beides korrekt, andere Methode
+- EE am Endenergieverbrauch (Strom + Wärme + Verkehr): ~22% (2024). Strom = 25% des Endenergieverbrauchs
+- EE-Strom stieg von 46% (2020) auf 59% (2024) = +13 Prozentpunkte. Wärme stagniert bei 18%, Verkehr bei 7%
 - 16/19 EU-Länder haben Windausbauziele erhöht (Ember European Electricity Review 2025)
 - EU-Richtlinie 2023/2413 (RED III): bindendes Ziel 42,5% EE bis 2030
 - Global: 585 GW neue EE-Kapazität 2024 = 92,5% aller neuen Kapazität (IRENA)
