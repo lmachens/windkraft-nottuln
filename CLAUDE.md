@@ -154,6 +154,26 @@ Alle folgenden Fakten wurden gegen Originalquellen geprüft:
 - Klimaschäden Prognose 2022-2050: 280-900 Mrd € (IÖW/Prognos/GWS)
 - Ahrtal-Flut 2021: >40 Mrd € Gesamtschaden, 180+ Tote (bpb)
 
+## Netzkosten & Redispatch (verifiziert Februar 2026)
+- Gesamtkosten Netzengpassmanagement 2024: **2,8 Mrd. €** (SMARD Jahresbericht)
+- Davon EE-Abregelung: **554 Mio. € (20%)**, Rest: konventionelle Kraftwerke (80%)
+- Pro Kopf: ~7 €/Jahr für EE-Entschädigungen (554 Mio. / 83,5 Mio. Einwohner)
+- Finanzierung über **Netzentgelte** (Stromrechnung), NICHT über Steuern/Bundeshaushalt
+- Trend: 4,2 Mrd. (2022) → 3,3 Mrd. (2023) → 2,8 Mrd. (2024)
+- 96,5% des EE-Stroms kommen beim Verbraucher an (3,5% abgeregelt = 9,4 TWh)
+- Quelle: https://www.smard.de/page/home/topic-article/5892/213288
+
+## Internationaler Vergleich EE (verifiziert Februar 2026)
+- EE-Anteil Bruttostromverbrauch 2024 (Eurostat): DK 79,7%, PT 65,8%, ES 59,7%, DE 54,1%, UK 50,8%, EU-Schnitt 47,5%
+- Destatis (59,4%) misst Bruttostromerzeugung, Eurostat (54,1%) misst Bruttostromverbrauch - beides korrekt, andere Methode
+- 16/19 EU-Länder haben Windausbauziele erhöht (Ember European Electricity Review 2025)
+- EU-Richtlinie 2023/2413 (RED III): bindendes Ziel 42,5% EE bis 2030
+- Global: 585 GW neue EE-Kapazität 2024 = 92,5% aller neuen Kapazität (IRENA)
+- China 2024: 277 GW Solar + 80 GW Wind, Deutschland: ~19 GW gesamt
+- Eurostat: https://ec.europa.eu/eurostat/databrowser/view/nrg_ind_ren/default/table?lang=en
+- IRENA: https://www.irena.org/Publications/2025/Mar/Renewable-capacity-statistics-2025
+- Ember: https://ember-energy.org/latest-insights/european-electricity-review-2025/
+
 ## NRW-spezifische Fakten (verifiziert Januar 2026)
 - NRW 1000m-Mindestabstand: **ABGESCHAFFT seit August 2023**
 - Aktuell gelten nur: Immissionsschutz (TA Lärm, Schattenwurf) + optisch bedrängende Wirkung (2-3× Anlagenhöhe)
