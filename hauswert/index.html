@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="canonical" href="https://windkraft-nottuln.de/hauswert/">
+    <title>Immobilienwerte und Windenergie - Was bedeutet das für Nottuln?</title>
+    <meta name="description" content="RWI-Studie, Zensus-Daten und interaktive Karte: Welche Gebäude in Stockum sind betroffen? Gebäudealter und Entfernung zu den geplanten WEA im Überblick.">
+    <meta name="keywords" content="Immobilienwerte Windkraft, Hauswert Windrad, RWI Studie Windenergie, Nottuln Stockum Gebäudealter">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://windkraft-nottuln.de/hauswert/">
+    <meta property="og:title" content="Immobilienwerte und Windenergie - Was bedeutet das für Nottuln?">
+    <meta property="og:description" content="Interaktive Karte mit Zensus 2022 Daten: Gebäudealter und Entfernung zu den geplanten WEA in Stockum.">
+    <meta property="og:locale" content="de_DE">
+    <meta property="og:site_name" content="Windkraft Nottuln">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "WebPage",
+                "name": "Immobilienwerte und Windenergie - Nottuln",
+                "description": "Analyse der RWI-Studie im Kontext der geplanten Windenergieanlagen bei Stockum, Nottuln. Interaktive Karte mit Zensus 2022 Gebäudealter-Daten.",
+                "url": "https://windkraft-nottuln.de/hauswert/",
+                "author": { "@type": "Person", "name": "Leon Machens" },
+                "datePublished": "2026-02-17"
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "Stimmt es, dass Hauswerte um 20% oder mehr sinken?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Die RWI-Studie (2019) zeigt durchschnittlich 7% Wertverlust innerhalb von 1 km, eine aktualisierte RWI-Studie (2024) findet 1,8% in 1-2 km. Bis zu 23% wurden nur bei Altbauten vor 1950 im ländlichen Raum gemessen. Laut Zensus 2022 weist keine Gitterzelle im 1-km-Radius der geplanten WEA bei Stockum Gebäude mit Baujahr vor 1950 aus. Allerdings sind 45 Zellen komplett unterdrückt (§16 BStatG), dort stehen Einzelhöfe mit unbekanntem Baujahr."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Ist meine Altersvorsorge durch Windräder gefährdet?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Die Auswirkung hängt von Entfernung, Gebäudealter und Lage ab. Die RWI-Studie von 2019 findet 7% innerhalb von 1 km, eine aktualisierte RWI-Studie von 2024 findet 1,8% in 1-2 km. Ab 3 km (RWI 2024) bzw. 8-9 km (RWI 2019) ist kein Effekt messbar. Eine US-Studie (PNAS 2024) zeigt zudem, dass sich Preise nach wenigen Jahren erholen und bei neueren Anlagen (ab 2017) kein Effekt mehr messbar ist."
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
+
+    <!-- Privacy-friendly analytics by Plausible -->
+    <script async src="https://metrics.th.gl/js/pa-tT1oTBaakBaf8SIoAGQdW.js"></script>
+    <script>window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};plausible.init()</script>
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --color-primary: #1a5f6a;
+            --color-primary-dark: #134249;
+            --color-primary-light: #e8f4f5;
+            --color-accent: #7da87b;
+            --color-accent-light: #e8f0e7;
+            --color-text: #2d3436;
+            --color-text-muted: #636e72;
+            --color-bg: #fafbfc;
+            --color-white: #ffffff;
+            --color-border: #dfe6e9;
+            --color-warning: #c9a227;
+            --color-warning-light: #fef9e7;
+            --color-success: #27ae60;
+            --color-success-light: #e8f8ef;
+            --color-error: #c0392b;
+            --color-error-light: #fdeaea;
+
+            --font-display: 'DM Serif Display', Georgia, serif;
+            --font-body: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
+
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 1.5rem;
+            --space-lg: 2.5rem;
+            --space-xl: 4rem;
+
+            --max-width: 1200px;
+            --max-width-content: 800px;
+            --border-radius: 8px;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --color-primary: #5bc0cd;
+                --color-primary-dark: #8ecfd8;
+                --color-primary-light: #1a2e30;
+                --color-accent: #9bc49a;
+                --color-accent-light: #1e2a1e;
+                --color-text: #e8eaed;
+                --color-text-muted: #9aa0a6;
+                --color-bg: #121518;
+                --color-white: #1e2225;
+                --color-border: #3c4043;
+                --color-warning: #f5d050;
+                --color-warning-light: #2a2510;
+                --color-success: #4ade80;
+                --color-success-light: #1a2e1e;
+                --color-error: #f87171;
+                --color-error-light: #2e1a1a;
+            }
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :focus-visible { outline: 2px solid var(--color-primary); outline-offset: 2px; }
+        html { scroll-behavior: smooth; overflow-x: hidden; }
+
+        body {
+            font-family: var(--font-body);
+            font-size: 1.0625rem;
+            line-height: 1.7;
+            color: var(--color-text);
+            background-color: var(--color-bg);
+        }
+
+        .container {
+            width: 100%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 var(--space-md);
+        }
+
+        .content-container {
+            max-width: var(--max-width-content);
+            margin: 0 auto;
+        }
+
+        h1, h2, h3 {
+            font-family: var(--font-display);
+            font-weight: 400;
+            line-height: 1.2;
+            color: var(--color-primary-dark);
+        }
+
+        h1 { font-size: clamp(2rem, 5vw, 2.5rem); margin-bottom: var(--space-sm); }
+        h2 { font-size: 1.5rem; margin: var(--space-lg) 0 var(--space-sm); }
+        h3 { font-size: 1.125rem; margin: var(--space-md) 0 var(--space-xs); color: var(--color-primary); }
+        p { margin-bottom: var(--space-sm); }
+        a { color: var(--color-primary); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        /* Header */
+        .header {
+            background: var(--color-white);
+            border-bottom: 1px solid var(--color-border);
+            padding: var(--space-sm) 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .header__inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 var(--space-md);
+        }
+        .header__logo {
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+            text-decoration: none;
+            color: var(--color-primary-dark);
+        }
+        .header__logo-icon {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .header__logo-icon svg { width: 18px; height: 18px; fill: white; }
+        .header__logo-text { font-family: var(--font-display); font-size: 1.25rem; }
+        .header__nav { display: flex; gap: var(--space-md); }
+        .header__nav a { color: var(--color-text-muted); font-weight: 500; font-size: 0.9375rem; }
+        .header__nav a:hover { color: var(--color-primary); text-decoration: none; }
+        .header__nav a.active { color: var(--color-primary); }
+        .mobile-nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: var(--space-xs); }
+        .mobile-nav-toggle span { display: block; width: 24px; height: 2px; background: var(--color-primary-dark); margin: 5px 0; transition: all 0.3s ease; border-radius: 2px; }
+        .mobile-nav-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .mobile-nav-toggle.active span:nth-child(2) { opacity: 0; }
+        .mobile-nav-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+        @media (max-width: 850px) {
+            .mobile-nav-toggle { display: block; }
+            .header__nav { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--color-white); flex-direction: column; padding: var(--space-md); border-bottom: 1px solid var(--color-border); box-shadow: 0 8px 24px rgba(0,0,0,0.1); gap: var(--space-sm); z-index: 100; }
+            .header__nav.active { display: flex; }
+            .header__nav a { padding: var(--space-xs) 0; border-bottom: 1px solid var(--color-border); }
+            .header__nav a:last-child { border-bottom: none; }
+            .header { position: relative; }
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-bg) 100%);
+            padding: var(--space-xl) 0;
+            text-align: center;
+        }
+        .hero__subtitle {
+            color: var(--color-text-muted);
+            font-size: 1.125rem;
+            max-width: 600px;
+            margin: 0 auto var(--space-md);
+        }
+        .hero__badge {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-xs);
+            background: var(--color-white);
+            border: 1px solid var(--color-border);
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.875rem;
+            color: var(--color-text-muted);
+        }
+        .hero__badge svg {
+            width: 16px;
+            height: 16px;
+            stroke: var(--color-accent);
+            fill: none;
+        }
+
+        /* Content Section */
+        .content-section {
+            padding: var(--space-lg) 0;
+        }
+        .content-section + .content-section {
+            padding-top: 0;
+        }
+
+        /* Stat boxes */
+        .stat-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-sm);
+            margin: var(--space-md) 0;
+        }
+        .stat-box {
+            flex: 1;
+            min-width: 180px;
+            background: var(--color-white);
+            padding: var(--space-md);
+            border-radius: var(--border-radius);
+            border: 1px solid var(--color-border);
+            text-align: center;
+        }
+        .stat-box__number {
+            font-family: var(--font-display);
+            font-size: 2.25rem;
+            line-height: 1;
+            margin-bottom: var(--space-xs);
+        }
+        .stat-box__label {
+            font-size: 0.875rem;
+            color: var(--color-text-muted);
+            line-height: 1.4;
+        }
+        .stat-box--warning { border-left: 4px solid var(--color-warning); }
+        .stat-box--warning .stat-box__number { color: var(--color-warning); }
+        .stat-box--error { border-left: 4px solid var(--color-error); }
+        .stat-box--error .stat-box__number { color: var(--color-error); }
+        .stat-box--success { border-left: 4px solid var(--color-success); }
+        .stat-box--success .stat-box__number { color: var(--color-success); }
+
+        /* Detail box */
+        .detail-box {
+            background: var(--color-white);
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius);
+            padding: var(--space-md);
+            margin: var(--space-md) 0;
+        }
+        .detail-box h3 {
+            margin-top: 0;
+        }
+        .detail-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Note box (like warning) */
+        .note-box {
+            background: var(--color-warning-light);
+            border-left: 4px solid var(--color-warning);
+            padding: var(--space-sm) var(--space-md);
+            margin: var(--space-md) 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+            font-size: 0.9375rem;
+        }
+        .note-box p { margin: 0; }
+
+        /* Success box */
+        .success-box {
+            background: var(--color-success-light);
+            border-left: 4px solid var(--color-success);
+            padding: var(--space-sm) var(--space-md);
+            margin: var(--space-md) 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        .success-box p { margin: 0; }
+
+        /* Map */
+        .map-section {
+            padding: var(--space-lg) 0 var(--space-md);
+        }
+        .map-container {
+            background: var(--color-white);
+            border-radius: var(--border-radius);
+            border: 1px solid var(--color-border);
+            overflow: hidden;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+        }
+        #map {
+            height: 500px;
+            width: 100%;
+        }
+        @media (max-width: 640px) {
+            #map { height: 350px; }
+        }
+        .map-legend {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-md);
+            padding: var(--space-sm) var(--space-md);
+            background: var(--color-bg);
+            border-top: 1px solid var(--color-border);
+            flex-wrap: wrap;
+        }
+        .map-legend__item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.8125rem;
+            color: var(--color-text-muted);
+        }
+        .map-legend__dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 3px;
+        }
+        .map-legend__circle {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+        }
+
+        /* Stockum Analysis Cards */
+        .analysis-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-md);
+            margin: var(--space-md) 0;
+        }
+        @media (max-width: 640px) {
+            .analysis-grid { grid-template-columns: 1fr; }
+        }
+        .analysis-card {
+            background: var(--color-white);
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius);
+            padding: var(--space-md);
+        }
+        .analysis-card__header {
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+            margin-bottom: var(--space-xs);
+        }
+        .analysis-card__tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.125rem 0.5rem;
+            border-radius: 9999px;
+            line-height: 1.5;
+        }
+        .analysis-card__tag--green { background: var(--color-success-light); color: var(--color-success); }
+        .analysis-card__tag--yellow { background: var(--color-warning-light); color: var(--color-warning); }
+        .analysis-card__tag--red { background: var(--color-error-light); color: var(--color-error); }
+        .analysis-card p:last-child { margin-bottom: 0; }
+
+        /* Claims section */
+        .claim-item {
+            background: var(--color-white);
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius);
+            padding: var(--space-md);
+            margin-bottom: var(--space-md);
+        }
+        .claim-item__claim {
+            font-weight: 600;
+            color: var(--color-error);
+            margin-bottom: var(--space-xs);
+            font-size: 1rem;
+        }
+        .claim-item__fact {
+            color: var(--color-text);
+        }
+        .claim-item__fact p:last-child { margin-bottom: 0; }
+
+        /* Zensus bar chart */
+        .zensus-bar {
+            display: flex;
+            height: 32px;
+            border-radius: 6px;
+            overflow: hidden;
+            margin: var(--space-sm) 0;
+        }
+        .zensus-bar__segment {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: white;
+            min-width: 0;
+            transition: flex 0.3s ease;
+        }
+        .zensus-bar__segment span {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            padding: 0 4px;
+        }
+
+        /* Source list */
+        .source-list {
+            list-style: none;
+            padding: 0;
+            margin: var(--space-md) 0 0;
+        }
+        .source-list li {
+            padding: var(--space-xs) 0;
+            border-bottom: 1px solid var(--color-border);
+            font-size: 0.9375rem;
+        }
+        .source-list li:last-child { border-bottom: none; }
+
+        /* ===== EXPLORE SECTION ===== */
+        .explore-section {
+            background: var(--color-bg);
+            padding: var(--space-xl) 0;
+        }
+        .explore-section .container { max-width: 1200px; }
+        .explore-section .section-header { text-align: center; max-width: 700px; margin: 0 auto var(--space-xl); }
+        .explore-section .section-header h2 { font-size: 1.5rem; margin-bottom: var(--space-sm); }
+        .explore-section .section-header p { color: var(--color-text-muted); font-size: 1.125rem; }
+        .explore-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--space-md);
+        }
+        @media (max-width: 768px) { .explore-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 480px) { .explore-grid { grid-template-columns: 1fr; } }
+        .explore-card {
+            background: var(--color-white);
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius);
+            padding: var(--space-md);
+            text-decoration: none;
+            color: var(--color-text);
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        .explore-card:hover { border-color: var(--color-primary); box-shadow: 0 4px 16px rgba(0,0,0,0.08); text-decoration: none; }
+        .explore-card__icon { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: var(--space-sm); }
+        .explore-card__icon svg { width: 24px; height: 24px; }
+        .explore-card__title { font-family: var(--font-display); font-size: 1.125rem; color: var(--color-primary-dark); margin-bottom: var(--space-xs); }
+        .explore-card__desc { font-size: 0.875rem; color: var(--color-text-muted); line-height: 1.5; margin-bottom: var(--space-sm); }
+        .explore-card__arrow { font-size: 0.875rem; font-weight: 600; color: var(--color-primary); }
+
+        /* ===== CONTACT SECTION ===== */
+        .contact-section {
+            background: var(--color-white);
+            border-top: 1px solid var(--color-border);
+            padding: var(--space-xl) 0;
+        }
+        .contact-section__inner { max-width: 600px; margin: 0 auto; text-align: center; }
+        .contact-section__inner h2 { font-size: 1.5rem; margin-bottom: var(--space-sm); }
+        .contact-section__inner p { color: var(--color-text-muted); font-size: 1rem; }
+        .contact-section__email {
+            display: inline-block;
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--color-primary);
+            border: 2px solid var(--color-border);
+            padding: 0.5rem 1.5rem;
+            border-radius: 2rem;
+            margin-top: var(--space-xs);
+        }
+        .contact-section__email:hover { border-color: var(--color-primary); background: var(--color-primary-light); text-decoration: none; }
+
+        /* Footer */
+        .footer { background: var(--color-white); border-top: 1px solid var(--color-border); padding: var(--space-xl) 0 var(--space-lg); }
+        .footer__inner { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: var(--space-lg); }
+        @media (max-width: 768px) { .footer__inner { grid-template-columns: 1fr 1fr; } }
+        @media (max-width: 480px) { .footer__inner { grid-template-columns: 1fr; } }
+        .footer__brand p { color: var(--color-text-muted); font-size: 0.9375rem; margin-top: var(--space-sm); }
+        .footer__col h4 { font-family: var(--font-body); font-weight: 600; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-primary-dark); margin-bottom: var(--space-sm); }
+        .footer__col ul { list-style: none; }
+        .footer__col li { margin-bottom: var(--space-xs); }
+        .footer__col a { color: var(--color-text); text-decoration: none; font-size: 0.9375rem; }
+        .footer__col a:hover { color: var(--color-primary); }
+        .footer__bottom { margin-top: var(--space-xl); padding-top: var(--space-md); border-top: 1px solid var(--color-border); text-align: center; }
+        .footer__bottom p { color: var(--color-text-muted); font-size: 0.875rem; margin: 0; }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="header__inner">
+            <a href="/" class="header__logo">
+                <div class="header__logo-icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10.5 12L10 24H14L13.5 12" fill="white" opacity="0.7"/><circle cx="12" cy="10.5" r="2.25" fill="white"/><path d="M10.5 9L12 0L13.5 9Z" fill="white"/><path d="M12 9L24 17L12 12Z" fill="white"/><path d="M12 9L0 17L12 12Z" fill="white"/>
+                    </svg>
+                </div>
+                <span class="header__logo-text">Windkraft Nottuln</span>
+            </a>
+            <button class="mobile-nav-toggle" aria-label="Menü öffnen" onclick="this.classList.toggle('active'); document.querySelector('.header__nav').classList.toggle('active');">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="header__nav">
+                <a href="/">Startseite</a>
+                <a href="/anlagen/">Anlagen</a>
+                <a href="/hauswert/" class="active">Hauswert</a>
+                <a href="/petition/">Petition</a>
+                <a href="/faq/">FAQ</a>
+                <a href="/gesetze/">Gesetze</a>
+                <a href="/quellen/">Quellen</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Immobilienwerte und Windenergie</h1>
+            <p class="hero__subtitle">Was sagt die Forschung - und was bedeutet das konkret für Nottuln?</p>
+            <div class="hero__badge">
+                <svg viewBox="0 0 24 24" stroke-width="2">
+                    <path d="M9 12l2 2 4-4"/>
+                    <circle cx="12" cy="12" r="10"/>
+                </svg>
+                <span>Daten: RWI 2019 &amp; 2024, Zensus 2022, PNAS 2024</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 1: Current Research (2024) -->
+    <section class="content-section">
+        <div class="container">
+            <div class="content-container">
+                <h2>Aktueller Forschungsstand (2024)</h2>
+
+                <div class="stat-row">
+                    <div class="stat-box stat-box--warning">
+                        <div class="stat-box__number">1,8%</div>
+                        <div class="stat-box__label">Durchschnitt in 1-2 km (RWI 2024)</div>
+                    </div>
+                    <div class="stat-box stat-box--success">
+                        <div class="stat-box__number">~3 J.</div>
+                        <div class="stat-box__label">Preise erholen sich nach ca. 3 Jahren (PNAS 2024)</div>
+                    </div>
+                    <div class="stat-box stat-box--success">
+                        <div class="stat-box__number">0%</div>
+                        <div class="stat-box__label">Kein Effekt bei Anlagen ab 2017 (PNAS 2024)</div>
+                    </div>
+                </div>
+
+                <div class="detail-box">
+                    <h3>RWI - Heuer &amp; Sommer (2024)</h3>
+                    <p>Eine aktualisierte RWI-Studie (<a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4918064" target="_blank" rel="noopener">Heuer &amp; Sommer, SSRN #4918064</a>) untersuchte rund 4 Millionen Immobilienangebote auf ImmoScout24 von 2009 bis 2021.</p>
+                    <p><strong>Ergebnis:</strong> Immobilien mit einer WEA im Umkreis von 1-2 km sind durchschnittlich <strong>1,8% günstiger</strong>. Ab 3 km ist kein Effekt mehr nachweisbar. Der Effekt ist bei <strong>älteren Immobilien</strong> und in weniger dicht besiedelten Gebieten größer.</p>
+                    <p><strong>Methodik:</strong> Angebotsdaten (ImmoScout24), 2009-2021. Zum Vergleich: Die <a href="#rwi-2019">RWI-Studie von 2019</a> nutzte Transaktionsdaten von 2007-2015 und fand höhere Werte (7%/23%).</p>
+                </div>
+
+                <div class="detail-box">
+                    <h3>Berkeley/PIK - PNAS 2024</h3>
+                    <p>Eine große US-Studie (<a href="https://www.pnas.org/doi/10.1073/pnas.2309372121" target="_blank" rel="noopener">Proceedings of the National Academy of Sciences, 2024</a>) untersuchte speziell Häuser mit <strong>direktem Blick</strong> auf Windräder.</p>
+                    <p><strong>Ergebnis:</strong> Der Wertverlust erreicht seinen Höhepunkt nach etwa 3 Jahren und erholt sich danach. Für <strong>nach 2017 errichtete Anlagen</strong> war kein signifikanter Preiseffekt mehr messbar.</p>
+                    <p>Die Forscher erklären das mit zunehmender gesellschaftlicher Gewöhnung an Windenergieanlagen.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: RWI 2019 (the commonly cited numbers) -->
+    <section class="content-section">
+        <div class="container">
+            <div class="content-container">
+                <h2 id="rwi-2019">Die oft zitierten Zahlen: RWI-Studie (2019)</h2>
+                <p>In lokalen Diskussionen werden häufig die Zahlen der RWI-Studie von 2019 genannt. Sie untersuchte rund 3 Millionen Immobilientransaktionen zwischen 2007 und 2015.</p>
+
+                <div class="stat-row">
+                    <div class="stat-box stat-box--warning">
+                        <div class="stat-box__number">7%</div>
+                        <div class="stat-box__label">Durchschnitt innerhalb 1 km</div>
+                    </div>
+                    <div class="stat-box stat-box--error">
+                        <div class="stat-box__number">bis 23%</div>
+                        <div class="stat-box__label">Altbauten vor 1950 im ländlichen Raum</div>
+                    </div>
+                    <div class="stat-box stat-box--success">
+                        <div class="stat-box__number">0%</div>
+                        <div class="stat-box__label">Ab 8-9 km kein Effekt messbar</div>
+                    </div>
+                </div>
+
+                <div class="detail-box">
+                    <h3>Wann gelten welche Zahlen?</h3>
+                    <p><strong>7% Durchschnitt:</strong> Gilt für alle Gebäudetypen innerhalb von 1 km. Der Effekt nimmt mit der Entfernung ab.</p>
+                    <p><strong>Bis 23%:</strong> Gilt für Altbauten mit Baujahr vor 1950 im <strong>ländlichen Raum</strong> innerhalb von 1 km.</p>
+                    <p><strong>Siedlungstyp:</strong> Laut RWI sind "alte Häuser" und solche "in ländlichen Gebieten" am stärksten betroffen. Neuere Studien (u.a. PNAS 2024) zeigen teils abweichende Ergebnisse zur Rolle des Siedlungstyps.</p>
+                    <p><strong>0% ab 8-9 km:</strong> Ab dieser Entfernung kein statistisch signifikanter Effekt.</p>
+                </div>
+
+                <div class="note-box">
+                    <p><strong>Einordnung:</strong> Die Studie basiert auf Daten von 2007-2015, als Anlagen typischerweise 100-150 m hoch waren. Die aktualisierte RWI-Studie von 2024 mit Daten bis 2021 findet mit 1,8% einen niedrigeren Durchschnittswert - bei anderer Methodik (Angebots- statt Transaktionsdaten).</p>
+                </div>
+
+                <p style="margin-top: var(--space-sm);"><a href="https://www.rwi-essen.de/presse/wissenschaftskommunikation/pressemitteilungen/detail/windraeder-lassen-immobilienpreise-sinken" target="_blank" rel="noopener">RWI-Pressemitteilung (2019) &rarr;</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Interactive Map -->
+    <section class="map-section" id="karte">
+        <div class="container">
+            <h2 style="text-align: center;">Wie alt sind die Gebäude um die geplanten WEA?</h2>
+            <p style="text-align: center; color: var(--color-text-muted); max-width: 700px; margin: 0 auto var(--space-md);">
+                Daten: Zensus 2022 (100-m-Gitterzellen, Statistisches Bundesamt). Dargestellt: alle Zellen im <strong>2-km-Radius</strong> der geplanten WEA. Farbe zeigt die <strong>dominierende Baualtersklasse</strong>.
+            </p>
+            <div class="map-container">
+                <div id="map"></div>
+                <div class="map-legend">
+                    <div class="map-legend__item">
+                        <div class="map-legend__dot" style="background: #c0392b;"></div>
+                        Vor 1950
+                    </div>
+                    <div class="map-legend__item">
+                        <div class="map-legend__dot" style="background: #f39c12;"></div>
+                        1949-1990
+                    </div>
+                    <div class="map-legend__item">
+                        <div class="map-legend__dot" style="background: #27ae60;"></div>
+                        Nach 1990
+                    </div>
+                    <div class="map-legend__item">
+                        <div class="map-legend__dot" style="background: #bdc3c7;"></div>
+                        Keine Altersangabe
+                    </div>
+                    <div class="map-legend__item">
+                        <div class="map-legend__dot" style="background: transparent; border: 2px dashed #e74c3c;"></div>
+                        Alter unbekannt
+                    </div>
+                    <div class="map-legend__item">
+                        <div class="map-legend__circle" style="background: #e67e22;"></div>
+                        Geplante WEA
+                    </div>
+                    <div class="map-legend__item">
+                        <div style="width: 20px; height: 0; border-top: 2px dashed #1a5f6a;"></div>
+                        1-km-Radius
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Stockum Analysis -->
+    <section class="content-section">
+        <div class="container">
+            <div class="content-container">
+                <h2>Was bedeutet das für Stockum?</h2>
+
+                <div class="success-box">
+                    <p><strong>Kernbefund:</strong> Innerhalb des 1-km-Radius der geplanten WEA weist der Zensus 2022 <strong>kein einziges Gebäude mit Baujahr vor 1950</strong> aus. Allerdings sind 45 Gitterzellen im Radius komplett unterdrückt (§16 BStatG) - dort stehen Einzelhöfe, deren Baujahr aus den Zensus-Daten nicht hervorgeht.</p>
+                </div>
+
+                <h3>Gebäude im Stockum-Bereich (Zensus 2022)</h3>
+                <div class="zensus-bar" aria-label="Baualtersverteilung: 4,5% vor 1950, 55,1% 1949-1990, 35,3% nach 1990, 5,1% unbekannt">
+                    <div class="zensus-bar__segment" style="flex: 4.5; background: #c0392b;" title="Vor 1950: 4,5%"><span>5%</span></div>
+                    <div class="zensus-bar__segment" style="flex: 55.1; background: #f39c12;" title="1949-1990: 55,1%"><span>55%</span></div>
+                    <div class="zensus-bar__segment" style="flex: 35.3; background: #27ae60;" title="Nach 1990: 35,3%"><span>35%</span></div>
+                    <div class="zensus-bar__segment" style="flex: 5.1; background: #bdc3c7; color: #636e72;" title="Keine Angabe: 5,1%"><span></span></div>
+                </div>
+                <p style="font-size: 0.8125rem; color: var(--color-text-muted);">2.419 Gebäude mit bekannten Daten im 2-km-Radius. Zusätzlich 114 komplett unterdrückte Zellen. Quelle: Zensus 2022, 100-m-Gitterzellen.</p>
+
+                <div class="analysis-grid">
+                    <div class="analysis-card">
+                        <div class="analysis-card__header">
+                            <h3 style="margin: 0;">Vogelwegsiedlung</h3>
+                            <span class="analysis-card__tag analysis-card__tag--yellow">1980er-2000er</span>
+                        </div>
+                        <p style="color: var(--color-text-muted); font-size: 0.9375rem;">Nächste geschlossene Wohnsiedlung zu WEA 5 (ca. 650 m). Habichtweg, Bussardweg, Falkenstraße, Drosselweg.</p>
+                        <p style="font-size: 0.9375rem;">Baujahre 1980er-2000er. Liegt innerhalb des 1-km-Radius.</p>
+                    </div>
+                    <div class="analysis-card">
+                        <div class="analysis-card__header">
+                            <h3 style="margin: 0;">Einzelhöfe</h3>
+                            <span class="analysis-card__tag analysis-card__tag--red">Alter unbekannt</span>
+                        </div>
+                        <p style="color: var(--color-text-muted); font-size: 0.9375rem;">Historische Münsterländer Bauerschaften. 45 Gitterzellen im 1-km-Radius sind komplett unterdrückt (§16 BStatG) - dort stehen Einzelhöfe mit unbekanntem Baujahr.</p>
+                        <p style="font-size: 0.9375rem;">14 Gitterzellen im Gesamtbereich haben dominant alte Gebäude (vor 1950).</p>
+                    </div>
+                    <div class="analysis-card">
+                        <div class="analysis-card__header">
+                            <h3 style="margin: 0;">Innerhalb 1 km</h3>
+                            <span class="analysis-card__tag analysis-card__tag--yellow">187 + unterdrückte</span>
+                        </div>
+                        <p style="color: var(--color-text-muted); font-size: 0.9375rem;">187 Gebäude mit bekannten Daten innerhalb von 1 km. Davon 0 mit Baujahr vor 1950, 92,5% nach 1990 gebaut.</p>
+                        <p style="font-size: 0.9375rem;">Zusätzlich 45 unterdrückte Zellen mit Einzelhöfen, deren Baujahr unbekannt ist.</p>
+                    </div>
+                    <div class="analysis-card">
+                        <div class="analysis-card__header">
+                            <h3 style="margin: 0;">Neubaugebiet B-Plan 161</h3>
+                            <span class="analysis-card__tag analysis-card__tag--green">Neubau</span>
+                        </div>
+                        <p style="color: var(--color-text-muted); font-size: 0.9375rem;">Geplant: "Niederstockumer Weg" mit ca. 250 Wohneinheiten. Wird in Kenntnis der geplanten WEA entwickelt.</p>
+                        <p style="font-size: 0.9375rem;">Käufer wissen beim Erwerb von den geplanten Anlagen.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: Common Claims -->
+    <section class="content-section">
+        <div class="container">
+            <div class="content-container">
+                <h2>Häufige Behauptungen</h2>
+
+                <div class="claim-item">
+                    <div class="claim-item__claim">"Über 20% Wertverlust durch Windräder"</div>
+                    <div class="claim-item__fact">
+                        <p>Der Wert "bis 23%" stammt aus der RWI-Studie von 2019 und gilt für <strong>Altbauten vor 1950 im ländlichen Raum innerhalb von 1 km</strong>. Im 1-km-Radius der geplanten Stockumer WEA weist der Zensus 2022 kein Gebäude mit Baujahr vor 1950 aus. Für 45 Gitterzellen mit Einzelhöfen sind die Daten allerdings unterdrückt. Eine aktualisierte RWI-Studie von 2024 (Daten bis 2021) findet einen Durchschnittseffekt von 1,8% in 1-2 km Entfernung.</p>
+                    </div>
+                </div>
+
+                <div class="claim-item">
+                    <div class="claim-item__claim">"Meine Altersvorsorge ist in Gefahr"</div>
+                    <div class="claim-item__fact">
+                        <p>Die tatsächliche Auswirkung hängt von <strong>Entfernung</strong>, <strong>Gebäudealter</strong> und <strong>Lage</strong> ab. Von den 187 Gebäuden mit bekannten Daten innerhalb von 1 km sind 92,5% nach 1990 gebaut. Für 45 Gitterzellen mit Einzelhöfen sind die Baujahre unbekannt. Ab 3 km (RWI 2024) bzw. 8-9 km (RWI 2019) ist kein Effekt messbar. Neuere Forschung (PNAS 2024) zeigt zudem, dass sich Preise nach wenigen Jahren erholen.</p>
+                    </div>
+                </div>
+
+                <div class="claim-item">
+                    <div class="claim-item__claim">"25-30% Wertverlust"</div>
+                    <div class="claim-item__fact">
+                        <p>Diese Zahlen lassen sich mit keiner wissenschaftlichen Studie belegen. Die RWI-Studie von 2019 (3 Mio. Transaktionen) kommt auf maximal 23% - für Altbauten vor 1950 im ländlichen Raum innerhalb von 1 km.</p>
+                    </div>
+                </div>
+
+                <p><a href="/faq/#hauswert">Mehr dazu in den FAQ &rarr;</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sources -->
+    <section class="content-section" style="padding-bottom: var(--space-xl);">
+        <div class="container">
+            <div class="content-container">
+                <h2>Quellen</h2>
+                <ul class="source-list">
+                    <li>
+                        <strong>RWI Leibniz-Institut (2019):</strong>
+                        <a href="https://www.rwi-essen.de/presse/wissenschaftskommunikation/pressemitteilungen/detail/windraeder-lassen-immobilienpreise-sinken" target="_blank" rel="noopener">"Windräder lassen Immobilienpreise sinken"</a> - Daten: 3 Mio. Transaktionen, 2007-2015
+                    </li>
+                    <li>
+                        <strong>Heuer &amp; Sommer, RWI (2024):</strong>
+                        <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4918064" target="_blank" rel="noopener">"Distance and intensity effects of renewable energy on property prices"</a> - Daten: 4 Mio. Angebote, 2009-2021
+                    </li>
+                    <li>
+                        <strong>Berkeley/PIK - PNAS (2024):</strong>
+                        <a href="https://www.pnas.org/doi/10.1073/pnas.2309372121" target="_blank" rel="noopener">"The effect of wind turbine visibility on property values"</a>
+                    </li>
+                    <li>
+                        <strong>Zensus 2022 - Gitterzellen:</strong>
+                        <a href="https://ergebnisse.zensus2022.de/" target="_blank" rel="noopener">Statistisches Bundesamt, Gebäude nach Baujahresklassen (100-m-Raster)</a>
+                        - Datenlizenz Deutschland - Namensnennung 2.0
+                    </li>
+                    <li>
+                        <strong>WEA-Positionen:</strong>
+                        <a href="https://www.marktstammdatenregister.de" target="_blank" rel="noopener">Bundesnetzagentur (MaStR)</a> / <a href="https://www.stadtwerke-muenster.de/unternehmen/muenster-wird-gruen/energiewende/windenergie" target="_blank" rel="noopener">Stadtwerke Münster</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Explore More -->
+    <section class="explore-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Mehr erfahren</h2>
+                <p>Weitere Themen rund um Windkraft in Nottuln.</p>
+            </div>
+            <div class="explore-grid">
+                <a href="/" class="explore-card">
+                    <div class="explore-card__icon" style="background: var(--color-primary-light);">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    </div>
+                    <div class="explore-card__title">Faktenchecks</div>
+                    <p class="explore-card__desc">Gesundheit, Artenschutz, Klima, Technik - die häufigsten Behauptungen im Faktencheck.</p>
+                    <span class="explore-card__arrow">Zur Startseite &rarr;</span>
+                </a>
+                <a href="/anlagen/" class="explore-card">
+                    <div class="explore-card__icon" style="background: var(--color-accent-light, var(--color-primary-light));">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-accent, var(--color-primary))" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>
+                    </div>
+                    <div class="explore-card__title">Interaktive Karte</div>
+                    <p class="explore-card__desc">Alle 18 geplanten Standorte mit Schutzgebieten, Abständen und Windenergiebereichen.</p>
+                    <span class="explore-card__arrow">Karte öffnen &rarr;</span>
+                </a>
+                <a href="/faq/" class="explore-card">
+                    <div class="explore-card__icon" style="background: var(--color-accent-light, var(--color-primary-light));">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-accent, var(--color-primary))" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                    </div>
+                    <div class="explore-card__title">Häufige Fragen</div>
+                    <p class="explore-card__desc">Antworten auf die meistgestellten Fragen zu Windkraft in Nottuln - kompakt und mit Quellen.</p>
+                    <span class="explore-card__arrow">FAQ lesen &rarr;</span>
+                </a>
+                <a href="/gesetze/" class="explore-card">
+                    <div class="explore-card__icon" style="background: var(--color-primary-light);">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                    </div>
+                    <div class="explore-card__title">Gesetze & Verfahren</div>
+                    <p class="explore-card__desc">BImSchG, BauGB, Artenschutz - welche Gesetze gelten und wie das Genehmigungsverfahren funktioniert.</p>
+                    <span class="explore-card__arrow">Zur Übersicht &rarr;</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-section__inner">
+                <h2>Fehler gefunden? Fragen?</h2>
+                <p>Diese Seite lebt von Genauigkeit. Wenn Ihnen ein Fehler auffällt, eine Quelle fehlt oder Sie eine andere Sichtweise mit Belegen haben - ich freue mich über jede Nachricht.</p>
+                <a href="mailto:kontakt@windkraft-nottuln.de" class="contact-section__email">kontakt@windkraft-nottuln.de</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <div class="footer__brand">
+                    <a href="/" class="header__logo">
+                        <div class="header__logo-icon">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10.5 12L10 24H14L13.5 12" fill="white" opacity="0.7"/><circle cx="12" cy="10.5" r="2.25" fill="white"/><path d="M10.5 9L12 0L13.5 9Z" fill="white"/><path d="M12 9L24 17L12 12Z" fill="white"/><path d="M12 9L0 17L12 12Z" fill="white"/>
+                            </svg>
+                        </div>
+                        <span class="header__logo-text">Windkraft Nottuln</span>
+                    </a>
+                    <p>Eine private Initiative für mehr Fakten zur Windenergie in Nottuln, Kreis Coesfeld.</p>
+                </div>
+                <div class="footer__col">
+                    <h4>Inhalte</h4>
+                    <ul>
+                        <li><a href="/">Startseite</a></li>
+                        <li><a href="/anlagen/">Anlagen</a></li>
+                        <li><a href="/hauswert/">Hauswert</a></li>
+                        <li><a href="/faq/">Häufige Fragen</a></li>
+                        <li><a href="/gesetze/">Gesetze & Verfahren</a></li>
+                        <li><a href="/quellen/">Quellenverzeichnis</a></li>
+                    </ul>
+                </div>
+                <div class="footer__col">
+                    <h4>Externe Quellen</h4>
+                    <ul>
+                        <li><a href="https://www.marktstammdatenregister.de" target="_blank" rel="noopener">Marktstammdatenregister</a></li>
+                        <li><a href="https://www.nottuln.de/leben-in-nottuln/klimaschutz-energie-umwelt/windenergie-nottuln" target="_blank" rel="noopener">Gemeinde Nottuln</a></li>
+                        <li><a href="https://www.stadt-muenster.de/klima/erneuerbare-energien/windenergie" target="_blank" rel="noopener">Stadt Münster</a></li>
+                    </ul>
+                </div>
+                <div class="footer__col">
+                    <h4>Rechtliches</h4>
+                    <ul>
+                        <li><a href="/impressum/">Impressum</a></li>
+                        <li><a href="/datenschutz/">Datenschutz</a></li>
+                        <li><a href="https://github.com/lmachens/windkraft-nottuln" target="_blank" rel="noopener">GitHub</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2026 Windkraft Nottuln &middot; <a href="https://github.com/lmachens/windkraft-nottuln/blob/main/LICENSE" target="_blank" rel="noopener" style="color: inherit;">MIT-Lizenz</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+    <script>
+        // Zensus 2022 Grid Data (100m cells, Stockum area)
+        // t: type (a=pre1950, b=1949-1990, c=post1990, d=partial suppression, e=complete suppression)
+        // n: total buildings, p: pre-1950, m: mid, r: post-1990
+        // c: polygon coordinates [lon, lat]
+        var zensusData = [{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.3423,51.89634],[7.34224,51.89724],[7.3437,51.89727],[7.34375,51.89638],[7.3423,51.89634]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.35101,51.89654],[7.35096,51.89744],[7.35241,51.89747],[7.35246,51.89657],[7.35101,51.89654]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.32622,51.89778],[7.32617,51.89868],[7.32762,51.89871],[7.32767,51.89781],[7.32622,51.89778]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.34074,51.89811],[7.34069,51.899],[7.34214,51.89904],[7.34219,51.89814],[7.34074,51.89811]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.34364,51.89817],[7.34359,51.89907],[7.34504,51.8991],[7.34509,51.8982],[7.34364,51.89817]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.32601,51.90137],[7.32595,51.90227],[7.3274,51.9023],[7.32746,51.9014],[7.32601,51.90137]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.30417,51.90177],[7.30412,51.90267],[7.30557,51.9027],[7.30562,51.9018],[7.30417,51.90177]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.30853,51.90187],[7.30847,51.90277],[7.30993,51.9028],[7.30998,51.9019],[7.30853,51.90187]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.30998,51.9019],[7.30993,51.9028],[7.31138,51.90284],[7.31143,51.90194],[7.30998,51.9019]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.35499,51.90292],[7.35494,51.90382],[7.35639,51.90385],[7.35645,51.90296],[7.35499,51.90292]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.32735,51.9032],[7.3273,51.9041],[7.32875,51.90413],[7.3288,51.90323],[7.32735,51.9032]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.35639,51.90385],[7.35634,51.90475],[7.35779,51.90478],[7.35785,51.90389],[7.35639,51.90385]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.31713,51.90387],[7.31708,51.90476],[7.31853,51.9048],[7.31859,51.9039],[7.31713,51.90387]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.31859,51.9039],[7.31853,51.9048],[7.31998,51.90483],[7.32004,51.90393],[7.31859,51.9039]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.32439,51.90403],[7.32434,51.90493],[7.32579,51.90496],[7.32585,51.90406],[7.32439,51.90403]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.3302,51.90416],[7.33015,51.90506],[7.3316,51.90509],[7.33165,51.9042],[7.3302,51.90416]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.35634,51.90475],[7.35629,51.90565],[7.35774,51.90568],[7.35779,51.90478],[7.35634,51.90475]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.32434,51.90493],[7.32429,51.90583],[7.32574,51.90586],[7.32579,51.90496],[7.32434,51.90493]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.32579,51.90496],[7.32574,51.90586],[7.32719,51.90589],[7.32724,51.90499],[7.32579,51.90496]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.32724,51.90499],[7.32719,51.90589],[7.32864,51.90593],[7.3287,51.90503],[7.32724,51.90499]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.3316,51.90509],[7.33155,51.90599],[7.333,51.90602],[7.33305,51.90513],[7.3316,51.90509]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.34462,51.90629],[7.34456,51.90718],[7.34602,51.90722],[7.34607,51.90632],[7.34462,51.90629]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.35333,51.90648],[7.35328,51.90738],[7.35473,51.90741],[7.35478,51.90652],[7.35333,51.90648]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.29955,51.90616],[7.29949,51.90706],[7.30094,51.90709],[7.301,51.90619],[7.29955,51.90616]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.35183,51.90735],[7.35177,51.90825],[7.35323,51.90828],[7.35328,51.90738],[7.35183,51.90735]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.35328,51.90738],[7.35323,51.90828],[7.35468,51.90831],[7.35473,51.90741],[7.35328,51.90738]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.35177,51.90825],[7.35172,51.90914],[7.35317,51.90918],[7.35323,51.90828],[7.35177,51.90825]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.30509,51.91078],[7.30503,51.91168],[7.30648,51.91172],[7.30654,51.91082],[7.30509,51.91078]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.29051,51.91135],[7.29045,51.91225],[7.29191,51.91228],[7.29196,51.91138],[7.29051,51.91135]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.30207,51.91251],[7.30202,51.91341],[7.30347,51.91345],[7.30353,51.91255],[7.30207,51.91251]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.30353,51.91255],[7.30347,51.91345],[7.30492,51.91348],[7.30498,51.91258],[7.30353,51.91255]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.30778,51.91444],[7.30772,51.91534],[7.30917,51.91537],[7.30923,51.91448],[7.30778,51.91444]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.33537,51.91507],[7.33532,51.91597],[7.33677,51.916],[7.33683,51.9151],[7.33537,51.91507]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.33096,51.91587],[7.33091,51.91677],[7.33236,51.9168],[7.33241,51.9159],[7.33096,51.91587]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.33241,51.9159],[7.33236,51.9168],[7.33381,51.91683],[7.33387,51.91594],[7.33241,51.9159]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.33532,51.91597],[7.33527,51.91687],[7.33672,51.9169],[7.33677,51.916],[7.33532,51.91597]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.30767,51.91624],[7.30761,51.91714],[7.30907,51.91717],[7.30912,51.91627],[7.30767,51.91624]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.33381,51.91683],[7.33376,51.91773],[7.33521,51.91776],[7.33527,51.91687],[7.33381,51.91683]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.29599,51.91687],[7.29594,51.91777],[7.29739,51.9178],[7.29745,51.9169],[7.29599,51.91687]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.33521,51.91776],[7.33516,51.91866],[7.33661,51.9187],[7.33667,51.9178],[7.33521,51.91776]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.33957,51.91786],[7.33952,51.91876],[7.34097,51.91879],[7.34102,51.9179],[7.33957,51.91786]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.34538,51.91799],[7.34533,51.91889],[7.34678,51.91892],[7.34683,51.91803],[7.34538,51.91799]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.35991,51.91832],[7.35986,51.91922],[7.36131,51.91925],[7.36136,51.91835],[7.35991,51.91832]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.35114,51.91902],[7.35109,51.91992],[7.35254,51.91995],[7.35259,51.91906],[7.35114,51.91902]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.29879,51.91873],[7.29874,51.91963],[7.30019,51.91967],[7.30024,51.91877],[7.29879,51.91873]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.30315,51.91883],[7.3031,51.91973],[7.30455,51.91977],[7.3046,51.91887],[7.30315,51.91883]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.33801,51.91963],[7.33796,51.92052],[7.33941,51.92056],[7.33947,51.91966],[7.33801,51.91963]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.28991,51.92123],[7.28986,51.92213],[7.29131,51.92216],[7.29137,51.92126],[7.28991,51.92123]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.28981,51.92302],[7.28975,51.92392],[7.2912,51.92396],[7.29126,51.92306],[7.28981,51.92302]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.35227,51.92444],[7.35222,51.92534],[7.35367,51.92537],[7.35373,51.92448],[7.35227,51.92444]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.2912,51.92396],[7.29115,51.92485],[7.2926,51.92489],[7.29266,51.92399],[7.2912,51.92396]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.32752,51.92478],[7.32747,51.92568],[7.32892,51.92572],[7.32898,51.92482],[7.32752,51.92478]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.33188,51.92488],[7.33183,51.92578],[7.33328,51.92581],[7.33334,51.92492],[7.33188,51.92488]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.33334,51.92492],[7.33328,51.92581],[7.33473,51.92585],[7.33479,51.92495],[7.33334,51.92492]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.33764,51.92591],[7.33759,51.92681],[7.33904,51.92684],[7.33909,51.92595],[7.33764,51.92591]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.32892,51.92572],[7.32887,51.92661],[7.33032,51.92665],[7.33038,51.92575],[7.32892,51.92572]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.31144,51.92622],[7.31138,51.92712],[7.31284,51.92715],[7.31289,51.92625],[7.31144,51.92622]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.32887,51.92661],[7.32882,51.92751],[7.33027,51.92754],[7.33032,51.92665],[7.32887,51.92661]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.33032,51.92665],[7.33027,51.92754],[7.33172,51.92758],[7.33178,51.92668],[7.33032,51.92665]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.30552,51.92788],[7.30546,51.92878],[7.30692,51.92881],[7.30697,51.92791],[7.30552,51.92788]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.30692,51.92881],[7.30686,51.92971],[7.30832,51.92974],[7.30837,51.92885],[7.30692,51.92881]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.33598,51.92947],[7.33592,51.93037],[7.33737,51.9304],[7.33743,51.9295],[7.33598,51.92947]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.33011,51.93024],[7.33006,51.93114],[7.33151,51.93117],[7.33156,51.93027],[7.33011,51.93024]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.34755,51.93063],[7.34749,51.93153],[7.34895,51.93156],[7.349,51.93066],[7.34755,51.93063]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.349,51.93066],[7.34895,51.93156],[7.3504,51.9316],[7.35045,51.9307],[7.349,51.93066]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.33006,51.93114],[7.33,51.93203],[7.33146,51.93207],[7.33151,51.93117],[7.33006,51.93114]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.34017,51.93226],[7.34012,51.93316],[7.34157,51.9332],[7.34163,51.9323],[7.34017,51.93226]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.34163,51.9323],[7.34157,51.9332],[7.34303,51.93323],[7.34308,51.93233],[7.34163,51.9323]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.34308,51.93233],[7.34303,51.93323],[7.34448,51.93326],[7.34453,51.93236],[7.34308,51.93233]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.34453,51.93236],[7.34448,51.93326],[7.34593,51.93329],[7.34599,51.9324],[7.34453,51.93236]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.33722,51.9331],[7.33716,51.934],[7.33862,51.93403],[7.33867,51.93313],[7.33722,51.9331]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.34012,51.93316],[7.34007,51.93406],[7.34152,51.93409],[7.34157,51.9332],[7.34012,51.93316]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.34879,51.93426],[7.34873,51.93516],[7.35019,51.93519],[7.35024,51.93429],[7.34879,51.93426]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.30369,51.93413],[7.30363,51.93503],[7.30509,51.93506],[7.30514,51.93417],[7.30369,51.93413]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.30654,51.9351],[7.30649,51.936],[7.30794,51.93603],[7.30799,51.93513],[7.30654,51.9351]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.3341,51.93662],[7.33404,51.93752],[7.3355,51.93755],[7.33555,51.93666],[7.3341,51.93662]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.32242,51.93726],[7.32236,51.93816],[7.32382,51.93819],[7.32387,51.93729],[7.32242,51.93726]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.31074,51.93789],[7.31068,51.93879],[7.31214,51.93882],[7.31219,51.93792],[7.31074,51.93789]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.31795,51.93896],[7.3179,51.93985],[7.31935,51.93989],[7.3194,51.93899],[7.31795,51.93896]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.33388,51.94022],[7.33383,51.94111],[7.33528,51.94115],[7.33534,51.94025],[7.33388,51.94022]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.30606,51.94318],[7.306,51.94408],[7.30746,51.94411],[7.30751,51.94321],[7.30606,51.94318]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.33076,51.94374],[7.33071,51.94464],[7.33216,51.94467],[7.33222,51.94378],[7.33076,51.94374]]},{"t":"a","n":3,"p":3,"m":0,"r":0,"c":[[7.32493,51.89505],[7.32487,51.89595],[7.32633,51.89598],[7.32638,51.89508],[7.32493,51.89505]]},{"t":"b","n":3,"p":0,"m":3,"r":0,"c":[[7.3466,51.89734],[7.34655,51.89824],[7.348,51.89827],[7.34805,51.89737],[7.3466,51.89734]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.29244,51.92758],[7.29239,51.92848],[7.29384,51.92851],[7.29389,51.92761],[7.29244,51.92758]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.33753,51.92771],[7.33748,51.92861],[7.33893,51.92864],[7.33899,51.92774],[7.33753,51.92771]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.35811,51.8994],[7.35806,51.90029],[7.35951,51.90033],[7.35956,51.89943],[7.35811,51.8994]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.30272,51.90174],[7.30267,51.90264],[7.30412,51.90267],[7.30417,51.90177],[7.30272,51.90174]]},{"t":"d","n":3,"p":0,"m":0,"r":0,"c":[[7.35645,51.90296],[7.35639,51.90385],[7.35785,51.90389],[7.3579,51.90299],[7.35645,51.90296]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.31428,51.9029],[7.31423,51.9038],[7.31568,51.90383],[7.31573,51.90293],[7.31428,51.9029]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.335,51.92136],[7.33495,51.92225],[7.3364,51.92229],[7.33645,51.92139],[7.335,51.92136]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.3551,51.90113],[7.35505,51.90202],[7.3565,51.90206],[7.35655,51.90116],[7.3551,51.90113]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.35006,51.9127],[7.35,51.9136],[7.35146,51.91363],[7.35151,51.91274],[7.35006,51.9127]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.34274,51.91344],[7.34269,51.91434],[7.34414,51.91437],[7.34419,51.91347],[7.34274,51.91344]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.33397,51.91414],[7.33392,51.91504],[7.33537,51.91507],[7.33543,51.91417],[7.33397,51.91414]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.30772,51.91534],[7.30767,51.91624],[7.30912,51.91627],[7.30917,51.91537],[7.30772,51.91534]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.30622,51.91621],[7.30616,51.9171],[7.30761,51.91714],[7.30767,51.91624],[7.30622,51.91621]]},{"t":"b","n":10,"p":0,"m":11,"r":0,"c":[[7.357,51.91826],[7.35695,51.91915],[7.3584,51.91919],[7.35846,51.91829],[7.357,51.91826]]},{"t":"b","n":8,"p":0,"m":11,"r":0,"c":[[7.35846,51.91829],[7.3584,51.91919],[7.35986,51.91922],[7.35991,51.91832],[7.35846,51.91829]]},{"t":"b","n":21,"p":0,"m":13,"r":3,"c":[[7.34388,51.91886],[7.34382,51.91976],[7.34528,51.91979],[7.34533,51.91889],[7.34388,51.91886]]},{"t":"b","n":18,"p":0,"m":13,"r":7,"c":[[7.34533,51.91889],[7.34528,51.91979],[7.34673,51.91982],[7.34678,51.91892],[7.34533,51.91889]]},{"t":"c","n":19,"p":0,"m":7,"r":13,"c":[[7.34678,51.91892],[7.34673,51.91982],[7.34818,51.91986],[7.34823,51.91896],[7.34678,51.91892]]},{"t":"c","n":18,"p":0,"m":0,"r":17,"c":[[7.34969,51.91899],[7.34963,51.91989],[7.35109,51.91992],[7.35114,51.91902],[7.34969,51.91899]]},{"t":"b","n":12,"p":0,"m":9,"r":0,"c":[[7.35404,51.91909],[7.35399,51.91999],[7.35544,51.92002],[7.3555,51.91912],[7.35404,51.91909]]},{"t":"b","n":13,"p":0,"m":13,"r":0,"c":[[7.35695,51.91915],[7.3569,51.92005],[7.35835,51.92008],[7.3584,51.91919],[7.35695,51.91915]]},{"t":"b","n":11,"p":0,"m":9,"r":0,"c":[[7.3584,51.91919],[7.35835,51.92008],[7.3598,51.92012],[7.35986,51.91922],[7.3584,51.91919]]},{"t":"b","n":3,"p":0,"m":3,"r":0,"c":[[7.35124,51.91723],[7.35119,51.91812],[7.35264,51.91816],[7.3527,51.91726],[7.35124,51.91723]]},{"t":"d","n":3,"p":0,"m":0,"r":0,"c":[[7.35851,51.91739],[7.35846,51.91829],[7.35991,51.91832],[7.35996,51.91742],[7.35851,51.91739]]},{"t":"c","n":7,"p":0,"m":0,"r":7,"c":[[7.34683,51.91803],[7.34678,51.91892],[7.34823,51.91896],[7.34829,51.91806],[7.34683,51.91803]]},{"t":"c","n":6,"p":0,"m":0,"r":6,"c":[[7.34974,51.91809],[7.34969,51.91899],[7.35114,51.91902],[7.35119,51.91812],[7.34974,51.91809]]},{"t":"c","n":10,"p":0,"m":0,"r":5,"c":[[7.35119,51.91812],[7.35114,51.91902],[7.35259,51.91906],[7.35264,51.91816],[7.35119,51.91812]]},{"t":"b","n":8,"p":0,"m":11,"r":0,"c":[[7.35555,51.91822],[7.3555,51.91912],[7.35695,51.91915],[7.357,51.91826],[7.35555,51.91822]]},{"t":"c","n":6,"p":0,"m":0,"r":6,"c":[[7.33952,51.91876],[7.33947,51.91966],[7.34092,51.91969],[7.34097,51.91879],[7.33952,51.91876]]},{"t":"c","n":6,"p":0,"m":0,"r":6,"c":[[7.34097,51.91879],[7.34092,51.91969],[7.34237,51.91972],[7.34242,51.91883],[7.34097,51.91879]]},{"t":"c","n":12,"p":0,"m":7,"r":9,"c":[[7.34242,51.91883],[7.34237,51.91972],[7.34382,51.91976],[7.34388,51.91886],[7.34242,51.91883]]},{"t":"c","n":11,"p":0,"m":0,"r":13,"c":[[7.34823,51.91896],[7.34818,51.91986],[7.34963,51.91989],[7.34969,51.91899],[7.34823,51.91896]]},{"t":"b","n":4,"p":0,"m":4,"r":0,"c":[[7.35259,51.91906],[7.35254,51.91995],[7.35399,51.91999],[7.35404,51.91909],[7.35259,51.91906]]},{"t":"b","n":13,"p":0,"m":11,"r":0,"c":[[7.3555,51.91912],[7.35544,51.92002],[7.3569,51.92005],[7.35695,51.91915],[7.3555,51.91912]]},{"t":"c","n":21,"p":0,"m":0,"r":21,"c":[[7.33947,51.91966],[7.33941,51.92056],[7.34086,51.92059],[7.34092,51.91969],[7.33947,51.91966]]},{"t":"b","n":15,"p":0,"m":12,"r":0,"c":[[7.34382,51.91976],[7.34377,51.92066],[7.34522,51.92069],[7.34528,51.91979],[7.34382,51.91976]]},{"t":"b","n":17,"p":0,"m":14,"r":5,"c":[[7.34528,51.91979],[7.34522,51.92069],[7.34668,51.92072],[7.34673,51.91982],[7.34528,51.91979]]},{"t":"b","n":22,"p":0,"m":12,"r":11,"c":[[7.34673,51.91982],[7.34668,51.92072],[7.34813,51.92075],[7.34818,51.91986],[7.34673,51.91982]]},{"t":"b","n":31,"p":0,"m":17,"r":15,"c":[[7.34818,51.91986],[7.34813,51.92075],[7.34958,51.92079],[7.34963,51.91989],[7.34818,51.91986]]},{"t":"b","n":23,"p":0,"m":15,"r":11,"c":[[7.35109,51.91992],[7.35103,51.92082],[7.35249,51.92085],[7.35254,51.91995],[7.35109,51.91992]]},{"t":"b","n":13,"p":0,"m":10,"r":0,"c":[[7.35254,51.91995],[7.35249,51.92085],[7.35394,51.92088],[7.35399,51.91999],[7.35254,51.91995]]},{"t":"b","n":11,"p":0,"m":12,"r":0,"c":[[7.35399,51.91999],[7.35394,51.92088],[7.35539,51.92092],[7.35544,51.92002],[7.35399,51.91999]]},{"t":"b","n":14,"p":0,"m":14,"r":0,"c":[[7.3569,51.92005],[7.35684,51.92095],[7.3583,51.92098],[7.35835,51.92008],[7.3569,51.92005]]},{"t":"b","n":17,"p":3,"m":13,"r":4,"c":[[7.3598,51.92012],[7.35975,51.92101],[7.3612,51.92105],[7.36126,51.92015],[7.3598,51.92012]]},{"t":"c","n":12,"p":0,"m":3,"r":5,"c":[[7.33941,51.92056],[7.33936,51.92146],[7.34081,51.92149],[7.34086,51.92059],[7.33941,51.92056]]},{"t":"c","n":16,"p":0,"m":0,"r":15,"c":[[7.34232,51.92062],[7.34226,51.92152],[7.34372,51.92155],[7.34377,51.92066],[7.34232,51.92062]]},{"t":"b","n":15,"p":0,"m":15,"r":0,"c":[[7.34668,51.92072],[7.34662,51.92162],[7.34808,51.92165],[7.34813,51.92075],[7.34668,51.92072]]},{"t":"b","n":29,"p":0,"m":21,"r":7,"c":[[7.34813,51.92075],[7.34808,51.92165],[7.34953,51.92168],[7.34958,51.92079],[7.34813,51.92075]]},{"t":"b","n":16,"p":0,"m":16,"r":0,"c":[[7.34958,51.92079],[7.34953,51.92168],[7.35098,51.92172],[7.35103,51.92082],[7.34958,51.92079]]},{"t":"b","n":19,"p":0,"m":19,"r":0,"c":[[7.35103,51.92082],[7.35098,51.92172],[7.35243,51.92175],[7.35249,51.92085],[7.35103,51.92082]]},{"t":"b","n":17,"p":0,"m":13,"r":6,"c":[[7.35249,51.92085],[7.35243,51.92175],[7.35389,51.92178],[7.35394,51.92088],[7.35249,51.92085]]},{"t":"b","n":8,"p":0,"m":6,"r":0,"c":[[7.3583,51.92098],[7.35824,51.92188],[7.3597,51.92191],[7.35975,51.92101],[7.3583,51.92098]]},{"t":"c","n":18,"p":0,"m":0,"r":18,"c":[[7.34081,51.92149],[7.34076,51.92239],[7.34221,51.92242],[7.34226,51.92152],[7.34081,51.92149]]},{"t":"c","n":18,"p":0,"m":0,"r":18,"c":[[7.34226,51.92152],[7.34221,51.92242],[7.34366,51.92245],[7.34372,51.92155],[7.34226,51.92152]]},{"t":"b","n":16,"p":0,"m":12,"r":9,"c":[[7.34372,51.92155],[7.34366,51.92245],[7.34512,51.92248],[7.34517,51.92159],[7.34372,51.92155]]},{"t":"b","n":15,"p":0,"m":15,"r":0,"c":[[7.34517,51.92159],[7.34512,51.92248],[7.34657,51.92252],[7.34662,51.92162],[7.34517,51.92159]]},{"t":"b","n":19,"p":0,"m":14,"r":0,"c":[[7.35098,51.92172],[7.35093,51.92262],[7.35238,51.92265],[7.35243,51.92175],[7.35098,51.92172]]},{"t":"b","n":12,"p":4,"m":5,"r":3,"c":[[7.35243,51.92175],[7.35238,51.92265],[7.35383,51.92268],[7.35389,51.92178],[7.35243,51.92175]]},{"t":"b","n":7,"p":0,"m":4,"r":3,"c":[[7.35389,51.92178],[7.35383,51.92268],[7.35529,51.92271],[7.35534,51.92181],[7.35389,51.92178]]},{"t":"b","n":7,"p":0,"m":5,"r":0,"c":[[7.35534,51.92181],[7.35529,51.92271],[7.35674,51.92275],[7.35679,51.92185],[7.35534,51.92181]]},{"t":"b","n":8,"p":0,"m":6,"r":0,"c":[[7.35679,51.92185],[7.35674,51.92275],[7.35819,51.92278],[7.35824,51.92188],[7.35679,51.92185]]},{"t":"b","n":12,"p":0,"m":11,"r":3,"c":[[7.35824,51.92188],[7.35819,51.92278],[7.35964,51.92281],[7.3597,51.92191],[7.35824,51.92188]]},{"t":"b","n":12,"p":0,"m":12,"r":0,"c":[[7.34522,51.92069],[7.34517,51.92159],[7.34662,51.92162],[7.34668,51.92072],[7.34522,51.92069]]},{"t":"b","n":6,"p":0,"m":4,"r":3,"c":[[7.35394,51.92088],[7.35389,51.92178],[7.35534,51.92181],[7.35539,51.92092],[7.35394,51.92088]]},{"t":"b","n":13,"p":0,"m":16,"r":0,"c":[[7.35539,51.92092],[7.35534,51.92181],[7.35679,51.92185],[7.35684,51.92095],[7.35539,51.92092]]},{"t":"c","n":3,"p":0,"m":0,"r":3,"c":[[7.33936,51.92146],[7.33931,51.92235],[7.34076,51.92239],[7.34081,51.92149],[7.33936,51.92146]]},{"t":"b","n":10,"p":0,"m":10,"r":0,"c":[[7.34662,51.92162],[7.34657,51.92252],[7.34802,51.92255],[7.34808,51.92165],[7.34662,51.92162]]},{"t":"b","n":15,"p":0,"m":14,"r":0,"c":[[7.34953,51.92168],[7.34948,51.92258],[7.35093,51.92262],[7.35098,51.92172],[7.34953,51.92168]]},{"t":"c","n":12,"p":0,"m":0,"r":12,"c":[[7.34221,51.92242],[7.34216,51.92332],[7.34361,51.92335],[7.34366,51.92245],[7.34221,51.92242]]},{"t":"b","n":16,"p":0,"m":10,"r":4,"c":[[7.34366,51.92245],[7.34361,51.92335],[7.34506,51.92338],[7.34512,51.92248],[7.34366,51.92245]]},{"t":"b","n":14,"p":0,"m":11,"r":6,"c":[[7.34802,51.92255],[7.34797,51.92345],[7.34942,51.92348],[7.34948,51.92258],[7.34802,51.92255]]},{"t":"c","n":16,"p":6,"m":4,"r":9,"c":[[7.35383,51.92268],[7.35378,51.92358],[7.35523,51.92361],[7.35529,51.92271],[7.35383,51.92268]]},{"t":"c","n":11,"p":0,"m":7,"r":9,"c":[[7.35674,51.92275],[7.35669,51.92364],[7.35814,51.92368],[7.35819,51.92278],[7.35674,51.92275]]},{"t":"b","n":14,"p":0,"m":10,"r":0,"c":[[7.35819,51.92278],[7.35814,51.92368],[7.35959,51.92371],[7.35964,51.92281],[7.35819,51.92278]]},{"t":"d","n":8,"p":0,"m":0,"r":0,"c":[[7.35378,51.92358],[7.35373,51.92448],[7.35518,51.92451],[7.35523,51.92361],[7.35378,51.92358]]},{"t":"b","n":13,"p":0,"m":4,"r":3,"c":[[7.35523,51.92361],[7.35518,51.92451],[7.35663,51.92454],[7.35669,51.92364],[7.35523,51.92361]]},{"t":"b","n":10,"p":0,"m":3,"r":0,"c":[[7.35373,51.92448],[7.35367,51.92537],[7.35513,51.92541],[7.35518,51.92451],[7.35373,51.92448]]},{"t":"b","n":14,"p":4,"m":9,"r":7,"c":[[7.35518,51.92451],[7.35513,51.92541],[7.35658,51.92544],[7.35663,51.92454],[7.35518,51.92451]]},{"t":"b","n":13,"p":0,"m":13,"r":0,"c":[[7.34657,51.92252],[7.34652,51.92342],[7.34797,51.92345],[7.34802,51.92255],[7.34657,51.92252]]},{"t":"b","n":4,"p":0,"m":4,"r":0,"c":[[7.34948,51.92258],[7.34942,51.92348],[7.35087,51.92351],[7.35093,51.92262],[7.34948,51.92258]]},{"t":"d","n":3,"p":0,"m":0,"r":0,"c":[[7.35093,51.92262],[7.35087,51.92351],[7.35233,51.92355],[7.35238,51.92265],[7.35093,51.92262]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.35238,51.92265],[7.35233,51.92355],[7.35378,51.92358],[7.35383,51.92268],[7.35238,51.92265]]},{"t":"c","n":11,"p":0,"m":0,"r":8,"c":[[7.34216,51.92332],[7.34211,51.92422],[7.34356,51.92425],[7.34361,51.92335],[7.34216,51.92332]]},{"t":"b","n":6,"p":0,"m":6,"r":0,"c":[[7.34506,51.92338],[7.34501,51.92428],[7.34646,51.92431],[7.34652,51.92342],[7.34506,51.92338]]},{"t":"b","n":3,"p":0,"m":3,"r":0,"c":[[7.34652,51.92342],[7.34646,51.92431],[7.34792,51.92435],[7.34797,51.92345],[7.34652,51.92342]]},{"t":"b","n":5,"p":0,"m":5,"r":0,"c":[[7.34205,51.92511],[7.342,51.92601],[7.34345,51.92604],[7.34351,51.92515],[7.34205,51.92511]]},{"t":"c","n":5,"p":0,"m":0,"r":3,"c":[[7.34932,51.92528],[7.34926,51.92617],[7.35072,51.92621],[7.35077,51.92531],[7.34932,51.92528]]},{"t":"b","n":3,"p":0,"m":3,"r":0,"c":[[7.35222,51.92534],[7.35217,51.92624],[7.35362,51.92627],[7.35367,51.92537],[7.35222,51.92534]]},{"t":"b","n":10,"p":0,"m":10,"r":0,"c":[[7.34345,51.92604],[7.3434,51.92694],[7.34485,51.92697],[7.3449,51.92608],[7.34345,51.92604]]},{"t":"b","n":16,"p":3,"m":6,"r":0,"c":[[7.3449,51.92608],[7.34485,51.92697],[7.3463,51.92701],[7.34636,51.92611],[7.3449,51.92608]]},{"t":"b","n":9,"p":0,"m":7,"r":0,"c":[[7.33759,51.92681],[7.33753,51.92771],[7.33899,51.92774],[7.33904,51.92684],[7.33759,51.92681]]},{"t":"b","n":10,"p":0,"m":11,"r":0,"c":[[7.34049,51.92688],[7.34044,51.92777],[7.34189,51.92781],[7.34195,51.92691],[7.34049,51.92688]]},{"t":"b","n":11,"p":0,"m":13,"r":0,"c":[[7.3434,51.92694],[7.34335,51.92784],[7.3448,51.92787],[7.34485,51.92697],[7.3434,51.92694]]},{"t":"b","n":10,"p":0,"m":9,"r":0,"c":[[7.34485,51.92697],[7.3448,51.92787],[7.34625,51.92791],[7.3463,51.92701],[7.34485,51.92697]]},{"t":"b","n":5,"p":0,"m":7,"r":0,"c":[[7.3463,51.92701],[7.34625,51.92791],[7.3477,51.92794],[7.34776,51.92704],[7.3463,51.92701]]},{"t":"b","n":9,"p":0,"m":3,"r":0,"c":[[7.34921,51.92707],[7.34916,51.92797],[7.35061,51.928],[7.35066,51.92711],[7.34921,51.92707]]},{"t":"d","n":4,"p":0,"m":0,"r":0,"c":[[7.2954,51.92675],[7.29535,51.92765],[7.2968,51.92768],[7.29685,51.92678],[7.2954,51.92675]]},{"t":"c","n":5,"p":3,"m":3,"r":4,"c":[[7.29685,51.92678],[7.2968,51.92768],[7.29825,51.92771],[7.29831,51.92682],[7.29685,51.92678]]},{"t":"b","n":12,"p":0,"m":12,"r":0,"c":[[7.33899,51.92774],[7.33893,51.92864],[7.34039,51.92867],[7.34044,51.92777],[7.33899,51.92774]]},{"t":"b","n":13,"p":0,"m":8,"r":3,"c":[[7.34044,51.92777],[7.34039,51.92867],[7.34184,51.92871],[7.34189,51.92781],[7.34044,51.92777]]},{"t":"b","n":7,"p":0,"m":5,"r":0,"c":[[7.34335,51.92784],[7.34329,51.92874],[7.34475,51.92877],[7.3448,51.92787],[7.34335,51.92784]]},{"t":"b","n":12,"p":0,"m":8,"r":0,"c":[[7.3448,51.92787],[7.34475,51.92877],[7.3462,51.9288],[7.34625,51.92791],[7.3448,51.92787]]},{"t":"b","n":17,"p":0,"m":20,"r":0,"c":[[7.34625,51.92791],[7.3462,51.9288],[7.34765,51.92884],[7.3477,51.92794],[7.34625,51.92791]]},{"t":"d","n":7,"p":0,"m":0,"r":0,"c":[[7.3477,51.92794],[7.34765,51.92884],[7.3491,51.92887],[7.34916,51.92797],[7.3477,51.92794]]},{"t":"b","n":9,"p":0,"m":7,"r":0,"c":[[7.34916,51.92797],[7.3491,51.92887],[7.35056,51.9289],[7.35061,51.928],[7.34916,51.92797]]},{"t":"c","n":18,"p":0,"m":0,"r":16,"c":[[7.33312,51.92851],[7.33307,51.92941],[7.33452,51.92944],[7.33458,51.92854],[7.33312,51.92851]]},{"t":"b","n":13,"p":0,"m":10,"r":0,"c":[[7.33748,51.92861],[7.33743,51.9295],[7.33888,51.92954],[7.33893,51.92864],[7.33748,51.92861]]},{"t":"b","n":7,"p":0,"m":6,"r":0,"c":[[7.34039,51.92867],[7.34033,51.92957],[7.34179,51.9296],[7.34184,51.92871],[7.34039,51.92867]]},{"t":"b","n":17,"p":4,"m":8,"r":8,"c":[[7.3462,51.9288],[7.34615,51.9297],[7.3476,51.92973],[7.34765,51.92884],[7.3462,51.9288]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.32747,51.92568],[7.32742,51.92658],[7.32887,51.92661],[7.32892,51.92572],[7.32747,51.92568]]},{"t":"b","n":5,"p":0,"m":5,"r":0,"c":[[7.33909,51.92595],[7.33904,51.92684],[7.34049,51.92688],[7.34055,51.92598],[7.33909,51.92595]]},{"t":"b","n":5,"p":0,"m":5,"r":0,"c":[[7.34055,51.92598],[7.34049,51.92688],[7.34195,51.92691],[7.342,51.92601],[7.34055,51.92598]]},{"t":"b","n":8,"p":0,"m":7,"r":3,"c":[[7.342,51.92601],[7.34195,51.92691],[7.3434,51.92694],[7.34345,51.92604],[7.342,51.92601]]},{"t":"d","n":4,"p":0,"m":0,"r":0,"c":[[7.34926,51.92617],[7.34921,51.92707],[7.35066,51.92711],[7.35072,51.92621],[7.34926,51.92617]]},{"t":"b","n":3,"p":0,"m":6,"r":0,"c":[[7.29691,51.92589],[7.29685,51.92678],[7.29831,51.92682],[7.29836,51.92592],[7.29691,51.92589]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.33613,51.92678],[7.33608,51.92768],[7.33753,51.92771],[7.33759,51.92681],[7.33613,51.92678]]},{"t":"b","n":9,"p":0,"m":11,"r":0,"c":[[7.34195,51.92691],[7.34189,51.92781],[7.34335,51.92784],[7.3434,51.92694],[7.34195,51.92691]]},{"t":"b","n":3,"p":0,"m":3,"r":0,"c":[[7.35066,51.92711],[7.35061,51.928],[7.35206,51.92804],[7.35212,51.92714],[7.35066,51.92711]]},{"t":"c","n":7,"p":0,"m":0,"r":7,"c":[[7.33172,51.92758],[7.33167,51.92848],[7.33312,51.92851],[7.33318,51.92761],[7.33172,51.92758]]},{"t":"c","n":7,"p":0,"m":0,"r":7,"c":[[7.33318,51.92761],[7.33312,51.92851],[7.33458,51.92854],[7.33463,51.92764],[7.33318,51.92761]]},{"t":"b","n":10,"p":0,"m":5,"r":3,"c":[[7.29535,51.92765],[7.29529,51.92855],[7.29675,51.92858],[7.2968,51.92768],[7.29535,51.92765]]},{"t":"b","n":3,"p":0,"m":3,"r":3,"c":[[7.30406,51.92785],[7.30401,51.92875],[7.30546,51.92878],[7.30552,51.92788],[7.30406,51.92785]]},{"t":"c","n":10,"p":0,"m":0,"r":10,"c":[[7.33167,51.92848],[7.33162,51.92937],[7.33307,51.92941],[7.33312,51.92851],[7.33167,51.92848]]},{"t":"c","n":10,"p":0,"m":0,"r":9,"c":[[7.33603,51.92857],[7.33598,51.92947],[7.33743,51.9295],[7.33748,51.92861],[7.33603,51.92857]]},{"t":"b","n":10,"p":0,"m":11,"r":0,"c":[[7.33893,51.92864],[7.33888,51.92954],[7.34033,51.92957],[7.34039,51.92867],[7.33893,51.92864]]},{"t":"b","n":30,"p":0,"m":30,"r":0,"c":[[7.34184,51.92871],[7.34179,51.9296],[7.34324,51.92964],[7.34329,51.92874],[7.34184,51.92871]]},{"t":"b","n":15,"p":4,"m":7,"r":4,"c":[[7.34765,51.92884],[7.3476,51.92973],[7.34905,51.92977],[7.3491,51.92887],[7.34765,51.92884]]},{"t":"b","n":12,"p":0,"m":9,"r":5,"c":[[7.29239,51.92848],[7.29233,51.92938],[7.29379,51.92941],[7.29384,51.92851],[7.29239,51.92848]]},{"t":"b","n":11,"p":0,"m":9,"r":4,"c":[[7.29384,51.92851],[7.29379,51.92941],[7.29524,51.92944],[7.29529,51.92855],[7.29384,51.92851]]},{"t":"b","n":6,"p":3,"m":4,"r":0,"c":[[7.29529,51.92855],[7.29524,51.92944],[7.29669,51.92948],[7.29675,51.92858],[7.29529,51.92855]]},{"t":"a","n":7,"p":6,"m":3,"r":0,"c":[[7.29675,51.92858],[7.29669,51.92948],[7.29814,51.92951],[7.2982,51.92861],[7.29675,51.92858]]},{"t":"c","n":15,"p":0,"m":0,"r":15,"c":[[7.33162,51.92937],[7.33156,51.93027],[7.33302,51.9303],[7.33307,51.92941],[7.33162,51.92937]]},{"t":"c","n":14,"p":0,"m":0,"r":17,"c":[[7.33307,51.92941],[7.33302,51.9303],[7.33447,51.93034],[7.33452,51.92944],[7.33307,51.92941]]},{"t":"b","n":14,"p":0,"m":14,"r":0,"c":[[7.33888,51.92954],[7.33883,51.93044],[7.34028,51.93047],[7.34033,51.92957],[7.33888,51.92954]]},{"t":"b","n":14,"p":3,"m":10,"r":0,"c":[[7.34324,51.92964],[7.34319,51.93053],[7.34464,51.93057],[7.34469,51.92967],[7.34324,51.92964]]},{"t":"b","n":11,"p":0,"m":7,"r":3,"c":[[7.34469,51.92967],[7.34464,51.93057],[7.34609,51.9306],[7.34615,51.9297],[7.34469,51.92967]]},{"t":"b","n":11,"p":0,"m":6,"r":0,"c":[[7.34615,51.9297],[7.34609,51.9306],[7.34755,51.93063],[7.3476,51.92973],[7.34615,51.9297]]},{"t":"b","n":11,"p":3,"m":10,"r":3,"c":[[7.3476,51.92973],[7.34755,51.93063],[7.349,51.93066],[7.34905,51.92977],[7.3476,51.92973]]},{"t":"a","n":10,"p":4,"m":3,"r":3,"c":[[7.29524,51.92944],[7.29518,51.93034],[7.29664,51.93038],[7.29669,51.92948],[7.29524,51.92944]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.30105,51.92958],[7.301,51.93048],[7.30245,51.93051],[7.3025,51.92961],[7.30105,51.92958]]},{"t":"b","n":13,"p":0,"m":6,"r":4,"c":[[7.30541,51.92968],[7.30536,51.93057],[7.30681,51.93061],[7.30686,51.92971],[7.30541,51.92968]]},{"t":"b","n":3,"p":0,"m":4,"r":3,"c":[[7.30686,51.92971],[7.30681,51.93061],[7.30826,51.93064],[7.30832,51.92974],[7.30686,51.92971]]},{"t":"c","n":17,"p":0,"m":0,"r":17,"c":[[7.33156,51.93027],[7.33151,51.93117],[7.33296,51.9312],[7.33302,51.9303],[7.33156,51.93027]]},{"t":"c","n":15,"p":0,"m":0,"r":17,"c":[[7.33302,51.9303],[7.33296,51.9312],[7.33442,51.93124],[7.33447,51.93034],[7.33302,51.9303]]},{"t":"c","n":21,"p":0,"m":0,"r":21,"c":[[7.33447,51.93034],[7.33442,51.93124],[7.33587,51.93127],[7.33592,51.93037],[7.33447,51.93034]]},{"t":"b","n":10,"p":0,"m":7,"r":0,"c":[[7.34028,51.93047],[7.34023,51.93137],[7.34168,51.9314],[7.34173,51.9305],[7.34028,51.93047]]},{"t":"b","n":17,"p":0,"m":14,"r":0,"c":[[7.34173,51.9305],[7.34168,51.9314],[7.34313,51.93143],[7.34319,51.93053],[7.34173,51.9305]]},{"t":"b","n":13,"p":0,"m":15,"r":0,"c":[[7.34319,51.93053],[7.34313,51.93143],[7.34459,51.93146],[7.34464,51.93057],[7.34319,51.93053]]},{"t":"c","n":10,"p":6,"m":0,"r":8,"c":[[7.29518,51.93034],[7.29513,51.93124],[7.29658,51.93127],[7.29664,51.93038],[7.29518,51.93034]]},{"t":"b","n":11,"p":0,"m":3,"r":3,"c":[[7.29809,51.93041],[7.29804,51.93131],[7.29949,51.93134],[7.29954,51.93044],[7.29809,51.93041]]},{"t":"b","n":11,"p":0,"m":4,"r":3,"c":[[7.29954,51.93044],[7.29949,51.93134],[7.30094,51.93137],[7.301,51.93048],[7.29954,51.93044]]},{"t":"c","n":21,"p":0,"m":3,"r":17,"c":[[7.30245,51.93051],[7.3024,51.93141],[7.30385,51.93144],[7.3039,51.93054],[7.30245,51.93051]]},{"t":"b","n":10,"p":0,"m":5,"r":4,"c":[[7.3039,51.93054],[7.30385,51.93144],[7.3053,51.93147],[7.30536,51.93057],[7.3039,51.93054]]},{"t":"b","n":6,"p":0,"m":3,"r":3,"c":[[7.34459,51.93146],[7.34453,51.93236],[7.34599,51.9324],[7.34604,51.9315],[7.34459,51.93146]]},{"t":"b","n":9,"p":0,"m":3,"r":3,"c":[[7.34604,51.9315],[7.34599,51.9324],[7.34744,51.93243],[7.34749,51.93153],[7.34604,51.9315]]},{"t":"d","n":4,"p":0,"m":0,"r":0,"c":[[7.3491,51.92887],[7.34905,51.92977],[7.3505,51.9298],[7.35056,51.9289],[7.3491,51.92887]]},{"t":"c","n":20,"p":0,"m":6,"r":14,"c":[[7.30401,51.92875],[7.30396,51.92964],[7.30541,51.92968],[7.30546,51.92878],[7.30401,51.92875]]},{"t":"b","n":14,"p":0,"m":11,"r":0,"c":[[7.33743,51.9295],[7.33737,51.9304],[7.33883,51.93044],[7.33888,51.92954],[7.33743,51.9295]]},{"t":"b","n":20,"p":0,"m":17,"r":3,"c":[[7.34179,51.9296],[7.34173,51.9305],[7.34319,51.93053],[7.34324,51.92964],[7.34179,51.9296]]},{"t":"b","n":11,"p":0,"m":3,"r":3,"c":[[7.29379,51.92941],[7.29373,51.93031],[7.29518,51.93034],[7.29524,51.92944],[7.29379,51.92941]]},{"t":"b","n":12,"p":0,"m":6,"r":0,"c":[[7.3025,51.92961],[7.30245,51.93051],[7.3039,51.93054],[7.30396,51.92964],[7.3025,51.92961]]},{"t":"d","n":3,"p":0,"m":0,"r":0,"c":[[7.33737,51.9304],[7.33732,51.9313],[7.33877,51.93133],[7.33883,51.93044],[7.33737,51.9304]]},{"t":"b","n":6,"p":0,"m":5,"r":0,"c":[[7.33883,51.93044],[7.33877,51.93133],[7.34023,51.93137],[7.34028,51.93047],[7.33883,51.93044]]},{"t":"b","n":8,"p":0,"m":9,"r":0,"c":[[7.34609,51.9306],[7.34604,51.9315],[7.34749,51.93153],[7.34755,51.93063],[7.34609,51.9306]]},{"t":"c","n":8,"p":0,"m":0,"r":3,"c":[[7.29373,51.93031],[7.29368,51.93121],[7.29513,51.93124],[7.29518,51.93034],[7.29373,51.93031]]},{"t":"a","n":9,"p":3,"m":0,"r":3,"c":[[7.29664,51.93038],[7.29658,51.93127],[7.29804,51.93131],[7.29809,51.93041],[7.29664,51.93038]]},{"t":"b","n":8,"p":0,"m":5,"r":0,"c":[[7.30536,51.93057],[7.3053,51.93147],[7.30675,51.93151],[7.30681,51.93061],[7.30536,51.93057]]},{"t":"b","n":4,"p":0,"m":4,"r":0,"c":[[7.30681,51.93061],[7.30675,51.93151],[7.30821,51.93154],[7.30826,51.93064],[7.30681,51.93061]]},{"t":"b","n":3,"p":0,"m":6,"r":0,"c":[[7.34313,51.93143],[7.34308,51.93233],[7.34453,51.93236],[7.34459,51.93146],[7.34313,51.93143]]},{"t":"a","n":10,"p":6,"m":0,"r":3,"c":[[7.34749,51.93153],[7.34744,51.93243],[7.34889,51.93246],[7.34895,51.93156],[7.34749,51.93153]]},{"t":"d","n":6,"p":0,"m":0,"r":0,"c":[[7.34895,51.93156],[7.34889,51.93246],[7.35035,51.93249],[7.3504,51.9316],[7.34895,51.93156]]},{"t":"c","n":10,"p":3,"m":0,"r":9,"c":[[7.30094,51.93137],[7.30089,51.93227],[7.30234,51.9323],[7.3024,51.93141],[7.30094,51.93137]]},{"t":"c","n":15,"p":3,"m":4,"r":10,"c":[[7.3024,51.93141],[7.30234,51.9323],[7.3038,51.93234],[7.30385,51.93144],[7.3024,51.93141]]},{"t":"b","n":12,"p":0,"m":9,"r":3,"c":[[7.29648,51.93307],[7.29642,51.93397],[7.29787,51.934],[7.29793,51.9331],[7.29648,51.93307]]},{"t":"c","n":8,"p":0,"m":0,"r":8,"c":[[7.29938,51.93314],[7.29933,51.93403],[7.30078,51.93407],[7.30084,51.93317],[7.29938,51.93314]]},{"t":"c","n":12,"p":0,"m":0,"r":10,"c":[[7.29787,51.934],[7.29782,51.9349],[7.29927,51.93493],[7.29933,51.93403],[7.29787,51.934]]},{"t":"b","n":10,"p":0,"m":8,"r":0,"c":[[7.29658,51.93127],[7.29653,51.93217],[7.29798,51.9322],[7.29804,51.93131],[7.29658,51.93127]]},{"t":"b","n":6,"p":0,"m":9,"r":0,"c":[[7.30385,51.93144],[7.3038,51.93234],[7.30525,51.93237],[7.3053,51.93147],[7.30385,51.93144]]},{"t":"d","n":3,"p":0,"m":0,"r":0,"c":[[7.29508,51.93214],[7.29502,51.93304],[7.29648,51.93307],[7.29653,51.93217],[7.29508,51.93214]]},{"t":"b","n":12,"p":0,"m":9,"r":0,"c":[[7.29798,51.9322],[7.29793,51.9331],[7.29938,51.93314],[7.29944,51.93224],[7.29798,51.9322]]},{"t":"d","n":11,"p":0,"m":0,"r":0,"c":[[7.29944,51.93224],[7.29938,51.93314],[7.30084,51.93317],[7.30089,51.93227],[7.29944,51.93224]]},{"t":"b","n":9,"p":0,"m":8,"r":4,"c":[[7.30089,51.93227],[7.30084,51.93317],[7.30229,51.9332],[7.30234,51.9323],[7.30089,51.93227]]},{"t":"d","n":10,"p":0,"m":0,"r":0,"c":[[7.3038,51.93234],[7.30374,51.93324],[7.30519,51.93327],[7.30525,51.93237],[7.3038,51.93234]]},{"t":"c","n":8,"p":0,"m":5,"r":8,"c":[[7.29793,51.9331],[7.29787,51.934],[7.29933,51.93403],[7.29938,51.93314],[7.29793,51.9331]]},{"t":"d","n":5,"p":0,"m":0,"r":0,"c":[[7.30084,51.93317],[7.30078,51.93407],[7.30223,51.9341],[7.30229,51.9332],[7.30084,51.93317]]},{"t":"c","n":3,"p":0,"m":0,"r":3,"c":[[7.29642,51.93397],[7.29637,51.93487],[7.29782,51.9349],[7.29787,51.934],[7.29642,51.93397]]},{"t":"c","n":4,"p":0,"m":0,"r":6,"c":[[7.29782,51.9349],[7.29777,51.9358],[7.29922,51.93583],[7.29927,51.93493],[7.29782,51.9349]]},{"t":"d","n":4,"p":0,"m":0,"r":0,"c":[[7.31946,51.93809],[7.3194,51.93899],[7.32086,51.93902],[7.32091,51.93812],[7.31946,51.93809]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.3194,51.93899],[7.31935,51.93989],[7.3208,51.93992],[7.32086,51.93902],[7.3194,51.93899]]},{"t":"d","n":3,"p":0,"m":0,"r":0,"c":[[7.33098,51.94015],[7.33092,51.94105],[7.33238,51.94108],[7.33243,51.94018],[7.33098,51.94015]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.31052,51.94148],[7.31047,51.94238],[7.31192,51.94242],[7.31198,51.94152],[7.31052,51.94148]]},{"t":"d","n":3,"p":0,"m":0,"r":0,"c":[[7.32054,51.94441],[7.32048,51.94531],[7.32194,51.94534],[7.32199,51.94444],[7.32054,51.94441]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.32875,51.90413],[7.3287,51.90503],[7.33015,51.90506],[7.3302,51.90416],[7.32875,51.90413]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.35484,51.90562],[7.35478,51.90652],[7.35624,51.90655],[7.35629,51.90565],[7.35484,51.90562]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.34171,51.90622],[7.34166,51.90712],[7.34311,51.90715],[7.34317,51.90625],[7.34171,51.90622]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.35478,51.90652],[7.35473,51.90741],[7.35618,51.90745],[7.35624,51.90655],[7.35478,51.90652]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.35172,51.90914],[7.35167,51.91004],[7.35312,51.91007],[7.35317,51.90918],[7.35172,51.90914]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.35167,51.91004],[7.35161,51.91094],[7.35307,51.91097],[7.35312,51.91007],[7.35167,51.91004]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.34715,51.91264],[7.3471,51.91354],[7.34855,51.91357],[7.3486,51.91267],[7.34715,51.91264]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.30627,51.91531],[7.30622,51.91621],[7.30767,51.91624],[7.30772,51.91534],[7.30627,51.91531]]},{"t":"c","n":3,"p":0,"m":0,"r":3,"c":[[7.33392,51.91504],[7.33387,51.91594],[7.33532,51.91597],[7.33537,51.91507],[7.33392,51.91504]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.3499,51.9154],[7.34985,51.9163],[7.3513,51.91633],[7.35135,51.91543],[7.3499,51.9154]]},{"t":"c","n":4,"p":0,"m":0,"r":6,"c":[[7.34829,51.91806],[7.34823,51.91896],[7.34969,51.91899],[7.34974,51.91809],[7.34829,51.91806]]},{"t":"c","n":5,"p":0,"m":0,"r":5,"c":[[7.33452,51.92944],[7.33447,51.93034],[7.33592,51.93037],[7.33598,51.92947],[7.33452,51.92944]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.301,51.93048],[7.30094,51.93137],[7.3024,51.93141],[7.30245,51.93051],[7.301,51.93048]]},{"t":"c","n":3,"p":0,"m":0,"r":3,"c":[[7.33151,51.93117],[7.33146,51.93207],[7.33291,51.9321],[7.33296,51.9312],[7.33151,51.93117]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.32984,51.93473],[7.32979,51.93563],[7.33124,51.93566],[7.3313,51.93476],[7.32984,51.93473]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.33684,51.93938],[7.33679,51.94028],[7.33824,51.94031],[7.3383,51.93942],[7.33684,51.93938]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.33383,51.94111],[7.33378,51.94201],[7.33523,51.94204],[7.33528,51.94115],[7.33383,51.94111]]},{"t":"b","n":14,"p":0,"m":13,"r":0,"c":[[7.35544,51.92002],[7.35539,51.92092],[7.35684,51.92095],[7.3569,51.92005],[7.35544,51.92002]]},{"t":"b","n":20,"p":3,"m":12,"r":6,"c":[[7.35835,51.92008],[7.3583,51.92098],[7.35975,51.92101],[7.3598,51.92012],[7.35835,51.92008]]},{"t":"b","n":15,"p":3,"m":10,"r":3,"c":[[7.35684,51.92095],[7.35679,51.92185],[7.35824,51.92188],[7.3583,51.92098],[7.35684,51.92095]]},{"t":"b","n":12,"p":0,"m":10,"r":6,"c":[[7.35529,51.92271],[7.35523,51.92361],[7.35669,51.92364],[7.35674,51.92275],[7.35529,51.92271]]},{"t":"c","n":11,"p":0,"m":4,"r":8,"c":[[7.34361,51.92335],[7.34356,51.92425],[7.34501,51.92428],[7.34506,51.92338],[7.34361,51.92335]]},{"t":"b","n":12,"p":7,"m":9,"r":0,"c":[[7.35669,51.92364],[7.35663,51.92454],[7.35809,51.92457],[7.35814,51.92368],[7.35669,51.92364]]},{"t":"c","n":10,"p":3,"m":0,"r":7,"c":[[7.34076,51.92239],[7.34071,51.92328],[7.34216,51.92332],[7.34221,51.92242],[7.34076,51.92239]]},{"t":"b","n":15,"p":0,"m":15,"r":0,"c":[[7.34512,51.92248],[7.34506,51.92338],[7.34652,51.92342],[7.34657,51.92252],[7.34512,51.92248]]},{"t":"b","n":4,"p":0,"m":4,"r":0,"c":[[7.34211,51.92422],[7.34205,51.92511],[7.34351,51.92515],[7.34356,51.92425],[7.34211,51.92422]]},{"t":"b","n":18,"p":0,"m":16,"r":0,"c":[[7.33904,51.92684],[7.33899,51.92774],[7.34044,51.92777],[7.34049,51.92688],[7.33904,51.92684]]},{"t":"b","n":16,"p":3,"m":8,"r":3,"c":[[7.34475,51.92877],[7.34469,51.92967],[7.34615,51.9297],[7.3462,51.9288],[7.34475,51.92877]]},{"t":"d","n":6,"p":0,"m":0,"r":0,"c":[[7.29389,51.92761],[7.29384,51.92851],[7.29529,51.92855],[7.29535,51.92765],[7.29389,51.92761]]},{"t":"c","n":12,"p":0,"m":0,"r":11,"c":[[7.33458,51.92854],[7.33452,51.92944],[7.33598,51.92947],[7.33603,51.92857],[7.33458,51.92854]]},{"t":"b","n":19,"p":7,"m":14,"r":3,"c":[[7.34329,51.92874],[7.34324,51.92964],[7.34469,51.92967],[7.34475,51.92877],[7.34329,51.92874]]},{"t":"c","n":19,"p":0,"m":0,"r":18,"c":[[7.30546,51.92878],[7.30541,51.92968],[7.30686,51.92971],[7.30692,51.92881],[7.30546,51.92878]]},{"t":"b","n":15,"p":0,"m":17,"r":0,"c":[[7.34033,51.92957],[7.34028,51.93047],[7.34173,51.9305],[7.34179,51.9296],[7.34033,51.92957]]},{"t":"b","n":12,"p":3,"m":6,"r":3,"c":[[7.34905,51.92977],[7.349,51.93066],[7.35045,51.9307],[7.3505,51.9298],[7.34905,51.92977]]},{"t":"c","n":15,"p":0,"m":0,"r":13,"c":[[7.30396,51.92964],[7.3039,51.93054],[7.30536,51.93057],[7.30541,51.92968],[7.30396,51.92964]]},{"t":"b","n":17,"p":0,"m":18,"r":0,"c":[[7.34464,51.93057],[7.34459,51.93146],[7.34604,51.9315],[7.34609,51.9306],[7.34464,51.93057]]},{"t":"d","n":7,"p":0,"m":0,"r":0,"c":[[7.29233,51.92938],[7.29228,51.93028],[7.29373,51.93031],[7.29379,51.92941],[7.29233,51.92938]]},{"t":"c","n":11,"p":0,"m":5,"r":14,"c":[[7.33592,51.93037],[7.33587,51.93127],[7.33732,51.9313],[7.33737,51.9304],[7.33592,51.93037]]},{"t":"b","n":9,"p":0,"m":4,"r":4,"c":[[7.29804,51.93131],[7.29798,51.9322],[7.29944,51.93224],[7.29949,51.93134],[7.29804,51.93131]]},{"t":"c","n":10,"p":0,"m":3,"r":6,"c":[[7.29653,51.93217],[7.29648,51.93307],[7.29793,51.9331],[7.29798,51.9322],[7.29653,51.93217]]},{"t":"d","n":6,"p":0,"m":0,"r":0,"c":[[7.30234,51.9323],[7.30229,51.9332],[7.30374,51.93324],[7.3038,51.93234],[7.30234,51.9323]]},{"t":"d","n":10,"p":0,"m":0,"r":0,"c":[[7.29949,51.93134],[7.29944,51.93224],[7.30089,51.93227],[7.30094,51.93137],[7.29949,51.93134]]},{"t":"b","n":15,"p":0,"m":15,"r":0,"c":[[7.35986,51.91922],[7.3598,51.92012],[7.36126,51.92015],[7.36131,51.91925],[7.35986,51.91922]]},{"t":"d","n":4,"p":0,"m":0,"r":0,"c":[[7.2996,51.92954],[7.29954,51.93044],[7.301,51.93048],[7.30105,51.92958],[7.2996,51.92954]]},{"t":"b","n":10,"p":0,"m":13,"r":0,"c":[[7.34884,51.93336],[7.34879,51.93426],[7.35024,51.93429],[7.35029,51.93339],[7.34884,51.93336]]},{"t":"b","n":5,"p":0,"m":3,"r":0,"c":[[7.3273,51.9041],[7.32724,51.90499],[7.3287,51.90503],[7.32875,51.90413],[7.3273,51.9041]]},{"t":"e","n":0,"p":0,"m":0,"r":0,"c":[[7.29772,51.91241],[7.29766,51.91331],[7.29911,51.91335],[7.29917,51.91245],[7.29772,51.91241]]},{"t":"b","n":7,"p":0,"m":6,"r":0,"c":[[7.35706,51.91736],[7.357,51.91826],[7.35846,51.91829],[7.35851,51.91739],[7.35706,51.91736]]},{"t":"c","n":27,"p":0,"m":3,"r":26,"c":[[7.34092,51.91969],[7.34086,51.92059],[7.34232,51.92062],[7.34237,51.91972],[7.34092,51.91969]]},{"t":"c","n":22,"p":0,"m":6,"r":17,"c":[[7.34237,51.91972],[7.34232,51.92062],[7.34377,51.92066],[7.34382,51.91976],[7.34237,51.91972]]},{"t":"c","n":26,"p":0,"m":10,"r":20,"c":[[7.34963,51.91989],[7.34958,51.92079],[7.35103,51.92082],[7.35109,51.91992],[7.34963,51.91989]]},{"t":"c","n":11,"p":0,"m":0,"r":11,"c":[[7.34086,51.92059],[7.34081,51.92149],[7.34226,51.92152],[7.34232,51.92062],[7.34086,51.92059]]},{"t":"b","n":12,"p":0,"m":14,"r":3,"c":[[7.34377,51.92066],[7.34372,51.92155],[7.34517,51.92159],[7.34522,51.92069],[7.34377,51.92066]]},{"t":"b","n":13,"p":3,"m":7,"r":4,"c":[[7.35975,51.92101],[7.3597,51.92191],[7.36115,51.92195],[7.3612,51.92105],[7.35975,51.92101]]},{"t":"c","n":16,"p":0,"m":3,"r":15,"c":[[7.34808,51.92165],[7.34802,51.92255],[7.34948,51.92258],[7.34953,51.92168],[7.34808,51.92165]]},{"t":"b","n":14,"p":0,"m":8,"r":0,"c":[[7.34189,51.92781],[7.34184,51.92871],[7.34329,51.92874],[7.34335,51.92784],[7.34189,51.92781]]},{"t":"b","n":5,"p":0,"m":3,"r":0,"c":[[7.29669,51.92948],[7.29664,51.93038],[7.29809,51.93041],[7.29814,51.92951],[7.29669,51.92948]]},{"t":"b","n":9,"p":3,"m":4,"r":3,"c":[[7.29814,51.92951],[7.29809,51.93041],[7.29954,51.93044],[7.2996,51.92954],[7.29814,51.92951]]}];
+
+        // Stadtwerke Münster - Projekt Stockum (7 geplante WEA)
+        var stadtwerkeStockum = [
+            { name: "WEA 1", coords: [51.923481, 7.319295] },
+            { name: "WEA 2", coords: [51.921166, 7.324182] },
+            { name: "WEA 3", coords: [51.917956, 7.315968] },
+            { name: "WEA 4", coords: [51.916918, 7.321997] },
+            { name: "WEA 5", coords: [51.929896, 7.321571] },
+            { name: "WEA 6", coords: [51.910355, 7.327098] },
+            { name: "WEA 7", coords: [51.911087, 7.337525] }
+        ];
+
+        // Map init (center on WEA cluster)
+        var map = L.map('map').setView([51.920, 7.325], 13);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 18,
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> | Gebäudedaten: <a href="https://ergebnisse.zensus2022.de/">Zensus 2022</a> (dl-de/by-2-0)'
+        }).addTo(map);
+
+        // Color mapping
+        // a=pre1950, b=mid, c=post1990, d=partial suppression, e=complete suppression
+        var colorMap = { a: '#c0392b', b: '#f39c12', c: '#27ae60', d: '#bdc3c7', e: '#95a5a6' };
+        var labelMap = { a: 'Vor 1950', b: '1949-1990', c: 'Nach 1990', d: 'Alter teilweise unterdrückt', e: 'Komplett unterdrückt' };
+
+        // Add Zensus grid cells
+        var zensusLayer = L.layerGroup();
+        var suppressedLayer = L.layerGroup();
+        zensusData.forEach(function(cell) {
+            var coords = cell.c.map(function(p) { return [p[1], p[0]]; });
+            var color = colorMap[cell.t] || '#bdc3c7';
+
+            var details = '';
+            if (cell.p > 0) details += 'Vor 1950: ' + cell.p + '\n';
+            if (cell.m > 0) details += '1949-1990: ' + cell.m + '\n';
+            if (cell.r > 0) details += 'Nach 1990: ' + cell.r + '\n';
+            var suppressed = cell.n - cell.p - cell.m - cell.r;
+            if (suppressed > 0) details += 'Alter unbekannt: ' + suppressed;
+
+            // Completely suppressed cells (type e): no building count known
+            if (cell.t === 'e') {
+                L.polygon(coords, {
+                    color: '#e74c3c',
+                    weight: 2,
+                    fillColor: '#e74c3c',
+                    fillOpacity: 0.15,
+                    dashArray: '6, 4'
+                }).bindPopup(
+                    '<strong style="color:#e74c3c;">Komplett unterdrückt</strong><br>' +
+                    '<small>Nur 1-2 Gebäude in dieser Zelle. Daten nach §16 BStatG unterdrückt, da Bewohner sonst identifizierbar wären.</small>'
+                ).addTo(suppressedLayer);
+            } else {
+                L.polygon(coords, {
+                    color: color,
+                    weight: 0.5,
+                    fillColor: color,
+                    fillOpacity: 0.55
+                }).bindPopup(
+                    '<strong>' + cell.n + ' Gebäude</strong><br>' +
+                    '<span style="color:' + color + '">' + labelMap[cell.t] + ' (dominant)</span><br>' +
+                    '<small style="white-space:pre-line">' + details + '</small>'
+                ).addTo(zensusLayer);
+
+                // Also highlight partially suppressed cells on the suppressed layer
+                if (suppressed > 0) {
+                    L.polygon(coords, {
+                        color: '#e74c3c',
+                        weight: 3,
+                        fillColor: 'transparent',
+                        fillOpacity: 0,
+                        dashArray: '6, 4'
+                    }).bindPopup(
+                        '<strong style="color:#e74c3c;">' + suppressed + ' von ' + cell.n + ' Gebäuden: Alter unterdrückt</strong><br>' +
+                        '<small>Alter nach §16 BStatG unterdrückt, da Gebäude sonst identifizierbar wären.</small>' +
+                        (details ? '<br><small style="white-space:pre-line">' + details + '</small>' : '')
+                    ).addTo(suppressedLayer);
+                }
+            }
+        });
+        zensusLayer.addTo(map);
+        suppressedLayer.addTo(map);
+
+        // 1km radius circles around each WEA
+        var radiusLayer = L.layerGroup();
+        stadtwerkeStockum.forEach(function(wea) {
+            L.circle(wea.coords, {
+                radius: 1000,
+                color: '#1a5f6a',
+                fillColor: '#1a5f6a',
+                fillOpacity: 0.03,
+                weight: 1.5,
+                dashArray: '6, 6',
+                interactive: false
+            }).addTo(radiusLayer);
+        });
+        radiusLayer.addTo(map);
+
+        // WEA markers
+        var weaIcon = L.divIcon({
+            className: 'custom-marker',
+            html: '<div style="background: #e67e22; width: 22px; height: 22px; border-radius: 50%; border: 3px solid white; box-shadow: 0 2px 6px rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center;"><svg viewBox="0 0 24 24" style="width: 12px; height: 12px; fill: white;"><path d="M10.5 12L10 24H14L13.5 12" opacity="0.7"/><circle cx="12" cy="10.5" r="2.25"/><path d="M10.5 9L12 0L13.5 9Z"/><path d="M12 9L24 17L12 12Z"/><path d="M12 9L0 17L12 12Z"/></svg></div>',
+            iconSize: [22, 22],
+            iconAnchor: [11, 11]
+        });
+
+        var weaLayer = L.layerGroup();
+        stadtwerkeStockum.forEach(function(wea) {
+            L.marker(wea.coords, { icon: weaIcon })
+                .bindPopup('<strong>' + wea.name + '</strong><br>Windpark Stockum<br><span style="color: #e67e22; font-weight: 600;">Geplant (Stadtwerke Münster)</span>')
+                .addTo(weaLayer);
+        });
+        weaLayer.addTo(map);
+
+        // Layer control
+        var overlays = {
+            "Gebäudealter (Zensus 2022)": zensusLayer,
+            "Alter unbekannt (unterdrückt)": suppressedLayer,
+            "1-km-Radius (RWI)": radiusLayer,
+            "Geplante WEA": weaLayer
+        };
+        L.control.layers(null, overlays, { collapsed: false }).addTo(map);
+    </script>
+</body>
+</html>

@@ -86,6 +86,9 @@ Alle folgenden Fakten wurden gegen Originalquellen geprüft:
 - Recycling: ~90%
 - Bauzeit pro Anlage: 3-6 Monate (Fundament, Aufbau, Netzanschluss)
 - Immobilienwerte: 7% durchschnittlich, bis 23% für ältere Häuser (Baujahr vor 1950) im ländlichen Raum in 1km (RWI 2019), ab 8-9km kein Effekt
+- Zensus 2022 Gebäudealter Stockum-Bereich (100m-Gitterzellen, Destatis): 3.292 Gebäude, davon 7,2% vor 1950, 51,6% 1949-1990, 35,3% nach 1990
+- Zensus 2022 Innerhalb 1km der WEA Stockum: 187 Gebäude, davon 0 (0%) vor 1950, 92,5% nach 1990
+- Berkeley/PIK PNAS 2024: Wertverlust peakt nach 3 Jahren, erholt sich dann. Für nach 2017 errichtete Anlagen kein signifikanter Effekt
 - Abregelung 2024: 9,4 TWh (3,5% der EE-Produktion) wegen Netzengpässen
 - Strommix 2024: 59,4% erneuerbar, 40,6% fossil (Destatis)
 - Klimaziel 2030: 80% EE (EEG 2023, §1 Abs. 2)
@@ -243,7 +246,7 @@ Alle folgenden Fakten wurden gegen Originalquellen geprüft:
 - Statische HTML/CSS Website (kein Build-Prozess, kein SSG)
 - Hosting: GitHub Pages
 - Repository: github.com/lmachens/windkraft-nottuln (öffentlich, MIT-Lizenz)
-- Struktur: /faq/, /quellen/, /impressum/, /datenschutz/
+- Struktur: /faq/, /quellen/, /anlagen/, /hauswert/, /petition/, /gesetze/, /impressum/, /datenschutz/
 - FAQ-Seite hat Schema.org FAQPage JSON-LD Markup für Google Rich Results
 
 ### Tooltips für Fachbegriffe
@@ -266,9 +269,12 @@ Auf ALLEN Seiten identisch halten:
 ```html
 <nav class="header__nav">
     <a href="/">Startseite</a>
+    <a href="/anlagen/">Anlagen</a>
+    <a href="/hauswert/">Hauswert</a>
+    <a href="/petition/">Petition</a>
     <a href="/faq/">FAQ</a>
+    <a href="/gesetze/">Gesetze</a>
     <a href="/quellen/">Quellen</a>
-    <a href="/impressum/">Impressum</a>
 </nav>
 ```
 **Ausnahme:** index.html hat zusätzlich Anker-Links (#fakten, #ehrlichkeit, #ressourcen)
@@ -276,7 +282,7 @@ Auf ALLEN Seiten identisch halten:
 ### Footer
 **Einheitlich auf ALLEN Seiten** (4-spaltig mit Logo):
 - Logo + Beschreibungstext
-- Spalte "Inhalte": Startseite, Häufige Fragen, Quellenverzeichnis
+- Spalte "Inhalte": Startseite, Anlagen, Hauswert, Häufige Fragen, Gesetze & Verfahren, Quellenverzeichnis
 - Spalte "Externe Quellen": BUND, UBA, ProWindCOE
 - Spalte "Rechtliches": Impressum, Datenschutz, GitHub
 - Footer-Bottom: © 2026 + MIT-Lizenz
@@ -293,20 +299,26 @@ Bei Änderungen an gemeinsamen Elementen ALLE Dateien prüfen:
 - [ ] faq/index.html
 - [ ] quellen/index.html
 - [ ] impressum/index.html
+- [ ] anlagen/index.html
+- [ ] hauswert/index.html
+- [ ] petition/index.html
+- [ ] gesetze/index.html
 - [ ] datenschutz/index.html
 - [ ] sitemap.xml (bei neuen Seiten)
 
 ### Fakten-Duplikate
 Gleiche Fakten können auf mehreren Seiten vorkommen:
-| Fakt | index.html | faq/index.html | Aktualisieren |
-|------|------------|----------------|---------------|
-| Infraschall 3,5h Auto | ✓ | ✓ | beide |
-| Immobilienwerte 7-23%/1km | ✓ | ✓ | beide |
-| Abregelung 3,5% | ✓ | ✓ | beide |
-| Vogelschlag-Zahlen | ✓ | ✓ | beide |
-| Schattenwurf 8h | ✓ | ✓ | beide |
-| Standortwahl/Autobahn | ✓ | ✓ | beide |
-| Zugvögel (Kraniche/Gänse) | ✓ | ✓ | beide |
+| Fakt | index.html | faq/index.html | hauswert/index.html | Aktualisieren |
+|------|------------|----------------|---------------------|---------------|
+| Infraschall 3,5h Auto | ✓ | ✓ | | beide |
+| Immobilienwerte 7-23%/1km | ✓ | ✓ | ✓ | alle drei |
+| Abregelung 3,5% | ✓ | ✓ | | beide |
+| Vogelschlag-Zahlen | ✓ | ✓ | | beide |
+| Schattenwurf 8h | ✓ | ✓ | | beide |
+| Standortwahl/Autobahn | ✓ | ✓ | | beide |
+| Zugvögel (Kraniche/Gänse) | ✓ | ✓ | | beide |
+| Berkeley/PIK PNAS 2024 | ✓ | ✓ | ✓ | alle drei |
+| Zensus 2022 Gebäudealter | | | ✓ | hauswert |
 
 **Regel:** Bei Fakten-Änderungen IMMER grep über alle .html-Dateien!
 
