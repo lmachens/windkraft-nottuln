@@ -337,6 +337,15 @@
         }
         @media (max-width: 640px) {
             #map { height: 350px; }
+            .leaflet-control-layers-toggle {
+                width: 40px;
+                height: 40px;
+                background-size: 24px 24px;
+            }
+            .leaflet-control-layers-expanded {
+                max-height: 280px;
+                overflow-y: auto;
+            }
         }
         .map-legend {
             display: flex;
@@ -1043,7 +1052,8 @@
             "1-km-Radius (RWI)": radiusLayer,
             "Geplante WEA": weaLayer
         };
-        L.control.layers(null, overlays, { collapsed: false }).addTo(map);
+        var isMobile = window.matchMedia('(max-width: 640px)').matches;
+        L.control.layers(null, overlays, { collapsed: isMobile }).addTo(map);
     </script>
 </body>
 </html>
