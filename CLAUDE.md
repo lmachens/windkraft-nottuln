@@ -73,7 +73,7 @@ Faktenbasierte Aufklärung über Windkraft mit verifizierten Quellen.
 Alle folgenden Fakten wurden gegen Originalquellen geprüft:
 - Schattenwurf: 8h tatsächlich / 30h astronomisch (LAI-Hinweise)
 - Infraschall: 3,5h Autofahrt = 27 Jahre in 300m (Uni Bayreuth)
-- §6 EEG: 0,2 ct/kWh für Gemeinden
+- §6 EEG: 0,2 ct/kWh für Gemeinden im 2,5-km-Radius (Verteilung nach Flächenanteil)
 - §29 GewStG: 90% Gewerbesteuer an Standortgemeinde (seit 2021)
 - BürgEnG NRW: Investition ab 500€
 - CO2-Einsparung: 6.000-10.000t pro Windrad/Jahr
