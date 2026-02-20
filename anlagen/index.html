@@ -1620,29 +1620,31 @@
             iconAnchor: [11, 11]
         });
 
-        // Alle Anlagen im 8km-Radius (aus MaStR-Daten Januar 2026)
+        // Alle Anlagen im 8km-Radius (MaStR-Daten Jan 2026, Koordinaten-Korrekturen via windturbinemap.com Feb 2026)
         const inBetrieb = [
             // Nottuln (2)
-            { name: "WKA 1", park: "WP Darup", typ: "Enercon E40", mw: "0,5 MW", hoehe: "83 m", jahr: 1998, gemeinde: "Nottuln", coords: [51.943573, 7.291765] },
-            { name: "WKA 2", park: "WP Darup", typ: "Enercon E-40", mw: "0,6 MW", hoehe: "100 m", jahr: 2002, gemeinde: "Nottuln", coords: [51.943573, 7.291765] },
-            // Billerbeck (10)
+            { name: "WKA 1", park: "WP Darup", typ: "Enercon E40", mw: "0,5 MW", hoehe: "83 m", jahr: 1998, gemeinde: "Nottuln", coords: [51.946513, 7.284279] },
+            { name: "WKA 2", park: "WP Darup", typ: "Enercon E-40", mw: "0,6 MW", hoehe: "100 m", jahr: 2002, gemeinde: "Nottuln", coords: [51.945191, 7.285910] },
+            // Billerbeck (11)
             { name: "WE 15561948", park: "Nottuln", typ: "GE 1.5 sl", mw: "1,50 MW", hoehe: "138 m", jahr: 2004, gemeinde: "Billerbeck", coords: [51.903047, 7.363029] },
-            { name: "Baumberge 1", park: "WKA Baumberge", typ: "Enercon E40", mw: "0,50 MW", hoehe: "68 m", jahr: 2001, gemeinde: "Billerbeck", coords: [51.959853, 7.364432] },
-            { name: "Baumberge 2", park: "WKA Baumberge", typ: "Enercon E40", mw: "0,50 MW", hoehe: "68 m", jahr: 2001, gemeinde: "Billerbeck", coords: [51.959728, 7.365532] },
+            { name: "Baumberge 1", park: "WKA Baumberge", typ: "Enercon E40", mw: "0,50 MW", hoehe: "68 m", jahr: 1994, gemeinde: "Billerbeck", coords: [51.959853, 7.364432] },
+            { name: "Baumberge 2", park: "WKA Baumberge", typ: "Enercon E40", mw: "0,50 MW", hoehe: "68 m", jahr: 1994, gemeinde: "Billerbeck", coords: [51.959711, 7.361312] },
             { name: "WEA 1 (N 70433)", park: "WP Nottuln", typ: "Nordex S-77", mw: "1,50 MW", hoehe: "138 m", jahr: 2007, gemeinde: "Billerbeck", coords: [51.894006, 7.368403] },
             { name: "WEA 2 (N 70432)", park: "WP Nottuln", typ: "Nordex S-77", mw: "1,50 MW", hoehe: "138 m", jahr: 2007, gemeinde: "Billerbeck", coords: [51.895542, 7.374860] },
-            { name: "WEA 3 (N 70434)", park: "WP Nottuln", typ: "Nordex S-77", mw: "1,50 MW", hoehe: "138 m", jahr: 2007, gemeinde: "Billerbeck", coords: [51.891310, 7.367177] },
-            { name: "WEA 58225", park: "Billerbeck", typ: "Enercon E-58", mw: "1,00 MW", hoehe: "100 m", jahr: 2001, gemeinde: "Billerbeck", coords: [51.946335, 7.280679] },
-            { name: "WEA 58224", park: "Billerbeck", typ: "Enercon E-58", mw: "1,00 MW", hoehe: "100 m", jahr: 2001, gemeinde: "Billerbeck", coords: [51.945439, 7.277192] },
-            { name: "WEA 822747", park: "Osthellermark", typ: "Enercon E-82", mw: "2,30 MW", hoehe: "127 m", jahr: 2012, gemeinde: "Billerbeck", coords: [51.951970, 7.267970] },
+            { name: "WEA 3 (N 70434)", park: "WP Nottuln", typ: "Nordex S-77", mw: "1,50 MW", hoehe: "138 m", jahr: 2007, gemeinde: "Billerbeck", coords: [51.897258, 7.372899] },
+            { name: "WEA 4 (N 70431)", park: "WP Nottuln", typ: "Nordex S-77", mw: "1,50 MW", hoehe: "138 m", jahr: 2007, gemeinde: "Billerbeck", coords: [51.896622, 7.367363] },
+            { name: "WEA 58225", park: "Billerbeck", typ: "Enercon E-58", mw: "1,00 MW", hoehe: "100 m", jahr: 2006, gemeinde: "Billerbeck", coords: [51.946335, 7.280679] },
+            { name: "WEA 58224", park: "Billerbeck", typ: "Enercon E-58", mw: "1,00 MW", hoehe: "100 m", jahr: 2006, gemeinde: "Billerbeck", coords: [51.945439, 7.277192] },
+            { name: "WEA 822747", park: "Osthellermark", typ: "Enercon E-82", mw: "2,30 MW", hoehe: "127 m", jahr: 2010, gemeinde: "Billerbeck", coords: [51.951970, 7.267970] },
             { name: "WKA", park: "WKA-Schoene", typ: "Tacke TW 300", mw: "0,30 MW", hoehe: "64 m", jahr: 1995, gemeinde: "Billerbeck", coords: [52.000360, 7.356250] },
             // Dülmen (1)
-            { name: "442479", park: "Dülmen-Buldern", typ: "Enercon E-40", mw: "0,60 MW", hoehe: "98 m", jahr: 2002, gemeinde: "Dülmen", coords: [51.875723, 7.391927] }
+            { name: "442479", park: "Dülmen-Buldern", typ: "Enercon E-40", mw: "0,60 MW", hoehe: "98 m", jahr: 2007, gemeinde: "Dülmen", coords: [51.875723, 7.391927] }
         ];
 
         const inPlanung = [
-            // Nottuln (9)
+            // Nottuln (10)
             { name: "Nottuln", park: "Nottuln", typ: "Enercon E-175 EP5", mw: "7,00 MW", hoehe: "200 m", gemeinde: "Nottuln", coords: [51.902572, 7.362762] },
+            { name: "SL Windenergie (Vorbescheid)", park: "Darup", gemeinde: "Nottuln", statusText: "Vorbescheid (Jan. 2025)", coords: [51.940423, 7.291802] },
             { name: "WEA 1", park: "Nottuln Hastehausen", typ: "Enercon E-138 EP3", mw: "4,26 MW", hoehe: "229 m", gemeinde: "Nottuln", coords: [51.945912, 7.286183] },
             { name: "175Darup1", park: "Darup", typ: "Enercon E-175 EP5", mw: "6,30 MW", hoehe: "250 m", gemeinde: "Nottuln", coords: [51.944930, 7.279971] },
             { name: "WEA 2", park: "BWP Nottuln-Gladbeck", typ: "Enercon E 160", mw: "5,56 MW", hoehe: "220 m", gemeinde: "Nottuln", coords: [51.905201, 7.285756] },
@@ -1687,6 +1689,9 @@
             } else {
                 statusClass = 'color: #7da87b';
                 statusText = 'In Planung (MaStR)';
+            }
+            if (anlage.statusText) {
+                statusText = anlage.statusText;
             }
             let html = `
                 <div class="popup-title">${anlage.name}</div>
