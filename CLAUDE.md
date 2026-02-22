@@ -210,8 +210,13 @@ Alle folgenden Fakten wurden gegen Originalquellen geprüft:
   - Rechtskraft: 09.11.2023
   - Ziel: „Der Windenergienutzung im Gemeindegebiet mehr Raum geben" (Kreis Coesfeld)
   - Quellen: SessionNet Vorlage 126/2023, zusammenfassende Erklärung PDF
-- **Vorbescheide rechtmäßig** (Kreis Coesfeld Stellungnahme 18.09.2025): Erteilt auf Grundlage der damals geltenden Rechtslage, vor §36a LPLG NRW. Kreis war verpflichtet, positiv zu bescheiden.
+- **Vorbescheide rechtmäßig** (Kreis Coesfeld Stellungnahme 18.09.2025): Erteilt auf Grundlage der damals geltenden Rechtslage, vor §36a LPLG NRW
+  - §9 Abs. 1 BImSchG ist eine **Soll-Vorschrift** ("soll entschieden werden"): Im Regelfall Quasi-Anspruch auf Erteilung, enger Restermessensspielraum in atypischen Fällen
+  - Zum Vergleich: §6 Abs. 1 BImSchG (Genehmigung) = "ist zu erteilen" (gebundene Entscheidung)
+  - Da alle Voraussetzungen erfüllt waren, war der Kreis im Regelfall zur positiven Bescheidung verpflichtet
+  - §9 Abs. 1a BImSchG (seit Juli 2024): Vereinfachter WEA-Vorbescheid; seit Feb 2025 nicht mehr außerhalb WEG (Abs. 1a S. 2)
 - **Stockum nicht von §36a betroffen**: Anträge vor Stichtag (15. April 2024) eingereicht
+- **OVG Berlin-Brandenburg** (Az. 7 A 13/25, 19.09.2025): Klage auf Erteilung eines Vorbescheids (nicht wie in Nottuln bereits erteilt). Gericht: Kein Anspruch auf vereinfachten Vorbescheid außerhalb WEG nach §9 Abs. 1a S. 2 BImSchG. Nicht direkt auf Nottuln übertragbar, da Stockum-Vorbescheide bereits erteilt sind (Bestandsschutz). Quelle: gesetze.berlin.de/bsbe/document/NJRE001622283
 - Gemeindebeteiligung: sechsstelliger Betrag/Jahr (§6 EEG)
 - **Nottuln.Wind GmbH**: Gesellschaft für Bürgerbeteiligung an Erneuerbaren Energien
   - Gründungsbeschluss gefasst (Februar 2026)
