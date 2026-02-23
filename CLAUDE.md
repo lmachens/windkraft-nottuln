@@ -184,8 +184,9 @@ Alle folgenden Fakten wurden gegen Originalquellen geprüft:
 
 ## NRW-spezifische Fakten (verifiziert Januar 2026)
 - NRW 1000m-Mindestabstand: **ABGESCHAFFT seit August 2023**
-- Aktuell gelten nur: Immissionsschutz (TA Lärm, Schattenwurf) + optisch bedrängende Wirkung (2-3× Anlagenhöhe)
-- Bei 267m-Anlagen: ca. 530-800m Abstand nach "optisch bedrängend"-Regel
+- Aktuell gelten nur: Immissionsschutz (TA Lärm, Schattenwurf) + optisch bedrängende Wirkung (2H-Regel, §249 Abs. 10 BauGB seit 01.02.2023)
+- Optisch bedrängende Wirkung: Seit 01.02.2023 gilt 2x Gesamthöhe (2H) als gesetzliche Schwelle (§249 Abs. 10 BauGB). Davor galt nach OVG-Rechtsprechung 3H als "sicherer" Richtwert.
+- Bei 267m-Anlagen: 2H = 534m. WEA 5 Stockum (653m, ca. 2,4H) liegt oberhalb der 2H-Schwelle.
 - **§36a LPLG NRW** (Windenergie-Moratorium): In Kraft seit **15. Februar 2025**
 - Pausiert Genehmigungen **außerhalb** geplanter Windenergiegebiete für 12 Monate (verlängerbar)
 - Ausnahmen: Repowering nach §16b BImSchG, Anträge mit vollständigen Unterlagen vor 15. April 2024
