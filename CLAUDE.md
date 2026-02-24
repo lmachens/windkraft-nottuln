@@ -226,6 +226,18 @@ Alle folgenden Fakten wurden gegen Originalquellen geprüft:
   - Aufgaben: Beteiligungsmöglichkeiten verwalten, digitale Beteiligungsplattform
   - Quellen: Facebook @gemeindenottuln (08.02.2026), SessionNet Vorlage 151/2025
   - Registrierung für Interessenten: buergerwind@nottuln.de
+- **WEA Buxtrup (97. FNP-Änderung)**: Einzelne WEA, isolierte Positivplanung (§ 249 Abs. 4 BauGB)
+  - 4. Windfläche in Nottuln (zusätzlich zu 3 Windenergiebereichen im Regionalplan Münsterland)
+  - Standort: Gemarkung Nottuln, Flur 63, Flurstück 85 (tlw.), ca. 3,7 ha, im LSG "Nonnenbach/Staatsforst Münster"
+  - Zwei Varianten in Prüfung: 5,56 MW / 246m Gesamthöhe (Option A) oder 6,00 MW / 249,5m (Option B)
+  - Zugleich Beschleunigungsgebiet (§ 249c BauGB)
+  - Direktverbrauch: Energielieferung an nahegelegene Ziegelei geplant (Kontakt durch Projektträger aufgenommen)
+  - Netzanschluss: 30-kV-Netz, ca. 1.300m nördlich, vom Netzbetreiber bestätigt
+  - Aufstellungsbeschluss: 10.12.2024, Ratsbeschluss frühzeitige Beteiligung: 24.02.2026
+  - Parallelverfahren: B-Plan Nr. 172 "Windenergieanlage Buxtrup"
+  - Städtebaulicher Vertrag (§ 11 BauGB): Investor übernimmt Kosten für Änderungsverfahren und Gutachten
+  - Erstellt von: WWK Weil Winterkamp Knopp, Partnerschaft für Umweltplanung, Warendorf
+  - Quelle: Vorlage 165/2025, SessionNet
 - Baumberge: **Landschaftsschutzgebiet** (NICHT Naturschutzgebiet) - rechtlich wichtiger Unterschied
 - Regionalplan Ziel 5: südliche Höhenlagen der Baumberge geschützt, geplante Standorte NICHT betroffen
 - Münster zum Vergleich: 33-34 WEA, ~320.000 Einwohner, 303 km² (Stadt mit dichter Bebauung)
