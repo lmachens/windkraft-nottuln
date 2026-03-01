@@ -216,7 +216,7 @@ Alle folgenden Fakten wurden gegen Originalquellen geprüft:
   - Zum Vergleich: §6 Abs. 1 BImSchG (Genehmigung) = "ist zu erteilen" (gebundene Entscheidung)
   - Da alle Voraussetzungen erfüllt waren, war der Kreis im Regelfall zur positiven Bescheidung verpflichtet
   - §9 Abs. 1a BImSchG (seit Juli 2024): Vereinfachter WEA-Vorbescheid; seit Feb 2025 nicht mehr außerhalb WEG (Abs. 1a S. 2)
-- **Stockum nicht von §36a betroffen**: Anträge vor Stichtag (15. April 2024) eingereicht
+- **Stockum nicht von §36a betroffen**: Vorbescheide am 29.01.2025 erteilt, also vor Inkrafttreten des §36a (15.02.2025). Bestandsschutz. Anträge wurden nach §9 Abs. 1a BImSchG gestellt (Kreis-Stellungnahme). Genaues Antragsdatum nicht öffentlich bekannt.
 - **OVG Berlin-Brandenburg** (Az. 7 A 13/25, 19.09.2025): Klage auf Erteilung eines Vorbescheids (nicht wie in Nottuln bereits erteilt). Gericht: Kein Anspruch auf vereinfachten Vorbescheid außerhalb WEG nach §9 Abs. 1a S. 2 BImSchG. Nicht direkt auf Nottuln übertragbar, da Stockum-Vorbescheide bereits erteilt sind (Bestandsschutz). Quelle: gesetze.berlin.de/bsbe/document/NJRE001622283
 - Gemeindebeteiligung: sechsstelliger Betrag/Jahr (§6 EEG)
 - **Nottuln.Wind GmbH**: Gesellschaft für Bürgerbeteiligung an Erneuerbaren Energien
