@@ -85,7 +85,7 @@ Alle folgenden Fakten wurden gegen Originalquellen geprüft:
 - Flächenverbrauch: ~0,5 ha versiegelt, 97% weiter nutzbar
 - Recycling: ~90%
 - Bauzeit pro Anlage: 3-6 Monate (Fundament, Aufbau, Netzanschluss)
-- Immobilienwerte: 7% durchschnittlich, bis 23% für ältere Häuser (Baujahr vor 1950) im ländlichen Raum in 1km (RWI 2019), ab 8-9km kein Effekt
+- Immobilienwerte: RWI 2019: 7,1% durchschnittlich innerhalb 1 km, bis 23% für ältere Häuser (Baujahr vor 1950) im ländlichen Raum, ab 8-9km kein Effekt. RWI 2024 (Daten 2009-2021): durchschnittlich 1,8% in 1-2 km. Dröes/Koster (NL, 2021): Einzige Studie mit Höhendifferenzierung, Anlagen >150m: -5,4%. Alle Studien beziehen sich auf Bestandsanlagen, nicht auf moderne 270m-Anlagen.
 - Zensus 2022 Gebäudealter Stockum-Bereich (100m-Gitterzellen, Destatis): 3.292 Gebäude, davon 7,2% vor 1950, 51,6% 1949-1990, 35,3% nach 1990
 - Zensus 2022 Innerhalb 1km der WEA Stockum: 187 Gebäude, davon 0 (0%) vor 1950, 92,5% nach 1990
 - Berkeley/PIK PNAS 2024: Wertverlust peakt nach 3 Jahren, erholt sich dann. Für nach 2017 errichtete Anlagen kein signifikanter Effekt
@@ -329,7 +329,7 @@ Gleiche Fakten können auf mehreren Seiten vorkommen:
 | Fakt | index.html | faq/index.html | hauswert/index.html | Aktualisieren |
 |------|------------|----------------|---------------------|---------------|
 | Infraschall 3,5h Auto | ✓ | ✓ | | beide |
-| Immobilienwerte 7-23%/1km | ✓ | ✓ | ✓ | alle drei |
+| Immobilienwerte RWI 2019+2024/1km | ✓ | ✓ | ✓ | alle drei |
 | Abregelung 3,5% | ✓ | ✓ | | beide |
 | Vogelschlag-Zahlen | ✓ | ✓ | | beide |
 | Schattenwurf 8h | ✓ | ✓ | | beide |
