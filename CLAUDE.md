@@ -220,12 +220,23 @@ Alle folgenden Fakten wurden gegen Originalquellen geprüft:
 - **OVG Berlin-Brandenburg** (Az. 7 A 13/25, 19.09.2025): Klage auf Erteilung eines Vorbescheids (nicht wie in Nottuln bereits erteilt). Gericht: Kein Anspruch auf vereinfachten Vorbescheid außerhalb WEG nach §9 Abs. 1a S. 2 BImSchG. Nicht direkt auf Nottuln übertragbar, da Stockum-Vorbescheide bereits erteilt sind (Bestandsschutz). Quelle: gesetze.berlin.de/bsbe/document/NJRE001622283
 - Gemeindebeteiligung: sechsstelliger Betrag/Jahr (§6 EEG)
 - **Nottuln.Wind GmbH**: Gesellschaft für Bürgerbeteiligung an Erneuerbaren Energien
-  - Gründungsbeschluss gefasst (Februar 2026)
+  - Gründungsbeschluss gefasst (Februar 2026, Ratsbeschluss 26:4)
   - Sondersitzung Rat 10.02.2026: Beschluss über Gesellschaftsvertrag (Vorgabe Kommunalaufsicht)
-  - Nach Beschluss + notarieller Beurkundung → Geschäftstätigkeit startet
-  - Aufgaben: Beteiligungsmöglichkeiten verwalten, digitale Beteiligungsplattform
-  - Quellen: Facebook @gemeindenottuln (08.02.2026), SessionNet Vorlage 151/2025
-  - Registrierung für Interessenten: buergerwind@nottuln.de
+  - Plattform: beteiligung.nottuln.de (betrieben durch eueco GmbH als Vermittler)
+  - **Erstes Projekt: Bürgerbeteiligung Windpark Roruper Berg** (3 Nordex-Anlagen)
+    - Betreiber: Bürgerwind Roruper Berg GmbH & Co. KG
+    - Instrument: Nachrangdarlehen mit qualifizierter Nachrangigkeit
+    - Gesamtvolumen: 1 Mio. EUR
+    - Anteile: 500-25.000 EUR (in 500er Schritten)
+    - Zinsen: 5% p.a., jährliche Auszahlung
+    - Laufzeit: bis 31.03.2036
+    - Berechtigt: Natürliche Personen mit Wohnsitz Nottuln
+    - Start: 09.03.2026, 10:00 Uhr
+    - 14 Tage Widerrufsrecht, keine ordentliche Kündigung
+    - Ab 15.000 EUR: PostIdent-Verfahren erforderlich
+    - Risiko: Im Insolvenzfall Nachrang hinter Banken und nicht-nachrangigen Gläubigern
+  - Kontakt: buergerwind@nottuln.de
+  - Quellen: beteiligung.nottuln.de, Facebook @gemeindenottuln (08.02.2026), SessionNet Vorlage 151/2025
 - **WEA Buxtrup (97. FNP-Änderung)**: Einzelne WEA, isolierte Positivplanung (§ 249 Abs. 4 BauGB)
   - 4. Windfläche in Nottuln (zusätzlich zu 3 Windenergiebereichen im Regionalplan Münsterland)
   - Standort: Gemarkung Nottuln, Flur 63, Flurstück 85 (tlw.), ca. 3,7 ha, im LSG "Nonnenbach/Staatsforst Münster"
