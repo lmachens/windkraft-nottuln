@@ -103,6 +103,8 @@ Alle folgenden Fakten wurden gegen Originalquellen geprüft:
 - Netzengpasskosten-Trend: 4.200 Mio. (2022) → 3.335 Mio. (2023) → 2.776 Mio. (2024), davon 554 Mio. (20%) EE-Entschädigungen
 - SuedLink (4 GW): Seit Oktober 2024 vollständig genehmigt, in 6 Bundesländern im Bau, Fertigstellung Ende 2028
 - Ultranet (2 GW): Seit Oktober 2025 vollständig genehmigt, Bau läuft, Fertigstellung Ende 2026
+- Eingriffsregelung §15 BNatSchG: Vermeidung → Ausgleich/Ersatz → Ersatzgeld. Betreiber muss Eingriff in Natur kompensieren. Ersatzgeld ist zweckgebunden für Naturschutz
+- Kreis Coesfeld Ersatzgeld 2026: 3,25 Mio. EUR (u.a. aus WEA-Kompensationszahlungen). Verwendung: Heckenprogramm, Beweidungsprojekt Borkenberge (250k), Grundstückserwerb (300k). Quelle: WN 07.03.2026 (Ausschuss Umwelt)
 - Auckland ist in Neuseeland, NICHT Australien
 - § 9 FStrG: 40m Bauverbot an Autobahnen, 100m Beschränkungszone
 - OVG Berlin-Brandenburg 2024: WEA mit 110m Abstand zu Autobahn genehmigt
