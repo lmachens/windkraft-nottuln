@@ -90,6 +90,7 @@ Alle folgenden Fakten wurden gegen Originalquellen geprüft:
 - Zensus 2022 Innerhalb 1km der WEA Stockum: 187 Gebäude, davon 0 (0%) vor 1950, 92,5% nach 1990
 - Berkeley/PIK PNAS 2024: Wertverlust peakt nach 3 Jahren, erholt sich dann. Für nach 2017 errichtete Anlagen kein signifikanter Effekt
 - Abregelung 2024: 9,4 TWh (3,5% der EE-Produktion) wegen Netzengpässen
+- Strommix 2025: 58,6% erneuerbar (256,9 Mrd. kWh), 41,4% fossil (181,3 Mrd. kWh) (Destatis). Wind 30,0% (131,3), Solar 16,0% (70,1, Rekord), Erdgas 16,1% (70,6, Rekord, +10,2%). Gesamt: 438,2 Mrd. kWh (+1,4%)
 - Strommix 2024: 59,4% erneuerbar, 40,6% fossil (Destatis)
 - Klimaziel 2030: 80% EE (EEG 2023, §1 Abs. 2)
 - Volllaststunden Onshore: 1.800-3.200h/Jahr je nach Standort (Fraunhofer ISE); Flottendurchschnitt ~1.750h (inkl. alter Kleinanlagen); neue 250m+-Anlagen ~2.500h (Fraunhofer IEE Windmonitor)
@@ -171,7 +172,7 @@ Alle folgenden Fakten wurden gegen Originalquellen geprüft:
 
 ## Internationaler Vergleich EE (verifiziert Februar 2026)
 - EE-Anteil Bruttostromverbrauch 2024 (Eurostat): DK 79,7%, PT 65,8%, ES 59,7%, DE 54,1%, UK 50,8%, EU-Schnitt 47,5%
-- Destatis (59,4%) misst Bruttostromerzeugung, Eurostat (54,1%) misst Bruttostromverbrauch - beides korrekt, andere Methode
+- Destatis misst Bruttostromerzeugung (2025: 58,6%, 2024: 59,4%), Eurostat misst Bruttostromverbrauch (2024: 54,1%) - beides korrekt, andere Methode
 - EE am Endenergieverbrauch (Strom + Wärme + Verkehr): ~22% (2024). Strom = 25% des Endenergieverbrauchs
 - EE-Strom stieg von 46% (2020) auf 59% (2024) = +13 Prozentpunkte. Wärme stagniert bei 18%, Verkehr bei 7%
 - 16/19 EU-Länder haben Windausbauziele erhöht (Ember European Electricity Review 2025)
