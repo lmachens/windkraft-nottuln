@@ -247,6 +247,144 @@
     margin-bottom: 12px;
   }
 
+  /* Reading progress bar */
+  .progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--forest), var(--canopy), var(--gold));
+    z-index: 1001;
+    transition: width 0.1s linear;
+  }
+
+  /* Sidebar navigation (desktop) */
+  .side-nav {
+    position: fixed;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 220px;
+    background: var(--forest-deep);
+    padding: 20px 0;
+    z-index: 1000;
+    border-radius: 0 6px 6px 0;
+    box-shadow: 2px 0 12px rgba(0,0,0,0.15);
+  }
+  .side-nav-title {
+    font-family: Georgia, serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    padding: 0 18px 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    margin-bottom: 8px;
+  }
+  .side-nav a {
+    display: block;
+    padding: 8px 18px;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 13px;
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    border-left: 3px solid transparent;
+    transition: all 0.2s ease;
+    line-height: 1.4;
+  }
+  .side-nav a:hover {
+    color: #fff;
+    background: rgba(255,255,255,0.05);
+  }
+  .side-nav a.active {
+    color: var(--gold-light);
+    border-left-color: var(--gold);
+    background: rgba(200,164,21,0.08);
+  }
+
+  /* Shift content right on desktop to make room for sidebar */
+  @media (min-width: 1100px) {
+    .content {
+      margin-left: calc((100% - 820px) / 2 + 40px);
+      margin-right: auto;
+    }
+  }
+
+  /* Mobile floating nav */
+  .mobile-nav {
+    display: none;
+    position: fixed;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--forest-deep);
+    padding: 6px 8px;
+    border-radius: 24px;
+    z-index: 1000;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+    white-space: nowrap;
+    overflow-x: auto;
+    max-width: 94vw;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .mobile-nav::-webkit-scrollbar { display: none; }
+  .mobile-nav a {
+    display: inline-block;
+    padding: 6px 10px;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 12px;
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    border-radius: 16px;
+    transition: all 0.2s ease;
+  }
+  .mobile-nav a:hover {
+    color: #fff;
+  }
+  .mobile-nav a.active {
+    background: var(--gold);
+    color: var(--forest-deep);
+    font-weight: bold;
+  }
+
+  /* CTA section */
+  .cta-section {
+    background: var(--gold-pale);
+    border-top: 3px solid var(--gold);
+    padding: 40px 24px;
+    text-align: center;
+    margin-top: 50px;
+  }
+  .cta-section p {
+    font-family: Georgia, serif;
+    font-size: 20px;
+    font-style: italic;
+    color: var(--forest-deep);
+    margin-bottom: 20px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .cta-button {
+    display: inline-block;
+    background: var(--forest);
+    color: #fff;
+    padding: 14px 32px;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 4px;
+    letter-spacing: 0.5px;
+    transition: background 0.2s ease;
+  }
+  .cta-button:hover {
+    background: var(--forest-deep);
+    color: #fff;
+  }
+
   /* Print */
   @media print {
     .hero { background: #333 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
@@ -254,6 +392,8 @@
     .claim-card { break-inside: avoid; box-shadow: none; border: 1px solid #999; }
     .pagebreak { page-break-before: always; }
     body { font-size: 12px; }
+    .side-nav, .mobile-nav, .progress-bar, .cta-section { display: none !important; }
+    .content { margin-left: auto !important; }
   }
 
   /* Responsive */
@@ -264,10 +404,44 @@
     .claim-card { padding: 16px; }
     table { font-size: 13px; }
     th, td { padding: 6px 8px; }
+    .cta-section p { font-size: 17px; }
+  }
+
+  /* Show/hide nav based on screen size */
+  @media (max-width: 1099px) {
+    .side-nav { display: none; }
+    .mobile-nav { display: block; }
+  }
+  @media (min-width: 1100px) {
+    .side-nav { display: block; }
+    .mobile-nav { display: none; }
   }
 </style>
 </head>
 <body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<nav class="side-nav" id="sideNav">
+  <div class="side-nav-title">Inhalt</div>
+  <a href="#person">1. Person</a>
+  <a href="#youtube">2. YouTube-Serie</a>
+  <a href="#faktencheck">3. Faktencheck</a>
+  <a href="#methode">4. Methode</a>
+  <a href="#bezug">5. Bezug Nottuln</a>
+  <a href="#einordnung">6. Einordnung</a>
+  <a href="#quellen">7. Quellen</a>
+</nav>
+
+<nav class="mobile-nav" id="mobileNav">
+  <a href="#person">Person</a>
+  <a href="#youtube">Serie</a>
+  <a href="#faktencheck">Check</a>
+  <a href="#methode">Methode</a>
+  <a href="#bezug">Nottuln</a>
+  <a href="#einordnung">Einordnung</a>
+  <a href="#quellen">Quellen</a>
+</nav>
 
 <header class="hero">
   <div class="hero-logo">windkraft-nottuln.de</div>
@@ -286,7 +460,7 @@
 Dieses Dokument enthält ausschließlich Informationen aus öffentlich zugänglichen Quellen. Jede Behauptung ist mit einer konkreten Quelle belegt. Der Faktencheck prüft zehn zentrale Behauptungen aus Schultes YouTube-Serie "Gegenwind: Windkraft im Wald".
 </div>
 
-<h2>1. Person</h2>
+<h2 id="person">1. Person</h2>
 
 <table>
 <tr><th style="width:30%">Merkmal</th><th>Detail</th></tr>
@@ -322,7 +496,7 @@ Dieses Dokument enthält ausschließlich Informationen aus öffentlich zugängli
 
 <div class="pagebreak"></div>
 
-<h2>2. YouTube-Serie "Gegenwind: Windkraft im Wald"</h2>
+<h2 id="youtube">2. YouTube-Serie "Gegenwind: Windkraft im Wald"</h2>
 
 <table>
 <tr><th>Teil</th><th>Titel</th><th>Aufrufe</th><th>Länge</th></tr>
@@ -337,7 +511,7 @@ Dieses Dokument enthält ausschließlich Informationen aus öffentlich zugängli
 
 <div class="pagebreak"></div>
 
-<h2>3. Faktencheck: Zehn Kernbehauptungen</h2>
+<h2 id="faktencheck">3. Faktencheck: Zehn Kernbehauptungen</h2>
 
 <div class="claim-card">
 <h3>Behauptung 1: "500-1.000 Liter hochgiftiger Mineralöle pro Windrad kontaminieren Waldböden"</h3>
@@ -617,7 +791,7 @@ Dieses Dokument enthält ausschließlich Informationen aus öffentlich zugängli
 
 <div class="pagebreak"></div>
 
-<h2>4. Methode: "Fakten-Framing"</h2>
+<h2 id="methode">4. Methode: "Fakten-Framing"</h2>
 
 <p>Über alle zehn Behauptungen hinweg zeigt sich ein wiederkehrendes Muster:</p>
 
@@ -657,7 +831,7 @@ Dieses Dokument enthält ausschließlich Informationen aus öffentlich zugängli
 
 <div class="pagebreak"></div>
 
-<h2>5. Bezug Nottuln</h2>
+<h2 id="bezug">5. Bezug Nottuln</h2>
 
 <table>
 <tr><th style="width:30%">Merkmal</th><th>Detail</th></tr>
@@ -672,7 +846,7 @@ Dieses Dokument enthält ausschließlich Informationen aus öffentlich zugängli
 <strong>Hinweis:</strong> Schultes Videos enthalten keinen direkten Bezug zu Nottuln oder Stockum. Die Argumente seiner Serie - Mineralöle, PFAS, Waldrodung, CO2-Bilanz - decken sich aber mit den Themen, die Gegenwind Nottuln in der lokalen Debatte verwendet. Gegenwind Nottuln hat Schulte für einen Vortrag nach Nottuln eingeladen.
 </div>
 
-<h2>6. Öffentliche Einordnung</h2>
+<h2 id="einordnung">6. Öffentliche Einordnung</h2>
 
 <p>Es existieren keine systematischen Faktenchecks zu Schultes Windkraft-Serie - weder von Correctiv, Volksverpetzer noch klimafakten.de (Stand April 2026). Seine Windkraft-Thesen sind nicht peer-reviewed erschienen.</p>
 
@@ -693,7 +867,7 @@ Dieses Dokument enthält ausschließlich Informationen aus öffentlich zugängli
 
 <div class="pagebreak"></div>
 
-<h2>7. Quellenverzeichnis</h2>
+<h2 id="quellen">7. Quellenverzeichnis</h2>
 
 <h3>Person und Kanal</h3>
 <ul>
@@ -744,6 +918,11 @@ Dieses Dokument enthält ausschließlich Informationen aus öffentlich zugängli
 
 </div><!-- end .content -->
 
+<div class="cta-section">
+  <p>Mehr zur Windkraft-Debatte in Nottuln erfahren</p>
+  <a href="https://windkraft-nottuln.de" class="cta-button" target="_blank">windkraft-nottuln.de besuchen</a>
+</div>
+
 <footer class="footer">
   <div class="footer-brand">windkraft-nottuln.de</div>
   <p>Erstellt: 10.04.2026 | Alle Angaben auf Basis öffentlich zugänglicher Quellen.</p>
@@ -752,5 +931,66 @@ Dieses Dokument enthält ausschließlich Informationen aus öffentlich zugängli
   </p>
 </footer>
 
+<script>
+(function() {
+  var sections = document.querySelectorAll('h2[id]');
+  var sideLinks = document.querySelectorAll('.side-nav a');
+  var mobileLinks = document.querySelectorAll('.mobile-nav a');
+  var progressBar = document.getElementById('progressBar');
+
+  // Smooth scroll for all nav links
+  function addSmoothScroll(links) {
+    links.forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        var target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  }
+  addSmoothScroll(sideLinks);
+  addSmoothScroll(mobileLinks);
+
+  // Update active section and progress bar on scroll
+  var ticking = false;
+  window.addEventListener('scroll', function() {
+    if (!ticking) {
+      window.requestAnimationFrame(function() {
+        // Progress bar
+        var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        var progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+        progressBar.style.width = Math.min(progress, 100) + '%';
+
+        // Active section
+        var currentId = '';
+        sections.forEach(function(section) {
+          var rect = section.getBoundingClientRect();
+          if (rect.top <= 120) {
+            currentId = section.getAttribute('id');
+          }
+        });
+
+        function setActive(links) {
+          links.forEach(function(link) {
+            if (link.getAttribute('href') === '#' + currentId) {
+              link.classList.add('active');
+            } else {
+              link.classList.remove('active');
+            }
+          });
+        }
+        setActive(sideLinks);
+        setActive(mobileLinks);
+
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
+})();
+</script>
 </body>
 </html>
