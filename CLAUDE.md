@@ -89,6 +89,10 @@ Alle folgenden Fakten wurden gegen Originalquellen geprüft:
 - Getriebeöle WGK: Überwiegend WGK 1 (schwach wassergefährdend), teils WGK 2. Kein WGK 3 in WEA. Quelle: BLAK UmwS Merkblatt Windenergieanlagen (Mai 2023). Zum Vergleich: Benzin = WGK 3
 - BPA-Grenzwert TrinkwV: 2,5 µg/L (seit 12.01.2024, EU-RL 2020/2184)
 - PFAS-Grenzwert TrinkwV: 0,1 µg/L für Summe PFAS-20 (ab 12.01.2026), 0,02 µg/L für Summe PFAS-4 (ab 12.01.2028)
+- Rückbau: 550+ Altanlagen 2024 in DE rückgebaut (BWE). Rückbaubürgschaft nach §35 Abs. 5 BauGB insolvenzfest (selbstschuldnerische Bankbürgschaft). DIN SPEC 4866: vollständiger Fundamentrückbau inkl. Sauberkeitsschicht
+- EEG-Ausschreibungen Onshore Wind: Höchstwert 7,35 ct/kWh (2023-2025), tatsächliche Zuschlagswerte sinkend: Feb 2024: 7,34 ct, Nov 2024: 7,15 ct, Feb 2025: 7,00 ct, Mai 2025: 6,15 ct/kWh. Bei negativen Preisen >4h keine Vergütung (§51 EEG). Quelle: BNetzA Ausschreibungsergebnisse
+- Wald in Wasserschutzgebieten: ~33% der deutschen Waldfläche liegt in WSG. Quelle: forstwirtschaft-in-deutschland.de
+- PwC-Studie 2024 "Klimaschutzinvestitionen lohnen sich": Klimaneutralität ~13,2 Bio. €, Weiter-wie-bisher ~13,3 Bio. € (Klimaschutz ist günstiger). Wird in Anti-WK-Kreisen als "13,3 Bio. Kosten für Klimaschutz" fehlzitiert
 - Bauzeit pro Anlage: 3-6 Monate (Fundament, Aufbau, Netzanschluss)
 - Immobilienwerte: RWI 2019: 7,1% durchschnittlich innerhalb 1 km, bis 23% für ältere Häuser (Baujahr vor 1950) im ländlichen Raum, ab 8-9km kein Effekt. RWI 2024 (Daten 2009-2021): durchschnittlich 1,8% in 1-2 km. Dröes/Koster (NL, 2021): Einzige Studie mit Höhendifferenzierung, Anlagen >150m: -5,4%. Alle Studien beziehen sich auf Bestandsanlagen, nicht auf moderne 270m-Anlagen.
 - Zensus 2022 Gebäudealter Stockum-Bereich (100m-Gitterzellen, Destatis): 3.292 Gebäude, davon 7,2% vor 1950, 51,6% 1949-1990, 35,3% nach 1990
