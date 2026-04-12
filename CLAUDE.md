@@ -84,6 +84,11 @@ Alle folgenden Fakten wurden gegen Originalquellen geprüft:
 - BNK: bis zu 98% weniger Lichtemissionen
 - Flächenverbrauch: ~0,5 ha versiegelt, 97% weiter nutzbar
 - Recycling: ~90%
+- Recycling Rotorblätter: Thermische Verwertung aktuell Hauptmethode. WindEurope-Pledge 2021: Blätter recycelbar bis 2030, komplette Turbinen bis 2040. Siemens Gamesa RecyclableBlade seit 2021.
+- Mikrofaserabrieb Rotorblätter: Onshore max. 0,15 kg/Anlage/Jahr, Offshore max. 3 kg/Jahr (Mishnaevsky et al. 2024, DTU, DOI: 10.3390/en17246260). BWE-Faktencheck (Aug 2024): 2,74 kg/Anlage/Jahr. Fraunhofer-IWES-Worst-Case (Bundestag WD 8-077/20): 45 kg/Jahr bei vollständigem Beschichtungsverlust - "mit hoher Wahrscheinlichkeit deutlich darunter"
+- Getriebeöle WGK: Überwiegend WGK 1 (schwach wassergefährdend), teils WGK 2. Kein WGK 3 in WEA. Quelle: BLAK UmwS Merkblatt Windenergieanlagen (Mai 2023). Zum Vergleich: Benzin = WGK 3
+- BPA-Grenzwert TrinkwV: 2,5 µg/L (seit 12.01.2024, EU-RL 2020/2184)
+- PFAS-Grenzwert TrinkwV: 0,1 µg/L für Summe PFAS-20 (ab 12.01.2026), 0,02 µg/L für Summe PFAS-4 (ab 12.01.2028)
 - Bauzeit pro Anlage: 3-6 Monate (Fundament, Aufbau, Netzanschluss)
 - Immobilienwerte: RWI 2019: 7,1% durchschnittlich innerhalb 1 km, bis 23% für ältere Häuser (Baujahr vor 1950) im ländlichen Raum, ab 8-9km kein Effekt. RWI 2024 (Daten 2009-2021): durchschnittlich 1,8% in 1-2 km. Dröes/Koster (NL, 2021): Einzige Studie mit Höhendifferenzierung, Anlagen >150m: -5,4%. Alle Studien beziehen sich auf Bestandsanlagen, nicht auf moderne 270m-Anlagen.
 - Zensus 2022 Gebäudealter Stockum-Bereich (100m-Gitterzellen, Destatis): 3.292 Gebäude, davon 7,2% vor 1950, 51,6% 1949-1990, 35,3% nach 1990
@@ -123,10 +128,14 @@ Alle folgenden Fakten wurden gegen Originalquellen geprüft:
 - Fledermäuse: NICHT gefährdet = Bechstein-, Mopsfledermaus (fliegen 1-5m bodennah, keine Schlagopfer in RENEBAT)
 - Fledermäuse: Schutzmaßnahmen = Gondelmonitoring + ProBat-Software (bundesweiter Standard seit 2014)
 - Fledermäuse: NRW-Leitfaden (2017) Abschaltung bei Wind <6 m/s UND Temp >10°C (1. April – 31. Oktober, Sonnenuntergang bis Sonnenaufgang)
+- Fledermäuse: Voigt et al. 2024 (BioScience, DOI: 10.1093/biosci/biae023): 14 Fledermäuse/Anlage/Jahr ohne Curtailment. 18.000 von 30.000 Onshore-Anlagen (~60%) laufen ohne Fledermausschutz-Abschaltung. Curtailment kann Mortalität um >80% senken (typischerweise weniger). Ertragsverlust: 1-4%
+- Fledermäuse: Ellerbrok et al. 2022 (J. Appl. Ecol. 59:2497-2506): Waldfledermaus-Aktivität im Nahbereich (80m) ca. 50% geringer als in 450m Entfernung. Gradueller Rückgang, kein vollständiger Lebensraumverlust. Gilt für Waldfledermäuse bei hohen Windgeschwindigkeiten
 - Fledermäuse: Ertragsverlust durch Abschaltung: 1-4%
 - Fledermäuse: Mindestabstand zu Quartieren 500m, zu Wochenstuben 1.000m
 - Bechsteinfledermaus: Erhaltungsziel im FFH-Gebiet "Roruper Holz mit Kestenbusch" (DE-4009-301), 642m von Stockum-WKA
 - Bechsteinfledermaus: Flughöhe 1-5m, Kollisionsrisiko an WKA "unwahrscheinlich" (KNE)
+- Vogelschlag-Vergleich (NABU): Glasscheiben 100-115 Mio., Katzen 20-100 Mio., Straßenverkehr ~70 Mio., Windkraft >100.000/Jahr. Quelle: nabu.de/tiere-und-pflanzen/voegel/gefaehrdungen/24661.html
+- Dürr-Kartei (Vogelschutzwarte Brandenburg): ca. 4.800 dokumentierte Kollisionsfunde (Vögel + Fledermäuse, kumuliert, laufend aktualisiert)
 - Kranich: Über Deutschland typischerweise 50-250m Flughöhe nach der Ostseeüberquerung (NABU, nabu.de/kranichzug-aktuell)
 - Kranich: Über die gesamte Zugroute gemittelt ~300m (kraniche.de, GPS-Studie mit 7 Kranichen, Variation 50-2.000m)
 - Kranich: Bei Schlechtwetter (Nebel, tiefe Wolken) zusätzlich erhöhtes Risiko durch eingeschränkte Sicht
