@@ -402,6 +402,44 @@
     border-left-color: var(--gold-warm);
     background: rgba(236,242,230,0.5);
   }
+  .side-nav-sub {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+  }
+  .side-nav-sub.open { max-height: 700px; }
+  .side-nav-sub a {
+    padding: 3px 18px 3px 28px;
+    font-size: 11px;
+    line-height: 1.3;
+    opacity: 0.7;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .side-nav-sub a:hover { opacity: 1; }
+  .side-nav-sub a.active { opacity: 1; font-weight: 600; }
+  .side-nav-sub a .chk {
+    display: inline-block;
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    border: 1.5px solid var(--border);
+    margin-right: 4px;
+    vertical-align: 0px;
+    transition: all 0.3s;
+  }
+  .side-nav-sub a.read .chk {
+    background: var(--canopy);
+    border-color: var(--canopy);
+  }
+  .claim-counter {
+    font-family: var(--sans);
+    font-size: 10px;
+    color: var(--text-muted);
+    padding: 6px 18px 2px;
+    letter-spacing: 0.3px;
+  }
+  .claim-counter strong { color: var(--forest-mid); }
 
   @media (min-width: 1100px) {
     .content {
@@ -453,7 +491,7 @@
   .cta-section {
     background: linear-gradient(180deg, var(--parchment), var(--gold-pale));
     border-top: 1px solid var(--border);
-    padding: 52px 24px;
+    padding: 52px 24px 120px;
     text-align: center;
     margin-top: 56px;
   }
@@ -541,6 +579,24 @@
   <a href="#person">1. Person</a>
   <a href="#youtube">2. YouTube-Serie</a>
   <a href="#faktencheck">3. Faktencheck</a>
+  <div class="side-nav-sub" id="claimNav">
+    <div class="claim-counter" id="claimCounter">Gelesen: <strong>0</strong>/15</div>
+    <a href="#claim1"><span class="chk"></span>1. Mineralöle</a>
+    <a href="#claim2"><span class="chk"></span>2. PFAS</a>
+    <a href="#claim3"><span class="chk"></span>3. China-CO₂</a>
+    <a href="#claim4"><span class="chk"></span>4. Recycling</a>
+    <a href="#claim5"><span class="chk"></span>5. Waldrodung</a>
+    <a href="#claim6"><span class="chk"></span>6. 50-100 ha</a>
+    <a href="#claim7"><span class="chk"></span>7. Fledermäuse</a>
+    <a href="#claim8"><span class="chk"></span>8. Insekten</a>
+    <a href="#claim9"><span class="chk"></span>9. Mikrofaserabrieb</a>
+    <a href="#claim10"><span class="chk"></span>10. Bisphenol A</a>
+    <a href="#claim11"><span class="chk"></span>11. 13,3 Billionen</a>
+    <a href="#claim12"><span class="chk"></span>12. Vergütung</a>
+    <a href="#claim13"><span class="chk"></span>13. Insolvenz</a>
+    <a href="#claim14"><span class="chk"></span>14. Trinkwasser</a>
+    <a href="#claim15"><span class="chk"></span>15. Wildkatzen</a>
+  </div>
   <a href="#methode">4. Muster</a>
   <a href="#bezug">5. Bezug Nottuln</a>
   <a href="#einordnung">6. Einordnung</a>
@@ -571,7 +627,7 @@
 <div class="content">
 
 <div class="intro-note">
-Dieses Dokument enthält ausschließlich Informationen aus öffentlich zugänglichen Quellen. Jede Behauptung ist mit einer konkreten Quelle belegt. Der Faktencheck prüft zehn zentrale Behauptungen aus Schultes YouTube-Serie "Gegenwind: Windkraft im Wald".
+Dieses Dokument enthält ausschließlich Informationen aus öffentlich zugänglichen Quellen. Jede Behauptung ist mit einer konkreten Quelle belegt. Der Faktencheck prüft fünfzehn zentrale Behauptungen aus Schultes YouTube-Serie "Gegenwind: Windkraft im Wald".
 </div>
 
 <h2 id="person">1. Person</h2>
@@ -627,9 +683,9 @@ Dieses Dokument enthält ausschließlich Informationen aus öffentlich zugängli
 
 <div class="pagebreak"></div>
 
-<h2 id="faktencheck">3. Faktencheck: Zehn Kernbehauptungen</h2>
+<h2 id="faktencheck">3. Faktencheck: Fünfzehn Kernbehauptungen</h2>
 
-<div class="claim-card">
+<div class="claim-card" id="claim1">
 <h3>Behauptung 1: "500-1.000 Liter hochgiftiger Mineralöle pro Windrad kontaminieren Waldböden"</h3>
 
 <div class="bewertung bewertung-orange">Bewertung: TEILWEISE RICHTIG, STARK ÜBERTRIEBEN</div>
@@ -655,7 +711,7 @@ Dieses Dokument enthält ausschließlich Informationen aus öffentlich zugängli
 <p class="source">Quellen: <a href="https://www.wiwo.de/technologie/green/gegen-oel-austritt-windraeder-bekommen-einen-kragen/13552608.html" target="_blank">WiWo</a>, <a href="https://www.agrarheute.com/energie/strom/windraeder-verbrauchen-sehr-viel-mineraloel-wahrheit-fake-news-630112" target="_blank">Agrarheute</a>, <a href="https://energiewende.eu/windkraft-grundwasser/" target="_blank">energiewende.eu</a>, <a href="https://www.umwelt.niedersachsen.de/download/112319" target="_blank">Niedersachsen Grundwasserschutz-Merkblatt</a>, <a href="https://www.umweltbundesamt.de/wgk-einstufung" target="_blank">UBA WGK-Einstufung</a></p>
 </div>
 
-<div class="claim-card">
+<div class="claim-card" id="claim2">
 <h3>Behauptung 2: "PFAS-Chemikalien (Ewigkeitschemikalien) aus Windrädern belasten das Ökosystem"</h3>
 
 <div class="bewertung bewertung-rot">Bewertung: IM KERN IRREFÜHREND</div>
@@ -678,7 +734,7 @@ Dieses Dokument enthält ausschließlich Informationen aus öffentlich zugängli
 <p class="source">Quellen: <a href="https://www.juwi.de/aktuelles/blog/artikel/pfas-in-der-umwelt-warum-die-windenergie-nicht-als-suendenbock-taugt" target="_blank">JUWI: PFAS und Windenergie</a>, <a href="https://energiewende.eu/windkraft-abrieb/" target="_blank">energiewende.eu: Abrieb und Chemikalien</a>, <a href="https://fragdenstaat.de/en/request/schadstoffe-im-abrieb-von-rotorblaettern-bei-windkraftanlagen/" target="_blank">FragDenStaat: Schadstoffe im Abrieb</a></p>
 </div>
 
-<div class="claim-card">
+<div class="claim-card" id="claim3">
 <h3>Behauptung 3: "CO2-Einsparung aller deutschen Wald-Windräder = 7 Stunden CO2-Ausstoß Chinas"</h3>
 
 <div class="bewertung bewertung-gelb">Bewertung: RECHNERISCH RICHTIG, KONTEXT FEHLT</div>
@@ -703,7 +759,7 @@ Dieses Dokument enthält ausschließlich Informationen aus öffentlich zugängli
 <p class="source">Quellen: <a href="https://www.fachagentur-wind-solar.de/wind/windenergie-im-wald" target="_blank">Fachagentur Wind und Solar</a>, <a href="https://www.carbonbrief.org/analysis-record-surge-of-clean-energy-in-2024-halts-chinas-co2-rise/" target="_blank">Carbon Brief: China CO2</a>, <a href="https://en.wikipedia.org/wiki/Greenhouse_gas_emissions_by_China" target="_blank">Wikipedia: China Emissionen</a>, <a href="https://correctiv.org/faktencheck/2019/09/27/eine-windkraftanlage-spart-mehr-co2-als-der-wald-der-fuer-sie-gerodet-wird/" target="_blank">Correctiv: CO2-Bilanz WKA vs. Wald</a></p>
 </div>
 
-<div class="claim-card">
+<div class="claim-card" id="claim4">
 <h3>Behauptung 4: "Rotorblätter werden in Deutschland verbrannt oder illegal ins Ausland verbracht statt recycelt"</h3>
 
 <div class="bewertung bewertung-gelb">Bewertung: IM KERN RICHTIG, DARSTELLUNG EINSEITIG</div>
@@ -729,7 +785,7 @@ Dieses Dokument enthält ausschließlich Informationen aus öffentlich zugängli
 <p class="source">Quellen: <a href="https://www.enbw.com/unternehmen/themen/windkraft/windrad-recycling.html" target="_blank">EnBW: Recycling</a> (Energiekonzern, Eigeninteresse beachten), <a href="https://correctiv.org/faktencheck/2025/09/26/wie-rotorblaetter-von-windraedern-in-deutschland-entsorgt-werden/" target="_blank">Correctiv: Entsorgung</a>, <a href="https://www.euractiv.de/section/europa-kompakt/news/illegaler-deutscher-muell-sorgt-fuer-aerger-in-tschechien/" target="_blank">Euractiv: Fall Tschechien</a>, <a href="https://www.umweltbundesamt.de/themen/abfall-ressourcen/produktverantwortung-in-der-abfallwirtschaft/windenergieanlagen-rueckbau-recycling-repowering" target="_blank">UBA: Recyclingkapazitäten</a></p>
 </div>
 
-<div class="claim-card">
+<div class="claim-card" id="claim5">
 <h3>Behauptung 5: "Waldrodung für Windkraftanlagen"</h3>
 
 <div class="bewertung bewertung-gelb">Bewertung: ZAHLEN KORREKT, EINORDNUNG FEHLT</div>
@@ -758,7 +814,7 @@ Dieses Dokument enthält ausschließlich Informationen aus öffentlich zugängli
 <p class="source">Quellen: <a href="https://www.fachagentur-wind-solar.de/wind/windenergie-im-wald" target="_blank">Fachagentur Wind und Solar</a>, <a href="https://www.fachagentur-wind-solar.de/fileadmin/Veroeffentlichungen/Wind/Windenergie_im_Wald/FA_Wind_und_Solar_Analyse_Wind_im_Forst_10Auflage_2025.pdf" target="_blank">Analyse Wind im Wald (PDF, 10. Aufl. 2025)</a>, <a href="https://www.fachagentur-wind-solar.de/wind/windenergie-im-wald" target="_blank">KNE: Waldinanspruchnahme</a>, <a href="https://stories.umweltbundesamt.de/system/files/document/20210527_Themenkompass_Windenergie_im_Wald.pdf" target="_blank">UBA Themenkompass (PDF)</a>, <a href="https://www.topagrar.com/energie/news/0-5-hektar-pro-windrad-12039954.html" target="_blank">Top Agrar</a></p>
 </div>
 
-<div class="claim-card">
+<div class="claim-card" id="claim6">
 <h3>Behauptung 6: "50-100 Hektar Flächenverbrauch pro Windrad" (aus Teil 4)</h3>
 
 <div class="bewertung bewertung-rot">Bewertung: IRREFÜHRENDE NEUDEFINITION</div>
@@ -785,7 +841,7 @@ Dieses Dokument enthält ausschließlich Informationen aus öffentlich zugängli
 <p class="source">Quelle: <a href="https://www.fachagentur-wind-solar.de/wind/windenergie-im-wald" target="_blank">Fachagentur Wind und Solar: Windenergie im Wald</a></p>
 </div>
 
-<div class="claim-card">
+<div class="claim-card" id="claim7">
 <h3>Behauptung 7: "Mehr als 200.000 Fledermäuse sterben pro Jahr an Windkraftanlagen"</h3>
 
 <div class="bewertung bewertung-gelb">Bewertung: ZAHL PLAUSIBEL, KONTEXT FEHLT</div>
@@ -824,7 +880,7 @@ Dieses Dokument enthält ausschließlich Informationen aus öffentlich zugängli
 <p class="source">Quellen: <a href="https://doi.org/10.1093/biosci/biae023" target="_blank">Voigt et al. (2024), BioScience</a>; <a href="https://www.izw-berlin.de/de/pressemitteilung/windenergie-und-fledermausschutz-forschende-fordern-globale-anwendung-von-massnahmen-zur-senkung-der-schlagopferzahlen.html" target="_blank">IZW Berlin (2024)</a>; <a href="https://www.natur-und-erneuerbare.de/fileadmin/Daten/Download_Dokumente/01_Skripte/BfN-Schriftfen-682-Signifikanzschwelle_2024.pdf" target="_blank">BfN Signifikanzschwelle (2024, PDF)</a>; <a href="https://doi.org/10.1016/j.joule.2024.11.016" target="_blank">McKenna et al. (2025), Joule</a>; <a href="https://www.naturstiftung-david.de/probat/" target="_blank">ProBat</a>; LIFE EUROKITE (LIFE18 NAT/AT/000048)</p>
 </div>
 
-<div class="claim-card">
+<div class="claim-card" id="claim8">
 <h3>Behauptung 8: "5-6 Milliarden Insekten pro Sommertag durch Rotoren getötet"</h3>
 
 <div class="bewertung bewertung-gelb">Bewertung: ZAHL KORREKT ZITIERT, EINORDNUNG DES AUTORS FEHLT</div>
@@ -851,7 +907,7 @@ Dieses Dokument enthält ausschließlich Informationen aus öffentlich zugängli
 <p class="source">Quelle: Trieb, F. (2019): "Interference of Flying Insects and Wind Parks", DLR (Deutsches Zentrum für Luft- und Raumfahrt), Stuttgart</p>
 </div>
 
-<div class="claim-card">
+<div class="claim-card" id="claim9">
 <h3>Behauptung 9: "50-150 kg Mikrofaserabrieb pro Windrad und Jahr"</h3>
 
 <div class="bewertung bewertung-rot">Bewertung: WEIT ÜBER WISSENSCHAFTLICHEM KONSENS</div>
@@ -878,7 +934,7 @@ Dieses Dokument enthält ausschließlich Informationen aus öffentlich zugängli
 <p class="source">Quellen: <a href="https://doi.org/10.3390/en17246260" target="_blank">Mishnaevsky et al. (2024), DTU/Energies</a>; <a href="https://www.bundestag.de/resource/blob/817020/27cf214cfbeaac330d3b731cbbd8610b/WD-8-077-20-pdf.pdf" target="_blank">Bundestag WD 8-077/20 (Fraunhofer IWES-Daten)</a>; <a href="https://www.wind-energie.de/fileadmin/redaktion/dokumente/Aktuelles/Faktenchecks/20240801_BWE-Faktencheck_-_Erosion_an_Rotorblaettern.pdf" target="_blank">BWE-Faktencheck Erosion (2024)</a>; <a href="https://norwea.no/norwea-mener/2021/3/26/faktaark-vindkraft-plast-og-bisfenol-a" target="_blank">NORWEA/Vestas (2021)</a></p>
 </div>
 
-<div class="claim-card">
+<div class="claim-card" id="claim10">
 <h3>Behauptung 10: "1 kg Bisphenol A kann 10 Milliarden Liter Wasser verseuchen"</h3>
 
 <div class="bewertung bewertung-rot">Bewertung: RECHENFEHLER - FAKTOR 25 DANEBEN</div>
@@ -905,11 +961,121 @@ Dieses Dokument enthält ausschließlich Informationen aus öffentlich zugängli
 <p class="source">Quelle: <a href="https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:32020L2184" target="_blank">EU-Richtlinie 2020/2184 (Trinkwasserrichtlinie)</a></p>
 </div>
 
+<div class="claim-card" id="claim11">
+<h3>Behauptung 11: "Kosten bis zu 13,3 Billionen Euro bis 2045"</h3>
+
+<div class="bewertung bewertung-rot">Bewertung: QUELLENAUSSAGE UMGEKEHRT</div>
+
+<blockquote>"...je nach Studie auf bis zu 13,3 Billionen Euro bis 2045."<br><span class="source">- Prof. Schulte, Teil 1, Einleitung (Quellenangabe im Video: "wissenschaftlicher Beirat des deutschen Bundestages")</span></blockquote>
+
+<p><strong>Was falsch ist:</strong></p>
+<ul>
+<li><strong>Falsche Institution.</strong> Einen "Wissenschaftlichen Beirat des Bundestages" gibt es nicht. Die Quelle ist die Ausarbeitung <span class="tooltip" tabindex="0">WD<span class="tooltip-content">Wissenschaftliche Dienste des Deutschen Bundestages - interner Recherche-Service, kein Beratungsgremium.</span></span> 5-135/24 der Wissenschaftlichen Dienste des Deutschen Bundestages - ein interner Recherche-Service, kein Beratungsgremium. Das Dokument selbst stellt klar: "Ihre Arbeiten geben nicht die Auffassung des Deutschen Bundestages [...] wieder."</li>
+<li><strong>Die Quellenaussage wird in ihr Gegenteil verkehrt.</strong> Die 13,3 Billionen Euro stammen aus der <span class="tooltip" tabindex="0">PwC<span class="tooltip-content">PricewaterhouseCoopers - internationale Wirtschaftsprüfungs- und Beratungsgesellschaft.</span></span>-Studie (März 2024). Deren Befund lautet: Klimaneutralität kostet ca. 13,2 Bio. Euro, Weiter-wie-bisher kostet ca. 13,3 Bio. Euro. Klimaschutz ist also laut dieser Studie GÜNSTIGER als Nichtstun.</li>
+<li><strong>Aufschlüsselung (PwC):</strong> Beschleunigtes Szenario: 5,3 Bio. Investitionen + 7,9 Bio. Energie = 13,2 Bio. Euro. Weiter-wie-bisher: 3,9 Bio. Investitionen + 9,4 Bio. Energie = 13,3 Bio. Euro.</li>
+<li>Schulte präsentiert die Kosten des NICHTSTUNS als Kosten des Klimaschutzes.</li>
+</ul>
+
+<p class="source">Quellen: <a href="https://www.bundestag.de/resource/blob/1019134/59b54bba98e93b9fecf43013668d86b3/WD-5-135-24-pdf.pdf" target="_blank">Bundestag WD 5-135/24 (PDF)</a>, <a href="https://www.pwc.de/de/energiewirtschaft/klimaschutzinvestitionen-lohnen-sich.html" target="_blank">PwC: Klimaschutzinvestitionen lohnen sich</a></p>
+</div>
+
+<div class="claim-card" id="claim12">
+<h3>Behauptung 12: "7,35 Cent pro Kilowattstunde garantierte Einspeisevergütung"</h3>
+
+<div class="bewertung bewertung-orange">Bewertung: IRREFÜHREND</div>
+
+<blockquote>"7,35 Cent pro Kilowattstunde an garantierter Einspeisevergütung"<br><span class="source">- Prof. Schulte, Teil 1, Einleitung</span></blockquote>
+
+<p><strong>Was stimmt:</strong></p>
+<ul>
+<li>7,35 ct/<span class="tooltip" tabindex="0">kWh<span class="tooltip-content">Kilowattstunde - Maßeinheit für elektrische Energie.</span></span> war der Höchstwert (Gebotsobergrenze) für Onshore-Wind-Ausschreibungen nach <span class="tooltip" tabindex="0">EEG<span class="tooltip-content">Erneuerbare-Energien-Gesetz - regelt die Einspeisung und Vergütung von Strom aus erneuerbaren Energien.</span></span> in den Jahren 2023-2025.</li>
+</ul>
+
+<p><strong>Was irreführend ist:</strong></p>
+<ul>
+<li><strong>Es ist der MAXIMAL zulässige Gebotswert, nicht die garantierte Vergütung.</strong> Die tatsächlich bezuschlagten Preise (Zuschlagswerte) liegen darunter und sinken: Feb 2024: 7,34 ct, Nov 2024: 7,15 ct, Feb 2025: 7,00 ct, Mai 2025: 6,15 ct/kWh.</li>
+<li><strong>"Garantiert" verschweigt die 4-Stunden-Regel.</strong> Bei negativen Strompreisen über 4 aufeinanderfolgende Stunden erhalten Betreiber KEINE Vergütung (§ 51 EEG).</li>
+<li><strong>Das <span class="tooltip" tabindex="0">Marktprämienmodell<span class="tooltip-content">Vergütungsmechanismus im EEG: Betreiber verkaufen Strom an der Börse und erhalten eine gleitende Prämie als Differenz zum Zuschlagswert.</span></span> wird ignoriert.</strong> Betreiber verkaufen ihren Strom an der Börse und erhalten eine gleitende Marktprämie - sie sind Marktbedingungen ausgesetzt, nicht durch einen festen Preis geschützt.</li>
+</ul>
+
+<p class="source">Quelle: <a href="https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Ausschreibungen/Wind_Onshore/BeendeteAusschreibungen/2025/GT1022025/artikel.html" target="_blank"><span class="tooltip" tabindex="0">BNetzA<span class="tooltip-content">Bundesnetzagentur - zuständig für die Durchführung der EEG-Ausschreibungen.</span></span> Ausschreibungsergebnisse Wind Onshore</a></p>
+</div>
+
+<div class="claim-card" id="claim13">
+<h3>Behauptung 13: "Betreiber gehen in beabsichtigte Insolvenz"</h3>
+
+<div class="bewertung bewertung-rot">Bewertung: NICHT BELEGT</div>
+
+<blockquote>"...in die gegebenenfalls von Anfang an beabsichtigte Insolvenz gehen, wer baut dann zurück?"<br><span class="source">- Prof. Schulte, Teil 1, Einleitung</span></blockquote>
+
+<p><strong>Was falsch ist:</strong></p>
+<ul>
+<li><strong>Kein dokumentierter Fall.</strong> Es gibt keinen dokumentierten Fall einer vorsätzlichen Insolvenz eines deutschen Windparkbetreibers zur Umgehung der Rückbaupflicht.</li>
+<li><strong>Rückbaubürgschaften sind insolvenzfest.</strong> Nach § 35 Abs. 5 <span class="tooltip" tabindex="0">BauGB<span class="tooltip-content">Baugesetzbuch - regelt u.a. den Rückbau von Anlagen im Außenbereich.</span></span> müssen Betreiber vor Baubeginn eine Rückbausicherheit hinterlegen. In der Praxis werden selbstschuldnerische Bankbürgschaften verlangt, die auch im Insolvenzfall des Betreibers greifen.</li>
+<li><strong>Bestätigung durch Behörden.</strong> Das Land Brandenburg hat bestätigt, dass Genehmigungsbehörden bisher in keinem Fall auf hinterlegte Sicherheitsleistungen für den Rückbau zurückgreifen mussten.</li>
+<li><strong>Rückbau funktioniert in der Praxis.</strong> Allein 2024 wurden in Deutschland über 550 Altanlagen rückgebaut (<span class="tooltip" tabindex="0">BWE<span class="tooltip-content">Bundesverband WindEnergie - Branchenverband der deutschen Windindustrie.</span></span>).</li>
+</ul>
+
+<p><strong>Reales, aber engeres Problem:</strong></p>
+<ul>
+<li>Bei einigen älteren Anlagen wurden die Rückbausicherheiten zu niedrig angesetzt - das betrifft die Höhe der Rücklagen, nicht eine beabsichtigte Insolvenz.</li>
+</ul>
+
+<p class="source">Quellen: <a href="https://www.wind-energie.de/fileadmin/redaktion/dokumente/publikationen-oeffentlich/themen/02-technik-und-netze/09-rueckbau/20240322_BWE-Informationspapier_Rueckbau_und_Recycling_von_Windenergieanlagen.pdf" target="_blank">BWE Informationspapier Rückbau (2024, PDF)</a>, § 35 Abs. 5 BauGB</p>
+</div>
+
+<div class="claim-card" id="claim14">
+<h3>Behauptung 14: "Wälder sind Trinkwasserschutzgebiet"</h3>
+
+<div class="bewertung bewertung-rot">Bewertung: PAUSCHAL FALSCH</div>
+
+<blockquote>"unserem artenreichen Mischwald und unseren Trinkwasserschutzgebieten" [...] "sowieso im Trinkwasserschutzgebiet"<br><span class="source">- Prof. Schulte, Teil 3, Kontamination und Recycling</span></blockquote>
+
+<p><strong>Was stimmt:</strong></p>
+<ul>
+<li>Etwa 40% aller <span class="tooltip" tabindex="0">WSG<span class="tooltip-content">Wasserschutzgebiet - rechtlich festgesetztes Gebiet zum Schutz von Trinkwasserressourcen.</span></span> in Deutschland sind bewaldet.</li>
+<li>Wälder spielen eine wichtige Rolle bei der Wasserfiltration.</li>
+</ul>
+
+<p><strong>Was falsch ist:</strong></p>
+<ul>
+<li><strong>Nur etwa ein Drittel (~33%) der deutschen Waldfläche liegt in Wasserschutzgebieten.</strong> Zwei Drittel aller Wälder sind NICHT in WSG. "Wald" und "Trinkwasserschutzgebiet" gleichzusetzen, ist sachlich falsch.</li>
+<li><strong>Ob ein konkreter <span class="tooltip" tabindex="0">WEA<span class="tooltip-content">Windenergieanlage.</span></span>-Standort in einem WSG liegt, wird im Einzelfall geprüft.</strong> Es gibt keine pauschale Gleichsetzung.</li>
+<li><strong>WSG-Status verbietet keinen Bau, sondern löst zusätzliche Schutzauflagen aus</strong> (verschärfte Auffangvorrichtungen, Monitoring, Verwendung biologisch abbaubarer Betriebsstoffe).</li>
+</ul>
+
+<p class="source">Quelle: <a href="https://www.forstwirtschaft-in-deutschland.de/forstwirtschaft/produkte-leistungen/trinkwasser/" target="_blank">Forstwirtschaft in Deutschland: Trinkwasser</a></p>
+</div>
+
+<div class="claim-card" id="claim15">
+<h3>Behauptung 15: "35-120 Hektar Habitatverlust für Wildkatzen pro Anlage"</h3>
+
+<div class="bewertung bewertung-orange">Bewertung: KEINE PEER-REVIEW-GRUNDLAGE</div>
+
+<blockquote>"Verlust von potenziellem Reproduktionsraum im Umfang von 35 bis 120 Hektar pro Anlage für ein Wildkatzenweibchen"<br><span class="source">- Prof. Schulte, Teil 4, Natur- und Artenschutz (zitiert Naturschutzinitiative e.V., Gabriele Neumann)</span></blockquote>
+
+<p><strong>Was stimmt:</strong></p>
+<ul>
+<li>Die Europäische Wildkatze ist in Deutschland eine geschützte Art.</li>
+<li>Es gibt wissenschaftliche Hinweise auf Meideverhalten in der Nähe von Windkraftanlagen (Deutsche Wildtier Stiftung, Universität Göttingen).</li>
+</ul>
+
+<p><strong>Was problematisch ist:</strong></p>
+<ul>
+<li><strong>Die Zahl 35-120 ha stammt nicht aus Peer-Review-Forschung.</strong> Quelle ist ein Artikel der <span class="tooltip" tabindex="0">NI<span class="tooltip-content">Naturschutzinitiative e.V. - Umweltverein, der schwerpunktmäßig gegen Windkraft im Wald klagt.</span></span> (Naturschutzinitiative e.V., Gabriele Neumann, August 2024). Der Artikel verweist auf ein Forschungsprojekt der Deutschen Wildtier Stiftung, nennt aber keine formale Zitation, keinen <span class="tooltip" tabindex="0">DOI<span class="tooltip-content">Digital Object Identifier - eindeutige Kennung für wissenschaftliche Publikationen.</span></span> und keine Publikationsdetails.</li>
+<li><strong>Zur Einordnung der Quelle:</strong> Naturschutzinitiative e.V. ist zwar als Umweltvereinigung anerkannt, fungiert aber primär als Anti-Windkraft-Klageverein. Gegründet von Harry Neumann (ehemaliger BUND-Landesvorsitzender, der den BUND wegen eines Windkraft-Konflikts verließ). Gabriele Neumann (Artikelautorin) ist die Ehefrau von Harry Neumann. Die NI verwendet Formulierungen wie "Lizenz zum Töten" für die Windenergiepolitik.</li>
+<li><strong>Dieselbe Methode wie bei Behauptung 6:</strong> Aus einem angenommenen Meidungsradius wird eine Kreisfläche berechnet und als "Habitatverlust" bezeichnet - analog zu Schultes 50-100 ha bei Fledermäusen.</li>
+<li><strong>Keine Peer-Review-Publikation quantifiziert "35-120 ha Habitatverlust pro Anlage" für Wildkatzen.</strong></li>
+</ul>
+
+<p class="source">Quellen: <a href="https://naturschutz-initiative.de/aktuell/neuigkeiten/ohne-wald-keine-wildkatzen-keine-windenergie-im-wald/" target="_blank">Naturschutzinitiative e.V.: Wildkatzen und Windenergie</a>, <a href="https://www.uni-goettingen.de/de/wildkatze+und+windkraft/683922.html" target="_blank">Uni Göttingen: Wildkatze und Windkraft</a>, <a href="https://taz.de/Neuer-Umweltschutzverein-gegruendet/!5274323/" target="_blank">taz: Gründung der NI</a></p>
+</div>
+
 <div class="pagebreak"></div>
 
 <h2 id="methode">4. Wiederkehrende Muster</h2>
 
-<p>Die folgende Tabelle fasst Muster zusammen, die in den zehn geprüften Behauptungen auftreten. Die Beispiele verweisen auf die jeweiligen Behauptungen oben:</p>
+<p>Die folgende Tabelle fasst Muster zusammen, die in den fünfzehn geprüften Behauptungen auftreten. Die Beispiele verweisen auf die jeweiligen Behauptungen oben:</p>
 
 <table>
 <tr><th style="width:5%">Nr.</th><th style="width:35%">Beobachtung</th><th>Beispiel</th></tr>
@@ -921,6 +1087,7 @@ Dieses Dokument enthält ausschließlich Informationen aus öffentlich zugängli
 <tr><td>6</td><td>Zahlen aus nicht-wissenschaftlichen Quellen</td><td>Mikrofaserabrieb: 50-150 kg/Jahr (Rechtsanwalt Thomas Mock) vs. Onshore max. 0,15 kg/Jahr (DTU 2024, Peer-Review)</td></tr>
 <tr><td>7</td><td>Tonfall widerspricht Sachlichkeitsanspruch</td><td>"Klimanationalismus", "raubsozialistischer Strudel", "Staatsfunk", "Mietwissenschaftler", "nützliche Idioten" (alles Teil 1) vs. Selbstbeschreibung "grundsätzlich unabhängig und überparteilich", "wissensbasiert"</td></tr>
 <tr><td>8</td><td>Anti-Windkraft-Organisationen als neutrale Quellen</td><td>Naturschutzinitiative e.V. (bekannte Anti-Windkraft-Organisation) und Deutsche Wildtier Stiftung werden zitiert, ohne deren Positionierung einzuordnen</td></tr>
+<tr><td>9</td><td>Quellenaussage in ihr Gegenteil verkehrt</td><td>PwC-Studie: Klimaneutralität kostet ~13,2 Bio. € (günstiger als Nichtstun mit ~13,3 Bio. €). Schulte: "Kosten bis zu 13,3 Billionen" (suggeriert: Klimaschutz ist unbezahlbar)</td></tr>
 </table>
 
 <h3>Wo Schulte berechtigte Punkte hat</h3>
@@ -1055,9 +1222,13 @@ Dieses Dokument enthält ausschließlich Informationen aus öffentlich zugängli
 <script>
 (function() {
   var sections = document.querySelectorAll('h2[id]');
-  var sideLinks = document.querySelectorAll('.side-nav a');
+  var sideLinks = document.querySelectorAll('.side-nav > a');
   var mobileLinks = document.querySelectorAll('.mobile-nav a');
+  var claimLinks = document.querySelectorAll('.side-nav-sub a');
   var progressBar = document.getElementById('progressBar');
+  var claimNav = document.getElementById('claimNav');
+  var claimCards = document.querySelectorAll('.claim-card[id]');
+  var readClaims = new Set();
 
   // Smooth scroll for all nav links
   function addSmoothScroll(links) {
@@ -1065,46 +1236,53 @@ Dieses Dokument enthält ausschließlich Informationen aus öffentlich zugängli
       link.addEventListener('click', function(e) {
         e.preventDefault();
         var target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
     });
   }
   addSmoothScroll(sideLinks);
   addSmoothScroll(mobileLinks);
+  addSmoothScroll(claimLinks);
 
-  // Update active section and progress bar on scroll
+  // Update on scroll
   var ticking = false;
   window.addEventListener('scroll', function() {
     if (!ticking) {
       window.requestAnimationFrame(function() {
-        // Progress bar
         var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         var docHeight = document.documentElement.scrollHeight - window.innerHeight;
-        var progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-        progressBar.style.width = Math.min(progress, 100) + '%';
+        progressBar.style.width = Math.min(docHeight > 0 ? (scrollTop / docHeight) * 100 : 0, 100) + '%';
 
-        // Active section
+        // Active main section
         var currentId = '';
-        sections.forEach(function(section) {
-          var rect = section.getBoundingClientRect();
-          if (rect.top <= 120) {
-            currentId = section.getAttribute('id');
-          }
-        });
-
+        sections.forEach(function(s) { if (s.getBoundingClientRect().top <= 120) currentId = s.id; });
         function setActive(links) {
-          links.forEach(function(link) {
-            if (link.getAttribute('href') === '#' + currentId) {
-              link.classList.add('active');
-            } else {
-              link.classList.remove('active');
-            }
+          links.forEach(function(l) {
+            l.classList.toggle('active', l.getAttribute('href') === '#' + currentId);
           });
         }
         setActive(sideLinks);
         setActive(mobileLinks);
+
+        // Toggle claim sub-nav
+        if (claimNav) claimNav.classList.toggle('open', currentId === 'faktencheck');
+
+        // Track which claims are in view / have been read
+        var activeClaimId = '';
+        claimCards.forEach(function(card) {
+          var r = card.getBoundingClientRect();
+          if (r.top <= 200) activeClaimId = card.id;
+          if (r.top < window.innerHeight * 0.6 && r.bottom > 0) readClaims.add(card.id);
+        });
+        claimLinks.forEach(function(l) {
+          var href = l.getAttribute('href').slice(1);
+          l.classList.toggle('active', href === activeClaimId);
+          if (readClaims.has(href)) l.classList.add('read');
+        });
+
+        // Update counter
+        var counter = document.getElementById('claimCounter');
+        if (counter) counter.innerHTML = 'Gelesen: <strong>' + readClaims.size + '</strong>/15';
 
         ticking = false;
       });
