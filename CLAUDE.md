@@ -84,12 +84,12 @@ Alle folgenden Fakten wurden gegen Originalquellen geprüft:
 - BNK: bis zu 98% weniger Lichtemissionen
 - Flächenverbrauch: ~0,5 ha versiegelt, 97% weiter nutzbar
 - Recycling: ~90%
-- Recycling Rotorblätter: Thermische Verwertung aktuell Hauptmethode. WindEurope-Pledge 2021: Blätter recycelbar bis 2030, komplette Turbinen bis 2040. Siemens Gamesa RecyclableBlade seit 2021.
+- Recycling Rotorblätter: Thermische Verwertung aktuell Hauptmethode. WindEurope: europaweites Deponieverbot für Rotorblätter und Verpflichtung zur vollständigen Wiederverwertung (Quelle: windeurope.org/policy/topics/circularity/). Siemens Gamesa RecyclableBlade seit 2021.
 - Mikrofaserabrieb Rotorblätter: Onshore max. 0,15 kg/Anlage/Jahr, Offshore max. 3 kg/Jahr (Mishnaevsky et al. 2024, DTU, DOI: 10.3390/en17246260). BWE-Faktencheck (Aug 2024): 2,74 kg/Anlage/Jahr. Fraunhofer-IWES-Worst-Case (Bundestag WD 8-077/20): 45 kg/Jahr bei vollständigem Beschichtungsverlust - "mit hoher Wahrscheinlichkeit deutlich darunter"
 - Getriebeöle WGK: Überwiegend WGK 1 (schwach wassergefährdend), teils WGK 2. Kein WGK 3 in WEA. Quelle: BLAK UmwS Merkblatt Windenergieanlagen (Mai 2023). Zum Vergleich: Benzin = WGK 3
 - BPA-Grenzwert TrinkwV: 2,5 µg/L (seit 12.01.2024, EU-RL 2020/2184)
 - PFAS-Grenzwert TrinkwV: 0,1 µg/L für Summe PFAS-20 (ab 12.01.2026), 0,02 µg/L für Summe PFAS-4 (ab 12.01.2028)
-- Rückbau: 550+ Altanlagen 2024 in DE rückgebaut (BWE). Rückbaubürgschaft nach §35 Abs. 5 BauGB insolvenzfest (selbstschuldnerische Bankbürgschaft). DIN SPEC 4866: vollständiger Fundamentrückbau inkl. Sauberkeitsschicht
+- Rückbau: Rückbaubürgschaft nach §35 Abs. 5 BauGB (selbstschuldnerische Bankbürgschaft sichert gegen finanziellen Ausfall). Laut BWE/UBA mussten Behörden bisher in keinem Fall auf Sicherheitsleistungen zurückgreifen (Insolvenz = "absoluter Ausnahmefall"). DIN SPEC 4866: vollständiger Fundamentrückbau inkl. Sauberkeitsschicht
 - EEG-Ausschreibungen Onshore Wind: Höchstwert 7,35 ct/kWh (2023-2025), tatsächliche Zuschlagswerte sinkend: Feb 2024: 7,34 ct, Nov 2024: 7,15 ct, Feb 2025: 7,00 ct, Mai 2025: 6,15 ct/kWh. Bei negativen Preisen >4h keine Vergütung (§51 EEG). Quelle: BNetzA Ausschreibungsergebnisse
 - Wald in Wasserschutzgebieten: ~33% der deutschen Waldfläche liegt in WSG. Quelle: forstwirtschaft-in-deutschland.de
 - PwC-Studie 2024 "Klimaschutzinvestitionen lohnen sich": Klimaneutralität ~13,2 Bio. €, Weiter-wie-bisher ~13,3 Bio. € (Klimaschutz ist günstiger). Wird in Anti-WK-Kreisen als "13,3 Bio. Kosten für Klimaschutz" fehlzitiert
