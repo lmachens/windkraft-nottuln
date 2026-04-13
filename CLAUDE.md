@@ -74,7 +74,7 @@ Alle folgenden Fakten wurden gegen Originalquellen geprüft:
 - Schattenwurf: 8h tatsächlich / 30h astronomisch (LAI-Hinweise)
 - Infraschall: 3,5h Autofahrt = 27 Jahre in 300m (Uni Bayreuth)
 - §6 EEG: 0,2 ct/kWh für Gemeinden im 2,5-km-Radius (Verteilung nach Flächenanteil)
-- §29 GewStG: Bis zu 90% Gewerbesteuer an Standortgemeinde (seit 2021), nur bei Betreibern die ausschließlich Energieerzeugung betreiben (z.B. Projektgesellschaften, Bürgerwindparks)
+- Gewerbesteuer: §29 GewStG (bis zu 90% an Standortgemeinde, nur bei reinen Energieerzeugern) ODER §33 GewStG (abweichende Zerlegungsvereinbarung zwischen Kommunen). Stadtwerke Münster nutzen §33 - vereinbaren mit Standortgemeinde, dass Wertschöpfung dort anfällt (bestätigt durch Juliette Polenz, Stadtwerke Münster, April 2026). So in Südlohn praktiziert, für alle künftigen Projekte geplant.
 - BürgEnG NRW: Investition ab 500€
 - CO2-Einsparung: 6.000-10.000t pro Windrad/Jahr
 - EPBT: 2,5-4,5 Monate (UBA)
