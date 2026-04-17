@@ -1956,9 +1956,100 @@
             background: var(--color-primary-light);
             text-decoration: none;
         }
+
+        /* ===== EVENT BANNER ===== */
+        .event-banner {
+            background: var(--color-primary-dark);
+            color: rgba(255,255,255,0.92);
+            font-size: 0.875rem;
+            line-height: 1.4;
+            position: relative;
+            z-index: 200;
+            overflow: hidden;
+        }
+        .event-banner::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: repeating-linear-gradient(
+                -45deg,
+                transparent,
+                transparent 8px,
+                rgba(255,255,255,0.02) 8px,
+                rgba(255,255,255,0.02) 16px
+            );
+            pointer-events: none;
+        }
+        .event-banner__inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0.6rem var(--space-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            position: relative;
+        }
+        .event-banner__date {
+            background: rgba(255,255,255,0.12);
+            border: 1px solid rgba(255,255,255,0.15);
+            padding: 0.15rem 0.5rem;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 0.75rem;
+            letter-spacing: 0.03em;
+            white-space: nowrap;
+            color: #fff;
+        }
+        .event-banner__text {
+            flex: 0 1 auto;
+        }
+        .event-banner__text a {
+            color: #fff;
+            text-decoration: underline;
+            text-decoration-color: rgba(255,255,255,0.4);
+            text-underline-offset: 2px;
+            font-weight: 600;
+            transition: text-decoration-color 0.2s;
+        }
+        .event-banner__text a:hover {
+            text-decoration-color: #fff;
+        }
+        .event-banner__close {
+            position: absolute;
+            right: var(--space-md);
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: rgba(255,255,255,0.5);
+            cursor: pointer;
+            padding: 0.25rem;
+            font-size: 1.125rem;
+            line-height: 1;
+            transition: color 0.2s;
+        }
+        .event-banner__close:hover {
+            color: #fff;
+        }
+        .event-banner[hidden] { display: none; }
+        @media (max-width: 600px) {
+            .event-banner__inner { padding-right: 2.5rem; }
+            .event-banner__date { display: none; }
+        }
     </style>
 </head>
 <body>
+    <!-- Event Banner -->
+    <div class="event-banner" id="eventBanner" role="alert">
+        <div class="event-banner__inner">
+            <span class="event-banner__date">29. Apr</span>
+            <span class="event-banner__text">Prof. Schulte spricht in Nottuln — <a href="/dokumentation/faktencheck-prof-schulte.html">14 Behauptungen im Faktencheck</a></span>
+            <button class="event-banner__close" aria-label="Hinweis schließen" onclick="this.closest('.event-banner').hidden=true;try{localStorage.setItem('banner-schulte-dismissed','1')}catch(e){}">&times;</button>
+        </div>
+    </div>
+    <script>try{if(localStorage.getItem('banner-schulte-dismissed'))document.getElementById('eventBanner').hidden=true}catch(e){}</script>
+
     <!-- Header -->
     <header class="header">
         <div class="container header__inner">
