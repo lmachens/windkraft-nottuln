@@ -90,7 +90,7 @@ Alle folgenden Fakten wurden gegen Originalquellen geprüft:
 - BPA-Grenzwert TrinkwV: 2,5 µg/L (seit 12.01.2024, EU-RL 2020/2184)
 - PFAS-Grenzwert TrinkwV: 0,1 µg/L für Summe PFAS-20 (ab 12.01.2026), 0,02 µg/L für Summe PFAS-4 (ab 12.01.2028)
 - Rückbau: Rückbaubürgschaft nach §35 Abs. 5 BauGB (selbstschuldnerische Bankbürgschaft sichert gegen finanziellen Ausfall). Laut BWE/UBA mussten Behörden bisher in keinem Fall auf Sicherheitsleistungen zurückgreifen (Insolvenz = "absoluter Ausnahmefall"). DIN SPEC 4866: vollständiger Fundamentrückbau inkl. Sauberkeitsschicht
-- EEG-Ausschreibungen Onshore Wind: Höchstwert 7,35 ct/kWh (2023-2025), tatsächliche Zuschlagswerte sinkend: Feb 2024: 7,34 ct, Nov 2024: 7,15 ct, Feb 2025: 7,00 ct, Mai 2025: 6,15 ct/kWh. Bei negativen Preisen >4h keine Vergütung (§51 EEG). Quelle: BNetzA Ausschreibungsergebnisse
+- EEG-Ausschreibungen Onshore Wind: Höchstwert 7,35 ct/kWh (2023-2025), tatsächliche Zuschlagswerte sinkend: Feb 2024: 7,34 ct, Nov 2024: 7,15 ct, Feb 2025: 7,00 ct, Mai 2025: 6,15 ct/kWh. Seit Feb 2025: Bei negativen Preisen entfällt Vergütung ab erster Viertelstunde (§51 EEG), Vergütungszeitraum wird verlängert (§51a EEG). Quelle: BNetzA Ausschreibungsergebnisse
 - Wald in Wasserschutzgebieten: ~33% der deutschen Waldfläche liegt in WSG. Quelle: forstwirtschaft-in-deutschland.de
 - PwC-Studie 2024 "Klimaschutzinvestitionen lohnen sich": Klimaneutralität ~13,2 Bio. €, Weiter-wie-bisher ~13,3 Bio. € (Klimaschutz ist günstiger). Wird in Anti-WK-Kreisen als "13,3 Bio. Kosten für Klimaschutz" fehlzitiert
 - Bauzeit pro Anlage: 3-6 Monate (Fundament, Aufbau, Netzanschluss)
