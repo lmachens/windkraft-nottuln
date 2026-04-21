@@ -81,6 +81,7 @@ Alle folgenden Fakten wurden gegen Originalquellen geprüft:
 - 106 Mio. t CO2 durch Wind vermieden (2024)
 - 70% Energieimportabhängigkeit, ~70-76 Mrd. €/Jahr
 - TA Lärm nachts: 35 dB(A) reines WG, 40 dB(A) allg. WG, 45 dB(A) Misch-/Außenbereich
+- Schallemission (Quelle): Moderne 6-7 MW-Anlagen 104-107 dB(A) mit Serrations, nur 2-3 dB(A) mehr als ältere 2-3 MW-Anlagen (~104 dB(A)). Nordex N163/6.X: 106,4 dB(A) Mode 1 mit STE, 103,0-106,4 je nach Modus. Vestas V172-7.2: 106,9 dB(A) max, 98-106,9 je nach Modus. Quellen: Nordex-Datenblatt (UVP-Verbund NI), Vestas-Datenblatt (Kreis Paderborn), Hoen et al. 2023 (Applied Energy)
 - BNK: bis zu 98% weniger Lichtemissionen
 - Flächenverbrauch: ~0,5 ha versiegelt, 97% weiter nutzbar
 - Recycling: ~90%
