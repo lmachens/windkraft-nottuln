@@ -190,7 +190,8 @@ Alle folgenden Fakten wurden gegen Originalquellen geprüft:
 - Vortrag fand statt am 29.04.2026, Forum Rupert-Neudeck-Gymnasium, ca. 100 Besucher, eingeladen von Gegenwind Nottuln
 - Schulte zeigte windkraft-nottuln.de als Quelle die er "widerlegt", ging aber inhaltlich nicht auf den Faktencheck ein
 - Schulte formulierte im Vortrag VORSICHTIGER als in Videos: "eindeutig wahrscheinlich" statt "gesichert gesundheitsgefährdend", keine Begriffe wie "Klimanationalismus", "Staatsfunk", "Mietwissenschaftler"
-- Vahl/Dietz DGIM P-15-07: Kongressposter, KEINE Probanden sondern KV-Abrechnungsdaten (ICD-Codes). Quelle: events.mcon-mannheim.de
+- Vahl/Dietz DGIM P-15-07: Kongressposter (nicht peer-reviewed), KEINE Probanden sondern KV-Abrechnungsdaten (ICD-Codes) aus 4 Gemeinden Kreis Paderborn, Zeitraum 2015-2024. Poster sagt "Exponierte Einwohner", Schulte sagte "Probanden". Kein einziger Infraschall-Messwert. Poster zeigt Altersvergleich 2024, aber keine multivariate Confounding-Kontrolle. Quelle: events.mcon-mannheim.de
+- Baliatsas et al. 2025 (Renewable and Sustainable Energy Reviews, DOI: 10.1016/j.rser.2025.115642): 350.000-560.000 Personen/Jahr, 10 Jahre (2012-2021), individuelle GIS-Expositionsmessung, multivariate Regression. Ergebnis: "lack of consistent and significant associations". Methodisch deutlich staerker als Vahl/Dietz.
 - Mueller et al. 2022 (PMC9703817): Widerlegung Chaban et al. 2021, Laborpegel 10.000-1.000.000x höher als reale WEA-Infraschallpegel
 - RWE EBITDA 2025: 5,1 Mrd. EUR (bereinigtes EBITDA), Nettogewinn 1,8 Mrd. EUR. EBITDA ≠ Vorsteuergewinn. Quelle: rwe.com/investor-relations
 - RWE Aktionärsstruktur: Qatar 9,3%, BlackRock 5,9%, 62% institutionelle Investoren Ausland. Quelle: rwe.com
