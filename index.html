@@ -58,7 +58,7 @@
             "name": "Leon Machens"
         },
         "datePublished": "2025-12-01",
-        "dateModified": "2026-02-09",
+        "dateModified": "2026-05-04",
         "mainEntityOfPage": "https://windkraft-nottuln.de/",
         "about": [
             {"@type": "Thing", "name": "Windkraft"},
@@ -2043,12 +2043,12 @@
     <!-- Event Banner -->
     <div class="event-banner" id="eventBanner" role="alert">
         <div class="event-banner__inner">
-            <span class="event-banner__date">29. Apr</span>
-            <span class="event-banner__text">Prof. Schulte spricht in Nottuln — <a href="/dokumentation/faktencheck-prof-schulte.html">18 Behauptungen im Faktencheck</a></span>
-            <button class="event-banner__close" aria-label="Hinweis schließen" onclick="this.closest('.event-banner').hidden=true;try{localStorage.setItem('banner-schulte-dismissed','1')}catch(e){}">&times;</button>
+            <span class="event-banner__date">NEU</span>
+            <span class="event-banner__text">Schulte-Vortrag in Nottuln — <a href="/dokumentation/faktencheck-schulte-vortrag-nottuln.html">Faktencheck mit 8 neuen Behauptungen</a></span>
+            <button class="event-banner__close" aria-label="Hinweis schließen" onclick="this.closest('.event-banner').hidden=true;try{localStorage.setItem('banner-vortrag-dismissed','1')}catch(e){}">&times;</button>
         </div>
     </div>
-    <script>try{if(localStorage.getItem('banner-schulte-dismissed'))document.getElementById('eventBanner').hidden=true}catch(e){}</script>
+    <script>try{if(localStorage.getItem('banner-vortrag-dismissed'))document.getElementById('eventBanner').hidden=true}catch(e){}</script>
 
     <!-- Header -->
     <header class="header">
@@ -2160,14 +2160,31 @@
         <a href="#ressourcen" class="quick-nav__pill">Recherchieren</a>
     </nav>
 
-    <!-- Schulte Faktencheck Teaser -->
+    <!-- Aktuelles: Faktenchecks -->
     <section class="petition-teaser">
         <div class="container">
+            <h2 style="font-family: var(--font-display); font-size: 1.5rem; color: var(--color-primary-dark); margin-bottom: var(--space-md); text-align: center;">Aktuelles</h2>
+            <a href="/dokumentation/faktencheck-schulte-vortrag-nottuln.html" class="petition-teaser__card" style="margin-bottom: var(--space-sm);">
+                <div class="petition-teaser__badge">Neu</div>
+                <div class="petition-teaser__content">
+                    <h2>Faktencheck: Schulte-Vortrag in Nottuln (29.04.2026)</h2>
+                    <p>8 neue Behauptungen aus dem Vortrag im Gymnasium geprüft. Inklusive Fragerunde und Einordnung.</p>
+                </div>
+                <div class="petition-teaser__stats">
+                    <span class="petition-teaser__stat"><strong>8</strong> Behauptungen</span>
+                    <span class="petition-teaser__stat"><strong>39</strong> geprüft</span>
+                </div>
+                <div class="petition-teaser__arrow">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </div>
+            </a>
             <a href="/dokumentation/faktencheck-prof-schulte.html" class="petition-teaser__card">
                 <div class="petition-teaser__badge">Faktencheck</div>
                 <div class="petition-teaser__content">
                     <h2>Prof. Schulte: "Gegenwind - Windkraft im Wald"</h2>
-                    <p>18 Behauptungen aus der YouTube-Serie geprüft. Am 29.04. spricht Schulte in Nottuln.</p>
+                    <p>18 Behauptungen aus der YouTube-Serie geprüft. Originalquellen, Rechenfehler, fehlender Kontext.</p>
                 </div>
                 <div class="petition-teaser__stats">
                     <span class="petition-teaser__stat"><strong>18</strong> Behauptungen</span>

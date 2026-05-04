@@ -186,6 +186,18 @@ Alle folgenden Fakten wurden gegen Originalquellen geprüft:
 - Klimaschäden Prognose 2022-2050: 280-900 Mrd € (IÖW/Prognos/GWS)
 - Ahrtal-Flut 2021: >40 Mrd € Gesamtschaden, 180+ Tote (bpb)
 
+## Schulte-Vortrag Nottuln 29.04.2026 (verifiziert Mai 2026)
+- Vortrag fand statt am 29.04.2026, Forum Rupert-Neudeck-Gymnasium, ca. 100 Besucher, eingeladen von Gegenwind Nottuln
+- Schulte zeigte windkraft-nottuln.de als Quelle die er "widerlegt", ging aber inhaltlich nicht auf den Faktencheck ein
+- Schulte formulierte im Vortrag VORSICHTIGER als in Videos: "eindeutig wahrscheinlich" statt "gesichert gesundheitsgefährdend", keine Begriffe wie "Klimanationalismus", "Staatsfunk", "Mietwissenschaftler"
+- Vahl/Dietz DGIM P-15-07: Kongressposter, KEINE Probanden sondern KV-Abrechnungsdaten (ICD-Codes). Quelle: events.mcon-mannheim.de
+- Mueller et al. 2022 (PMC9703817): Widerlegung Chaban et al. 2021, Laborpegel 10.000-1.000.000x höher als reale WEA-Infraschallpegel
+- RWE EBITDA 2025: 5,1 Mrd. EUR (bereinigtes EBITDA), Nettogewinn 1,8 Mrd. EUR. EBITDA ≠ Vorsteuergewinn. Quelle: rwe.com/investor-relations
+- RWE Aktionärsstruktur: Qatar 9,3%, BlackRock 5,9%, 62% institutionelle Investoren Ausland. Quelle: rwe.com
+- UBA CO2-Methodik: Verdrängungsmix (NICHT nur Braunkohle). Quelle: UBA Climate Change 03/2025 (PDF, S. 22+28)
+- Frankreich CO2-Intensität 2025: 19,6 g/kWh (NICHT 45g wie Schulte behauptet). Quelle: RTE analysesetdonnees.rte-france.com
+- Infraschall dB-Unterschied: 130 dB (Labor) vs 55-75 dB (Anwohner) = ~300.000-fache Schallintensität (10^(55/10)), ~560-facher Schalldruck (10^(55/20)). NICHT verwechseln!
+
 ## Netzkosten & Redispatch (verifiziert Februar 2026)
 - Gesamtkosten Netzengpassmanagement 2024: **2,8 Mrd. €** (SMARD Jahresbericht)
 - Davon EE-Abregelung: **554 Mio. € (20%)**, Rest: konventionelle Kraftwerke (80%)

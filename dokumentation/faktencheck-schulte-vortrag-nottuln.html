@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<title>Faktencheck: Schulte-Vortrag in Nottuln (29.04.2026)</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --color-primary: #1a5f6a;
+    --color-primary-dark: #134249;
+    --color-primary-light: #e8f4f5;
+    --color-accent: #7da87b;
+    --color-text: #2d3436;
+    --color-text-muted: #636e72;
+    --color-bg: #fafbfc;
+    --color-white: #ffffff;
+    --color-border: #dfe6e9;
+    --font-display: 'DM Serif Display', Georgia, serif;
+    --font-body: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
+    --space-xs: 0.5rem; --space-sm: 1rem; --space-md: 1.5rem; --space-lg: 2.5rem; --space-xl: 4rem;
+    --max-width: 900px;
+    --border-radius: 8px;
+    --shadow-sm: 0 1px 3px rgba(26,95,106,0.06);
+    --shadow-md: 0 4px 12px rgba(26,95,106,0.08);
+    --shadow-lg: 0 8px 30px rgba(26,95,106,0.1);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-primary: #5bc0cd; --color-primary-dark: #8ecfd8; --color-primary-light: #1a2e30;
+      --color-accent: #9bc49a; --color-text: #e8eaed; --color-text-muted: #9aa0a6;
+      --color-bg: #121518; --color-white: #1e2225; --color-border: #3c4043;
+    }
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :focus-visible { outline: 2px solid var(--color-primary); outline-offset: 2px; }
+  html, body { overflow-x: hidden; }
+  body { font-family: var(--font-body); font-size: 1.0625rem; line-height: 1.7; color: var(--color-text); background-color: var(--color-bg); -webkit-font-smoothing: antialiased; }
+  .container { width: 100%; max-width: var(--max-width); margin: 0 auto; padding: 0 var(--space-md); }
+  h1, h2, h3 { font-family: var(--font-display); font-weight: 400; line-height: 1.2; color: var(--color-primary-dark); }
+  .header { background: var(--color-white); border-bottom: 1px solid var(--color-border); padding: var(--space-sm) 0; }
+  .header__inner { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 var(--space-md); }
+  .header__logo { display: flex; align-items: center; gap: var(--space-xs); text-decoration: none; color: var(--color-primary-dark); }
+  .header__logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+  .header__logo-icon svg { width: 18px; height: 18px; fill: white; }
+  .header__logo-text { font-family: var(--font-display); font-size: 1.25rem; }
+  .header__nav { display: flex; gap: var(--space-md); }
+  .header__nav a { color: var(--color-text-muted); font-weight: 500; font-size: 0.9375rem; text-decoration: none; }
+  .header__nav a:hover { color: var(--color-primary); }
+  .mobile-nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: var(--space-xs); }
+  .mobile-nav-toggle span { display: block; width: 24px; height: 2px; background: var(--color-primary-dark); margin: 5px 0; transition: all 0.3s ease; border-radius: 2px; }
+  @media (max-width: 850px) {
+    .mobile-nav-toggle { display: block; }
+    .header__nav { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--color-white); flex-direction: column; padding: var(--space-md); border-bottom: 1px solid var(--color-border); box-shadow: 0 8px 24px rgba(0,0,0,0.1); gap: var(--space-sm); z-index: 100; }
+    .header__nav.active { display: flex; }
+    .header { position: relative; }
+  }
+  .content-header { background: var(--color-primary-light); border-bottom: 1px solid var(--color-border); padding: var(--space-xl) 0 var(--space-lg); text-align: center; }
+  .content-header h1 { font-size: 2rem; margin-bottom: var(--space-xs); color: var(--color-primary-dark); }
+  .content-header .subtitle { font-size: 1.125rem; color: var(--color-primary); margin-bottom: var(--space-md); font-weight: 500; }
+  .content-header .meta { font-size: 0.875rem; color: var(--color-text-muted); max-width: 680px; margin: 0 auto; line-height: 1.6; }
+  .content-header .meta strong { color: var(--color-primary-dark); font-weight: 600; }
+  .content { max-width: 780px; margin: 0 auto; padding: 0 var(--space-md); }
+  .intro-note { background: var(--color-primary-light); border: 1px solid var(--color-border); border-left: 4px solid var(--color-primary); padding: 18px 22px; margin: 36px 0; font-size: 0.9375rem; color: var(--color-text-muted); border-radius: var(--border-radius); }
+  h2 { font-size: 1.5rem; color: var(--color-primary-dark); margin: var(--space-xl) 0 var(--space-sm); padding-bottom: 10px; border-bottom: 2px solid var(--color-primary); scroll-margin-top: 20px; }
+  h3 { font-size: 1.125rem; color: var(--color-primary-dark); margin: var(--space-md) 0 var(--space-xs); }
+  p { margin-bottom: var(--space-sm); }
+  table { border-collapse: collapse; width: 100%; margin: 14px 0; font-size: 0.9375rem; background: var(--color-white); border-radius: var(--border-radius); overflow: hidden; box-shadow: var(--shadow-sm); }
+  th, td { border-bottom: 1px solid var(--color-border); padding: 10px 14px; text-align: left; vertical-align: top; }
+  td { border-right: 1px solid var(--color-border); } td:last-child { border-right: none; }
+  th { background: var(--color-primary-dark); color: rgba(255,255,255,0.95); font-weight: 500; font-size: 0.75rem; letter-spacing: 0.6px; text-transform: uppercase; padding: 11px 14px; }
+  tr:last-child td { border-bottom: none; } tr:hover td { background: rgba(232,244,245,0.4); }
+  blockquote { position: relative; margin: 18px 0; padding: 18px 22px 18px 24px; background: var(--color-primary-light); border: 1px solid var(--color-border); border-left: 4px solid var(--color-primary); border-radius: 0 var(--border-radius) var(--border-radius) 0; font-family: var(--font-display); font-size: 0.9375rem; font-style: italic; color: var(--color-text); line-height: 1.65; }
+  blockquote::before { content: '\201E'; position: absolute; top: 8px; left: 8px; font-size: 28px; color: var(--color-primary); opacity: 0.4; font-family: Georgia, serif; line-height: 1; }
+  .source { font-size: 0.8125rem; color: var(--color-text-muted); font-style: normal; margin-top: 12px; padding-top: 8px; border-top: 1px dashed var(--color-border); }
+  .source a { color: var(--color-primary); text-decoration: none; border-bottom: 1px dotted var(--color-primary); }
+  .bewertung { display: flex; align-items: center; gap: 10px; padding: 12px 18px; margin: 16px 0; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; border-radius: var(--border-radius); border-left: 5px solid; }
+  .bewertung::before { font-size: 16px; line-height: 1; }
+  .bewertung-gelb { background: linear-gradient(135deg, #fefbf0, #fdf5d8); border-color: #c9a820; color: #6d4c00; }
+  .bewertung-gelb::before { content: '\25C9'; color: #c9a820; }
+  .bewertung-orange { background: linear-gradient(135deg, #fef6ee, #fdecd8); border-color: #d47800; color: #7a4200; }
+  .bewertung-orange::before { content: '\25C9'; color: #d47800; }
+  .bewertung-rot { background: linear-gradient(135deg, #fef0f0, #fce4e4); border-color: #b83030; color: #6e1a1a; }
+  .bewertung-rot::before { content: '\25C9'; color: #b83030; }
+  .bewertung-gruen { background: linear-gradient(135deg, #f0fef2, #e0f5e4); border-color: #2d8a3e; color: #1a5a28; }
+  .bewertung-gruen::before { content: '\25C9'; color: #2d8a3e; }
+  @media (prefers-color-scheme: dark) {
+    .bewertung-gelb { background: linear-gradient(135deg, #2a2510, #302a12); color: #e8c84a; }
+    .bewertung-orange { background: linear-gradient(135deg, #2a2010, #302412); color: #e89040; }
+    .bewertung-rot { background: linear-gradient(135deg, #2a1515, #301818); color: #e86060; }
+    .bewertung-gruen { background: linear-gradient(135deg, #152a18, #183020); color: #60e870; }
+    .content-header { background: var(--color-primary-light); }
+    th { background: #1a3a3f; }
+    blockquote { background: var(--color-primary-light); border-color: var(--color-border); }
+  }
+  .claim-card { background: var(--color-white); border: 1px solid var(--color-border); border-radius: var(--border-radius); padding: 28px 28px 24px; margin: 24px 0; box-shadow: var(--shadow-md); transition: box-shadow 0.3s ease; }
+  .claim-card:hover { box-shadow: var(--shadow-lg); }
+  .claim-card h3 { margin: 0 0 4px 0; color: var(--color-primary-dark); font-size: 1.125rem; font-style: normal; font-weight: bold; padding-bottom: 12px; border-bottom: 1px solid var(--color-border); }
+  ul, ol { margin: 0 0 var(--space-sm) 0; padding-left: var(--space-md); }
+  li { margin-bottom: var(--space-xs); font-size: 0.9375rem; line-height: 1.65; }
+  li strong { color: var(--color-text); }
+  .tooltip { position: relative; cursor: help; border-bottom: 1px dotted var(--color-primary); }
+  .tooltip-content { display: none; position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%); background: #1a3a3f; color: #fff; padding: 10px 14px; border-radius: 6px; font-family: var(--font-body); font-size: 0.8125rem; font-style: normal; font-weight: normal; line-height: 1.5; width: 240px; z-index: 100; margin-bottom: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); text-align: left; }
+  .tooltip-content::after { content: ''; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); border: 6px solid transparent; border-top-color: #1a3a3f; }
+  .tooltip:hover .tooltip-content, .tooltip:focus .tooltip-content { display: block; }
+  a { color: var(--color-primary); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .note { background: var(--color-primary-light); border: 1px solid var(--color-border); border-left: 4px solid var(--color-primary); padding: 16px 20px; margin: 20px 0; font-size: 0.9375rem; border-radius: 0 var(--border-radius) var(--border-radius) 0; }
+  .footer { background: var(--color-white); border-top: 1px solid var(--color-border); padding: var(--space-xl) 0 var(--space-lg); }
+  .footer__inner { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: var(--space-lg); max-width: var(--max-width); margin: 0 auto; padding: 0 var(--space-md); }
+  @media (max-width: 768px) { .footer__inner { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 480px) { .footer__inner { grid-template-columns: 1fr; } }
+  .footer__brand p { color: var(--color-text-muted); font-size: 0.9375rem; margin-top: var(--space-sm); }
+  .footer__col h4 { font-family: var(--font-body); font-weight: 600; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-primary-dark); margin-bottom: var(--space-sm); }
+  .footer__col ul { list-style: none; padding-left: 0; }
+  .footer__col li { margin-bottom: var(--space-xs); }
+  .footer__col a { color: var(--color-text); text-decoration: none; font-size: 0.9375rem; }
+  .footer__col a:hover { color: var(--color-primary); }
+  .footer__bottom { max-width: var(--max-width); margin: var(--space-xl) auto 0; padding: var(--space-md) var(--space-md) 0; border-top: 1px solid var(--color-border); text-align: center; }
+  .footer__bottom p { color: var(--color-text-muted); font-size: 0.875rem; margin: 0; }
+  .progress-bar { position: fixed; top: 0; left: 0; width: 0%; height: 3px; background: linear-gradient(90deg, var(--color-primary), var(--color-accent), var(--color-primary-dark)); z-index: 1001; transition: width 0.15s linear; }
+  .side-nav {
+    position: fixed;
+    top: 50%;
+    left: 16px;
+    transform: translateY(-50%);
+    width: 200px;
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    padding: 18px 0;
+    z-index: 1000;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-lg);
+  }
+  .side-nav-title {
+    font-family: var(--font-body);
+    font-size: 0.625rem;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    font-weight: 700;
+    padding: 0 18px 12px;
+    border-bottom: 1px solid var(--color-border);
+    margin-bottom: 6px;
+  }
+  .side-nav a {
+    display: block;
+    padding: 7px 18px;
+    font-family: var(--font-body);
+    font-size: 0.8125rem;
+    color: var(--color-text-muted);
+    text-decoration: none;
+    border-left: 3px solid transparent;
+    border-bottom: none;
+    transition: all 0.2s ease;
+    line-height: 1.4;
+  }
+  .side-nav a:hover {
+    color: var(--color-text);
+    background: var(--color-primary-light);
+    text-decoration: none;
+  }
+  .side-nav a.active {
+    color: var(--color-primary);
+    font-weight: 600;
+    border-left-color: var(--color-primary);
+    background: var(--color-primary-light);
+  }
+  .side-nav-sub {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+  }
+  .side-nav-sub.open { max-height: 700px; }
+  .side-nav-sub a {
+    padding: 3px 18px 3px 28px;
+    font-size: 0.6875rem;
+    line-height: 1.3;
+    opacity: 0.7;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .side-nav-sub a:hover { opacity: 1; }
+  .side-nav-sub a.active { opacity: 1; font-weight: 600; }
+  .side-nav-sub a .chk {
+    display: inline-block;
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    border: 1.5px solid var(--color-border);
+    margin-right: 4px;
+    vertical-align: 0px;
+    transition: all 0.3s;
+  }
+  .side-nav-sub a.read .chk {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+  }
+  .claim-counter {
+    font-family: var(--font-body);
+    font-size: 0.625rem;
+    color: var(--color-text-muted);
+    padding: 6px 18px 2px;
+    letter-spacing: 0.3px;
+  }
+  .claim-counter strong { color: var(--color-primary); }
+
+  @media (min-width: 1100px) {
+    .content {
+      margin-left: calc((100% - 780px) / 2 + 30px);
+      margin-right: auto;
+    }
+  }
+
+  .mobile-nav {
+    display: none;
+    position: fixed;
+    bottom: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    padding: 5px 6px;
+    border-radius: 22px;
+    z-index: 1000;
+    box-shadow: var(--shadow-lg);
+    white-space: nowrap;
+    overflow-x: auto;
+    max-width: 94vw;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .mobile-nav::-webkit-scrollbar { display: none; }
+  .mobile-nav a {
+    display: inline-block;
+    padding: 6px 11px;
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    text-decoration: none;
+    border-bottom: none;
+    border-radius: 14px;
+    transition: all 0.2s ease;
+    font-weight: 500;
+  }
+  .mobile-nav a:hover { color: var(--color-text); background: var(--color-primary-light); text-decoration: none; }
+  .mobile-nav a.active {
+    background: var(--color-primary);
+    color: #fff;
+    font-weight: 600;
+  }
+
+  @media print {
+    .header, .footer, .side-nav, .mobile-nav, .progress-bar { display: none !important; }
+    .claim-card { break-inside: avoid; box-shadow: none; border: 1px solid #bbb; }
+    body { font-size: 12px; background: #fff; }
+    .content { margin-left: auto !important; max-width: 100%; }
+    a { color: #333; }
+  }
+  @media (max-width: 600px) {
+    .content-header { padding: var(--space-lg) 0 var(--space-md); }
+    .content-header h1 { font-size: 1.5rem; }
+    .content { padding: 0 18px; }
+    .claim-card { padding: 20px 18px; margin: 18px 0; }
+  }
+  @media (max-width: 1099px) {
+    .side-nav { display: none; }
+    .mobile-nav { display: block; }
+  }
+  @media (min-width: 1100px) {
+    .side-nav { display: block; }
+    .mobile-nav { display: none; }
+  }
+</style>
+
+    <script async src="https://metrics.th.gl/js/pa-tT1oTBaakBaf8SIoAGQdW.js"></script>
+    <script>window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};plausible.init()</script>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<header class="header">
+    <div class="header__inner">
+        <a href="/" class="header__logo">
+            <div class="header__logo-icon">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10.5 12L10 24H14L13.5 12" fill="white" opacity="0.7"/><circle cx="12" cy="10.5" r="2.25" fill="white"/><path d="M10.5 9L12 0L13.5 9Z" fill="white"/><path d="M12 9L24 17L12 12Z" fill="white"/><path d="M12 9L0 17L12 12Z" fill="white"/>
+                </svg>
+            </div>
+            <span class="header__logo-text">Windkraft Nottuln</span>
+        </a>
+        <button class="mobile-nav-toggle" aria-label="Menü öffnen" onclick="this.classList.toggle('active'); document.querySelector('.header__nav').classList.toggle('active');">
+            <span></span><span></span><span></span>
+        </button>
+        <nav class="header__nav">
+            <a href="/">Startseite</a>
+            <a href="/anlagen/">Anlagen</a>
+            <a href="/hauswert/">Hauswert</a>
+            <a href="/petition/">Petition</a>
+            <a href="/faq/">FAQ</a>
+            <a href="/gesetze/">Gesetze</a>
+            <a href="/quellen/">Quellen</a>
+        </nav>
+    </div>
+</header>
+
+<nav class="side-nav" id="sideNav">
+  <div class="side-nav-title">Inhalt</div>
+  <a href="#muster">1. Grundmuster</a>
+  <a href="#faktencheck">2. Faktencheck</a>
+  <div class="side-nav-sub" id="claimNav">
+    <div class="claim-counter" id="claimCounter">Gelesen: <strong>0</strong>/8</div>
+    <a href="#claim1"><span class="chk"></span>1. Vahl-Probanden</a>
+    <a href="#claim2"><span class="chk"></span>2. RWE EBITDA</a>
+    <a href="#claim3"><span class="chk"></span>3. UBA Braunkohle</a>
+    <a href="#claim4"><span class="chk"></span>4. Gewerbesteuer</a>
+    <a href="#claim5"><span class="chk"></span>5. 30.000 Haushalte</a>
+    <a href="#claim6"><span class="chk"></span>6. Nachrangdarlehen</a>
+    <a href="#claim7"><span class="chk"></span>7. Infraschall 100%</a>
+    <a href="#claim8"><span class="chk"></span>8. Selektive Wahrn.</a>
+  </div>
+  <a href="#fragerunde">3. Fragerunde</a>
+  <a href="#einordnung">4. Einordnung</a>
+</nav>
+
+<nav class="mobile-nav" id="mobileNav">
+  <a href="#muster">Muster</a>
+  <a href="#faktencheck">Check</a>
+  <a href="#fragerunde">Fragen</a>
+  <a href="#einordnung">Einordnung</a>
+</nav>
+
+<div class="content-header">
+  <div class="container">
+    <h1>Faktencheck: Schulte-Vortrag in Nottuln</h1>
+    <p class="subtitle">29. April 2026, Forum Rupert-Neudeck-Gymnasium</p>
+    <div class="meta">
+      <strong>Veranstaltung:</strong> Eingeladen von Gegenwind Nottuln, ca. 100 Besucher<br>
+      <strong>Grundlage:</strong> Mitschriften und Notizen aus dem Vortrag<br>
+      <strong>Bezug:</strong> Ergänzung zum <a href="/dokumentation/faktencheck-prof-schulte.html">Faktencheck der YouTube-Videos</a> (18 Behauptungen)
+    </div>
+  </div>
+</div>
+
+<div class="content">
+
+<div class="intro-note">
+<strong>Kontext:</strong> Prof. Schulte sprach am 29. April auf Einladung von Gegenwind Nottuln im Gymnasium. Dieser Faktencheck prüft neue Behauptungen aus dem Vortrag, die über die bereits auf dieser Website dokumentierten <a href="/dokumentation/faktencheck-prof-schulte.html">18 Behauptungen aus seinen YouTube-Videos</a> hinausgehen. Der WN-Bericht von Viola ter Horst erschien am 02.05.2026.
+</div>
+
+<h2 id="muster">1. Grundmuster des Vortrags</h2>
+
+<p>Schulte baut jeden Themenblock nach Hegel auf: <strong>These</strong> (Pro-Windkraft-Position) - <strong>Antithese</strong> (seine Gegenposition) - <strong>Synthese</strong>. In jedem einzelnen Fall ist die Synthese gleich der Antithese. Es gibt keine echte Synthese im Hegelschen Sinne - die Gegenposition "gewinnt" immer.</p>
+
+<p>Bemerkenswert: Im Vortrag formuliert Schulte <strong>vorsichtiger</strong> als in seinen YouTube-Videos. Er sagt "eindeutig wahrscheinlich" und "Indizien" statt "gesichert gesundheitsgefährdend" (Video 5). Er vermeidet Begriffe wie "Klimanationalismus", "Staatsfunk" und "Mietwissenschaftler", die in den Videos vorkommen.</p>
+
+<h2 id="faktencheck">2. Neue Behauptungen aus dem Vortrag</h2>
+
+<div class="claim-card" id="claim1">
+<h3>Behauptung 1: "18.000 Probanden" belegen Herzrisiko durch Windkraft</h3>
+<div class="bewertung bewertung-rot">Bewertung: MEHRFACH IRREFÜHREND</div>
+
+<blockquote>"Eine ganz aktuelle Studie aus Paderborn [...] 18.000 Probanden [...] deutlich erhöhte Inzidenz von Herzinsuffizienz und Rhythmusstörungen"<br><span class="source">- Prof. Schulte, Vortrag Nottuln</span></blockquote>
+
+<p><strong>Was nicht stimmt:</strong></p>
+<ul>
+<li><strong>Kein Paper, ein Kongressposter</strong> (P-15-07, DGIM-Kongress April 2026). Keine vollständige wissenschaftliche Begutachtung.</li>
+<li><strong>Keine "Probanden".</strong> Es sind KV-Abrechnungsdaten (ICD-Codes) aus vier Gemeinden im Kreis Paderborn, per Informationsfreiheitsgesetz angefragt. Kein einziger Mensch wurde untersucht. Schulte räumt auf Nachfrage ein, dass es KV-Daten sind.</li>
+<li><strong>Kein einziger Infraschall-Messwert</strong> in der gesamten Studie.</li>
+<li><strong>Keine Confounding-Kontrolle</strong> (Altersstruktur, Ärztedichte, Soziodemografie).</li>
+<li><strong>Autoren fachfremd:</strong> Vahl (Herzchirurg, emeritiert) und Dietz (Unfallchirurg). Der Epidemiologe Prof. Wild ist nur in den Acknowledgments, nicht Co-Autor.</li>
+<li><strong>Vahls Peer-Review-Arbeit</strong> zum Thema (Chaban et al. 2021) wurde in derselben Fachzeitschrift als methodisch ungültig widerlegt (Mueller et al. 2022) - die Laborpegel waren 10.000 bis 1.000.000 Mal höher als reale Windrad-Infraschallpegel.</li>
+</ul>
+
+<p class="source">Quellen: DGIM-Kongressprogramm (<a href="https://events.mcon-mannheim.de/frontend/index.php?page_id=11011&v=List&do=15&day=1513&ses=23928" target="_blank">Poster P-15-07</a>), Mueller et al. 2022 (<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9703817/" target="_blank">PMC9703817</a>)</p>
+</div>
+
+<div class="claim-card" id="claim2">
+<h3>Behauptung 2: RWE macht "5,1 Milliarden Vorsteuergewinn"</h3>
+<div class="bewertung bewertung-orange">Bewertung: IRREFÜHREND - EBITDA IST NICHT VORSTEUERGEWINN</div>
+
+<blockquote>"5,1 Milliarden Vorsteuergewinn in 2025 [...] 9% geht an Qatar und 6% an BlackRock"<br><span class="source">- Prof. Schulte, Vortrag Nottuln</span></blockquote>
+
+<p><strong>Was nicht stimmt:</strong> Die 5,1 Mrd. EUR sind das <strong>bereinigte EBITDA</strong> (Ergebnis vor Zinsen, Steuern und Abschreibungen) - nicht der Vorsteuergewinn. Der <strong>Nettogewinn</strong> lag bei 1,8 Mrd. EUR. Schulte übertreibt den Gewinn um den Faktor 2,8.</p>
+<p><strong>Was stimmt:</strong> Qatar hält 9,3%, BlackRock 5,9% der RWE-Aktien. 62% institutionelle Investoren aus dem Ausland. Aber: Das gilt für jedes DAX-Unternehmen mit internationalen Aktionären.</p>
+<p><strong>Was fehlt:</strong> Für Nottuln/Stockum ist der Betreiber die <strong>Stadtwerke Münster</strong> - ein 100% kommunales Unternehmen. Kein Qatar, kein BlackRock, kein RWE.</p>
+
+<p class="source">Quelle: <a href="https://www.rwe.com/en/investor-relations/rwe-share/share-at-a-glance/shareholder-structure/" target="_blank">RWE Shareholder Structure</a>, RWE Pressemitteilung 12.03.2026</p>
+</div>
+
+<div class="claim-card" id="claim3">
+<h3>Behauptung 3: "Das UBA vergleicht mit Braunkohle"</h3>
+<div class="bewertung bewertung-rot">Bewertung: FALSCH</div>
+
+<blockquote>"Der Vergleich war Braunkohle. [...] Wenn wir nach Frankreich gucken, dann amortisiert sich ein Windrad erst nach elf oder zwölf Jahren. Weil die nur 45 Gramm CO2 haben."<br><span class="source">- Prof. Schulte, Vortrag Nottuln</span></blockquote>
+
+<p><strong>Was nicht stimmt:</strong></p>
+<ul>
+<li><strong>Das UBA vergleicht NICHT mit Braunkohle.</strong> Die UBA-Methodik nutzt einen "Verdrängungsmix" - ein marktbasiertes Modell, das berechnet welche fossilen Kraftwerke (Braunkohle, Steinkohle, Erdgas, Öl) tatsächlich verdrängt werden (UBA Climate Change 03/2025, S. 22+28).</li>
+<li><strong>Frankreich hat nicht 45 g/kWh.</strong> RTE (französischer Netzbetreiber) meldet für 2025: <strong>19,6 g CO2/kWh</strong>. Schulte liegt um den Faktor 2,3 daneben.</li>
+<li><strong>"11-12 Jahre" stimmt rechnerisch nicht</strong> mit den korrekten französischen Werten.</li>
+</ul>
+
+<p class="source">Quellen: <a href="https://www.umweltbundesamt.de/sites/default/files/medien/11850/publikationen/03_2025_cc_emissionsbilanz_erneuerbarer_energien_2023.pdf" target="_blank">UBA Climate Change 03/2025 (PDF, S. 22+28)</a>, <a href="https://analysesetdonnees.rte-france.com/en/annual-review-2025/ghg-emissions" target="_blank">RTE France 2025: 19,6 g/kWh</a></p>
+</div>
+
+<div class="claim-card" id="claim4">
+<h3>Behauptung 4: "Gewerbesteuer fließt erst ab Jahr 8-12"</h3>
+<div class="bewertung bewertung-orange">Bewertung: VERALTET - VERSCHWEIGT ZWEI REFORMEN</div>
+
+<blockquote>"Die GmbH und Co.KG zahlt die ersten 8 oder 10 Jahre auch keine Gewerbesteuer [...] Ab Jahr 8, 10 oder 12 kommt der erste Euro."<br><span class="source">- Prof. Schulte, Vortrag Nottuln</span></blockquote>
+
+<p><strong>Was fehlt:</strong></p>
+<ul>
+<li><strong>Seit 2021:</strong> Die Gewerbesteuerzerlegung wird zu <strong>90% nach installierter Leistung</strong> verteilt (§29 Abs. 1 Nr. 2 GewStG, Fondsstandortgesetz) - unabhängig vom Gewinn des Betreibers.</li>
+<li><strong>Seit 2023:</strong> §6 EEG schreibt <strong>0,2 ct/kWh</strong> an betroffene Gemeinden vor - ab dem <strong>ersten Tag</strong> der Einspeisung.</li>
+<li><strong>Für Nottuln:</strong> Die Stadtwerke Münster nutzen zusätzlich §33 GewStG (abweichende Zerlegungsvereinbarung), damit die Wertschöpfung am Anlagenstandort anfällt - so bereits in Südlohn praktiziert (bestätigt durch Stadtwerke Münster, April 2026).</li>
+</ul>
+
+<p class="source">Quellen: <a href="https://www.gesetze-im-internet.de/gewstg/__29.html" target="_blank">§29 GewStG</a>, <a href="https://www.gesetze-im-internet.de/eeg_2014/__6.html" target="_blank">§6 EEG</a></p>
+</div>
+
+<div class="claim-card" id="claim5">
+<h3>Behauptung 5: "30.000 Haushalte versorgen" ist "sachlich falsch"</h3>
+<div class="bewertung bewertung-gelb">Bewertung: TEILWEISE BERECHTIGT - FRAMING-FRAGE</div>
+
+<blockquote>"Die Aussage ist einfach nur falsch [...] An ca. 60 Tagen werden die Anlagen komplett stillstehen."<br><span class="source">- Prof. Schulte, Vortrag Nottuln</span></blockquote>
+
+<p><strong>Was stimmt:</strong> Die 30.000 ist eine <strong>rechnerische Jahresgröße</strong> (Jahresproduktion geteilt durch Durchschnittsverbrauch). Mathematisch korrekt: 7 x 6,6 MW x ~2.200 Volllaststunden = ~102.000 MWh / 3.500 kWh = ~29.000 Haushalte. Die Stadtwerke schreiben "könnten" (Konjunktiv). "Sachlich falsch" übertreibt.</p>
+
+<p><strong>Was nicht stimmt:</strong> "60 Tage komplett still" ist nicht belegt. Ein Kapazitätsfaktor von ~22% bedeutet, dass im Jahresdurchschnitt 22% der Maximalleistung erzeugt werden - nicht, dass die Anlage 78% der Zeit steht. Auch bei schwachem Wind wird Strom produziert.</p>
+
+<p class="source">Quelle: <a href="https://www.stadtwerke-muenster.de/unternehmen/muenster-wird-gruen/energiewende/windenergie" target="_blank">Stadtwerke Münster: Windenergie</a></p>
+</div>
+
+<div class="claim-card" id="claim6">
+<h3>Behauptung 6: Nachrangdarlehen = "Finger weg!"</h3>
+<div class="bewertung bewertung-gelb">Bewertung: RISIKO KORREKT, KONTEXT FEHLT</div>
+
+<blockquote>"Finger weg von einer Bürgerbeteiligung bei Windkraft! [...] Der Erwerb dieser Vermögensanlage ist mit erheblichen Risiken verbunden und kann zum vollständigen Verlust des eingesetzten Vermögens führen."<br><span class="source">- Prof. Schulte, Vortrag Nottuln (Synthese zu Bürgerbeteiligung)</span></blockquote>
+
+<p><strong>Was stimmt:</strong> Nachrangdarlehen sind nachrangig - bei Insolvenz werden sie zuletzt bedient. Die zitierte Risikowarnung ist gesetzlich vorgeschrieben (VermAnlG §13). Green City AG ist ein reales Beispiel (nachrangige Gläubiger erhielten nichts).</p>
+
+<p><strong>Was fehlt:</strong></p>
+<ul>
+<li>Der Emittent in Nottuln ist die <strong>kommunale Nottuln.Wind GmbH</strong> - nicht ein anonymer Projektentwickler. Das verändert das Risikoprofil erheblich.</li>
+<li>Die gesetzliche Risikowarnung steht auf <strong>jedem</strong> Nachrangdarlehen - sie ist kein spezifisches Windkraft-Problem, sondern Anlegerschutz-Standard.</li>
+<li>Schulte vergleicht mit Prokon (Insolvenz durch Missmanagement) und Windreich (Bilanzbetrug) - das sind <strong>Einzelfälle mit kriminellem Hintergrund</strong>, nicht typische Windkraft-Projekte.</li>
+</ul>
+
+<p class="source">Quellen: <a href="https://www.gesetze-im-internet.de/vermanlg/__13.html" target="_blank">VermAnlG §13 (Risikohinweise)</a>, <a href="https://beteiligung.nottuln.de" target="_blank">beteiligung.nottuln.de</a></p>
+</div>
+
+<div class="claim-card" id="claim7">
+<h3>Behauptung 7: Infraschall-Klagen haben "100% Verlustchance"</h3>
+<div class="bewertung bewertung-gruen">Bewertung: KORREKT - UND SELBSTWIDERSPRUCH</div>
+
+<blockquote>"Wenn Sie mit Infraschall klagen, sagt Ihnen jeder vernünftige Anwalt, 100% verlieren Sie vor Gerichten aktuell."<br><span class="source">- Prof. Schulte, Fragerunde</span></blockquote>
+
+<p>Schulte räumt ein, dass Infraschall als Berufskrankheit nicht anerkannt ist und Klagen aussichtslos sind. Das widerspricht seiner eigenen Darstellung in Video 5, wo er Infraschall als "gesichert gesundheitsgefährdend" bezeichnet. Wenn es "gesichert" wäre, würden Gerichte anders urteilen.</p>
+</div>
+
+<div class="claim-card" id="claim8">
+<h3>Behauptung 8: Schulte räumt selektive Wahrnehmung ein</h3>
+<div class="bewertung bewertung-gruen">Bewertung: SELBSTADMISSION</div>
+
+<blockquote>"Natürlich hat jeder, wie wir alle sitzen, selektive Wahrnehmung und wir nehmen gegebenenfalls bei der Quellenauswahl durchaus vor allen Dingen das wahr, was gegebenenfalls in den Narrativen im Kopf ist."<br><span class="source">- Prof. Schulte, Fragerunde (auf Nachfrage von Leon Machens)</span></blockquote>
+
+<p>Ein bemerkenswertes Eingeständnis. In seinen Videos und im Vortrag selbst zeigt sich genau dieses Muster: Peer-reviewte Studien (RWI, PNAS, UBA) werden verworfen, während Kongressposter, Makler-Blogs und Meinungsartikel als Belege dienen.</p>
+</div>
+
+<h2 id="fragerunde">3. Fragerunde - Highlights</h2>
+
+<p>In der Fragerunde wurden mehrere Punkte angesprochen. Zwei Beiträge sind besonders dokumentationswürdig:</p>
+
+<h3>Dezibel-Erklärung: 300.000-fache Schallintensität</h3>
+
+<p>Aus dem Publikum wurde darauf hingewiesen, dass die Laborexperimente zu Infraschall (Salt &amp; Lichtenhan) bei <strong>130+ Dezibel</strong> durchgeführt wurden, während bei Anwohnern von Windkraftanlagen maximal <strong>55-75 Dezibel</strong> gemessen werden. Da Dezibel logarithmisch ist, entspricht dieser Unterschied dem <strong>300.000-fachen Schallintensität</strong> - nicht "fast doppelt so viel".</p>
+
+<p>Der Vergleich: Das ist so, als würde man die Gefährlichkeit von Wasser damit beweisen, dass man jemanden untertaucht - und dann behaupten, Regen sei tödlich.</p>
+
+<p>Schulte wich auf eine andere Studie aus (Kaula 2026, publiziert bei ESMED/Medical Research Archives - kein Impact Factor, nicht in PubMed) und räumte ein, diese sei "noch nicht Peer-Review".</p>
+
+<h3>Fehlende Einordnung: Abschaltalgorithmen</h3>
+
+<p>Schulte nannte 200.000 tote Fledermäuse und 100.000-200.000 tote Vögel pro Jahr durch Windkraftanlagen, ohne Vergleich mit anderen Todesursachen und ohne Erwähnung bestehender Schutzmaßnahmen:</p>
+
+<table>
+<tr><th>Todesursache</th><th>Vögel/Jahr (DE)</th></tr>
+<tr><td>Glasscheiben</td><td>~100 Mio.</td></tr>
+<tr><td>Hauskatzen</td><td>bis 200 Mio.</td></tr>
+<tr><td>Straßenverkehr</td><td>~70 Mio.</td></tr>
+<tr><td>Stromleitungen</td><td>1-2 Mio.</td></tr>
+<tr><td><strong>Windkraftanlagen</strong></td><td><strong>100-200.000</strong></td></tr>
+</table>
+
+<p>Zudem verschweigt Schulte, dass moderne Abschaltalgorithmen die Fledermaus-Mortalität deutlich senken können.</p>
+
+<p class="source">Quellen: <a href="https://www.nabu.de/tiere-und-pflanzen/voegel/gefaehrdungen/24661.html" target="_blank">NABU: Vogelgefährdungen</a></p>
+
+<h2 id="einordnung">4. Einordnung</h2>
+
+<p>Von 39 neuen Behauptungen aus dem Vortrag (die nicht in den Videos vorkommen) konnten gegen Originalquellen geprüft werden:</p>
+
+<table>
+<tr><th>Bewertung</th><th>Anzahl</th></tr>
+<tr><td>Korrekt</td><td>4</td></tr>
+<tr><td>Teilweise korrekt</td><td>6</td></tr>
+<tr><td>Irreführend</td><td>8</td></tr>
+<tr><td>Falsch / nicht belegt</td><td>9</td></tr>
+<tr><td>Strohmann-Argument</td><td>2</td></tr>
+<tr><td>Selbstwiderspruch</td><td>2</td></tr>
+<tr><td>Anekdotisch / nicht prüfbar</td><td>8</td></tr>
+</table>
+
+<p>Schulte hat in einzelnen Punkten berechtigte Anliegen: Die Unterfinanzierung von Rückbausicherheiten bei Altgenehmigungen ist real. Die Risiken von Nachrangdarlehen sind korrekt dargestellt. Und seine Kritik, dass "Jeder Euro bleibt in der Region" eine Vereinfachung ist, ist berechtigt - das wurde auf dieser Website entsprechend korrigiert.</p>
+
+<p>Das Gesamtbild zeigt jedoch dasselbe Muster wie in den Videos: Korrekte Teilaspekte werden mit stärkerer Wortwahl präsentiert als die Quellen hergeben, bestehende Schutzmaßnahmen und aktuelle Gesetzesänderungen werden nicht erwähnt, und die "Synthese" ist in jedem Block identisch mit der Antithese.</p>
+
+<div class="note">
+<strong>Verwandte Seiten:</strong><br>
+<a href="/dokumentation/faktencheck-prof-schulte.html">Faktencheck: 18 Behauptungen aus Schultes YouTube-Videos</a>
+</div>
+
+</div>
+
+<footer class="footer">
+    <div class="container">
+    <div class="footer__inner">
+        <div class="footer__brand">
+            <a href="/" class="header__logo">
+                <div class="header__logo-icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10.5 12L10 24H14L13.5 12" fill="white" opacity="0.7"/><circle cx="12" cy="10.5" r="2.25" fill="white"/><path d="M10.5 9L12 0L13.5 9Z" fill="white"/><path d="M12 9L24 17L12 12Z" fill="white"/><path d="M12 9L0 17L12 12Z" fill="white"/>
+                    </svg>
+                </div>
+                <span class="header__logo-text">Windkraft Nottuln</span>
+            </a>
+            <p>Eine private Initiative für mehr Fakten zur Windenergie in Nottuln, Kreis Coesfeld. Nicht gesponsert, nicht parteiisch.</p>
+        </div>
+        <div class="footer__col">
+            <h4>Inhalte</h4>
+            <ul>
+                <li><a href="/">Startseite</a></li>
+                <li><a href="/anlagen/">Anlagen</a></li>
+                <li><a href="/hauswert/">Hauswert</a></li>
+                <li><a href="/faq/">Häufige Fragen</a></li>
+                <li><a href="/gesetze/">Gesetze & Verfahren</a></li>
+                <li><a href="/quellen/">Quellenverzeichnis</a></li>
+            </ul>
+        </div>
+        <div class="footer__col">
+            <h4>Externe Quellen</h4>
+            <ul>
+                <li><a href="https://www.bund.net/themen/aktuelles/detail-aktuelles/news/argumente-fuer-windenergie-fakten-statt-mythen/" target="_blank" rel="noopener">BUND Faktencheck</a></li>
+                <li><a href="https://www.umweltbundesamt.de" target="_blank" rel="noopener">Umweltbundesamt</a></li>
+                <li><a href="https://www.nottuln.de/leben-in-nottuln/klimaschutz-energie-umwelt/windenergie-nottuln" target="_blank" rel="noopener">Gemeinde Nottuln</a></li>
+            </ul>
+        </div>
+        <div class="footer__col">
+            <h4>Rechtliches</h4>
+            <ul>
+                <li><a href="/impressum/">Impressum</a></li>
+                <li><a href="/datenschutz/">Datenschutz</a></li>
+                <li><a href="https://github.com/lmachens/windkraft-nottuln" target="_blank" rel="noopener">GitHub (Open Source)</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer__bottom">
+        <p>&copy; 2026 Windkraft Nottuln &middot; <a href="https://github.com/lmachens/windkraft-nottuln/blob/main/LICENSE" target="_blank" rel="noopener" style="color: inherit;">MIT-Lizenz</a></p>
+    </div>
+    </div>
+</footer>
+
+<script>
+(function() {
+  var sections = document.querySelectorAll('h2[id]');
+  var sideLinks = document.querySelectorAll('.side-nav > a');
+  var mobileLinks = document.querySelectorAll('.mobile-nav a');
+  var claimLinks = document.querySelectorAll('.side-nav-sub a');
+  var progressBar = document.getElementById('progressBar');
+  var claimNav = document.getElementById('claimNav');
+  var claimCards = document.querySelectorAll('.claim-card[id]');
+  var readClaims = new Set();
+
+  function addSmoothScroll(links) {
+    links.forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        var target = document.querySelector(this.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+  }
+  addSmoothScroll(sideLinks);
+  addSmoothScroll(mobileLinks);
+  addSmoothScroll(claimLinks);
+
+  var ticking = false;
+  window.addEventListener('scroll', function() {
+    if (!ticking) {
+      window.requestAnimationFrame(function() {
+        var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        progressBar.style.width = Math.min(docHeight > 0 ? (scrollTop / docHeight) * 100 : 0, 100) + '%';
+
+        var currentId = '';
+        sections.forEach(function(s) { if (s.getBoundingClientRect().top <= 120) currentId = s.id; });
+        function setActive(links) {
+          links.forEach(function(l) {
+            l.classList.toggle('active', l.getAttribute('href') === '#' + currentId);
+          });
+        }
+        setActive(sideLinks);
+        setActive(mobileLinks);
+
+        if (claimNav) claimNav.classList.toggle('open', currentId === 'faktencheck');
+
+        var activeClaimId = '';
+        claimCards.forEach(function(card) {
+          var r = card.getBoundingClientRect();
+          if (r.top <= 200) activeClaimId = card.id;
+          if (r.top < window.innerHeight * 0.6 && r.bottom > 0) readClaims.add(card.id);
+        });
+        claimLinks.forEach(function(l) {
+          var href = l.getAttribute('href').slice(1);
+          l.classList.toggle('active', href === activeClaimId);
+          if (readClaims.has(href)) l.classList.add('read');
+        });
+
+        var counter = document.getElementById('claimCounter');
+        if (counter) counter.innerHTML = 'Gelesen: <strong>' + readClaims.size + '</strong>/8';
+
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
+})();
+</script>
+</body>
+</html>

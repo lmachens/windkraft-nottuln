@@ -518,12 +518,12 @@
     <!-- Event Banner -->
     <div class="event-banner" id="eventBanner" role="alert">
         <div class="event-banner__inner">
-            <span class="event-banner__date">29. Apr</span>
-            <span class="event-banner__text">Prof. Schulte spricht in Nottuln — <a href="/dokumentation/faktencheck-prof-schulte.html">14 Behauptungen im Faktencheck</a></span>
-            <button class="event-banner__close" aria-label="Hinweis schließen" onclick="this.closest('.event-banner').hidden=true;try{localStorage.setItem('banner-schulte-dismissed','1')}catch(e){}">&times;</button>
+            <span class="event-banner__date">NEU</span>
+            <span class="event-banner__text">Schulte-Vortrag in Nottuln — <a href="/dokumentation/faktencheck-schulte-vortrag-nottuln.html">Faktencheck mit 8 neuen Behauptungen</a></span>
+            <button class="event-banner__close" aria-label="Hinweis schließen" onclick="this.closest('.event-banner').hidden=true;try{localStorage.setItem('banner-vortrag-dismissed','1')}catch(e){}">&times;</button>
         </div>
     </div>
-    <script>try{if(localStorage.getItem('banner-schulte-dismissed'))document.getElementById('eventBanner').hidden=true}catch(e){}</script>
+    <script>try{if(localStorage.getItem('banner-vortrag-dismissed'))document.getElementById('eventBanner').hidden=true}catch(e){}</script>
     <header class="header">
         <div class="header__inner">
             <a href="/" class="header__logo">
@@ -871,6 +871,48 @@
                             <a href="https://www.cell.com/joule/fulltext/S2542-4351(24)00513-0" target="_blank" rel="noopener">doi.org (Open Access)</a>
                         </div>
                     </div>
+                    <div class="source-card">
+                        <div class="source-card__title">
+                            <span class="tag tag--study">Studie</span>
+                            Mueller et al. 2022: Widerlegung Infraschall-Laborexperimente
+                        </div>
+                        <div class="source-card__meta">Mueller, Rumpler, Golebiewski, Pörschmann, Applied Acoustics, 2022</div>
+                        <div class="source-card__description">
+                            Zeigt, dass die Laborexperimente zu Infraschall-Auswirkungen auf Herzzellen (Chaban et al. 2021) bei Schallpegeln durchgeführt wurden, die 10.000 bis 1.000.000 Mal höher lagen als reale Windrad-Infraschallpegel bei Anwohnern. Die Übertragbarkeit auf reale Expositionswerte fehlt.
+                        </div>
+                        <div class="source-card__link">
+                            <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9703817/" target="_blank" rel="noopener">PubMed Central (PMC9703817)</a>
+                        </div>
+                    </div>
+
+                    <div class="source-card">
+                        <div class="source-card__title">
+                            <span class="tag tag--official">Behörde</span>
+                            UBA: Emissionsbilanz erneuerbarer Energien 2023
+                        </div>
+                        <div class="source-card__meta">Umweltbundesamt, Climate Change 03/2025</div>
+                        <div class="source-card__description">
+                            Offizielle UBA-Methodik zur CO2-Bilanz erneuerbarer Energien. Nutzt einen marktbasierten "Verdrängungsmix" (Braunkohle, Steinkohle, Erdgas, Öl) - NICHT nur Braunkohle als Vergleich. Zentrale Quelle für die CO2-Amortisationszeit von Windkraftanlagen.
+                        </div>
+                        <div class="source-card__link">
+                            <a href="https://www.umweltbundesamt.de/sites/default/files/medien/11850/publikationen/03_2025_cc_emissionsbilanz_erneuerbarer_energien_2023.pdf" target="_blank" rel="noopener">UBA (PDF)</a>
+                        </div>
+                    </div>
+
+                    <div class="source-card">
+                        <div class="source-card__title">
+                            <span class="tag tag--official">Behörde</span>
+                            RTE France: CO2-Intensität des französischen Strommix
+                        </div>
+                        <div class="source-card__meta">RTE (Réseau de Transport d'Électricité), Jahresbericht 2025</div>
+                        <div class="source-card__description">
+                            Offizielle Daten des französischen Übertragungsnetzbetreibers. CO2-Intensität 2025: 19,6 g/kWh - einer der niedrigsten Werte weltweit dank hohem Kernkraftanteil. Relevant als Vergleichswert für die CO2-Amortisation von Windkraftanlagen.
+                        </div>
+                        <div class="source-card__link">
+                            <a href="https://analysesetdonnees.rte-france.com/en/annual-review-2025/ghg-emissions" target="_blank" rel="noopener">RTE France (Open Data)</a>
+                        </div>
+                    </div>
+
                 </div>
 
                 <div class="source-section">
