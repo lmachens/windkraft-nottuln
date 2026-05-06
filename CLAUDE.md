@@ -201,6 +201,18 @@ Alle folgenden Fakten wurden gegen Originalquellen geprüft:
 - Frankreich CO2-Intensität 2025: 19,6 g/kWh (NICHT 45g wie Schulte behauptet). Quelle: RTE analysesetdonnees.rte-france.com
 - Infraschall dB-Unterschied: 130 dB (Labor) vs 55-75 dB (Anwohner) = ~300.000-fache Schallintensität (10^(55/10)), ~560-facher Schalldruck (10^(55/20)). NICHT verwechseln!
 
+## Regionale Wertschöpfung EE (verifiziert Mai 2026)
+- Sixtus et al. 2025 (BMWK-Auftragsstudie, Berlin-Institut + IÖW + IW Consult, kein Peer-Review, Fassung Februar 2026): "Stärkung der regionalen Wertschöpfung durch Erneuerbare Energien"
+- Direkte Wertschöpfung 2023: **10 Mrd. EUR**, davon ca. 55% regional verbleibend (reg_pot)
+- Ziel 2033: **21 Mrd. EUR** direkt, 12,4 Mrd. EUR regional (reg_pot), Minimum 8,6 Mrd. EUR (reg_min)
+- Inkl. indirekt+induziert+Export 2023: **36,8 Mrd. EUR**
+- Arbeitsplätze 2023: 51.000 direkt + 80.500 indirekt; 2033: 101.600 direkt
+- Pacht je WEA: **10.000 bis über 100.000 EUR/Jahr** möglich
+- Eigentumsverteilung Windleistung 2019 (Trend Research, in Sixtus et al.): Privatpersonen **39%**, Energieversorger gesamt 11%, davon **"Große drei" (RWE/E.ON/EnBW) nur 4%**, Projektierer 23%, Fonds/Banken 16%, Landwirt*innen 2%, Gewerbe 5%
+- Beispielkommune Lichtenau (Westfalen, NRW, Kreis Paderborn): 11.000 Einwohner, 192 km², 166 WEA, 900 GWh/a (Stadt produziert mehr Strom als sie verbraucht). Stadtwerke betreiben 6 eigene WEA. Bürgerwindpark Westernfeld-Buchgarten seit 2016. Wasserstoffprojekt "Schlafender Riese". Bevölkerung wächst. 2014 noch Bürgerproteste mit 150 Personen, heute Akzeptanz durch Beteiligung
+- Spitzenkreise Windausbau: 7% des BIP-Wachstums durch Wind erklärbar
+- Quelle: https://www.bundeswirtschaftsministerium.de/Redaktion/DE/Publikationen/Studien/staerkung-der-regionalen-wertschoepfung-durch-erneuerbare-energien.html
+
 ## Netzkosten & Redispatch (verifiziert Februar 2026)
 - Gesamtkosten Netzengpassmanagement 2024: **2,8 Mrd. €** (SMARD Jahresbericht)
 - Davon EE-Abregelung: **554 Mio. € (20%)**, Rest: konventionelle Kraftwerke (80%)
