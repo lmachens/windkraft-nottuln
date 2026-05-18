@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import Default from '../../layouts/Default.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
 
 const entries = await getCollection('faktenchecks');
 const sorted = entries.sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
@@ -14,6 +15,8 @@ const formatDate = (d: Date) =>
   description="Übersicht aller Faktenchecks zur Windkraft-Debatte in Nottuln: geprüfte Aussagen mit Originalquellen, peer-reviewter Forschung und Behördenstellungnahmen."
   ogDescription="Übersicht aller Faktenchecks zur Windkraft-Debatte in Nottuln."
 >
+  <Breadcrumbs trail={[{ label: 'Startseite', href: '/' }, { label: 'Faktenchecks' }]} />
+
   <section class="checks-list">
     <div class="checks-list__inner">
       <header class="checks-list__header">

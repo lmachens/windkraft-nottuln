@@ -122,8 +122,30 @@ const ogImageUrl = ogImage ?? 'https://windkraft-nottuln.de/og/default.png';
   .footer__bottom { max-width: var(--max-width); margin: var(--space-xl) auto 0; padding: var(--space-md) var(--space-md) 0; border-top: 1px solid var(--color-border); text-align: center; }
   .footer__bottom p { color: var(--color-text-muted); font-size: 0.875rem; margin: 0; }
 
+  /* Skip-to-content link (visible only when focused) */
+  .skip-link {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(-150%);
+    z-index: 10000;
+    padding: 0.75rem 1.25rem;
+    background: var(--color-primary-dark);
+    color: #fff;
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+    font-weight: 600;
+    font-size: 0.9375rem;
+    text-decoration: none;
+    transition: transform 0.15s ease;
+  }
+  .skip-link:focus {
+    transform: translateX(-50%) translateY(0);
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+  }
+
   @media print {
-    .header, .footer { display: none !important; }
+    .header, .footer, .skip-link { display: none !important; }
     body { font-size: 12px; background: #fff; }
     a { color: #333; }
   }
@@ -137,6 +159,8 @@ const ogImageUrl = ogImage ?? 'https://windkraft-nottuln.de/og/default.png';
 </script>
 </head>
 <body>
+
+<a href="#main-content" class="skip-link">Zum Hauptinhalt springen</a>
 
 {showProgressBar && <div class="progress-bar" id="progressBar"></div>}
 
@@ -184,7 +208,7 @@ const ogImageUrl = ogImage ?? 'https://windkraft-nottuln.de/og/default.png';
   </div>
 </header>
 
-<main>
+<main id="main-content">
   <slot />
 </main>
 
