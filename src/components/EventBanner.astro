@@ -99,6 +99,13 @@ const {
   }
   .event-banner__close:hover { color: #fff; }
   .event-banner[hidden] { display: none; }
+  @media (prefers-color-scheme: dark) {
+    .event-banner { background: #0d2a30; color: rgba(255,255,255,0.92); }
+    .event-banner__text a { color: #fff; text-decoration-color: rgba(255,255,255,0.5); }
+    .event-banner__text a:hover { color: #fff; text-decoration-color: #fff; }
+    .event-banner__close { color: rgba(255,255,255,0.6); }
+    .event-banner__close:hover { color: #fff; }
+  }
   @media (max-width: 600px) {
     .event-banner__inner { padding-right: 2.5rem; }
     .event-banner__date { display: none; }
