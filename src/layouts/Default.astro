@@ -69,7 +69,6 @@ const ogImageUrl = ogImage ?? 'https://windkraft-nottuln.de/og/default.png';
     --color-white: #ffffff;
     --color-border: #dfe6e9;
     --space-xs: 0.5rem; --space-sm: 1rem; --space-md: 1.5rem; --space-lg: 2.5rem; --space-xl: 4rem;
-    --max-width: 900px;
     --border-radius: 8px;
     --shadow-sm: 0 1px 3px rgba(26,95,106,0.06);
     --shadow-md: 0 4px 12px rgba(26,95,106,0.08);
@@ -81,6 +80,13 @@ const ogImageUrl = ogImage ?? 'https://windkraft-nottuln.de/og/default.png';
       --color-accent: #9bc49a; --color-text: #e8eaed; --color-text-muted: #9aa0a6;
       --color-bg: #121518; --color-white: #1e2225; --color-border: #3c4043;
     }
+  }
+  /* Default fuer Pages ohne eigene --max-width-Deklaration (z.B. Faktenchecks,
+     Suche, 404). Wird per :where mit Spezifitaet 0 deklariert, damit Page-CSS,
+     das nach diesem Layout-CSS geladen wird, aber gleiche Spezifitaet hat,
+     verlaesslich gewinnt. */
+  :where(:root) {
+    --max-width: 900px;
   }
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :focus-visible { outline: 2px solid var(--color-primary); outline-offset: 2px; }
