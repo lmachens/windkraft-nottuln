@@ -39,6 +39,8 @@ const canonicalUrl = canonical ?? new URL(Astro.url.pathname, Astro.site).href;
 )}
 <meta property="og:locale" content="de_DE" />
 
+<slot name="head-extras" />
+
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link
@@ -236,6 +238,7 @@ const canonicalUrl = canonical ?? new URL(Astro.url.pathname, Astro.site).href;
       <span></span><span></span><span></span>
     </button>
     <nav class="header__nav">
+      <slot name="nav-extra" />
       <a href="/">Startseite</a>
       <a href="/anlagen/">Anlagen</a>
       <a href="/hauswert/">Hauswert</a>
@@ -264,7 +267,7 @@ const canonicalUrl = canonical ?? new URL(Astro.url.pathname, Astro.site).href;
         </div>
         <span class="header__logo-text">Windkraft Nottuln</span>
       </a>
-      <p>Faktencheck zur Windkraft-Debatte in Nottuln. Quellenbasiert, transparent, ohne Pauschalurteile.</p>
+      <p>Eine private Initiative für mehr Fakten zur Windenergie in Nottuln, Kreis Coesfeld. Nicht gesponsert, nicht parteiisch.</p>
     </div>
     <div class="footer__col">
       <h4>Inhalte</h4>
