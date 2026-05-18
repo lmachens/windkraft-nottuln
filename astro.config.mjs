@@ -6,7 +6,7 @@ export default defineConfig({
   site: 'https://windkraft-nottuln.de',
   trailingSlash: 'ignore',
   build: {
-    format: 'file',
+    format: 'preserve',
   },
   integrations: [
     sitemap({
