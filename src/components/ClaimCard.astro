@@ -1,0 +1,18 @@
+---
+export interface Props {
+  id?: string;
+  title?: string;
+  bewertung?: 'rot' | 'gelb' | 'grau';
+  bewertungLabel?: string;
+}
+
+const { id, title, bewertung, bewertungLabel } = Astro.props;
+---
+
+<div class="claim-card" id={id}>
+  {title && <h3>{title}</h3>}
+  {bewertung && bewertungLabel && (
+    <span class={`bewertung bewertung-${bewertung}`}>{bewertungLabel}</span>
+  )}
+  <slot />
+</div>

@@ -1,0 +1,18 @@
+---
+export interface NavSection {
+  href: string;
+  label: string;
+}
+
+export interface Props {
+  sections: NavSection[];
+}
+
+const { sections } = Astro.props;
+---
+
+<nav class="mobile-nav" id="mobileNav">
+  {sections.map((s) => (
+    <a href={s.href}>{s.label}</a>
+  ))}
+</nav>
