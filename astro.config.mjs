@@ -32,6 +32,15 @@ export default defineConfig({
     sitemap({
       changefreq: 'monthly',
       lastmod: new Date(),
+      serialize(item) {
+        // Faktencheck-Pages werden als .html-Files ausgegeben (build.format: 'preserve').
+        // Astro-Sitemap setzt default eine URL ohne .html, was inkonsistent zum canonical-Tag ist.
+        // Hier explizit .html anhaengen, damit sitemap + canonical uebereinstimmen.
+        if (item.url.includes('/dokumentation/') && !item.url.endsWith('.html') && !item.url.endsWith('/')) {
+          item.url += '.html';
+        }
+        return item;
+      },
     }),
   ],
 });
