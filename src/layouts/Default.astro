@@ -52,10 +52,10 @@ const ogImageUrl = ogImage ?? 'https://windkraft-nottuln.de/og/default.png';
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:image" content={ogImageUrl} />
 
-<slot name="head-extras" />
-
 <Font cssVariable="--font-display" preload />
 <Font cssVariable="--font-body" preload />
+
+<slot name="head-extras" />
 
 <style is:global>
   :root {
