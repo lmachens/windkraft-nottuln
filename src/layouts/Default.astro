@@ -100,6 +100,11 @@ const ogImageUrl = ogImage ?? 'https://windkraft-nottuln.de/og/default.png';
   .header__nav { display: flex; gap: var(--space-md); }
   .header__nav a { color: var(--color-text-muted); font-weight: 500; font-size: 0.9375rem; text-decoration: none; }
   .header__nav a:hover { color: var(--color-primary); }
+  .header__search { display: inline-flex; align-items: center; gap: 0.35rem; }
+  .header__search svg { stroke: currentColor; }
+  @media (min-width: 851px) {
+    .header__search-label { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+  }
   .mobile-nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: var(--space-xs); }
   .mobile-nav-toggle span { display: block; width: 24px; height: 2px; background: var(--color-primary-dark); margin: 5px 0; transition: all 0.3s ease; border-radius: 2px; }
   @media (max-width: 850px) {
@@ -145,9 +150,14 @@ const ogImageUrl = ogImage ?? 'https://windkraft-nottuln.de/og/default.png';
   }
 
   @media print {
-    .header, .footer, .skip-link { display: none !important; }
-    body { font-size: 12px; background: #fff; }
-    a { color: #333; }
+    @page { margin: 1.6cm 1.4cm 1.8cm 1.4cm; }
+    .header, .footer, .skip-link,
+    .event-banner, .breadcrumbs { display: none !important; }
+    body { font-size: 10pt; background: #fff; color: #000; }
+    main { display: block !important; }
+    a { color: #000; text-decoration: underline; }
+    h1, h2, h3, h4 { color: #000; page-break-after: avoid; }
+    img, table, blockquote, figure { page-break-inside: avoid; }
   }
 </style>
 
@@ -204,6 +214,13 @@ const ogImageUrl = ogImage ?? 'https://windkraft-nottuln.de/og/default.png';
       <a href="/faq/">FAQ</a>
       <a href="/gesetze/">Gesetze</a>
       <a href="/quellen/">Quellen</a>
+      <a href="/suche/" class="header__search" aria-label="Seite durchsuchen">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="11" cy="11" r="7"/>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+        <span class="header__search-label">Suche</span>
+      </a>
     </nav>
   </div>
 </header>
@@ -239,6 +256,7 @@ const ogImageUrl = ogImage ?? 'https://windkraft-nottuln.de/og/default.png';
         <li><a href="/faq/">Häufige Fragen</a></li>
         <li><a href="/gesetze/">Gesetze &amp; Verfahren</a></li>
         <li><a href="/quellen/">Quellenverzeichnis</a></li>
+        <li><a href="/suche/">Suche</a></li>
       </ul>
     </div>
     <div class="footer__col">

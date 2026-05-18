@@ -1,0 +1,224 @@
+---
+import Default from '../layouts/Default.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+---
+
+<Default
+  title="Suche – Windkraft Nottuln"
+  description="Durchsuche windkraft-nottuln.de nach Stichworten."
+>
+  <Breadcrumbs trail={[{ label: 'Startseite', href: '/' }, { label: 'Suche' }]} />
+
+  <section class="search-page">
+    <h1>Seite durchsuchen</h1>
+    <p class="search-page__hint">
+      Begriff eingeben – die Suche läuft direkt im Browser, ohne externen Dienst.
+    </p>
+
+    <form class="search-page__form" role="search" onsubmit="event.preventDefault()">
+      <label class="search-page__label" for="search-input">Suchbegriff</label>
+      <input
+        id="search-input"
+        type="search"
+        autocomplete="off"
+        autofocus
+        placeholder="z. B. Infraschall, Schattenwurf, Petition"
+        aria-describedby="search-status"
+      />
+    </form>
+
+    <p id="search-status" class="search-page__status" aria-live="polite" role="status"></p>
+    <ol id="search-results" class="search-page__results" aria-label="Suchergebnisse"></ol>
+  </section>
+</Default>
+
+<script type="module" is:inline>
+  const input = document.getElementById('search-input');
+  const list = document.getElementById('search-results');
+  const status = document.getElementById('search-status');
+
+  let pagefind;
+  let timer;
+  let queryId = 0;
+
+  async function getPagefind() {
+    if (!pagefind) {
+      pagefind = await import('/pagefind/pagefind.js');
+      await pagefind.options({ baseUrl: '/' });
+    }
+    return pagefind;
+  }
+
+  function escapeHtml(s) {
+    return String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  }
+
+  function longestMarkLength(excerpt) {
+    const marks = (excerpt || '').match(/<mark>([^<]+)<\/mark>/gi) || [];
+    let max = 0;
+    for (const m of marks) {
+      const t = m.replace(/<\/?mark>/gi, '');
+      if (t.length > max) max = t.length;
+    }
+    return max;
+  }
+
+  async function doSearch(rawTerm) {
+    const term = rawTerm.trim();
+    const myId = ++queryId;
+    list.innerHTML = '';
+    if (term.length < 2) {
+      status.textContent = '';
+      return;
+    }
+    status.textContent = 'Suche…';
+
+    const pf = await getPagefind();
+    const r = await pf.search(term);
+    if (myId !== queryId) return;
+
+    const data = await Promise.all(r.results.slice(0, 20).map((x) => x.data()));
+    if (myId !== queryId) return;
+
+    const minLen = Math.max(3, Math.floor(term.length * 0.7));
+    const filtered = data.filter((d) => longestMarkLength(d.excerpt) >= Math.min(minLen, term.length));
+
+    if (filtered.length === 0) {
+      status.innerHTML = `Keine Treffer für <strong>${escapeHtml(term)}</strong>. Prüfe die Schreibweise oder versuche einen kürzeren Begriff.`;
+      return;
+    }
+
+    status.innerHTML = `${filtered.length} Treffer für <strong>${escapeHtml(term)}</strong>`;
+    list.innerHTML = filtered
+      .map((d) => `
+        <li class="search-result">
+          <a href="${escapeHtml(d.url)}">
+            <h2 class="search-result__title">${escapeHtml(d.meta?.title || d.url)}</h2>
+            <p class="search-result__excerpt">${d.excerpt || ''}</p>
+            <span class="search-result__url">${escapeHtml(d.url)}</span>
+          </a>
+        </li>
+      `)
+      .join('');
+  }
+
+  input.addEventListener('input', () => {
+    clearTimeout(timer);
+    timer = setTimeout(() => doSearch(input.value), 180);
+  });
+
+  // ?q=Infraschall vorbelegen
+  const urlQuery = new URLSearchParams(location.search).get('q');
+  if (urlQuery) {
+    input.value = urlQuery;
+    doSearch(urlQuery);
+  }
+</script>
+
+<style is:global>
+  .search-page {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: var(--space-xl) var(--space-md);
+  }
+  .search-page h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 5vw, 2.75rem);
+    color: var(--color-primary-dark);
+    margin-bottom: var(--space-xs);
+  }
+  .search-page__hint {
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-lg);
+    font-size: 0.9375rem;
+  }
+
+  .search-page__form {
+    margin-bottom: var(--space-md);
+  }
+  .search-page__label {
+    position: absolute;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0 0 0 0);
+    white-space: nowrap; border: 0;
+  }
+  #search-input {
+    display: block;
+    width: 100%;
+    padding: 0.85rem 1rem;
+    font-family: var(--font-body);
+    font-size: 1.0625rem;
+    color: var(--color-text);
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  }
+  #search-input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(26, 95, 106, 0.15);
+  }
+
+  .search-page__status {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-md);
+    min-height: 1.4em;
+  }
+  .search-page__status strong {
+    color: var(--color-primary-dark);
+    font-weight: 600;
+  }
+
+  .search-page__results {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: var(--space-sm);
+  }
+  .search-result a {
+    display: block;
+    padding: 1rem 1.1rem;
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    color: var(--color-text);
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  }
+  .search-result a:hover {
+    border-color: var(--color-primary);
+    box-shadow: 0 2px 12px rgba(26, 95, 106, 0.07);
+  }
+  .search-result__title {
+    font-family: var(--font-display);
+    font-size: 1.125rem;
+    color: var(--color-primary-dark);
+    margin: 0 0 0.35rem;
+    line-height: 1.3;
+  }
+  .search-result__excerpt {
+    font-size: 0.9375rem;
+    color: var(--color-text);
+    margin: 0 0 0.4rem;
+    line-height: 1.55;
+  }
+  .search-result__excerpt mark {
+    background: rgba(245, 200, 70, 0.35);
+    color: inherit;
+    padding: 0 2px;
+    border-radius: 2px;
+  }
+  .search-result__url {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    font-family: var(--font-body);
+    letter-spacing: 0.02em;
+    word-break: break-all;
+  }
+</style>

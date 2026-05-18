@@ -4,7 +4,7 @@ import SideNav from '../components/SideNav.astro';
 import MobileNav from '../components/MobileNav.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import '../styles/faktencheck.css';
-import type { CollectionEntry } from 'astro:content';
+import { getCollection, type CollectionEntry } from 'astro:content';
 
 export interface Props {
   entry: CollectionEntry<'faktenchecks'>;
@@ -12,6 +12,21 @@ export interface Props {
 
 const { entry } = Astro.props;
 const { data } = entry;
+
+const allEntries = await getCollection('faktenchecks');
+const others = allEntries.filter((e) => e.id !== entry.id);
+let related: CollectionEntry<'faktenchecks'>[];
+if (data.related && data.related.length > 0) {
+  const map = new Map(others.map((e) => [e.id, e]));
+  related = data.related.map((slug) => map.get(slug)).filter((e): e is CollectionEntry<'faktenchecks'> => Boolean(e));
+} else {
+  related = others
+    .sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime())
+    .slice(0, 2);
+}
+
+const formatDate = (d: Date) =>
+  d.toLocaleDateString('de-DE', { day: '2-digit', month: 'long', year: 'numeric' });
 
 const mobileSections = data.sections.map((s) => ({
   href: `#${s.id}`,
@@ -36,6 +51,7 @@ const articleSchema = {
   author: { '@type': 'Person', name: 'Leon Machens' },
   publisher: { '@type': 'Person', name: 'Leon Machens' },
   datePublished: data.publishedAt.toISOString().slice(0, 10),
+  ...(data.updatedAt && { dateModified: data.updatedAt.toISOString().slice(0, 10) }),
   mainEntityOfPage: canonical,
   inLanguage: 'de-DE',
 };
@@ -53,6 +69,7 @@ const articleSchema = {
   <Fragment slot="head-extras">
     <meta property="article:author" content="Leon Machens" />
     <meta property="article:published_time" content={data.publishedAt.toISOString()} />
+    {data.updatedAt && <meta property="article:modified_time" content={data.updatedAt.toISOString()} />}
     <meta property="article:section" content="Faktencheck" />
     <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
   </Fragment>
@@ -72,6 +89,19 @@ const articleSchema = {
     <div class="container">
       <h1>{data.title}</h1>
       {data.subtitle && <p class="subtitle">{data.subtitle}</p>}
+      <p class="dateline">
+        <time datetime={data.publishedAt.toISOString().slice(0, 10)}>
+          Veröffentlicht {formatDate(data.publishedAt)}
+        </time>
+        {data.updatedAt && (
+          <>
+            <span aria-hidden="true"> · </span>
+            <time datetime={data.updatedAt.toISOString().slice(0, 10)}>
+              Aktualisiert {formatDate(data.updatedAt)}
+            </time>
+          </>
+        )}
+      </p>
       {data.metaList && (
         <div class="meta">
           {data.metaList.map((m) => (
@@ -110,6 +140,27 @@ const articleSchema = {
           ))}
         </ul>
       </div>
+    )}
+
+    {related.length > 0 && (
+      <aside class="related-checks" aria-labelledby="related-heading">
+        <h2 id="related-heading">Weitere Faktenchecks</h2>
+        <ul>
+          {related.map((r) => (
+            <li>
+              <a href={`/dokumentation/${r.id}.html`}>
+                <span class="related-checks__title">{r.data.title}</span>
+                {r.data.subtitle && (
+                  <span class="related-checks__subtitle">{r.data.subtitle}</span>
+                )}
+              </a>
+            </li>
+          ))}
+        </ul>
+        <p class="related-checks__all">
+          <a href="/faktenchecks/">Alle Faktenchecks ansehen →</a>
+        </p>
+      </aside>
     )}
   </div>
 

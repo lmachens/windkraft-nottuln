@@ -4,6 +4,8 @@
 .content-header { background: var(--color-primary-light); border-bottom: 1px solid var(--color-border); padding: var(--space-xl) 0 var(--space-lg); text-align: center; }
 .content-header h1 { font-size: 2rem; margin-bottom: var(--space-xs); color: var(--color-primary-dark); }
 .content-header .subtitle { font-size: 1.125rem; color: var(--color-primary); margin-bottom: var(--space-md); font-weight: 500; }
+.content-header .dateline { font-size: 0.8125rem; color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: var(--space-md); }
+.content-header .dateline time { white-space: nowrap; }
 .content-header .meta { font-size: 0.875rem; color: var(--color-text-muted); max-width: 680px; margin: 0 auto; line-height: 1.6; }
 .content-header .meta strong { color: var(--color-primary-dark); font-weight: 600; }
 .content { max-width: 780px; margin: 0 auto; padding: 0 var(--space-md); }
@@ -40,6 +42,74 @@
 .source a { color: var(--color-primary); }
 
 .progress-bar { position: fixed; top: 0; left: 0; width: 0%; height: 3px; background: linear-gradient(90deg, var(--color-primary), var(--color-accent), var(--color-primary-dark)); z-index: 1001; transition: width 0.15s linear; }
+
+.related-checks {
+  margin: var(--space-xl) 0 var(--space-lg);
+  padding: var(--space-md) 0;
+  border-top: 1px solid var(--color-border);
+}
+.related-checks h2 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  color: var(--color-primary-dark);
+  margin: 0 0 var(--space-sm);
+  padding: 0;
+  border: none;
+}
+.related-checks ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--space-sm);
+  display: grid;
+  gap: 0.75rem;
+}
+.related-checks li {
+  margin: 0;
+}
+.related-checks a {
+  display: block;
+  padding: 0.9rem 1.1rem;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  text-decoration: none;
+  color: var(--color-text);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.related-checks a:hover {
+  border-color: var(--color-primary);
+  box-shadow: 0 2px 12px rgba(26, 95, 106, 0.06);
+}
+.related-checks__title {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.0625rem;
+  color: var(--color-primary-dark);
+  line-height: 1.3;
+}
+.related-checks__subtitle {
+  display: block;
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  margin-top: 0.25rem;
+  font-style: italic;
+}
+.related-checks__all {
+  margin: 0;
+  font-size: 0.875rem;
+}
+.related-checks__all a {
+  background: transparent;
+  border: none;
+  padding: 0;
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.related-checks__all a:hover {
+  box-shadow: none;
+  color: var(--color-primary-dark);
+}
 
 .side-nav {
   position: fixed; top: 50%; left: 16px; transform: translateY(-50%);
@@ -113,9 +183,85 @@
 .mobile-nav a.active { background: var(--color-primary); color: #fff; font-weight: 600; }
 
 @media print {
-  .side-nav, .mobile-nav, .progress-bar { display: none !important; }
-  .claim-card { break-inside: avoid; box-shadow: none; border: 1px solid #bbb; }
-  .content { margin-left: auto !important; max-width: 100%; }
+  /* Hide screen-only UI */
+  .side-nav, .mobile-nav, .progress-bar,
+  .related-checks { display: none !important; }
+
+  /* Reset background tints, save toner */
+  .content-header,
+  .intro-note,
+  .content blockquote,
+  .claim-card,
+  .source {
+    background: #fff !important;
+    color: #000 !important;
+  }
+  .content-header {
+    border-bottom: 1px solid #999;
+    padding: 0 0 12pt;
+    text-align: left;
+  }
+  .content-header h1 { font-size: 18pt; color: #000 !important; }
+  .content-header .subtitle { font-size: 11pt; color: #333 !important; }
+  .content-header .dateline { color: #555 !important; font-size: 8.5pt; }
+  .content-header .meta { color: #333 !important; text-align: left; }
+
+  .content { margin: 0 !important; max-width: 100%; padding: 0; }
+  .content h2 { font-size: 13pt; color: #000 !important; border-bottom: 1px solid #999; page-break-after: avoid; }
+  .content h3 { font-size: 11pt; color: #000 !important; page-break-after: avoid; }
+  .content p, .content li { font-size: 10pt; line-height: 1.45; }
+  .content table { box-shadow: none; border: 1px solid #999; font-size: 9pt; }
+  .content th { background: #eee !important; color: #000 !important; }
+  .content tr:hover td { background: transparent !important; }
+  .content blockquote {
+    border: 1px solid #999;
+    border-left: 3pt solid #555;
+    color: #000 !important;
+    font-style: italic;
+    page-break-inside: avoid;
+  }
+  .content blockquote::before { color: #999 !important; }
+
+  .claim-card {
+    border: 1px solid #999;
+    border-left: 3pt solid #000;
+    box-shadow: none;
+    page-break-inside: avoid;
+    margin: 12pt 0;
+    padding: 10pt 12pt;
+  }
+  .intro-note {
+    border: 1px solid #999;
+    border-left: 3pt solid #000;
+    page-break-inside: avoid;
+  }
+
+  .bewertung {
+    background: transparent !important;
+    color: #000 !important;
+    border: 1pt solid #000 !important;
+    padding: 1pt 5pt;
+    font-size: 8pt;
+  }
+
+  .source {
+    border-top: 1px dashed #999;
+    color: #333 !important;
+    font-size: 8.5pt;
+  }
+  /* Print full URL inline so paper readers can find the source */
+  .source a::after,
+  .content p > a[href^="http"]::after {
+    content: ' [' attr(href) ']';
+    font-size: 0.85em;
+    color: #555;
+    word-break: break-all;
+  }
+  .source a, .content a { color: #000 !important; text-decoration: underline; }
+
+  /* Keep blocks together when possible */
+  h2, h3 { page-break-after: avoid; }
+  table, blockquote, .claim-card, .intro-note { page-break-inside: avoid; }
 }
 @media (max-width: 600px) {
   .content-header { padding: var(--space-lg) 0 var(--space-md); }

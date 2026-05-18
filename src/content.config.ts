@@ -30,6 +30,9 @@ const faktenchecks = defineCollection({
     title: z.string(),
     subtitle: z.string().optional(),
     publishedAt: z.date(),
+    updatedAt: z.date().optional(),
+    /** Slugs verwandter Faktenchecks (ohne .mdx). Wenn leer: automatisch andere checks zeigen. */
+    related: z.array(z.string()).optional(),
     description: z.string(),
     ogTitle: z.string().optional(),
     ogDescription: z.string().optional(),
