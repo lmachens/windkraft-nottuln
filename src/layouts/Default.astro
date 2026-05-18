@@ -1,4 +1,5 @@
 ---
+import { Font } from 'astro:assets';
 import EventBanner from '../components/EventBanner.astro';
 
 export interface Props {
@@ -45,12 +46,8 @@ const canonicalUrl = canonical ?? new URL(Astro.url.pathname, Astro.site).href;
 
 <slot name="head-extras" />
 
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link
-  href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Source+Sans+3:wght@400;500;600;700&display=swap"
-  rel="stylesheet"
-/>
+<Font cssVariable="--font-display" preload />
+<Font cssVariable="--font-body" preload />
 
 <style is:global>
   :root {
@@ -63,8 +60,6 @@ const canonicalUrl = canonical ?? new URL(Astro.url.pathname, Astro.site).href;
     --color-bg: #fafbfc;
     --color-white: #ffffff;
     --color-border: #dfe6e9;
-    --font-display: 'DM Serif Display', Georgia, serif;
-    --font-body: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
     --space-xs: 0.5rem; --space-sm: 1rem; --space-md: 1.5rem; --space-lg: 2.5rem; --space-xl: 4rem;
     --max-width: 900px;
     --border-radius: 8px;

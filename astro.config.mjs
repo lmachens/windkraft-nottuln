@@ -1,5 +1,5 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
+import { defineConfig, fontProviders } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import mdx from '@astrojs/mdx';
 
@@ -9,6 +9,24 @@ export default defineConfig({
   build: {
     format: 'preserve',
   },
+  fonts: [
+    {
+      name: 'DM Serif Display',
+      cssVariable: '--font-display',
+      provider: fontProviders.google(),
+      weights: [400],
+      styles: ['normal'],
+      fallbacks: ['Georgia', 'serif'],
+    },
+    {
+      name: 'Source Sans 3',
+      cssVariable: '--font-body',
+      provider: fontProviders.google(),
+      weights: [400, 500, 600, 700],
+      styles: ['normal'],
+      fallbacks: ['-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+    },
+  ],
   integrations: [
     mdx(),
     sitemap({
