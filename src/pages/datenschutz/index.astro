@@ -1,0 +1,179 @@
+---
+import Default from '../../layouts/Default.astro';
+import '../../styles/datenschutz.css';
+
+const meta = {
+  title: 'Datenschutz – Windkraft Nottuln',
+  description: 'Datenschutzerklärung von Windkraft Nottuln. Diese Website sammelt keine personenbezogenen Daten.',
+  ogDescription: 'Datenschutzerklärung von Windkraft Nottuln.',
+};
+---
+
+<Default
+  title={meta.title}
+  description={meta.description}
+  ogDescription={meta.ogDescription}
+>
+
+    <main class="content">
+        <div class="container">
+            <div class="content__header">
+                <h1>Datenschutzerklärung</h1>
+                <p>Informationen zum Umgang mit Ihren Daten</p>
+            </div>
+
+            <div class="content__body">
+                <div class="highlight-box">
+                    <strong>Kurz gesagt:</strong> Diese Website sammelt keine personenbezogenen Daten. Es gibt keine Cookies, kein Tracking und keine Formulare. Für anonyme Besucherstatistiken nutze ich Plausible Analytics (selbst gehostet, DSGVO-konform).
+                </div>
+
+                <h2>1. Verantwortlicher</h2>
+                <p>
+                    Verantwortlich für diese Website im Sinne der DSGVO ist:<br>
+                    Leon Machens<br>
+                    Steinstr. 2<br>
+                    48301 Nottuln<br>
+                    E-Mail: <a href="mailto:kontakt@windkraft-nottuln.de">kontakt@windkraft-nottuln.de</a>
+                </p>
+
+                <h2>2. Hosting</h2>
+                <p>Diese Website wird bei einem externen Dienstleister gehostet. Der Hoster kann technisch bedingt Zugriff auf folgende Daten erhalten:</p>
+                <ul>
+                    <li>IP-Adresse des anfragenden Rechners</li>
+                    <li>Datum und Uhrzeit des Zugriffs</li>
+                    <li>Angeforderte URL</li>
+                    <li>Referrer-URL (woher der Besucher kommt)</li>
+                    <li>Verwendeter Browser und Betriebssystem</li>
+                </ul>
+                <p>Diese Daten werden in sogenannten Server-Logfiles gespeichert. Sie sind technisch notwendig, um die Website bereitzustellen, und werden nicht mit anderen Datenquellen zusammengeführt.</p>
+                <p>Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der technischen Bereitstellung der Website).</p>
+
+                <h2>3. Keine Cookies</h2>
+                <p>Diese Website verwendet keine Cookies – weder technisch notwendige noch Tracking-Cookies. Es werden keine Informationen auf Ihrem Gerät gespeichert.</p>
+
+                <h2>4. Anonyme Besucherstatistiken (Plausible)</h2>
+                <p>Diese Website verwendet <a href="https://plausible.io" target="_blank" rel="noopener">Plausible Analytics</a> – eine datenschutzfreundliche Alternative zu Google Analytics. Plausible wird auf meinem eigenen Server betrieben.</p>
+                <p><strong>Was Plausible NICHT tut:</strong></p>
+                <ul>
+                    <li>Keine Cookies setzen</li>
+                    <li>Keine personenbezogenen Daten sammeln</li>
+                    <li>Kein Tracking über Websites hinweg</li>
+                    <li>Keine Daten an Dritte weitergeben</li>
+                </ul>
+                <p><strong>Was erfasst wird:</strong> Anonyme Seitenaufrufe, Referrer (woher Besucher kommen), Geräteart und Land – ohne individuelle Besucher zu identifizieren.</p>
+                <p>Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an anonymer Reichweitenmessung). Ein Cookie-Banner ist nicht erforderlich, da keine Cookies gesetzt werden.</p>
+
+                <h2>5. Externe Schriftarten (Google Fonts)</h2>
+                <p>Diese Website verwendet Schriftarten von Google Fonts. Beim Laden der Seite wird eine Verbindung zu den Servern von Google (google.com, gstatic.com) aufgebaut, um die Schriftarten zu laden.</p>
+                <p>Dabei kann Ihre IP-Adresse an Google übertragen werden. Google speichert diese Daten nach eigenen Angaben nicht personenbezogen. Weitere Informationen finden Sie in der <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Datenschutzerklärung von Google</a>.</p>
+                <p>Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der einheitlichen Darstellung der Website).</p>
+
+                <h2>6. Interaktive Karte (OpenStreetMap)</h2>
+                <p>Auf der Seite „Anlagen" wird eine interaktive Karte angezeigt. Dafür werden folgende externe Dienste genutzt:</p>
+                <ul>
+                    <li><strong>Leaflet.js</strong> (JavaScript-Bibliothek): Wird von unpkg.com geladen</li>
+                    <li><strong>OpenStreetMap-Kartenkacheln</strong>: Werden von tile.openstreetmap.org geladen</li>
+                </ul>
+                <p>Beim Laden der Karte wird eine Verbindung zu diesen Servern aufgebaut. Dabei kann Ihre IP-Adresse übertragen werden. OpenStreetMap wird von der OpenStreetMap Foundation betrieben. Weitere Informationen finden Sie in der <a href="https://wiki.osmfoundation.org/wiki/Privacy_Policy" target="_blank" rel="noopener">Datenschutzerklärung der OpenStreetMap Foundation</a>.</p>
+                <p>Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der anschaulichen Darstellung von Standortdaten).</p>
+
+                <h2>7. Nennung von Personen in der Dokumentation</h2>
+                <p>In den Dokumentationen und Dossiers auf dieser Website (z.B. unter <a href="/dokumentation/">/dokumentation/</a>) werden Personen namentlich genannt, die sich öffentlich zu kommunalpolitischen Themen in Nottuln geäußert haben. Dies betrifft insbesondere:</p>
+                <ul>
+                    <li><strong>Gewählte Mandatsträger</strong> (Ratsmitglieder, Fraktionsvorsitzende) in Ausübung ihres öffentlichen Amtes</li>
+                    <li><strong>Verwaltungsmitarbeiter</strong> in dienstlicher Funktion (z.B. bei Ausschuss-Sitzungen)</li>
+                    <li><strong>Verfasser von Leserbriefen</strong>, die in den Westfälischen Nachrichten veröffentlicht wurden</li>
+                    <li><strong>Personen</strong>, die sich in öffentlichen Facebook-Gruppen oder auf öffentlichen Veranstaltungen zu kommunalpolitischen Themen geäußert haben</li>
+                </ul>
+                <p>Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Dokumentation und Transparenz kommunalpolitischer Prozesse) in Verbindung mit Art. 85 DSGVO (Verarbeitung zu journalistischen Zwecken). Die Dokumentationen dienen der öffentlichen Meinungsbildung und dem Informationsinteresse der Bürger.</p>
+                <p>Die genannten Personen haben das Recht, der Verarbeitung ihrer Daten zu widersprechen (Art. 21 DSGVO). In begründeten Fällen kann eine Anonymisierung oder Löschung des Namens erfolgen. Bitte wenden Sie sich dazu an <a href="mailto:kontakt@windkraft-nottuln.de">kontakt@windkraft-nottuln.de</a>.</p>
+
+                <h2>8. Externe Links</h2>
+                <p>Diese Website enthält Links zu externen Websites. Wenn Sie auf einen solchen Link klicken, verlassen Sie diese Website. Ich habe keinen Einfluss auf die Datenschutzpraktiken dieser externen Seiten.</p>
+
+                <h2>9. E-Mail-Kontakt</h2>
+                <p>Wenn Sie mir per E-Mail schreiben, werden Ihre Angaben (E-Mail-Adresse, Inhalt der Nachricht) zur Bearbeitung Ihrer Anfrage gespeichert. Diese Daten werden nicht ohne Ihre Einwilligung an Dritte weitergegeben.</p>
+                <p>Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (Vertragsanbahnung) bzw. Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Beantwortung von Anfragen).</p>
+
+                <h2>10. Ihre Rechte</h2>
+                <p>Sie haben jederzeit das Recht auf:</p>
+                <ul>
+                    <li><strong>Auskunft</strong> über die bei mir gespeicherten personenbezogenen Daten (Art. 15 DSGVO)</li>
+                    <li><strong>Berichtigung</strong> unrichtiger Daten (Art. 16 DSGVO)</li>
+                    <li><strong>Löschung</strong> Ihrer Daten (Art. 17 DSGVO)</li>
+                    <li><strong>Einschränkung</strong> der Verarbeitung (Art. 18 DSGVO)</li>
+                    <li><strong>Datenübertragbarkeit</strong> (Art. 20 DSGVO)</li>
+                    <li><strong>Widerspruch</strong> gegen die Verarbeitung (Art. 21 DSGVO)</li>
+                    <li><strong>Beschwerde</strong> bei einer Aufsichtsbehörde (Art. 77 DSGVO)</li>
+                </ul>
+                <p>
+                    Die zuständige Aufsichtsbehörde ist:<br>
+                    Landesbeauftragte für Datenschutz und Informationsfreiheit Nordrhein-Westfalen<br>
+                    Postfach 20 04 44, 40102 Düsseldorf<br>
+                    <a href="https://www.ldi.nrw.de" target="_blank" rel="noopener">www.ldi.nrw.de</a>
+                </p>
+
+                <h2>11. Aktualität dieser Datenschutzerklärung</h2>
+                <p>Diese Datenschutzerklärung ist aktuell gültig und hat den Stand März 2026.</p>
+                <p>Bei Änderungen an der Website oder aufgrund rechtlicher Vorgaben kann eine Anpassung dieser Datenschutzerklärung erforderlich werden.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Explore More -->
+    <section class="explore-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Mehr erfahren</h2>
+                <p>Weitere Themen rund um Windkraft in Nottuln.</p>
+            </div>
+            <div class="explore-grid">
+                <a href="/gesetze/" class="explore-card">
+                    <div class="explore-card__icon" style="background: var(--color-primary-light);">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                    </div>
+                    <div class="explore-card__title">Gesetze & Verfahren</div>
+                    <p class="explore-card__desc">BImSchG, BauGB, Artenschutz - welche Gesetze gelten und wie das Genehmigungsverfahren funktioniert.</p>
+                    <span class="explore-card__arrow">Zur Übersicht &rarr;</span>
+                </a>
+                <a href="/anlagen/" class="explore-card">
+                    <div class="explore-card__icon" style="background: var(--color-accent-light, var(--color-primary-light));">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-accent, var(--color-primary))" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>
+                    </div>
+                    <div class="explore-card__title">Interaktive Karte</div>
+                    <p class="explore-card__desc">Alle 18 geplanten Standorte mit Schutzgebieten, Abständen und Windenergiebereichen.</p>
+                    <span class="explore-card__arrow">Karte öffnen &rarr;</span>
+                </a>
+                <a href="/petition/" class="explore-card">
+                    <div class="explore-card__icon" style="background: var(--color-primary-light);">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                    </div>
+                    <div class="explore-card__title">Petitions-Analyse</div>
+                    <p class="explore-card__desc">630 Kommentare der Gegenwind-Petition ausgewertet - was die Unterzeichner wirklich schreiben.</p>
+                    <span class="explore-card__arrow">Analyse lesen &rarr;</span>
+                </a>
+                <a href="/faq/" class="explore-card">
+                    <div class="explore-card__icon" style="background: var(--color-accent-light, var(--color-primary-light));">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-accent, var(--color-primary))" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                    </div>
+                    <div class="explore-card__title">Häufige Fragen</div>
+                    <p class="explore-card__desc">Antworten auf die meistgestellten Fragen zu Windkraft in Nottuln - kompakt und mit Quellen.</p>
+                    <span class="explore-card__arrow">FAQ lesen &rarr;</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-section__inner">
+                <h2>Fehler gefunden? Fragen?</h2>
+                <p>Diese Seite lebt von Genauigkeit. Wenn Ihnen ein Fehler auffällt, eine Quelle fehlt oder Sie eine andere Sichtweise mit Belegen haben - ich freue mich über jede Nachricht.</p>
+                <a href="mailto:kontakt@windkraft-nottuln.de" class="contact-section__email">kontakt@windkraft-nottuln.de</a>
+            </div>
+        </div>
+    </section>
+
+
+</Default>

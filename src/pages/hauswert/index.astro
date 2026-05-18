@@ -1,0 +1,351 @@
+---
+import Default from '../../layouts/Default.astro';
+import '../../styles/hauswert.css';
+
+const meta = {
+  title: 'Immobilienwerte und Windenergie - Was bedeutet das für Nottuln?',
+  description: 'RWI-Studie, Zensus-Daten und interaktive Karte: Welche Gebäude in Stockum sind betroffen? Gebäudealter und Entfernung zu den geplanten WEA im Überblick.',
+  ogDescription: 'Interaktive Karte mit Zensus 2022 Daten: Gebäudealter und Entfernung zu den geplanten WEA in Stockum.',
+};
+---
+
+<Default
+  title={meta.title}
+  description={meta.description}
+  ogDescription={meta.ogDescription}
+>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Immobilienwerte und Windenergie</h1>
+            <p class="hero__subtitle">Was sagt die Forschung - und was bedeutet das konkret für Nottuln?</p>
+            <div class="hero__badge">
+                <svg viewBox="0 0 24 24" stroke-width="2">
+                    <path d="M9 12l2 2 4-4"/>
+                    <circle cx="12" cy="12" r="10"/>
+                </svg>
+                <span>Daten: RWI 2019 &amp; 2024, Zensus 2022, PNAS 2024</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 1: Current Research (2024) -->
+    <section class="content-section">
+        <div class="container">
+            <div class="content-container">
+                <h2>Aktueller Forschungsstand (2024)</h2>
+
+                <div class="stat-row">
+                    <div class="stat-box stat-box--warning">
+                        <div class="stat-box__number">1,8%</div>
+                        <div class="stat-box__label">Durchschnitt in 1-2 km (RWI 2024)</div>
+                    </div>
+                    <div class="stat-box stat-box--success">
+                        <div class="stat-box__number">~3 J.</div>
+                        <div class="stat-box__label">Preise erholen sich nach ca. 3 Jahren (PNAS 2024)</div>
+                    </div>
+                    <div class="stat-box stat-box--success">
+                        <div class="stat-box__number">0%</div>
+                        <div class="stat-box__label">Kein Effekt bei Anlagen ab 2017 (PNAS 2024)</div>
+                    </div>
+                </div>
+
+                <div class="detail-box">
+                    <h3>RWI - Heuer &amp; Sommer (2024)</h3>
+                    <p>Eine aktualisierte RWI-Studie (<a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4918064" target="_blank" rel="noopener">Heuer &amp; Sommer, SSRN #4918064</a>) untersuchte rund 4 Millionen Immobilienangebote auf ImmoScout24 von 2009 bis 2021.</p>
+                    <p><strong>Ergebnis:</strong> Immobilien mit einer WEA im Umkreis von 1-2 km sind durchschnittlich <strong>1,8% günstiger</strong>. Ab 3 km ist kein Effekt mehr nachweisbar. Der Effekt ist bei <strong>älteren Immobilien</strong> und in weniger dicht besiedelten Gebieten größer.</p>
+                    <p><strong>Methodik:</strong> Angebotsdaten (ImmoScout24), 2009-2021. Zum Vergleich: Die <a href="#rwi-2019">RWI-Studie von 2019</a> nutzte Transaktionsdaten von 2007-2015 und fand höhere Werte (7%/23%).</p>
+                </div>
+
+                <div class="detail-box">
+                    <h3>Berkeley/PIK - PNAS 2024</h3>
+                    <p>Eine große US-Studie (<a href="https://www.pnas.org/doi/10.1073/pnas.2309372121" target="_blank" rel="noopener">Proceedings of the National Academy of Sciences, 2024</a>) untersuchte speziell Häuser mit <strong>direktem Blick</strong> auf Windräder.</p>
+                    <p><strong>Ergebnis:</strong> Der Wertverlust erreicht seinen Höhepunkt nach etwa 3 Jahren und erholt sich danach. Für <strong>nach 2017 errichtete Anlagen</strong> war kein signifikanter Preiseffekt mehr messbar.</p>
+                    <p>Die Forscher erklären das mit zunehmender gesellschaftlicher Gewöhnung an Windenergieanlagen.</p>
+                </div>
+
+                <div class="detail-box">
+                    <h3>Dröes & Koster (2021) - Anlagenhöhe als Faktor</h3>
+                    <p>Eine niederländische Studie (<a href="https://doi.org/10.1016/j.eneco.2021.105265" target="_blank" rel="noopener">Dröes & Koster, Energy Economics, 2021</a>) ist die einzige Studie, die nach <strong>Anlagenhöhe</strong> differenziert.</p>
+                    <p><strong>Ergebnis:</strong> Bei Anlagen über 150m Höhe beträgt der Wertverlust im Umkreis von 2 km durchschnittlich <strong>-5,4%</strong>. Bei kleineren Anlagen ist der Effekt geringer.</p>
+                </div>
+
+                <div class="note-box" style="border-left-color: var(--color-warning);">
+                    <p><strong>Einordnung für Nottuln:</strong> Die in Stockum geplanten Anlagen haben eine Gesamthöhe von ca. 266 m. Alle oben genannten Studien basieren auf Daten zu Bestandsanlagen, die zum Zeitpunkt der Erhebung typischerweise 100-200 m hoch waren. Zur Auswirkung moderner Anlagen dieser Größenordnung auf Immobilienwerte gibt es noch keine belastbare Forschung.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: RWI 2019 (the commonly cited numbers) -->
+    <section class="content-section">
+        <div class="container">
+            <div class="content-container">
+                <h2 id="rwi-2019">Die oft zitierten Zahlen: RWI-Studie (2019)</h2>
+                <p>In lokalen Diskussionen werden häufig die Zahlen der RWI-Studie von 2019 genannt. Sie untersuchte rund 3 Millionen Immobilientransaktionen zwischen 2007 und 2015.</p>
+
+                <div class="stat-row">
+                    <div class="stat-box stat-box--warning">
+                        <div class="stat-box__number">7%</div>
+                        <div class="stat-box__label">Durchschnitt innerhalb 1 km</div>
+                    </div>
+                    <div class="stat-box stat-box--error">
+                        <div class="stat-box__number">bis 23%</div>
+                        <div class="stat-box__label">Altbauten vor 1950 im ländlichen Raum</div>
+                    </div>
+                    <div class="stat-box stat-box--success">
+                        <div class="stat-box__number">0%</div>
+                        <div class="stat-box__label">Ab 8-9 km kein Effekt messbar</div>
+                    </div>
+                </div>
+
+                <div class="detail-box">
+                    <h3>Wann gelten welche Zahlen?</h3>
+                    <p><strong>7% Durchschnitt:</strong> Gilt für alle Gebäudetypen innerhalb von 1 km. Der Effekt nimmt mit der Entfernung ab.</p>
+                    <p><strong>Bis 23%:</strong> Gilt für Altbauten mit Baujahr vor 1950 im <strong>ländlichen Raum</strong> innerhalb von 1 km.</p>
+                    <p><strong>Siedlungstyp:</strong> Laut RWI sind "alte Häuser" und solche "in ländlichen Gebieten" am stärksten betroffen. Neuere Studien (u.a. PNAS 2024) zeigen teils abweichende Ergebnisse zur Rolle des Siedlungstyps.</p>
+                    <p><strong>0% ab 8-9 km:</strong> Ab dieser Entfernung kein statistisch signifikanter Effekt.</p>
+                </div>
+
+                <div class="note-box">
+                    <p><strong>Einordnung:</strong> Die Studie basiert auf Daten von 2007-2015, als Anlagen typischerweise 100-150 m hoch waren. Die aktualisierte RWI-Studie von 2024 mit Daten bis 2021 findet mit 1,8% einen niedrigeren Durchschnittswert - bei anderer Methodik (Angebots- statt Transaktionsdaten).</p>
+                </div>
+
+                <p style="margin-top: var(--space-sm);"><a href="https://www.rwi-essen.de/presse/wissenschaftskommunikation/pressemitteilungen/detail/windraeder-lassen-immobilienpreise-sinken" target="_blank" rel="noopener">RWI-Pressemitteilung (2019) &rarr;</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Interactive Map -->
+    <section class="map-section" id="karte">
+        <div class="container">
+            <h2 style="text-align: center;">Wie alt sind die Gebäude um die geplanten WEA?</h2>
+            <p style="text-align: center; color: var(--color-text-muted); max-width: 700px; margin: 0 auto var(--space-md);">
+                Daten: Zensus 2022 (100-m-Gitterzellen, Statistisches Bundesamt). Dargestellt: alle Zellen im <strong>2-km-Radius</strong> der geplanten WEA. Farbe zeigt die <strong>dominierende Baualtersklasse</strong>.
+            </p>
+            <div class="map-container">
+                <div id="map"></div>
+                <div class="map-legend">
+                    <div class="map-legend__item">
+                        <div class="map-legend__dot" style="background: #c0392b;"></div>
+                        Vor 1950
+                    </div>
+                    <div class="map-legend__item">
+                        <div class="map-legend__dot" style="background: #f39c12;"></div>
+                        1949-1990
+                    </div>
+                    <div class="map-legend__item">
+                        <div class="map-legend__dot" style="background: #27ae60;"></div>
+                        Nach 1990
+                    </div>
+                    <div class="map-legend__item">
+                        <div class="map-legend__dot" style="background: #bdc3c7;"></div>
+                        Keine Altersangabe
+                    </div>
+                    <div class="map-legend__item">
+                        <div class="map-legend__dot" style="background: transparent; border: 2px dashed #e74c3c;"></div>
+                        Alter unbekannt
+                    </div>
+                    <div class="map-legend__item">
+                        <div class="map-legend__circle" style="background: #e67e22;"></div>
+                        Geplante WEA
+                    </div>
+                    <div class="map-legend__item">
+                        <div style="width: 20px; height: 0; border-top: 2px dashed #1a5f6a;"></div>
+                        1-km-Radius
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Stockum Analysis -->
+    <section class="content-section">
+        <div class="container">
+            <div class="content-container">
+                <h2>Was bedeutet das für Stockum?</h2>
+
+                <div class="success-box">
+                    <p><strong>Kernbefund:</strong> Von 187 Gebäuden mit Zensus-Daten im 1-km-Radius ist keines mit Baujahr vor 1950 erfasst. Allerdings sind <strong>45 Gitterzellen mit Einzelhöfen komplett unterdrückt</strong> (§16 BStatG) - deren Baujahr geht aus den Zensus-Daten nicht hervor.</p>
+                </div>
+
+                <h3>Gebäude im Stockum-Bereich (Zensus 2022)</h3>
+                <div class="zensus-bar" aria-label="Baualtersverteilung: 4,5% vor 1950, 55,1% 1949-1990, 35,3% nach 1990, 5,1% unbekannt">
+                    <div class="zensus-bar__segment" style="flex: 4.5; background: #c0392b;" title="Vor 1950: 4,5%"><span>5%</span></div>
+                    <div class="zensus-bar__segment" style="flex: 55.1; background: #f39c12;" title="1949-1990: 55,1%"><span>55%</span></div>
+                    <div class="zensus-bar__segment" style="flex: 35.3; background: #27ae60;" title="Nach 1990: 35,3%"><span>35%</span></div>
+                    <div class="zensus-bar__segment" style="flex: 5.1; background: #bdc3c7; color: #636e72;" title="Keine Angabe: 5,1%"><span></span></div>
+                </div>
+                <p style="font-size: 0.8125rem; color: var(--color-text-muted);">2.419 Gebäude mit bekannten Daten im 2-km-Radius. Zusätzlich 114 komplett unterdrückte Zellen. Quelle: Zensus 2022, 100-m-Gitterzellen.</p>
+
+                <div class="analysis-grid">
+                    <div class="analysis-card">
+                        <div class="analysis-card__header">
+                            <h3 style="margin: 0;">Vogelwegsiedlung</h3>
+                            <span class="analysis-card__tag analysis-card__tag--yellow">1980er-2000er</span>
+                        </div>
+                        <p style="color: var(--color-text-muted); font-size: 0.9375rem;">Nächste geschlossene Wohnsiedlung zu WEA 5 (ca. 650 m). Habichtweg, Bussardweg, Falkenstraße, Drosselweg.</p>
+                        <p style="font-size: 0.9375rem;">Baujahre 1980er-2000er. Liegt innerhalb des 1-km-Radius.</p>
+                    </div>
+                    <div class="analysis-card">
+                        <div class="analysis-card__header">
+                            <h3 style="margin: 0;">Einzelhöfe</h3>
+                            <span class="analysis-card__tag analysis-card__tag--red">Alter unbekannt</span>
+                        </div>
+                        <p style="color: var(--color-text-muted); font-size: 0.9375rem;">Historische Münsterländer Bauerschaften. 45 Gitterzellen im 1-km-Radius sind komplett unterdrückt (§16 BStatG) - dort stehen Einzelhöfe mit unbekanntem Baujahr.</p>
+                        <p style="font-size: 0.9375rem;">14 Gitterzellen im Gesamtbereich haben dominant alte Gebäude (vor 1950).</p>
+                    </div>
+                    <div class="analysis-card">
+                        <div class="analysis-card__header">
+                            <h3 style="margin: 0;">Innerhalb 1 km</h3>
+                            <span class="analysis-card__tag analysis-card__tag--yellow">187 + unterdrückte</span>
+                        </div>
+                        <p style="color: var(--color-text-muted); font-size: 0.9375rem;">187 Gebäude mit bekannten Zensus-Daten innerhalb von 1 km. Davon keines mit Baujahr vor 1950 erfasst, 92,5% nach 1990 gebaut.</p>
+                        <p style="font-size: 0.9375rem;">Zusätzlich 45 unterdrückte Zellen mit Einzelhöfen, deren Baujahr unbekannt ist.</p>
+                    </div>
+                    <div class="analysis-card">
+                        <div class="analysis-card__header">
+                            <h3 style="margin: 0;">Neubaugebiet B-Plan 161</h3>
+                            <span class="analysis-card__tag analysis-card__tag--green">Neubau</span>
+                        </div>
+                        <p style="color: var(--color-text-muted); font-size: 0.9375rem;">Geplant: "Niederstockumer Weg" mit ca. 250 Wohneinheiten. Die Bauleitplanung für das Wohngebiet (B-Plan 161) und die WEA-Genehmigung (BImSchG) sind separate Verfahren.</p>
+                        <p style="font-size: 0.9375rem;">Die geplanten WEA sind nicht Bestandteil der Bauleitplanung für das Neubaugebiet.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: Common Claims -->
+    <section class="content-section">
+        <div class="container">
+            <div class="content-container">
+                <h2>Häufige Behauptungen</h2>
+
+                <div class="claim-item">
+                    <div class="claim-item__claim">"Über 20% Wertverlust durch Windräder"</div>
+                    <div class="claim-item__fact">
+                        <p>Der Wert "bis 23%" stammt aus der RWI-Studie von 2019 und gilt für <strong>Altbauten vor 1950 im ländlichen Raum innerhalb von 1 km</strong>. Von 187 Gebäuden mit Zensus-2022-Daten im 1-km-Radius ist keines mit Baujahr vor 1950 erfasst. Für 45 Gitterzellen mit Einzelhöfen sind die Baujahre allerdings unterdrückt (§16 BStatG). Eine aktualisierte RWI-Studie von 2024 (Daten bis 2021) findet einen Durchschnittseffekt von 1,8% in 1-2 km Entfernung.</p>
+                    </div>
+                </div>
+
+                <div class="claim-item">
+                    <div class="claim-item__claim">"Meine Altersvorsorge ist in Gefahr"</div>
+                    <div class="claim-item__fact">
+                        <p>Die tatsächliche Auswirkung hängt von <strong>Entfernung</strong>, <strong>Gebäudealter</strong> und <strong>Lage</strong> ab. Von den 187 Gebäuden mit bekannten Daten innerhalb von 1 km sind 92,5% nach 1990 gebaut. Für 45 Gitterzellen mit Einzelhöfen sind die Baujahre unbekannt. Ab 3 km (RWI 2024) bzw. 8-9 km (RWI 2019) ist kein Effekt messbar. Neuere Forschung (PNAS 2024) zeigt zudem, dass sich Preise nach wenigen Jahren erholen.</p>
+                    </div>
+                </div>
+
+                <div class="claim-item">
+                    <div class="claim-item__claim">"25-30% Wertverlust"</div>
+                    <div class="claim-item__fact">
+                        <p>Diese Zahlen lassen sich mit keiner wissenschaftlichen Studie belegen. Die RWI-Studie von 2019 (3 Mio. Transaktionen) kommt auf maximal 23% - für Altbauten vor 1950 im ländlichen Raum innerhalb von 1 km.</p>
+                    </div>
+                </div>
+
+                <div class="claim-item">
+                    <div class="claim-item__claim">"Ich habe ein Recht darauf, vor Wertverlust geschützt zu werden"</div>
+                    <div class="claim-item__fact">
+                        <p>Das Bundesverwaltungsgericht hat klargestellt: Wertminderungen durch ein Nachbarvorhaben bilden <strong>für sich genommen keinen Maßstab</strong> dafür, ob Beeinträchtigungen zumutbar sind (<a href="https://dejure.org/dienste/vernetzung/rechtsprechung?Gericht=BVerwG&Datum=26.09.1991&Aktenzeichen=4%20C%205/87" target="_blank" rel="noopener">BVerwG, 26.09.1991, 4 C 5/87</a>). Ein Abwehranspruch besteht nur, wenn die Wertminderung Folge einer unzumutbaren Beeinträchtigung der Nutzungsmöglichkeiten ist (<a href="https://dejure.org/dienste/vernetzung/rechtsprechung?Gericht=BVerwG&Datum=23.08.1996&Aktenzeichen=4%20C%2013/94" target="_blank" rel="noopener">BVerwG, 23.08.1996, 4 C 13/94</a>).</p>
+                        <p>Das OVG Schleswig hat 2024 bestätigt: Der befürchtete Wertverlust stellt keinen Eingriff in Art. 14 Abs. 1 GG (Eigentumsgarantie) dar. Im Außenbereich muss mit privilegierten Vorhaben wie Windenergieanlagen gerechnet werden (<a href="https://www.cbh.de/news/verwaltung-wirtschaft/gegenwind-abgeschwaecht-klaeger-gegen-windenergieanlagen-muessen-konkrete-beeintraechtigungen-vorbringen/" target="_blank" rel="noopener">OVG Schleswig, 30.10.2024, 5 KS 5/23</a>).</p>
+                    </div>
+                </div>
+
+                <p><a href="/faq/#hauswert">Mehr dazu in den FAQ &rarr;</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sources -->
+    <section class="content-section" style="padding-bottom: var(--space-xl);">
+        <div class="container">
+            <div class="content-container">
+                <h2>Quellen</h2>
+                <ul class="source-list">
+                    <li>
+                        <strong>RWI Leibniz-Institut (2019):</strong>
+                        <a href="https://www.rwi-essen.de/presse/wissenschaftskommunikation/pressemitteilungen/detail/windraeder-lassen-immobilienpreise-sinken" target="_blank" rel="noopener">"Windräder lassen Immobilienpreise sinken"</a> - Daten: 3 Mio. Transaktionen, 2007-2015
+                    </li>
+                    <li>
+                        <strong>Heuer &amp; Sommer, RWI (2024):</strong>
+                        <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4918064" target="_blank" rel="noopener">"Distance and intensity effects of renewable energy on property prices"</a> - Daten: 4 Mio. Angebote, 2009-2021
+                    </li>
+                    <li>
+                        <strong>Berkeley/PIK - PNAS (2024):</strong>
+                        <a href="https://www.pnas.org/doi/10.1073/pnas.2309372121" target="_blank" rel="noopener">"The effect of wind turbine visibility on property values"</a>
+                    </li>
+                    <li>
+                        <strong>Dröes & Koster (2021):</strong>
+                        <a href="https://doi.org/10.1016/j.eneco.2021.105265" target="_blank" rel="noopener">""; Energy Economics (2021)</a> - Einzige Studie mit Höhendifferenzierung, Niederlande
+                    </li>
+                    <li>
+                        <strong>Zensus 2022 - Gitterzellen:</strong>
+                        <a href="https://ergebnisse.zensus2022.de/" target="_blank" rel="noopener">Statistisches Bundesamt, Gebäude nach Baujahresklassen (100-m-Raster)</a>
+                        - Datenlizenz Deutschland - Namensnennung 2.0
+                    </li>
+                    <li>
+                        <strong>WEA-Positionen:</strong>
+                        <a href="https://www.marktstammdatenregister.de" target="_blank" rel="noopener">Bundesnetzagentur (MaStR)</a> / <a href="https://www.stadtwerke-muenster.de/unternehmen/muenster-wird-gruen/energiewende/windenergie" target="_blank" rel="noopener">Stadtwerke Münster</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Explore More -->
+    <section class="explore-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Mehr erfahren</h2>
+                <p>Weitere Themen rund um Windkraft in Nottuln.</p>
+            </div>
+            <div class="explore-grid">
+                <a href="/" class="explore-card">
+                    <div class="explore-card__icon" style="background: var(--color-primary-light);">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    </div>
+                    <div class="explore-card__title">Faktenchecks</div>
+                    <p class="explore-card__desc">Gesundheit, Artenschutz, Klima, Technik - die häufigsten Behauptungen im Faktencheck.</p>
+                    <span class="explore-card__arrow">Zur Startseite &rarr;</span>
+                </a>
+                <a href="/anlagen/" class="explore-card">
+                    <div class="explore-card__icon" style="background: var(--color-accent-light, var(--color-primary-light));">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-accent, var(--color-primary))" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>
+                    </div>
+                    <div class="explore-card__title">Interaktive Karte</div>
+                    <p class="explore-card__desc">Alle 18 geplanten Standorte mit Schutzgebieten, Abständen und Windenergiebereichen.</p>
+                    <span class="explore-card__arrow">Karte öffnen &rarr;</span>
+                </a>
+                <a href="/faq/" class="explore-card">
+                    <div class="explore-card__icon" style="background: var(--color-accent-light, var(--color-primary-light));">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-accent, var(--color-primary))" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                    </div>
+                    <div class="explore-card__title">Häufige Fragen</div>
+                    <p class="explore-card__desc">Antworten auf die meistgestellten Fragen zu Windkraft in Nottuln - kompakt und mit Quellen.</p>
+                    <span class="explore-card__arrow">FAQ lesen &rarr;</span>
+                </a>
+                <a href="/gesetze/" class="explore-card">
+                    <div class="explore-card__icon" style="background: var(--color-primary-light);">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                    </div>
+                    <div class="explore-card__title">Gesetze & Verfahren</div>
+                    <p class="explore-card__desc">BImSchG, BauGB, Artenschutz - welche Gesetze gelten und wie das Genehmigungsverfahren funktioniert.</p>
+                    <span class="explore-card__arrow">Zur Übersicht &rarr;</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-section__inner">
+                <h2>Fehler gefunden? Fragen?</h2>
+                <p>Diese Seite lebt von Genauigkeit. Wenn Ihnen ein Fehler auffällt, eine Quelle fehlt oder Sie eine andere Sichtweise mit Belegen haben - ich freue mich über jede Nachricht.</p>
+                <a href="mailto:kontakt@windkraft-nottuln.de" class="contact-section__email">kontakt@windkraft-nottuln.de</a>
+            </div>
+        </div>
+    </section>
+
+
+</Default>

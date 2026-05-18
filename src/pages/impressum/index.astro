@@ -1,0 +1,109 @@
+---
+import Default from '../../layouts/Default.astro';
+import '../../styles/impressum.css';
+
+const meta = {
+  title: 'Impressum – Windkraft Nottuln',
+  description: 'Impressum und Kontaktdaten von Windkraft Nottuln.',
+  ogDescription: 'Impressum und Kontaktdaten von Windkraft Nottuln.',
+};
+---
+
+<Default
+  title={meta.title}
+  description={meta.description}
+  ogDescription={meta.ogDescription}
+>
+
+    <main class="content">
+        <div class="container">
+            <div class="content__header">
+                <h1>Impressum</h1>
+                <p>Angaben gemäß § 5 DDG</p>
+            </div>
+
+            <div class="content__body">
+                <h2>Verantwortlich für den Inhalt</h2>
+                <address>
+                    <strong>Leon Machens</strong><br>
+                    Steinstr. 2<br>
+                    48301 Nottuln<br>
+                    Deutschland
+                </address>
+
+                <h2>Kontakt</h2>
+                <p>E-Mail: <a href="mailto:kontakt@windkraft-nottuln.de">kontakt@windkraft-nottuln.de</a></p>
+
+                <h2>Haftung für Inhalte</h2>
+                <p>Als Betreiber dieser Seite bin ich gemäß § 7 Abs. 1 DDG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 DDG bin ich als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.</p>
+                <p>Alle Inhalte auf dieser Website wurden sorgfältig recherchiert und mit Quellen belegt. Sollte dennoch ein Fehler vorliegen, bitte ich um einen Hinweis per E-Mail. Ich werde fehlerhafte Informationen umgehend korrigieren.</p>
+
+                <h2>Haftung für Links</h2>
+                <p>Diese Website enthält Links zu externen Websites Dritter, auf deren Inhalte ich keinen Einfluss habe. Deshalb kann ich für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar.</p>
+
+                <h2>Urheberrecht</h2>
+                <p>Die durch mich erstellten Inhalte und Werke auf diesen Seiten sind frei verwendbar, solange die Quelle (windkraft-nottuln.de) genannt wird. Grafiken und Infografiken von Dritten (BWE, Statista, etc.) unterliegen deren jeweiligen Lizenzbedingungen – diese sind bei den entsprechenden Quellen vermerkt.</p>
+
+                <h2>Keine wirtschaftlichen Interessen</h2>
+                <p>Diese Website ist ein privates, nicht-kommerzielles Projekt. Ich erhalte keine Zahlungen von Windkraftbetreibern, Energieunternehmen oder politischen Organisationen. Es gibt keine Werbung, keine Sponsoren und keine Affiliate-Links.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Explore More -->
+    <section class="explore-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Mehr erfahren</h2>
+                <p>Weitere Themen rund um Windkraft in Nottuln.</p>
+            </div>
+            <div class="explore-grid">
+                <a href="/gesetze/" class="explore-card">
+                    <div class="explore-card__icon" style="background: var(--color-primary-light);">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                    </div>
+                    <div class="explore-card__title">Gesetze & Verfahren</div>
+                    <p class="explore-card__desc">BImSchG, BauGB, Artenschutz - welche Gesetze gelten und wie das Genehmigungsverfahren funktioniert.</p>
+                    <span class="explore-card__arrow">Zur Übersicht &rarr;</span>
+                </a>
+                <a href="/anlagen/" class="explore-card">
+                    <div class="explore-card__icon" style="background: var(--color-accent-light, var(--color-primary-light));">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-accent, var(--color-primary))" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>
+                    </div>
+                    <div class="explore-card__title">Interaktive Karte</div>
+                    <p class="explore-card__desc">Alle 18 geplanten Standorte mit Schutzgebieten, Abständen und Windenergiebereichen.</p>
+                    <span class="explore-card__arrow">Karte öffnen &rarr;</span>
+                </a>
+                <a href="/petition/" class="explore-card">
+                    <div class="explore-card__icon" style="background: var(--color-primary-light);">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                    </div>
+                    <div class="explore-card__title">Petitions-Analyse</div>
+                    <p class="explore-card__desc">630 Kommentare der Gegenwind-Petition ausgewertet - was die Unterzeichner wirklich schreiben.</p>
+                    <span class="explore-card__arrow">Analyse lesen &rarr;</span>
+                </a>
+                <a href="/faq/" class="explore-card">
+                    <div class="explore-card__icon" style="background: var(--color-accent-light, var(--color-primary-light));">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-accent, var(--color-primary))" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                    </div>
+                    <div class="explore-card__title">Häufige Fragen</div>
+                    <p class="explore-card__desc">Antworten auf die meistgestellten Fragen zu Windkraft in Nottuln - kompakt und mit Quellen.</p>
+                    <span class="explore-card__arrow">FAQ lesen &rarr;</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-section__inner">
+                <h2>Fehler gefunden? Fragen?</h2>
+                <p>Diese Seite lebt von Genauigkeit. Wenn Ihnen ein Fehler auffällt, eine Quelle fehlt oder Sie eine andere Sichtweise mit Belegen haben - ich freue mich über jede Nachricht.</p>
+                <a href="mailto:kontakt@windkraft-nottuln.de" class="contact-section__email">kontakt@windkraft-nottuln.de</a>
+            </div>
+        </div>
+    </section>
+
+
+</Default>
