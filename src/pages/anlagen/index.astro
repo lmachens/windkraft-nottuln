@@ -1,6 +1,5 @@
 ---
 import Default from '../../layouts/Default.astro';
-import EventBanner from '../../components/EventBanner.astro';
 import '../../styles/anlagen.css';
 
 const meta = {
@@ -19,15 +18,6 @@ const meta = {
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gokertanrisever/leaflet-ruler@master/src/leaflet-ruler.css" />
   </Fragment>
-
-  <EventBanner
-    slot="before-header"
-    dismissKey="banner-vortrag-dismissed"
-    href="/dokumentation/faktencheck-schulte-vortrag-nottuln.html"
-    textBefore="Schulte-Vortrag in Nottuln —"
-    linkLabel="Faktencheck mit 14 Behauptungen"
-  />
-
 
     <section class="hero">
         <div class="container">
