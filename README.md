@@ -26,9 +26,21 @@ Diese Website bietet quellenbasierte Informationen zu Windenergie in Nottuln und
 
 ## Technisch
 
-- Statische HTML/CSS-Website
+- [Astro](https://astro.build) Static-Site-Generator, Build-Output ist reines HTML/CSS/JS
+- Layout- und Komponenten-Wiederverwendung in `src/layouts/` und `src/components/`
+- Pro-Page CSS in `src/styles/`
+- Standalone-PDF und HTML-Dokumente (Skatepark-Dossier, Tonfall-Dokumentation, Vahl-Poster) liegen unverändert in `public/dokumentation/`
 - Keine Cookies, kein Tracking
-- Hosting: GitHub Pages
+- Hosting: GitHub Pages (Build per GitHub Actions, siehe `.github/workflows/astro-build.yml`)
+
+### Lokal entwickeln
+
+```bash
+bun install
+bun run dev      # Dev-Server auf http://localhost:4321
+bun run build    # Produktions-Build nach dist/
+bun run preview  # Built-Output lokal prüfen
+```
 
 ## KI-Unterstützung
 
