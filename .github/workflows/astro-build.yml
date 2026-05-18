@@ -1,9 +1,8 @@
-name: Astro Build
+name: Astro Build & Deploy
 
-# Baut die Astro-Site bei jedem Push und Pull-Request als CI-Check.
-# Deployment auf GitHub Pages folgt in PR 2 (separate Workflow-Datei),
-# sobald die bestehenden HTML-Seiten in Astro-Seiten überführt sind und
-# die Pages-Source im Repo-Setting auf "GitHub Actions" umgestellt ist.
+# Baut die Astro-Site und deployed sie auf GitHub Pages.
+# Voraussetzung: Pages-Source im Repo-Setting auf "GitHub Actions"
+# umgestellt (sonst schlaegt der deploy-Step fehl).
 
 on:
   push:
@@ -11,6 +10,15 @@ on:
   pull_request:
     branches: [main]
   workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
 
 jobs:
   build:
@@ -30,9 +38,19 @@ jobs:
       - name: Build Astro site
         run: bun run build
 
-      - name: Upload build artifact (for review)
-        uses: actions/upload-artifact@v4
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          name: astro-dist
           path: dist
-          retention-days: 7
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
