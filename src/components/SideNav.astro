@@ -4,17 +4,42 @@ export interface NavSection {
   label: string;
 }
 
+export interface ClaimSection {
+  id: string;
+  label: string;
+}
+
 export interface Props {
   title?: string;
   sections: NavSection[];
+  hasClaimSubnav?: boolean;
+  claims?: ClaimSection[];
+  /** ID-Wert der Hauptsection, deren Sub-Nav (claims) ausgeklappt werden soll */
+  claimsParentSection?: string;
 }
 
-const { title = 'Inhalt', sections } = Astro.props;
+const {
+  title = 'Inhalt',
+  sections,
+  hasClaimSubnav = false,
+  claims = [],
+  claimsParentSection = 'faktencheck',
+} = Astro.props;
 ---
 
 <nav class="side-nav" id="sideNav">
   <div class="side-nav-title">{title}</div>
   {sections.map((s) => (
-    <a href={s.href}>{s.label}</a>
+    <>
+      <a href={s.href}>{s.label}</a>
+      {hasClaimSubnav && s.href === `#${claimsParentSection}` && claims.length > 0 && (
+        <div class="side-nav-sub" id="claimNav">
+          <div class="claim-counter" id="claimCounter">Gelesen: <strong>0</strong>/{claims.length}</div>
+          {claims.map((c) => (
+            <a href={`#${c.id}`}><span class="chk"></span>{c.label}</a>
+          ))}
+        </div>
+      )}
+    </>
   ))}
 </nav>

@@ -1,0 +1,194 @@
+---
+import Default from './Default.astro';
+import SideNav from '../components/SideNav.astro';
+import MobileNav from '../components/MobileNav.astro';
+import '../styles/faktencheck.css';
+import type { CollectionEntry } from 'astro:content';
+
+export interface Props {
+  entry: CollectionEntry<'faktenchecks'>;
+}
+
+const { entry } = Astro.props;
+const { data } = entry;
+
+const mobileSections = data.sections.map((s) => ({
+  href: `#${s.id}`,
+  label: s.mobileLabel ?? s.label,
+}));
+
+const sideSections = data.sections.map((s) => ({
+  href: `#${s.id}`,
+  label: s.label,
+}));
+
+const hasClaims = data.claims && data.claims.length > 0;
+const claimCount = data.claims?.length ?? 0;
+---
+
+<Default
+  title={data.title}
+  description={data.description}
+  ogTitle={data.ogTitle ?? data.title}
+  ogDescription={data.ogDescription ?? data.description}
+  showProgressBar={true}
+>
+  <SideNav sections={sideSections} hasClaimSubnav={hasClaims} claims={data.claims} />
+  <MobileNav sections={mobileSections} />
+
+  <div class="content-header">
+    <div class="container">
+      <h1>{data.title}</h1>
+      {data.subtitle && <p class="subtitle">{data.subtitle}</p>}
+      {data.metaList && (
+        <div class="meta">
+          {data.metaList.map((m) => (
+            <div><strong>{m.label}:</strong> <Fragment set:html={m.value} /></div>
+          ))}
+        </div>
+      )}
+      {(data.anlass || data.frage) && (
+        <div class="meta">
+          {data.anlass && <Fragment><strong>Anlass:</strong> <Fragment set:html={data.anlass} /><br /></Fragment>}
+          {data.frage && <Fragment><strong>Frage:</strong> <Fragment set:html={data.frage} /></Fragment>}
+        </div>
+      )}
+    </div>
+  </div>
+
+  <div class="content">
+    {data.intro && (
+      <div class="intro-note">
+        <strong>Kurzantwort:</strong> <Fragment set:html={data.intro} />
+      </div>
+    )}
+
+    <slot />
+
+    {data.weiterfuehrend && data.weiterfuehrend.length > 0 && (
+      <div class="intro-note">
+        <strong>Weiterführend:</strong>
+        <ul>
+          {data.weiterfuehrend.map((w) => (
+            <li>
+              <a href={w.href} {...(w.external ? { target: '_blank', rel: 'noopener' } : {})}>
+                {w.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    )}
+  </div>
+
+  {hasClaims ? (
+    <script is:inline define:vars={{ claimCount }}>
+      (function () {
+        var sections = document.querySelectorAll('h2[id]');
+        var sideLinks = document.querySelectorAll('.side-nav > a');
+        var mobileLinks = document.querySelectorAll('.mobile-nav a');
+        var claimLinks = document.querySelectorAll('.side-nav-sub a');
+        var progressBar = document.getElementById('progressBar');
+        var claimNav = document.getElementById('claimNav');
+        var claimCards = document.querySelectorAll('.claim-card[id]');
+        var readClaims = new Set();
+
+        function addSmoothScroll(links) {
+          links.forEach(function (link) {
+            link.addEventListener('click', function (e) {
+              e.preventDefault();
+              var target = document.querySelector(this.getAttribute('href'));
+              if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+          });
+        }
+        addSmoothScroll(sideLinks);
+        addSmoothScroll(mobileLinks);
+        addSmoothScroll(claimLinks);
+
+        var ticking = false;
+        window.addEventListener('scroll', function () {
+          if (ticking) return;
+          window.requestAnimationFrame(function () {
+            var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            if (progressBar) progressBar.style.width = Math.min(docHeight > 0 ? (scrollTop / docHeight) * 100 : 0, 100) + '%';
+
+            var currentId = '';
+            sections.forEach(function (s) { if (s.getBoundingClientRect().top <= 120) currentId = s.id; });
+            function setActive(links) {
+              links.forEach(function (l) {
+                l.classList.toggle('active', l.getAttribute('href') === '#' + currentId);
+              });
+            }
+            setActive(sideLinks);
+            setActive(mobileLinks);
+
+            if (claimNav) claimNav.classList.toggle('open', currentId === 'faktencheck');
+
+            var activeClaimId = '';
+            claimCards.forEach(function (card) {
+              var r = card.getBoundingClientRect();
+              if (r.top <= 200) activeClaimId = card.id;
+              if (r.top < window.innerHeight * 0.6 && r.bottom > 0) readClaims.add(card.id);
+            });
+            claimLinks.forEach(function (l) {
+              var href = l.getAttribute('href').slice(1);
+              l.classList.toggle('active', href === activeClaimId);
+              if (readClaims.has(href)) l.classList.add('read');
+            });
+
+            var counter = document.getElementById('claimCounter');
+            if (counter) counter.innerHTML = 'Gelesen: <strong>' + readClaims.size + '</strong>/' + claimCount;
+
+            ticking = false;
+          });
+          ticking = true;
+        });
+      })();
+    </script>
+  ) : (
+    <script is:inline>
+      (function () {
+        var sections = document.querySelectorAll('h2[id]');
+        var sideLinks = document.querySelectorAll('.side-nav a');
+        var mobileLinks = document.querySelectorAll('.mobile-nav a');
+        var progressBar = document.getElementById('progressBar');
+
+        function addSmoothScroll(links) {
+          links.forEach(function (link) {
+            link.addEventListener('click', function (e) {
+              e.preventDefault();
+              var target = document.querySelector(this.getAttribute('href'));
+              if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+          });
+        }
+        addSmoothScroll(sideLinks);
+        addSmoothScroll(mobileLinks);
+
+        var ticking = false;
+        window.addEventListener('scroll', function () {
+          if (ticking) return;
+          window.requestAnimationFrame(function () {
+            var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            if (progressBar) progressBar.style.width = Math.min(docHeight > 0 ? (scrollTop / docHeight) * 100 : 0, 100) + '%';
+
+            var currentId = '';
+            sections.forEach(function (s) { if (s.getBoundingClientRect().top <= 120) currentId = s.id; });
+            function setActive(links) {
+              links.forEach(function (l) {
+                l.classList.toggle('active', l.getAttribute('href') === '#' + currentId);
+              });
+            }
+            setActive(sideLinks);
+            setActive(mobileLinks);
+            ticking = false;
+          });
+          ticking = true;
+        });
+      })();
+    </script>
+  )}
+</Default>
