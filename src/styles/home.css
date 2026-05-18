@@ -23,7 +23,7 @@
         --space-xl: 4rem;
         --space-2xl: 6rem;
 
-        --max-width: 1200px;
+        --max-width: 1280px;
         --border-radius: 8px;
       }
 
@@ -1463,7 +1463,7 @@
 
       .sidebar-nav {
         position: fixed;
-        left: max(calc((100vw - var(--max-width)) / 2 - 200px), 20px);
+        left: calc((100vw - var(--max-width)) / 2 - 200px);
         top: 50%;
         transform: translateY(-50%);
         width: 180px;
@@ -1483,14 +1483,10 @@
         pointer-events: auto;
       }
 
-      @media (max-width: 1400px) {
-        .sidebar-nav {
-          left: 12px;
-          width: 160px;
-        }
-      }
-
-      @media (max-width: 1200px) {
+      /* Side-Nav nur einblenden, wenn neben dem Container Platz fuer sie ist
+         (Container 1280 + 2x ~200 fuer Side-Nav = 1680). Darunter uebernimmt
+         die Mobile-Nav am unteren Bildrand. */
+      @media (max-width: 1700px) {
         .sidebar-nav {
           display: none;
         }
@@ -1707,7 +1703,7 @@
       }
 
       .explore-section .container {
-        max-width: 1200px;
+        max-width: var(--max-width);
       }
 
       .explore-section .section-header {
