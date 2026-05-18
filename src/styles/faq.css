@@ -78,10 +78,10 @@
         .content__header { margin-bottom: var(--space-lg); }
         .content__body { background: var(--color-white); padding: var(--space-lg); border-radius: var(--border-radius); border: 1px solid var(--color-border); }
 
-        /* FAQ Styles */
+        /* FAQ Styles - using <details>/<summary> for native accordion */
         .faq-item {
             border-bottom: 1px solid var(--color-border);
-            padding: var(--space-md) 0;
+            padding: var(--space-sm) 0;
         }
         .faq-item:last-child {
             border-bottom: none;
@@ -89,15 +89,21 @@
         .faq-item:first-child {
             padding-top: 0;
         }
+        .faq-item summary { list-style: none; }
+        .faq-item summary::-webkit-details-marker { display: none; }
         .faq-question {
             font-family: var(--font-display);
             font-size: 1.25rem;
             color: var(--color-primary-dark);
-            margin-bottom: var(--space-xs);
             display: flex;
             align-items: flex-start;
             gap: var(--space-xs);
+            cursor: pointer;
+            padding: var(--space-xs) 0;
+            user-select: none;
+            transition: color 0.15s ease;
         }
+        .faq-question:hover { color: var(--color-primary); }
         .faq-question::before {
             content: "?";
             display: inline-flex;
@@ -111,10 +117,25 @@
             font-family: var(--font-body);
             font-size: 1rem;
             font-weight: 600;
+            flex-shrink: 0;
+        }
+        .faq-question::after {
+            content: "+";
+            margin-left: auto;
+            font-family: var(--font-body);
+            font-weight: 400;
+            color: var(--color-primary);
+            font-size: 1.5rem;
+            line-height: 1;
+            padding-left: var(--space-sm);
+            flex-shrink: 0;
+        }
+        .faq-item[open] .faq-question::after {
+            content: "−";
         }
         .faq-answer {
             color: var(--color-text-muted);
-            margin-left: 36px;
+            margin: var(--space-sm) 0 var(--space-xs) 36px;
             font-size: 1rem;
         }
         .faq-answer strong {

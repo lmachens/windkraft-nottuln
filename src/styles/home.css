@@ -1265,7 +1265,7 @@
       }
 
       .petition-teaser__badge {
-        background: var(--color-accent);
+        background: var(--color-primary-dark);
         color: white;
         font-size: 0.75rem;
         font-weight: 700;

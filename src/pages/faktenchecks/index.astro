@@ -1,0 +1,134 @@
+---
+import { getCollection } from 'astro:content';
+import Default from '../../layouts/Default.astro';
+
+const entries = await getCollection('faktenchecks');
+const sorted = entries.sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
+
+const formatDate = (d: Date) =>
+  d.toLocaleDateString('de-DE', { day: '2-digit', month: 'long', year: 'numeric' });
+---
+
+<Default
+  title="Alle Faktenchecks – Windkraft Nottuln"
+  description="Übersicht aller Faktenchecks zur Windkraft-Debatte in Nottuln: geprüfte Aussagen mit Originalquellen, peer-reviewter Forschung und Behördenstellungnahmen."
+  ogDescription="Übersicht aller Faktenchecks zur Windkraft-Debatte in Nottuln."
+>
+  <section class="checks-list">
+    <div class="checks-list__inner">
+      <header class="checks-list__header">
+        <h1>Faktenchecks</h1>
+        <p>
+          Geprüfte Aussagen aus der Windkraft-Debatte in Nottuln. Jede Behauptung mit Originalquelle,
+          peer-reviewter Forschung und ggf. Behördenstellungnahme belegt.
+        </p>
+      </header>
+
+      <ol class="checks-list__items">
+        {sorted.map((entry) => (
+          <li class="check-item">
+            <a href={`/dokumentation/${entry.id}.html`} class="check-item__link">
+              <time class="check-item__date" datetime={entry.data.publishedAt.toISOString()}>
+                {formatDate(entry.data.publishedAt)}
+              </time>
+              <h2 class="check-item__title">{entry.data.title}</h2>
+              {entry.data.subtitle && (
+                <p class="check-item__subtitle">{entry.data.subtitle}</p>
+              )}
+              <p class="check-item__description">{entry.data.description}</p>
+              <span class="check-item__arrow" aria-hidden="true">→</span>
+            </a>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+</Default>
+
+<style is:global>
+  .checks-list {
+    padding: var(--space-xl) var(--space-md);
+    max-width: 880px;
+    margin: 0 auto;
+  }
+  .checks-list__header {
+    text-align: center;
+    margin-bottom: var(--space-xl);
+  }
+  .checks-list__header h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 5vw, 3rem);
+    color: var(--color-primary-dark);
+    margin-bottom: var(--space-sm);
+  }
+  .checks-list__header p {
+    color: var(--color-text-muted);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .checks-list__items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: var(--space-md);
+  }
+
+  .check-item__link {
+    display: block;
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    padding: 1.5rem 1.75rem;
+    text-decoration: none;
+    color: var(--color-text);
+    position: relative;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+  }
+  .check-item__link:hover {
+    border-color: var(--color-primary);
+    box-shadow: 0 4px 18px rgba(26, 95, 106, 0.08);
+    transform: translateY(-1px);
+  }
+
+  .check-item__date {
+    display: inline-block;
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.5rem;
+  }
+  .check-item__title {
+    font-family: var(--font-display);
+    font-size: 1.375rem;
+    line-height: 1.25;
+    color: var(--color-primary-dark);
+    margin: 0 0 0.3rem;
+  }
+  .check-item__subtitle {
+    font-size: 0.9375rem;
+    color: var(--color-primary);
+    margin: 0 0 0.75rem;
+    font-style: italic;
+  }
+  .check-item__description {
+    color: var(--color-text);
+    margin: 0;
+    line-height: 1.55;
+    padding-right: 2rem;
+  }
+  .check-item__arrow {
+    position: absolute;
+    right: 1.5rem;
+    bottom: 1.5rem;
+    color: var(--color-primary);
+    font-size: 1.25rem;
+    transition: transform 0.15s ease;
+  }
+  .check-item__link:hover .check-item__arrow {
+    transform: translateX(3px);
+  }
+</style>

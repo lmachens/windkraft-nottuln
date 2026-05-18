@@ -215,8 +215,8 @@ const faqSchemaRaw = `    {
             </div>
 
             <div class="content__body">
-                <div class="faq-item" id="infraschall">
-                    <h2 class="faq-question">Macht Infraschall von Windrädern krank?</h2>
+                <details class="faq-item" id="infraschall">
+                    <summary class="faq-question">Macht Infraschall von Windrädern krank?</summary>
                     <div class="faq-answer">
                         <p><strong>Nach aktuellem wissenschaftlichen Stand: Nein.</strong> Das Umweltbundesamt und die Universität Bayreuth finden keine Belege für Gesundheitsschäden durch Infraschall von Windenergieanlagen.</p>
                         <p>Zum Vergleich: <strong>3,5 Stunden Autofahrt</strong> setzen Sie mehr Infraschall aus als <strong>27 Jahre Aufenthalt</strong> in 300m Nähe zu einem Windrad. Der Infraschall von Windrädern liegt deutlich unter der menschlichen Wahrnehmungsschwelle.</p>
@@ -226,10 +226,10 @@ const faqSchemaRaw = `    {
                         <p><strong>Was Anwohner tatsächlich hören</strong>, ist nicht Infraschall, sondern das rhythmische "Wusch"-Geräusch im hörbaren Bereich - die sogenannte Amplitudenmodulation. Eine finnische Laborstudie (Maijala et al. 2021) zeigte: Probanden konnten Infraschall von Windturbinen nicht erkennen, und er hatte keinen Einfluss auf ihr Belästigungsempfinden. Die hörbare Amplitudenmodulation dagegen schon. Auch eine UBA-Feldstudie an fünf deutschen Windparks (2022) bestätigt: Die Belästigung korreliert mit hörbaren Geräuschmerkmalen, nicht mit Infraschall.</p>
                         <p class="faq-source">Quellen: <a href="https://www.bayceer.uni-bayreuth.de/infraschall/" target="_blank" rel="noopener">Uni Bayreuth</a>, <a href="https://www.umweltbundesamt.de/themen/laerm/nachbarschaftslaerm-laerm-von-anlagen/laerm-von-windenergieanlagen" target="_blank" rel="noopener">Umweltbundesamt</a>, <a href="https://doi.org/10.1016/j.apacoust.2025.111156" target="_blank" rel="noopener">Mattsson et al. 2025</a>, <a href="https://doi.org/10.1016/j.joule.2024.11.016" target="_blank" rel="noopener">McKenna et al. 2025</a>, <a href="https://doi.org/10.1289/EHP10757" target="_blank" rel="noopener">Marshall et al. 2023</a>, <a href="https://doi.org/10.1016/j.rser.2025.115642" target="_blank" rel="noopener">Baliatsas et al. 2025</a>, <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9703817/" target="_blank" rel="noopener">Müller et al. 2022</a>, <a href="https://doi.org/10.1121/10.0003509" target="_blank" rel="noopener">Maijala et al. 2021</a>, <a href="https://www.umweltbundesamt.de/publikationen/geraeuschwirkungen-bei-der-nutzung-von-windenergie" target="_blank" rel="noopener">UBA TEXTE 69/2022</a></p>
                     </div>
-                </div>
+                </details>
 
-                <div class="faq-item" id="stillstand">
-                    <h2 class="faq-question">Warum stehen Windräder manchmal still?</h2>
+                <details class="faq-item" id="stillstand">
+                    <summary class="faq-question">Warum stehen Windräder manchmal still?</summary>
                     <div class="faq-answer">
                         <p>Windräder drehen sich nicht 24/7, weil Wind nicht konstant weht – <strong>das ist normal, nicht Verschwendung</strong>.</p>
                         <p>Onshore-Anlagen erreichen je nach Standort und Generation <strong>1.800–3.200 <span class="tooltip" tabindex="0">Volllaststunden<span class="tooltip-content">Rechnerische Stunden pro Jahr, in denen eine Anlage mit voller Leistung laufen müsste, um die tatsächliche Jahresproduktion zu erreichen.</span></span></strong> pro Jahr (Fraunhofer ISE). Moderne Anlagen der 250m-Klasse erzielen im Schnitt bereits rund <strong>2.500 Stunden</strong> – deutlich mehr als der Flottendurchschnitt aller ~28.700 Anlagen, der alte Kleinanlagen einschließt. Technische Verfügbarkeit: <strong>98%</strong>. Nur <strong>3,5%</strong> der erneuerbaren Energie wird wegen Netzengpässen abgeregelt (9,4 TWh in 2024). Das bedeutet: <strong>96,5% werden genutzt.</strong></p>
@@ -237,10 +237,10 @@ const faqSchemaRaw = `    {
                         <p><strong>Lösung in Sicht:</strong> <span class="tooltip" tabindex="0">Ultranet<span class="tooltip-content">Gleichstromleitung von NRW nach Baden-Württemberg. 2 GW Kapazität.</span></span> (2026) und <span class="tooltip" tabindex="0">SuedLink<span class="tooltip-content">Größtes deutsches Stromleitungsprojekt. Verbindet Windstrom aus dem Norden mit Verbrauchern im Süden. 4 GW Kapazität.</span></span> (2028) schaffen neue Kapazitäten.</p>
                         <p class="faq-source">Quellen: <a href="https://www.bundesnetzagentur.de/SharedDocs/Pressemitteilungen/DE/2025/20250103_smard.html" target="_blank" rel="noopener">Bundesnetzagentur</a>, <a href="https://www.tennet.eu/de/projekte/suedlink" target="_blank" rel="noopener">SuedLink</a>, <a href="https://www.amprion.net/Netzausbau/Unsere-Projekte/Ultranet/" target="_blank" rel="noopener">Ultranet</a></p>
                     </div>
-                </div>
+                </details>
 
-                <div class="faq-item" id="hauswert">
-                    <h2 class="faq-question">Sinkt mein Hauswert durch Windräder in der Nähe?</h2>
+                <details class="faq-item" id="hauswert">
+                    <summary class="faq-question">Sinkt mein Hauswert durch Windräder in der Nähe?</summary>
                     <div class="faq-answer">
                         <p><strong>Die Studienlage zeigt ein differenziertes Bild:</strong></p>
                         <p>Laut RWI-Studie (2019) verlieren Häuser innerhalb von <strong>1 km Entfernung</strong> durchschnittlich <strong>7%</strong> an Wert. <strong>Ältere Häuser (Baujahr vor 1950) im ländlichen Raum</strong> sind stärker betroffen - hier kann der Wertverlust <strong>bis zu 23%</strong> betragen. Ab <strong>8-9 km</strong> ist kein Effekt mehr messbar.</p>
@@ -250,10 +250,10 @@ const faqSchemaRaw = `    {
                         <p><strong>Rechtliche Lage:</strong> Wertminderungen bilden nach ständiger Rechtsprechung <strong>für sich genommen keinen Maßstab</strong> für die Zulässigkeit eines Vorhabens (<a href="https://dejure.org/dienste/vernetzung/rechtsprechung?Gericht=BVerwG&Datum=26.09.1991&Aktenzeichen=4%20C%205/87" target="_blank" rel="noopener">BVerwG, 4 C 5/87</a>). Ein Abwehranspruch besteht nur, wenn die Wertminderung Folge einer unzumutbaren Nutzungsbeeinträchtigung ist (<a href="https://dejure.org/dienste/vernetzung/rechtsprechung?Gericht=BVerwG&Datum=23.08.1996&Aktenzeichen=4%20C%2013/94" target="_blank" rel="noopener">BVerwG, 4 C 13/94</a>). Im Außenbereich muss mit privilegierten Vorhaben wie Windrädern gerechnet werden.</p>
                         <p class="faq-source">Quellen: <a href="https://www.rwi-essen.de/presse/wissenschaftskommunikation/pressemitteilungen/detail/windraeder-lassen-immobilienpreise-sinken" target="_blank" rel="noopener">RWI Essen (2019)</a>, <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4918064" target="_blank" rel="noopener">RWI/Heuer &amp; Sommer (2024)</a>, <a href="https://www.pnas.org/doi/10.1073/pnas.2309372121" target="_blank" rel="noopener">PNAS (2024)</a>, <a href="https://dejure.org/dienste/vernetzung/rechtsprechung?Gericht=BVerwG&Datum=26.09.1991&Aktenzeichen=4%20C%205/87" target="_blank" rel="noopener">BVerwG 4 C 5/87</a> | <a href="/hauswert/">Interaktive Karte: Gebäudealter in Stockum</a></p>
                     </div>
-                </div>
+                </details>
 
-                <div class="faq-item" id="eeg-verguetung">
-                    <h2 class="faq-question">Bekommen Windräder Förderung, auch wenn sie nicht laufen?</h2>
+                <details class="faq-item" id="eeg-verguetung">
+                    <summary class="faq-question">Bekommen Windräder Förderung, auch wenn sie nicht laufen?</summary>
                     <div class="faq-answer">
                         <p><strong>Nein.</strong> Die <span class="tooltip" tabindex="0">EEG-Vergütung<span class="tooltip-content">Vergütung nach dem Erneuerbare-Energien-Gesetz. Gibt es ausschließlich für tatsächlich eingespeisten Strom.</span></span> gibt es <strong>ausschließlich für tatsächlich eingespeisten Strom</strong>. Ohne Netzanschluss und Einspeisung gibt es keine Vergütung.</p>
                         <p><strong>Rechtslage nach § 36e EEG:</strong></p>
@@ -266,10 +266,10 @@ const faqSchemaRaw = `    {
                         <p><strong>Wie hoch ist die Vergütung?</strong> Die <span class="tooltip" tabindex="0">EEG<span class="tooltip-content">Erneuerbare-Energien-Gesetz – regelt die Förderung erneuerbarer Energien in Deutschland.</span></span>-Vergütung wird per Ausschreibung ermittelt – Betreiber bieten um den niedrigsten Preis. Der Höchstwert liegt bei 7,35 ct/kWh, aber die tatsächlichen Zuschläge sind deutlich niedriger und sinken: <strong>7,34 ct</strong> (Feb 2024) → <strong>7,15 ct</strong> (Nov 2024) → <strong>7,00 ct</strong> (Feb 2025) → <strong>6,15 ct</strong> (Mai 2025). Bei negativen Strompreisen über 4 Stunden erhalten Betreiber zudem <strong>keine Vergütung</strong> (§51 EEG).</p>
                         <p class="faq-source">Quellen: <a href="https://www.gesetze-im-internet.de/eeg_2014/__36e.html" target="_blank" rel="noopener">§36e EEG</a>, <a href="https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Ausschreibungen/Wind_Onshore/BeendeteAusschreibungen/2025/GT1022025/artikel.html" target="_blank" rel="noopener">BNetzA Ausschreibungsergebnisse</a>, <a href="https://www.next-kraftwerke.de/wissen/einspeisemanagement" target="_blank" rel="noopener">Einspeisemanagement erklärt</a></p>
                     </div>
-                </div>
+                </details>
 
-                <div class="faq-item" id="einnahmen">
-                    <h2 class="faq-question">Was bekommt Nottuln von den Windrädern?</h2>
+                <details class="faq-item" id="einnahmen">
+                    <summary class="faq-question">Was bekommt Nottuln von den Windrädern?</summary>
                     <div class="faq-answer">
                         <p><strong>Nottuln profitiert von Windrädern im Gemeindegebiet:</strong></p>
                         <ul style="margin: var(--space-xs) 0 var(--space-xs) var(--space-md);">
@@ -282,10 +282,10 @@ const faqSchemaRaw = `    {
                         <p style="font-size: 0.9375rem; color: var(--color-text-muted); margin-bottom: var(--space-sm);"><strong>Betreiber in Nottuln:</strong> Stadtwerke Münster, Bürgerwind Nottuln-Gladbeck, Bürgerwind Roruper Berg u.a. Alle zahlen nach §6 EEG an die betroffenen Gemeinden im 2,5-km-Umkreis.</p>
                         <p class="faq-source">Quellen: <a href="https://www.gesetze-im-internet.de/gewstg/__33.html" target="_blank" rel="noopener">§33 GewStG</a>, <a href="https://www.gesetze-im-internet.de/gewstg/__29.html" target="_blank" rel="noopener">§29 GewStG</a>, <a href="https://www.gesetze-im-internet.de/eeg_2014/__6.html" target="_blank" rel="noopener">§6 EEG</a>, <a href="https://www.stadtwerke-muenster.de/unternehmen/muenster-wird-gruen/energiewende/windenergie/nottuln" target="_blank" rel="noopener">Stadtwerke Münster</a>, <a href="https://www.nottuln.de/sessionnet/sessionnetbi/vo0050.php?__kvonr=2006033526" target="_blank" rel="noopener">Gemeinde Nottuln (SessionNet)</a>, <a href="https://www.nottuln.de/leben-in-nottuln/klimaschutz-energie-umwelt/windenergie-nottuln" target="_blank" rel="noopener">nottuln.de/windenergie</a></p>
                     </div>
-                </div>
+                </details>
 
-                <div class="faq-item" id="verfahren">
-                    <h2 class="faq-question">Ist das Genehmigungsverfahren rechtmäßig?</h2>
+                <details class="faq-item" id="verfahren">
+                    <summary class="faq-question">Ist das Genehmigungsverfahren rechtmäßig?</summary>
                     <div class="faq-answer">
                         <p><strong>Ja.</strong> Der Kreis Coesfeld hat in einer offiziellen Stellungnahme bestätigt, dass die Vorbescheide auf Grundlage der damals geltenden Rechtslage rechtmäßig erteilt wurden.</p>
                         <p>Wichtig: <strong>Vorbescheide sind keine Baugenehmigungen.</strong> Sie klären vorab die grundsätzliche planungsrechtliche Zulässigkeit eines Standorts. Nach §9 BImSchG ist die Behörde im Regelfall zur positiven Bescheidung verpflichtet, wenn alle Voraussetzungen erfüllt sind (Soll-Vorschrift). Das vollständige Genehmigungsverfahren mit <strong>Artenschutz, Lärmschutz und Umweltverträglichkeitsprüfung</strong> steht noch aus und wird 2026 erwartet.</p>
@@ -293,10 +293,10 @@ const faqSchemaRaw = `    {
                         <p style="font-size: 0.9375rem; color: var(--color-text-muted);">Die rechtlichen Grundlagen - von §9 BImSchG über §36a LPlG NRW bis zum Regionalplan - werden auf der <a href="/gesetze/#vorbescheid" style="color: var(--color-primary);">Gesetze-Seite</a> ausführlich erklärt.</p>
                         <p class="faq-source">Quelle: <a href="https://www.kreis-coesfeld.de/aktuelles/pressemeldungen/details/news-stellungnahme-des-kreises-coesfeld-zu-in-der-gemeinde-nottuln-in-umlauf-befindlichen-flugblaettern" target="_blank" rel="noopener">Kreis Coesfeld</a></p>
                     </div>
-                </div>
+                </details>
 
-                <div class="faq-item" id="fnp">
-                    <h2 class="faq-question">Warum hat Nottuln den Flächennutzungsplan aufgehoben?</h2>
+                <details class="faq-item" id="fnp">
+                    <summary class="faq-question">Warum hat Nottuln den Flächennutzungsplan aufgehoben?</summary>
                     <div class="faq-answer">
                         <p><strong>Weil die alte Planung rechtlich unwirksam war und das Bundesrecht sich geändert hat.</strong></p>
                         <p>Die 45. <span class="tooltip" tabindex="0">FNP<span class="tooltip-content">Flächennutzungsplan – legt fest, welche Flächen einer Gemeinde wie genutzt werden dürfen (Wohnen, Gewerbe, Landwirtschaft, Windenergie etc.).</span></span>-Änderung (2004) wies zwei Konzentrationszonen für Windenergie aus (Buxtrup/Horst und Hastehausen). Das <span class="tooltip" tabindex="0">BVerwG<span class="tooltip-content">Bundesverwaltungsgericht – höchstes deutsches Verwaltungsgericht.</span></span> stellte 2020 fest: Diese Änderung war <strong>wegen eines Bekanntmachungsmangels nie wirksam</strong> in Kraft getreten.</p>
@@ -311,10 +311,10 @@ const faqSchemaRaw = `    {
                         <p>Erklärtes Ziel der Aufhebung: „Der Windenergienutzung im Gemeindegebiet mehr Raum geben." Das Moratorium nach §36a LPlG NRW trat erst am 15.02.2025 in Kraft – also <strong>über ein Jahr nach</strong> der FNP-Aufhebung.</p>
                         <p class="faq-source">Quellen: <a href="https://www.nottuln.de/sessionnet/sessionnetbi/vo0050.php?__kvonr=2006032995" target="_blank" rel="noopener">Vorlage 126/2023 (SessionNet)</a>, <a href="https://www.nottuln.de/fileadmin/media/PDF/Fachbereich_3/Flaechennutzungsplan_AEnderungen/86.AEnderung_FNP__zusammenfassende_Erklaerung_.pdf" target="_blank" rel="noopener">Zusammenfassende Erklärung 86. FNP-Änderung (PDF)</a>, <a href="https://www.kreis-coesfeld.de/aktuelles/pressemeldungen/details/news-stellungnahme-des-kreises-coesfeld-zu-in-der-gemeinde-nottuln-in-umlauf-befindlichen-flugblaettern" target="_blank" rel="noopener">Kreis Coesfeld</a></p>
                     </div>
-                </div>
+                </details>
 
-                <div class="faq-item" id="abstand">
-                    <h2 class="faq-question">Warum fordern manche einen 2-km-Abstand?</h2>
+                <details class="faq-item" id="abstand">
+                    <summary class="faq-question">Warum fordern manche einen 2-km-Abstand?</summary>
                     <div class="faq-answer">
                         <p>Die Forderung klingt einleuchtend, <strong>hat aber keine wissenschaftliche Grundlage</strong>.</p>
                         <p>Was Anwohner tatsächlich schützt, sind <strong>Immissionsgrenzwerte</strong>: je nach Gebietstyp 35-45 dB(A) nachts (TA Lärm), max. 8h Schattenwurf pro Jahr. Im ländlichen Außenbereich, wo die meisten Windräder stehen, gelten 45 dB(A). Welcher Wert für ein Grundstück gilt, ergibt sich aus dem <a href="https://www.o-sp.de/nottuln/karte" target="_blank" rel="noopener">Bebauungsplan</a>.</p>
@@ -322,10 +322,10 @@ const faqSchemaRaw = `    {
                         <p><strong>Sind größere Anlagen lauter?</strong> Kaum. Die Schallemission moderner 6-7 MW-Anlagen liegt bei 104-107 dB(A) mit Schallminderungstechnik (Serrations) – nur 2-3 dB(A) mehr als ältere 2-3 MW-Anlagen mit ca. 104 dB(A). Hersteller haben die Schallemission von der Leistungssteigerung entkoppelt (<a href="https://doi.org/10.1016/j.apenergy.2023.120856" target="_blank" rel="noopener">Hoen et al. 2023, Applied Energy</a>). Zudem verfügen moderne Anlagen über bis zu 16 schallreduzierte Betriebsmodi für den Nachtbetrieb.</p>
                         <p class="faq-source">Quellen: <a href="https://www.umweltbundesamt.de/themen/laerm/regelungen-normen/technische-anleitung-zum-schutz-gegen-laerm" target="_blank" rel="noopener">UBA: TA Lärm</a>; <a href="https://www.uvp-verbund.de/documents-ige-ng/igc_ni/69946C06-3D23-4D35-953E-864F269C9072/06_2_Schallemissionen-Leistungskurven-Schubbeiwerte_N163-6x_LKVE.pdf" target="_blank" rel="noopener">Nordex N163 Schalldaten</a>; <a href="https://doi.org/10.1016/j.apenergy.2023.120856" target="_blank" rel="noopener">Hoen et al. 2023</a></p>
                     </div>
-                </div>
+                </details>
 
-                <div class="faq-item" id="voegel">
-                    <h2 class="faq-question">Töten Windräder viele Vögel?</h2>
+                <details class="faq-item" id="voegel">
+                    <summary class="faq-question">Töten Windräder viele Vögel?</summary>
                     <div class="faq-answer">
                         <p>Windräder töten in Deutschland etwa <strong>100.000 Vögel pro Jahr</strong>. Das klingt viel, ist aber im Vergleich wenig:</p>
                         <ul style="margin: var(--space-xs) 0 var(--space-xs) var(--space-md);">
@@ -336,10 +336,10 @@ const faqSchemaRaw = `    {
                         <p>Windkraft verursacht damit <strong>&lt;0,1%</strong> der Vogeltode. Für Greifvögel wie den Rotmilan ist die Situation differenzierter – siehe nächste Frage.</p>
                         <p class="faq-source">Quelle: <a href="https://www.nabu.de/tiere-und-pflanzen/voegel/gefaehrdungen/24661.html" target="_blank" rel="noopener">NABU</a></p>
                     </div>
-                </div>
+                </details>
 
-                <div class="faq-item" id="rotmilan">
-                    <h2 class="faq-question">Was ist mit dem Rotmilan?</h2>
+                <details class="faq-item" id="rotmilan">
+                    <summary class="faq-question">Was ist mit dem Rotmilan?</summary>
                     <div class="faq-answer">
                         <p>Der <span class="tooltip" tabindex="0">Rotmilan<span class="tooltip-content">Greifvogel mit gegabeltem Schwanz. Deutschland beherbergt über 50% des weltweiten Bestands.</span></span> ist ein häufiges Argument gegen Windkraft. Die Wissenschaft zeigt ein differenziertes Bild:</p>
                         <p><strong>Flughöhen:</strong> Der Rotmilan fliegt beim Suchflug (Beutesuche) im Mittel etwa <strong>40m</strong> hoch, selten über 80m. Bei einer 266m-Anlage liegt die Rotorunterkante bei etwa <strong>96m</strong> – meist fliegt er also unterhalb der Rotoren.</p>
@@ -353,20 +353,20 @@ const faqSchemaRaw = `    {
                         <p><strong>Todesursachen:</strong> Das EU-Projekt <span class="tooltip" tabindex="0">LIFE EUROKITE<span class="tooltip-content">EU-Projekt (2019–2027) zum Schutz des Rotmilans. Über 3.000 Tiere in 12 Ländern mit GPS-Sendern ausgestattet.</span></span> erfasst systematisch, woran besenderte Rotmilane sterben. Zwischenergebnisse für Deutschland (n=121): natürliche Fressfeinde (41%), Schienenverkehr (12%), Straßenverkehr (10%), WEA-Kollisionen (<strong>8%</strong>). WEA sind damit ein relevanter, aber nicht der größte Faktor. <em>(Zwischenergebnisse; peer-reviewed Publikation zur Todesursachen-Rangfolge steht noch aus.)</em></p>
                         <p class="faq-source">Quellen: <a href="https://www.presseportal.ch/de/pm/100002863/100936241" target="_blank" rel="noopener">Skrabal et al. 2025 / Schweizer Vogelwarte</a>, <a href="https://www.topagrar.com/energie/news/erneut-bestaetigt-rotmilane-und-windraeder-vertragen-sich-9372399.html" target="_blank" rel="noopener">Biologische Station Paderborn</a>, <a href="https://www.life-eurokite.eu/en/our-birds/numbers-facts.html" target="_blank" rel="noopener">LIFE EUROKITE</a></p>
                     </div>
-                </div>
+                </details>
 
-                <div class="faq-item" id="fledermaeuse">
-                    <h2 class="faq-question">Sind Fledermäuse durch Windräder gefährdet?</h2>
+                <details class="faq-item" id="fledermaeuse">
+                    <summary class="faq-question">Sind Fledermäuse durch Windräder gefährdet?</summary>
                     <div class="faq-answer">
                         <p><strong>Flughöhen:</strong> 95% aller Fledermausflüge finden unter <strong>144m</strong> statt (Leibniz-IZW). Die meisten Arten jagen unter 40m (Baumwipfelhöhe). Bei 266m-Anlagen mit Rotorunterkante bei ~96m gibt es zwar Überschneidungen, aber die meisten bodennah fliegenden Arten sind nicht betroffen.</p>
                         <p><strong>Wirksamer Schutz:</strong> Moderne Windräder werden bei niedrigen Windgeschwindigkeiten (&lt;8 m/s) und hoher Fledermausaktivität abgeschaltet. Bei Anlagen mit solcher <strong>Betriebssteuerung</strong> wurden in Studien kaum noch Schlagopfer gefunden.</p>
                         <p><strong>Ertragsverlust:</strong> Nur <strong>1-4%</strong> – ein kleiner Preis für effektiven Artenschutz.</p>
                         <p class="faq-source">Quellen: <a href="https://mecklenburg-vorpommern.nabu.de/tiere-und-pflanzen/aktionen-und-projekte/fledermauszug/21333.html" target="_blank" rel="noopener">NABU MV / Leibniz-IZW</a>, <a href="https://www.leibniz-gemeinschaft.de/ueber-uns/neues/forschungsnachrichten/forschungsnachrichten-single/newsdetails/alte-windenergieanlagen-gefaehrden-fledermaeuse" target="_blank" rel="noopener">Leibniz-Gemeinschaft</a></p>
                     </div>
-                </div>
+                </details>
 
-                <div class="faq-item" id="zugvoegel">
-                    <h2 class="faq-question">Stören Windräder Zugvögel wie Kraniche und Gänse?</h2>
+                <details class="faq-item" id="zugvoegel">
+                    <summary class="faq-question">Stören Windräder Zugvögel wie Kraniche und Gänse?</summary>
                     <div class="faq-answer">
                         <p><strong>Flughöhe:</strong> <span class="tooltip" tabindex="0">Kraniche<span class="tooltip-content">Grus grus – Großvogel mit bis zu 2,2m Flügelspannweite. Zieht auf dem westeuropäischen Zugweg über das Münsterland.</span></span> fliegen über Deutschland typischerweise auf <strong>50–250m Höhe</strong> (NABU) – nach der Ostseeüberquerung verlieren sie an Höhe. Der <span class="tooltip" tabindex="0">Rotorbereich<span class="tooltip-content">Bei einer 266m-Anlage: Rotorunterkante ~96m, Rotoroberkante ~266m.</span></span> einer 266m-Anlage liegt bei 96–266m – Flughöhe und Rotorbereich überschneiden sich also. Über die gesamte Zugroute gemittelt liegt die Flughöhe bei <span class="tooltip" tabindex="0">~300m<span class="tooltip-content">GPS-Studie mit 7 besenderten Kranichen (kraniche.de). Kleine Stichprobe.</span></span> (kraniche.de). Bei Schlechtwetter (Nebel, tiefe Wolken) steigt das Kollisionsrisiko zusätzlich, weil die Sicht eingeschränkt ist.</p>
                         <p><strong>Dokumentierte Kollisionen:</strong> Seit 2002 wurden in ganz Deutschland <strong>54 Kranich-Schlagopfer</strong> dokumentiert (<span class="tooltip" tabindex="0">Vogelschutzwarte Brandenburg<span class="tooltip-content">Staatliche Fachbehörde, die seit 2002 eine zentrale Schlagopferkartei für ganz Deutschland führt (Tobias Dürr).</span></span>) – bei Hunderttausenden Kranichen auf dem Zugweg und über 28.000 Windrädern. Die Behörde stuft die Kollisionsgefährdung als „sehr gering" ein. Auch bei <span class="tooltip" tabindex="0">Wildgänsen<span class="tooltip-content">Vor allem Bläss- und Saatgänse. 120.000–200.000 Blässgänse überwintern jährlich in NRW.</span></span>: <strong>4 Blässgans-Funde</strong> deutschlandweit.</p>
@@ -375,49 +375,49 @@ const faqSchemaRaw = `    {
                         <p><strong>Münsterland:</strong> An guten Tagen ziehen bis zu <strong>50.000 Kraniche</strong> über NRW (NABU NRW). Schutzmaßnahmen: In Norddeutschland gibt es eine ehrenamtliche „Kranich-Meldekette" (NABU) für temporäre Abschaltungen bei Massenzug. In NRW gilt ein <strong>1.000m-Ausschlussbereich</strong> um Kranich-Brutplätze.</p>
                         <p class="faq-source">Quellen: <a href="https://lfu.brandenburg.de/sixcms/media.php/9/Dokumentation-Voegel-Windkraft.pdf" target="_blank" rel="noopener">LfU Brandenburg</a>, <a href="https://www.naturschutz-energiewende.de/fragenundantworten/189-stoerungsempfindlichkeit-kollisionsgefaehrdung-kranich-windenergieanlagen/" target="_blank" rel="noopener">KNE</a>, <a href="https://www.nabu.de/tiere-und-pflanzen/voegel/artenschutz/kranich/kranichzug-aktuell.html" target="_blank" rel="noopener">NABU</a>, <a href="https://kraniche.de/de/news-leser/wie-hoch-fliegen-kraniche-eigentlich.html" target="_blank" rel="noopener">kraniche.de</a>, <a href="https://nrw.nabu.de/tiere-und-pflanzen/voegel/vogelzug/14200.html" target="_blank" rel="noopener">NABU NRW</a>, <a href="https://academic.oup.com/icesjms/article/66/4/746/603346" target="_blank" rel="noopener">Masden et al. 2009</a></p>
                     </div>
-                </div>
+                </details>
 
-                <div class="faq-item" id="schatten">
-                    <h2 class="faq-question">Wie viel Schatten werfen Windräder?</h2>
+                <details class="faq-item" id="schatten">
+                    <summary class="faq-question">Wie viel Schatten werfen Windräder?</summary>
                     <div class="faq-answer">
                         <p>Die gesetzlichen Grenzwerte (<span class="tooltip" tabindex="0">LAI<span class="tooltip-content">Länderausschuss für Immissionsschutz – das Gremium der Bundesländer, das einheitliche Umweltschutz-Richtlinien erarbeitet.</span></span>-Hinweise) erlauben maximal <strong>30 Stunden</strong> <span class="tooltip" tabindex="0">astronomisch möglichen<span class="tooltip-content">Theoretisches Maximum: Berechnet unter der Annahme, dass die Sonne immer scheint (keine Wolken) und der Rotor immer senkrecht zur Sonne steht. In der Realität deutlich weniger.</span></span> Schattenwurf pro Jahr und <strong>30 Minuten pro Tag</strong>.</p>
                         <p>Durch <strong>Abschaltautomatik</strong> wird die tatsächliche Beschattung auf maximal <strong>8 Stunden pro Jahr</strong> begrenzt. Das entspricht weniger als 1 Minute pro Tag im Durchschnitt.</p>
                         <p class="faq-source">Quelle: <a href="https://www.lai-immissionsschutz.de/documents/wka_schattenwurfhinweise_stand_23_1588595757.01.pdf" target="_blank" rel="noopener">LAI-Hinweise (PDF)</a></p>
                     </div>
-                </div>
+                </details>
 
-                <div class="faq-item" id="eiswurf">
-                    <h2 class="faq-question">Ist Eiswurf von Windrädern gefährlich?</h2>
+                <details class="faq-item" id="eiswurf">
+                    <summary class="faq-question">Ist Eiswurf von Windrädern gefährlich?</summary>
                     <div class="faq-answer">
                         <p>Bei Frost kann sich Eis an den Rotorblättern bilden und beim Abtauen herabfallen (Eisfall) oder bei drehendem Rotor abgeworfen werden (Eiswurf). Moderne Anlagen haben deshalb <strong>Eiserkennungssysteme</strong>, die die Anlage bei Eisansatz automatisch abschalten.</p>
                         <p><strong>Sicherheitsabstand:</strong> Der NRW-Windenergie-Erlass schreibt einen Abstand von <strong>1,5 x (Nabenhöhe + Rotordurchmesser)</strong> zu Verkehrswegen und Gebäuden vor. Bei einer 266m-Anlage (181m Nabenhöhe + 170m Rotor) wären das ca. 530m - in der Praxis ist der Abstand zu Wohnhäusern deutlich größer.</p>
                         <p><strong>Unfallstatistik:</strong> In Deutschland ist trotz über 30.000 Windrädern und über 100.000 kumulierter Anlagenbetriebsjahre <strong>kein einziger Personenschaden</strong> durch Eiswurf bekannt.</p>
                         <p class="faq-source">Quellen: NRW-Windenergie-Erlass Kap. 5.2.3.5, BWE, <a href="https://www.fachagentur-wind-solar.de/fileadmin/Veroeffentlichungen/Wind/Allgemein/FA_Wind_Zusammenfassung_Eiswurf_11-2019.pdf" target="_blank" rel="noopener">FA Wind / IEA Wind TCP Task 19 (2019)</a></p>
                     </div>
-                </div>
+                </details>
 
-                <div class="faq-item" id="optik">
-                    <h2 class="faq-question">Wirken Windräder optisch bedrängend?</h2>
+                <details class="faq-item" id="optik">
+                    <summary class="faq-question">Wirken Windräder optisch bedrängend?</summary>
                     <div class="faq-answer">
                         <p>Seit 2023 regelt <a href="https://www.gesetze-im-internet.de/bbaug/__249.html" target="_blank" rel="noopener">§249 Abs. 10 BauGB</a>: Ab einem Abstand von <strong>2x der Anlagenhöhe</strong> (2H) steht die optisch bedrängende Wirkung einem Windrad <strong>"in der Regel nicht entgegen"</strong>. Bei einer 266m-Anlage wären das 532m - die geplanten Anlagen in Stockum stehen deutlich weiter weg.</p>
                         <p>Nur in <strong>atypischen Konstellationen</strong> kann bei Einhaltung des 2H-Abstands noch eine bedrängende Wirkung vorliegen. Das OVG NRW legt dafür einen <strong>strengen Maßstab</strong> an: Regelmäßig vorkommende Umstände reichen nicht aus, auch wenn sie erhebliche Auswirkungen auf die Nachbarn haben.</p>
                         <p>Wichtig: Die bloße <strong>Sichtbarkeit</strong> eines Windrads ist kein Ablehnungsgrund. Im Außenbereich muss mit privilegierten Vorhaben gerechnet werden.</p>
                         <p class="faq-source">Quellen: <a href="https://www.gesetze-im-internet.de/bbaug/__249.html" target="_blank" rel="noopener">§249 Abs. 10 BauGB</a>, <a href="https://www.maslaton.de/news/Windenergie--OVG-Muenster-Zusammenspiel-von--249-Abs-10-BauGB-und--2-EEG-2023--n906" target="_blank" rel="noopener">OVG Münster zu §249 Abs. 10</a> | <a href="/gesetze/#optisch">Details auf der Gesetze-Seite</a></p>
                     </div>
-                </div>
+                </details>
 
-                <div class="faq-item" id="bedarf">
-                    <h2 class="faq-question">Brauchen wir wirklich mehr Windkraft?</h2>
+                <details class="faq-item" id="bedarf">
+                    <summary class="faq-question">Brauchen wir wirklich mehr Windkraft?</summary>
                     <div class="faq-answer">
                         <p><strong>Ja.</strong> 2024 stammten <strong>59%</strong> des deutschen Stroms aus erneuerbaren Quellen, <strong>41%</strong> noch aus fossilen. Das Klimaziel bis 2030: <strong>80% aus heimischer Erzeugung</strong> (EEG 2023).</p>
                         <p>Hinzu kommt steigender Strombedarf durch E-Autos und Wärmepumpen. Deutschland importiert zudem <strong>70% seiner Energie</strong> für etwa <strong>70 Milliarden Euro jährlich</strong> - heimische Windkraft reduziert diese Abhängigkeit.</p>
                         <p><strong>Häufiges Missverständnis:</strong> Manchmal heißt es, Erneuerbare deckten "nur 22% des Energiebedarfs". Diese Zahl bezieht sich auf den gesamten <span class="tooltip" tabindex="0">Endenergieverbrauch<span class="tooltip-content">Strom + Wärme + Verkehr zusammen. Strom macht davon etwa 25% aus, Wärme ~50%, Verkehr ~25%.</span></span> (Strom + Wärme + Verkehr). Windräder erzeugen aber <strong>Strom</strong> - und dort stieg der EE-Anteil von 46% (2020) auf 59% (2024). Dass Wärme (18% EE) und Verkehr (7% EE) hinterherhinken, liegt nicht an zu vielen Windrädern, sondern an zu wenig Wärmepumpen und E-Autos.</p>
                         <p class="faq-source">Quellen: <a href="https://www.destatis.de/DE/Presse/Pressemitteilungen/2025/03/PD25_091_43312.html" target="_blank" rel="noopener">Destatis</a>, <a href="https://www.gesetze-im-internet.de/eeg_2014/__1.html" target="_blank" rel="noopener">EEG 2023</a>, <a href="https://www.umweltbundesamt.de/daten/energie/erneuerbare-energien-in-zahlen" target="_blank" rel="noopener">UBA</a></p>
                     </div>
-                </div>
+                </details>
 
-                <div class="faq-item" id="standort">
-                    <h2 class="faq-question">Warum nicht an der Autobahn bauen?</h2>
+                <details class="faq-item" id="standort">
+                    <summary class="faq-question">Warum nicht an der Autobahn bauen?</summary>
                     <div class="faq-answer">
                         <p>Diese Frage wird oft gestellt – die Antwort ist differenzierter als erwartet:</p>
                         <p><strong>Rechtlich ist es möglich:</strong> Nach <span class="tooltip" tabindex="0">§ 9 FStrG<span class="tooltip-content">Bundesfernstraßengesetz – regelt u.a. Bauverbote und -beschränkungen entlang von Autobahnen und Bundesstraßen.</span></span> gilt nur ein 40m-Bauverbot direkt neben Autobahnen, darüber hinaus eine 100m-Beschränkungszone. Für Windräder, bei denen nur der Rotor in diese Zone ragt, gelten die Beschränkungen nicht. Das <span class="tooltip" tabindex="0">OVG<span class="tooltip-content">Oberverwaltungsgericht – zweite Instanz der Verwaltungsgerichtsbarkeit, entscheidet über Berufungen gegen Urteile der Verwaltungsgerichte.</span></span> Berlin-Brandenburg hat 2024 eine Anlage mit nur <strong>110m Abstand</strong> zur A12 genehmigt.</p>
@@ -425,10 +425,10 @@ const faqSchemaRaw = `    {
                         <p>Die geplanten Standorte wurden im Regionalplan Münsterland nach Eignungskriterien ausgewählt und von den Grundstückseigentümern angeboten.</p>
                         <p class="faq-source">Quellen: <a href="https://www.gesetze-im-internet.de/fstrg/__9.html" target="_blank" rel="noopener">§9 FStrG</a>, <a href="https://www.maslaton.de/news/Windenergie--Zulaessigkeit-einer-Windenergieanlage-dicht-an-Bundesautobahn--n1068" target="_blank" rel="noopener">OVG Berlin-Brandenburg 2024</a>, <a href="https://www.bezreg-muenster.de/themen/regionalplanung-und-regionalrat/regionalplan-muensterland/windenergie-flaechenbeitragswert" target="_blank" rel="noopener">Regionalplan Münsterland</a></p>
                     </div>
-                </div>
+                </details>
 
-                <div class="faq-item" id="muenster">
-                    <h2 class="faq-question">Warum bauen die Stadtwerke Münster nicht in Münster?</h2>
+                <details class="faq-item" id="muenster">
+                    <summary class="faq-question">Warum bauen die Stadtwerke Münster nicht in Münster?</summary>
                     <div class="faq-answer">
                         <p><strong>Kurze Antwort: Sie bauen beides.</strong> Die Stadtwerke Münster betreiben Windräder in Münster <em>und</em> im Umland – und in Nottuln sind sie nur einer von vielen Betreibern.</p>
 
@@ -458,10 +458,10 @@ const faqSchemaRaw = `    {
 
                         <p class="faq-source">Quellen: <a href="https://www.stadtwerke-muenster.de/unternehmen/muenster-wird-gruen/energiewende/windenergie" target="_blank" rel="noopener">Stadtwerke Münster</a>, <a href="https://www.stadt-muenster.de/klima/erneuerbare-energien/windenergie" target="_blank" rel="noopener">Stadt Münster</a>, <a href="https://www.nottuln.de/leben-in-nottuln/klimaschutz-energie-umwelt/windenergie-nottuln" target="_blank" rel="noopener">Gemeinde Nottuln</a></p>
                     </div>
-                </div>
+                </details>
 
-                <div class="faq-item" id="redispatch-kosten">
-                    <h2 class="faq-question">Kosten Erneuerbare 3 Milliarden Euro?</h2>
+                <details class="faq-item" id="redispatch-kosten">
+                    <summary class="faq-question">Kosten Erneuerbare 3 Milliarden Euro?</summary>
                     <div class="faq-answer">
                         <p><strong>Die oft zitierten „3 Milliarden" sind irreführend.</strong> 2,8 Mrd. Euro (2024) sind die Gesamtkosten für <span class="tooltip" tabindex="0">Netzengpassmanagement<span class="tooltip-content">Maßnahmen der Netzbetreiber, um Engpässe im Stromnetz zu beheben - z.B. Kraftwerke hoch- oder runterfahren. Betrifft alle Energieträger, nicht nur Erneuerbare.</span></span> - also alle Eingriffe ins Stromnetz, nicht nur bei Erneuerbaren.</p>
                         <p><strong>Aufschlüsselung:</strong></p>
@@ -476,10 +476,10 @@ const faqSchemaRaw = `    {
                         <p><strong>Und das Netz ist stabil:</strong> 2024 lag die durchschnittliche Stromunterbrechung bei <strong>11,7 Minuten pro Jahr</strong> - das deutsche Stromnetz gehört laut Bundesnetzagentur zu den zuverlässigsten in Europa. Trotz steigendem EE-Anteil gibt es laut BNetzA "keine negativen Tendenzen" bei der Versorgungssicherheit.</p>
                         <p class="faq-source">Quellen: <a href="https://www.smard.de/page/home/topic-article/5892/213288" target="_blank" rel="noopener">SMARD Jahresbericht 2024</a>, <a href="https://www.bundesnetzagentur.de/SharedDocs/Pressemitteilungen/DE/2025/20251009_Saidi_Strom.html" target="_blank" rel="noopener">BNetzA SAIDI 2024</a></p>
                     </div>
-                </div>
+                </details>
 
-                <div class="faq-item" id="umweltvertraeglichkeit">
-                    <h2 class="faq-question">Sind Windräder umweltschädlich durch Öl, Mikroplastik oder PFAS?</h2>
+                <details class="faq-item" id="umweltvertraeglichkeit">
+                    <summary class="faq-question">Sind Windräder umweltschädlich durch Öl, Mikroplastik oder PFAS?</summary>
                     <div class="faq-answer">
                         <p><strong>Diese Behauptungen werden in Anti-Windkraft-Kampagnen übertrieben dargestellt.</strong> Die tatsächlichen Umweltauswirkungen sind gering und reguliert:</p>
                         <p><strong>Getriebeöle:</strong> Windräder enthalten je nach Größe 200-1.500 Liter Schmier- und Hydrauliköl. Diese sind als <span class="tooltip" tabindex="0">WGK 1<span class="tooltip-content">Wassergefährdungsklasse 1 = schwach wassergefährdend. Die Skala reicht von WGK 1 (schwach) bis WGK 3 (stark). Benzin und Altöl sind WGK 3. Quelle: BLAK UmwS Merkblatt 2023.</span></span> eingestuft (schwach wassergefährdend) – die Bezeichnung "hochgiftig" ist sachlich falsch. Gesetzlich vorgeschrieben sind Auffangwannen nach <span class="tooltip" tabindex="0">AwSV<span class="tooltip-content">Verordnung über Anlagen zum Umgang mit wassergefährdenden Stoffen. Regelt Schutzmaßnahmen wie Auffangwannen, Doppelwandigkeit und Leckageerkennung.</span></span>, regelmäßige Inspektionen und verschärfte Auflagen in Wasserschutzgebieten. Getriebelose Anlagen (z.B. Enercon) benötigen deutlich weniger Öl.</p>
@@ -488,10 +488,10 @@ const faqSchemaRaw = `    {
                         <p><strong><span class="tooltip" tabindex="0">BPA<span class="tooltip-content">Bisphenol A – Industriechemikalie, die in Epoxidharzen (z.B. Rotorblättern) vorkommt. EU-Trinkwassergrenzwert: 2,5 µg/L (seit 2024).</span></span> (Bisphenol A):</strong> In Epoxidharzen der Rotorblätter enthalten. Der EU-Trinkwassergrenzwert liegt bei 2,5 µg/L (TrinkwV, seit Januar 2024). Die tatsächliche Freisetzung aus Rotorblättern im Betrieb ist minimal.</p>
                         <p class="faq-source">Quellen: <a href="https://www.umwelt.niedersachsen.de/download/198345" target="_blank" rel="noopener">BLAK UmwS Merkblatt WEA (2023)</a>, <a href="https://doi.org/10.3390/en17246260" target="_blank" rel="noopener">Mishnaevsky et al. (2024), DTU</a>, <a href="https://www.wind-energie.de/fileadmin/redaktion/dokumente/Aktuelles/Faktenchecks/20240801_BWE-Faktencheck_-_Erosion_an_Rotorblaettern.pdf" target="_blank" rel="noopener">BWE-Faktencheck Erosion (2024)</a>, <a href="https://www.bundestag.de/resource/blob/817020/27cf214cfbeaac330d3b731cbbd8610b/WD-8-077-20-pdf.pdf" target="_blank" rel="noopener">Bundestag WD 8-077/20</a></p>
                     </div>
-                </div>
+                </details>
 
-                <div class="faq-item" id="sonderweg">
-                    <h2 class="faq-question">Ist Deutschland mit der Energiewende auf einem Sonderweg?</h2>
+                <details class="faq-item" id="sonderweg">
+                    <summary class="faq-question">Ist Deutschland mit der Energiewende auf einem Sonderweg?</summary>
                     <div class="faq-answer">
                         <p><strong>Nein - die Energiewende ist ein globaler Trend.</strong> Deutschland liegt beim EE-Anteil im europäischen Mittelfeld:</p>
                         <ul style="margin: var(--space-xs) 0 var(--space-xs) var(--space-md);">
@@ -507,7 +507,7 @@ const faqSchemaRaw = `    {
                         <p><strong>Global:</strong> 2024 wurden weltweit rund <strong>585 GW</strong> neue EE-Kapazität installiert - das sind <strong>92,5%</strong> aller neuen Stromerzeugungskapazitäten (IRENA). China allein installierte <strong>277 GW Solar</strong> und <strong>80 GW Wind</strong> in einem Jahr. Deutschland kam auf rund 19 GW.</p>
                         <p class="faq-source">Quellen: <a href="https://ec.europa.eu/eurostat/databrowser/view/nrg_ind_ren/default/table?lang=en" target="_blank" rel="noopener">Eurostat (Jan 2026)</a>, <a href="https://www.irena.org/Publications/2025/Mar/Renewable-capacity-statistics-2025" target="_blank" rel="noopener">IRENA Renewable Capacity Statistics 2025</a>, <a href="https://ember-energy.org/latest-insights/european-electricity-review-2025/" target="_blank" rel="noopener">Ember European Electricity Review 2025</a></p>
                     </div>
-                </div>
+                </details>
             </div>
 
             <p style="margin-top: var(--space-lg); color: var(--color-text-muted); font-size: 0.9375rem; text-align: center;">
@@ -515,6 +515,28 @@ const faqSchemaRaw = `    {
             </p>
         </div>
     </main>
+
+    <script is:inline>
+      (function () {
+        function openTarget() {
+          var hash = window.location.hash.slice(1);
+          if (!hash) return;
+          var el = document.getElementById(hash);
+          if (el && el.tagName === 'DETAILS') {
+            el.open = true;
+            setTimeout(function () {
+              el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 50);
+          }
+        }
+        window.addEventListener('hashchange', openTarget);
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', openTarget);
+        } else {
+          openTarget();
+        }
+      })();
+    </script>
 
     <!-- Explore More -->
     <section class="explore-section">

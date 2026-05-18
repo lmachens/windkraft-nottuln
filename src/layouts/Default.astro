@@ -106,7 +106,7 @@ const canonicalUrl = canonical ?? new URL(Astro.url.pathname, Astro.site).href;
   @media (max-width: 768px) { .footer__inner { grid-template-columns: 1fr 1fr; } }
   @media (max-width: 480px) { .footer__inner { grid-template-columns: 1fr; } }
   .footer__brand p { color: var(--color-text-muted); font-size: 0.9375rem; margin-top: var(--space-sm); }
-  .footer__col h4 { font-family: var(--font-body); font-weight: 600; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-primary-dark); margin-bottom: var(--space-sm); }
+  .footer__col-title { font-family: var(--font-body); font-weight: 600; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-primary-dark); margin-bottom: var(--space-sm); }
   .footer__col ul { list-style: none; padding-left: 0; margin: 0; }
   .footer__col li { margin-bottom: var(--space-xs); }
   .footer__col a { color: var(--color-text); text-decoration: none; font-size: 0.9375rem; }
@@ -165,6 +165,7 @@ const canonicalUrl = canonical ?? new URL(Astro.url.pathname, Astro.site).href;
     <nav class="header__nav">
       <slot name="nav-extra" />
       {showHomeLink && <a href="/">Startseite</a>}
+      <a href="/faktenchecks/">Faktenchecks</a>
       <a href="/anlagen/">Anlagen</a>
       <a href="/hauswert/">Hauswert</a>
       <a href="/petition/">Petition</a>
@@ -175,7 +176,9 @@ const canonicalUrl = canonical ?? new URL(Astro.url.pathname, Astro.site).href;
   </div>
 </header>
 
-<slot />
+<main>
+  <slot />
+</main>
 
 <footer class="footer">
   <div class="footer__inner">
@@ -195,9 +198,10 @@ const canonicalUrl = canonical ?? new URL(Astro.url.pathname, Astro.site).href;
       <p>Eine private Initiative für mehr Fakten zur Windenergie in Nottuln, Kreis Coesfeld. Nicht gesponsert, nicht parteiisch.</p>
     </div>
     <div class="footer__col">
-      <h4>Inhalte</h4>
+      <p class="footer__col-title">Inhalte</p>
       <ul>
         <li><a href="/">Startseite</a></li>
+        <li><a href="/faktenchecks/">Faktenchecks</a></li>
         <li><a href="/anlagen/">Anlagen</a></li>
         <li><a href="/hauswert/">Hauswert</a></li>
         <li><a href="/faq/">Häufige Fragen</a></li>
@@ -206,7 +210,7 @@ const canonicalUrl = canonical ?? new URL(Astro.url.pathname, Astro.site).href;
       </ul>
     </div>
     <div class="footer__col">
-      <h4>Externe Quellen</h4>
+      <p class="footer__col-title">Externe Quellen</p>
       <ul>
         <li><a href="https://www.bund.net/themen/aktuelles/detail-aktuelles/news/argumente-fuer-windenergie-fakten-statt-mythen/" target="_blank" rel="noopener">BUND Faktencheck</a></li>
         <li><a href="https://www.umweltbundesamt.de" target="_blank" rel="noopener">Umweltbundesamt</a></li>
@@ -214,7 +218,7 @@ const canonicalUrl = canonical ?? new URL(Astro.url.pathname, Astro.site).href;
       </ul>
     </div>
     <div class="footer__col">
-      <h4>Rechtliches</h4>
+      <p class="footer__col-title">Rechtliches</p>
       <ul>
         <li><a href="/impressum/">Impressum</a></li>
         <li><a href="/datenschutz/">Datenschutz</a></li>
