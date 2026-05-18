@@ -1,0 +1,20 @@
+---
+export interface NavSection {
+  href: string;
+  label: string;
+}
+
+export interface Props {
+  title?: string;
+  sections: NavSection[];
+}
+
+const { title = 'Inhalt', sections } = Astro.props;
+---
+
+<nav class="side-nav" id="sideNav">
+  <div class="side-nav-title">{title}</div>
+  {sections.map((s) => (
+    <a href={s.href}>{s.label}</a>
+  ))}
+</nav>

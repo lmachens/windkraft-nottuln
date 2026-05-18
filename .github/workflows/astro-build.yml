@@ -1,0 +1,38 @@
+name: Astro Build
+
+# Baut die Astro-Site bei jedem Push und Pull-Request als CI-Check.
+# Deployment auf GitHub Pages folgt in PR 2 (separate Workflow-Datei),
+# sobald die bestehenden HTML-Seiten in Astro-Seiten überführt sind und
+# die Pages-Source im Repo-Setting auf "GitHub Actions" umgestellt ist.
+
+on:
+  push:
+    branches: [main, astro-migration]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build Astro site
+        run: npm run build
+
+      - name: Upload build artifact (for review)
+        uses: actions/upload-artifact@v4
+        with:
+          name: astro-dist
+          path: dist
+          retention-days: 7
