@@ -1,6 +1,5 @@
 ---
 import Default from '../layouts/Default.astro';
-import EventBanner from '../components/EventBanner.astro';
 import '../styles/home.css';
 
 const meta = {
@@ -69,15 +68,6 @@ const articleSchema = {
     <a href="#klima">Klima</a>
     <a href="#technik">Technik</a>
   </Fragment>
-
-  <EventBanner
-    slot="before-header"
-    dismissKey="banner-vortrag-dismissed"
-    href="/dokumentation/faktencheck-schulte-vortrag-nottuln.html"
-    textBefore="Schulte-Vortrag in Nottuln —"
-    linkLabel="Faktencheck mit 14 Behauptungen"
-  />
-
 
     <!-- Sidebar Navigation (Desktop) -->
     <aside class="sidebar-nav" aria-label="Seitennavigation">

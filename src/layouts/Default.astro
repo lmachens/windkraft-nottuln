@@ -1,4 +1,6 @@
 ---
+import EventBanner from '../components/EventBanner.astro';
+
 export interface Props {
   title: string;
   description?: string;
@@ -135,7 +137,14 @@ const canonicalUrl = canonical ?? new URL(Astro.url.pathname, Astro.site).href;
 
 {showProgressBar && <div class="progress-bar" id="progressBar"></div>}
 
-<slot name="before-header" />
+<slot name="before-header">
+  <EventBanner
+    dismissKey="banner-vahl-mainz-dismissed"
+    href="/dokumentation/faktencheck-vahl-mainz-2026.html"
+    textBefore={'Neu: Faktencheck zur „Mainzer Studie" —'}
+    linkLabel="DGIM-Kongressposter geprüft"
+  />
+</slot>
 
 <header class="header">
   <div class="header__inner">
