@@ -1,0 +1,43 @@
+---
+export interface Props {
+  /** localStorage key used to remember dismissal */
+  dismissKey: string;
+  /** Short label on the left (e.g. "NEU") */
+  badge?: string;
+  /** Link target */
+  href: string;
+  /** Text in front of the link */
+  textBefore: string;
+  /** Anchor label */
+  linkLabel: string;
+}
+
+const {
+  dismissKey,
+  badge = 'NEU',
+  href,
+  textBefore,
+  linkLabel,
+} = Astro.props;
+---
+
+<div class="event-banner" id="eventBanner" role="alert" data-dismiss-key={dismissKey}>
+  <div class="event-banner__inner">
+    <span class="event-banner__date">{badge}</span>
+    <span class="event-banner__text">{textBefore} <a href={href}>{linkLabel}</a></span>
+    <button class="event-banner__close" aria-label="Hinweis schließen" id="eventBannerClose">&times;</button>
+  </div>
+</div>
+<script is:inline>
+  (function () {
+    var banner = document.getElementById('eventBanner');
+    if (!banner) return;
+    var key = banner.dataset.dismissKey;
+    try { if (localStorage.getItem(key)) banner.hidden = true; } catch (e) {}
+    var btn = document.getElementById('eventBannerClose');
+    if (btn) btn.addEventListener('click', function () {
+      banner.hidden = true;
+      try { localStorage.setItem(key, '1'); } catch (e) {}
+    });
+  })();
+</script>
