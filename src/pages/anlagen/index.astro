@@ -21,6 +21,7 @@ const meta = {
   </Fragment>
 
   <EventBanner
+    slot="before-header"
     dismissKey="banner-vortrag-dismissed"
     href="/dokumentation/faktencheck-schulte-vortrag-nottuln.html"
     textBefore="Schulte-Vortrag in Nottuln —"
@@ -708,10 +709,10 @@ const meta = {
 
 
     <!-- Leaflet JS -->
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-    <script src="https://cdn.jsdelivr.net/gh/gokertanrisever/leaflet-ruler@master/src/leaflet-ruler.js"></script>
+    <script is:inline src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script is:inline src="https://cdn.jsdelivr.net/gh/gokertanrisever/leaflet-ruler@master/src/leaflet-ruler.js"></script>
 
-    <script>
+    <script is:inline>
         // Karte initialisieren (Zentrum: Nottuln)
         const map = L.map('map').setView([51.91, 7.33], 12);
 

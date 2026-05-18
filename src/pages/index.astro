@@ -1,5 +1,6 @@
 ---
 import Default from '../layouts/Default.astro';
+import EventBanner from '../components/EventBanner.astro';
 import '../styles/home.css';
 
 const meta = {
@@ -50,6 +51,7 @@ const articleSchema = {
   description={meta.description}
   ogTitle={meta.ogTitle}
   ogDescription={meta.ogDescription}
+  showHomeLink={false}
 >
   <Fragment slot="head-extras">
     <meta name="keywords" content="Windkraft Nottuln, Windenergie Nottuln, Windpark Stockum, Kreis Coesfeld, Windenergieanlagen Münsterland, Stadtwerke Münster Windkraft, Windräder Nottuln, Rotmilan Windkraft, Artenschutz Windenergie" />
@@ -68,28 +70,13 @@ const articleSchema = {
     <a href="#technik">Technik</a>
   </Fragment>
 
-  <!-- Event Banner -->
-  <div class="event-banner" id="eventBanner" role="alert">
-    <div class="event-banner__inner">
-      <span class="event-banner__date">NEU</span>
-      <span class="event-banner__text">Schulte-Vortrag in Nottuln — <a href="/dokumentation/faktencheck-schulte-vortrag-nottuln.html">Faktencheck mit 14 Behauptungen</a></span>
-      <button class="event-banner__close" aria-label="Hinweis schließen" id="eventBannerClose">&times;</button>
-    </div>
-  </div>
-  <script is:inline>
-    (function () {
-      try {
-        if (localStorage.getItem('banner-vortrag-dismissed'))
-          document.getElementById('eventBanner').hidden = true;
-      } catch (e) {}
-      var btn = document.getElementById('eventBannerClose');
-      if (btn) btn.addEventListener('click', function () {
-        var b = document.getElementById('eventBanner');
-        if (b) b.hidden = true;
-        try { localStorage.setItem('banner-vortrag-dismissed', '1'); } catch (e) {}
-      });
-    })();
-  </script>
+  <EventBanner
+    slot="before-header"
+    dismissKey="banner-vortrag-dismissed"
+    href="/dokumentation/faktencheck-schulte-vortrag-nottuln.html"
+    textBefore="Schulte-Vortrag in Nottuln —"
+    linkLabel="Faktencheck mit 14 Behauptungen"
+  />
 
 
     <!-- Sidebar Navigation (Desktop) -->
