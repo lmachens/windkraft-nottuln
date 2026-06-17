@@ -328,10 +328,11 @@ Alle folgenden Fakten wurden gegen Originalquellen geprüft:
 - Bei Unsicherheit: lieber weglassen als falsch zitieren
 
 ## Technische Details
-- Statische HTML/CSS Website (kein Build-Prozess, kein SSG)
+- **Astro-Website** (Static Site Generator). Build mit `bun run build` → statisches `dist/` (kein reines Hand-HTML mehr). Quellcode in `src/`.
+- **Faktenchecks** als MDX in `src/content/faktenchecks/` (z.B. `faktencheck-vahl-mainz-2026.mdx`), mit Komponenten wie `<ClaimCard>`. Hier werden inhaltliche Faktenchecks gepflegt.
 - Hosting: GitHub Pages
 - Repository: github.com/lmachens/windkraft-nottuln (öffentlich, MIT-Lizenz)
-- Struktur: /faq/, /quellen/, /anlagen/, /hauswert/, /petition/, /gesetze/, /impressum/, /datenschutz/
+- Seiten/Routen (aus `src/` generiert): /, /faq/, /quellen/, /anlagen/, /hauswert/, /petition/, /gesetze/, /impressum/, /datenschutz/
 - FAQ-Seite hat Schema.org FAQPage JSON-LD Markup für Google Rich Results
 
 ### Tooltips für Fachbegriffe
@@ -348,6 +349,8 @@ Alle folgenden Fakten wurden gegen Originalquellen geprüft:
 - Tooltip-CSS muss auf der Seite vorhanden sein (index.html und faq/index.html haben sie)
 
 ## Gemeinsame Elemente (Duplikat-Verwaltung)
+
+> **Hinweis (Astro-Migration):** Die folgenden Abschnitte verweisen teils noch auf einzelne `*.html`-Dateien (index.html, faq/index.html …) aus der statischen Vorversion. Bei Astro liegen Header/Footer/Tooltips meist in gemeinsamen Komponenten/Layouts unter `src/`. Vor Änderungen die tatsächliche Quelle in `src/` prüfen; die HTML-Dateipfade unten können veraltet sein.
 
 ### Header Navigation
 Auf ALLEN Seiten identisch halten:
