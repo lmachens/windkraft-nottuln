@@ -4,7 +4,8 @@ import Default from '../../layouts/Default.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 
 const entries = await getCollection('faktenchecks');
-const sorted = entries.sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
+const dateOf = (e: (typeof entries)[number]) => e.data.updatedAt ?? e.data.publishedAt;
+const sorted = entries.sort((a, b) => dateOf(b).getTime() - dateOf(a).getTime());
 
 const formatDate = (d: Date) =>
   d.toLocaleDateString('de-DE', { day: '2-digit', month: 'long', year: 'numeric' });
@@ -31,8 +32,10 @@ const formatDate = (d: Date) =>
         {sorted.map((entry) => (
           <li class="check-item">
             <a href={`/dokumentation/${entry.id}.html`} class="check-item__link">
-              <time class="check-item__date" datetime={entry.data.publishedAt.toISOString()}>
-                {formatDate(entry.data.publishedAt)}
+              <time class="check-item__date" datetime={dateOf(entry).toISOString()}>
+                {entry.data.updatedAt
+                  ? `Aktualisiert: ${formatDate(entry.data.updatedAt)}`
+                  : formatDate(entry.data.publishedAt)}
               </time>
               <h2 class="check-item__title">{entry.data.title}</h2>
               {entry.data.subtitle && (
