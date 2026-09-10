@@ -24,7 +24,7 @@ const meta = {
                     <path d="M9 12l2 2 4-4"/>
                     <circle cx="12" cy="12" r="10"/>
                 </svg>
-                <span>Daten: RWI 2019 &amp; 2024, Zensus 2022, PNAS 2024</span>
+                <span>Daten: RWI 2019 &amp; 2024, Meta-Analyse 2024, Zensus 2022, PNAS 2024</span>
             </div>
         </div>
     </section>
@@ -54,7 +54,7 @@ const meta = {
                     <h3>RWI - Heuer &amp; Sommer (2024)</h3>
                     <p>Eine aktualisierte RWI-Studie (<a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4918064" target="_blank" rel="noopener">Heuer &amp; Sommer, SSRN #4918064</a>) untersuchte rund 4 Millionen Immobilienangebote auf ImmoScout24 von 2009 bis 2021.</p>
                     <p><strong>Ergebnis:</strong> Immobilien mit einer WEA im Umkreis von 1-2 km sind durchschnittlich <strong>1,8% günstiger</strong>. Ab 3 km ist kein Effekt mehr nachweisbar. Der Effekt ist bei <strong>älteren Immobilien</strong> und in weniger dicht besiedelten Gebieten größer.</p>
-                    <p><strong>Methodik:</strong> Angebotsdaten (ImmoScout24), 2009-2021. Zum Vergleich: Die <a href="#rwi-2019">RWI-Studie von 2019</a> nutzte Transaktionsdaten von 2007-2015 und fand höhere Werte (7%/23%).</p>
+                    <p><strong>Methodik:</strong> Angebotsdaten (ImmoScout24), 2009-2021. Zum Vergleich: Die <a href="#rwi-2019">RWI-Studie von 2019</a> wertete denselben Datentyp aus - Verkaufsangebote auf ImmoScout24, aber im Zeitraum 2007-2015 - und fand höhere Werte (7%/23%).</p>
                 </div>
 
                 <div class="detail-box">
@@ -70,6 +70,14 @@ const meta = {
                     <p><strong>Ergebnis:</strong> Bei Anlagen über 150m Höhe beträgt der Wertverlust im Umkreis von 2 km durchschnittlich <strong>-5,4%</strong>. Bei kleineren Anlagen ist der Effekt geringer.</p>
                 </div>
 
+                <div class="detail-box">
+                    <h3>Meta-Analyse - Schütt (2024)</h3>
+                    <p>Die bisher einzige umfassende Meta-Analyse zum Thema (<a href="https://doi.org/10.1007/s10640-023-00809-y" target="_blank" rel="noopener">Marvin Schütt, Environmental &amp; Resource Economics 87(1), 2024, S. 1-43</a>) fasst <strong>720 Einzelschätzungen aus 25 hedonischen Preisstudien</strong> zusammen. Sie rechnet dabei mit Bayes'scher Modellmittelung und korrigiert für <strong>Publikationsbias</strong> - also dafür, dass Studien mit auffälligen Ergebnissen häufiger veröffentlicht werden als solche ohne Befund.</p>
+                    <p><strong>Ergebnis:</strong> Nach dieser Korrektur bleibt im Mittel eine Wertminderung von <strong>0,68% bei etwa 3 km Entfernung</strong> (1,89 Meilen), die jenseits von rund 4,5 km (2,8 Meilen) auf null zurückgeht.</p>
+                    <p>Der Autor beschreibt die Ausgangslage im Abstract so: <em>"there is no consensus in the empirical hedonic literature ... It remains unclear if the proximity to wind turbines reduces, increases, or has no significant effect on property values."</em> Genau deshalb ist eine Meta-Analyse aussagekräftiger als jede Einzelstudie: Sie zeigt, wo die Literatur insgesamt landet, wenn man Ausreißer und Veröffentlichungsverzerrung herausrechnet.</p>
+                    <p><strong>Was das für die Debatte heißt:</strong> Die oft zitierten 7% bzw. 23% aus der RWI-Studie 2019 liegen am oberen Rand dessen, was die Forschung insgesamt findet. Der über alle Studien gemittelte Effekt ist deutlich kleiner.</p>
+                </div>
+
                 <div class="note-box" style="border-left-color: var(--color-warning);">
                     <p><strong>Einordnung für Nottuln:</strong> Die in Stockum geplanten Anlagen haben eine Gesamthöhe von ca. 266 m. Alle oben genannten Studien basieren auf Daten zu Bestandsanlagen, die zum Zeitpunkt der Erhebung typischerweise 100-200 m hoch waren. Zur Auswirkung moderner Anlagen dieser Größenordnung auf Immobilienwerte gibt es noch keine belastbare Forschung.</p>
                 </div>
@@ -82,7 +90,7 @@ const meta = {
         <div class="container">
             <div class="content-container">
                 <h2 id="rwi-2019">Die oft zitierten Zahlen: RWI-Studie (2019)</h2>
-                <p>In lokalen Diskussionen werden häufig die Zahlen der RWI-Studie von 2019 genannt. Sie untersuchte rund 3 Millionen Immobilientransaktionen zwischen 2007 und 2015.</p>
+                <p>In lokalen Diskussionen werden häufig die Zahlen der RWI-Studie von 2019 genannt. Sie untersuchte rund 3 Millionen Verkaufsangebote auf ImmoScout24 aus den Jahren 2007 bis 2015. Das RWI schreibt dazu wörtlich: <em>"Für die Studie hat das RWI knapp 3 Millionen Verkaufsangebote ausgewertet, die in der Zeit zwischen 2007 und 2015 auf dem Online-Portal Immoscout24 erschienen sind."</em> Es handelt sich also um <strong>Angebotspreise, nicht um beurkundete Kaufpreise</strong> - ein Unterschied, der bei der Einordnung der Zahlen wichtig ist.</p>
 
                 <div class="stat-row">
                     <div class="stat-box stat-box--warning">
@@ -108,7 +116,7 @@ const meta = {
                 </div>
 
                 <div class="note-box">
-                    <p><strong>Einordnung:</strong> Die Studie basiert auf Daten von 2007-2015, als Anlagen typischerweise 100-150 m hoch waren. Die aktualisierte RWI-Studie von 2024 mit Daten bis 2021 findet mit 1,8% einen niedrigeren Durchschnittswert - bei anderer Methodik (Angebots- statt Transaktionsdaten).</p>
+                    <p><strong>Einordnung:</strong> Die Studie basiert auf Daten von 2007-2015, als Anlagen typischerweise 100-150 m hoch waren. Die aktualisierte RWI-Studie von 2024 mit Daten bis 2021 findet mit 1,8% einen niedrigeren Durchschnittswert - bei gleichem Datentyp (Verkaufsangebote auf ImmoScout24), aber längerem und neuerem Zeitraum.</p>
                 </div>
 
                 <p style="margin-top: var(--space-sm);"><a href="https://www.rwi-essen.de/presse/wissenschaftskommunikation/pressemitteilungen/detail/windraeder-lassen-immobilienpreise-sinken" target="_blank" rel="noopener">RWI-Pressemitteilung (2019) &rarr;</a></p>
@@ -239,7 +247,7 @@ const meta = {
                 <div class="claim-item">
                     <div class="claim-item__claim">"25-30% Wertverlust"</div>
                     <div class="claim-item__fact">
-                        <p>Diese Zahlen lassen sich mit keiner wissenschaftlichen Studie belegen. Die RWI-Studie von 2019 (3 Mio. Transaktionen) kommt auf maximal 23% - für Altbauten vor 1950 im ländlichen Raum innerhalb von 1 km.</p>
+                        <p>Diese Zahlen lassen sich mit keiner wissenschaftlichen Studie belegen. Die RWI-Studie von 2019 (knapp 3 Mio. Verkaufsangebote) kommt auf maximal 23% - für Altbauten vor 1950 im ländlichen Raum innerhalb von 1 km.</p>
                     </div>
                 </div>
 
@@ -264,7 +272,7 @@ const meta = {
                 <ul class="source-list">
                     <li>
                         <strong>RWI Leibniz-Institut (2019):</strong>
-                        <a href="https://www.rwi-essen.de/presse/wissenschaftskommunikation/pressemitteilungen/detail/windraeder-lassen-immobilienpreise-sinken" target="_blank" rel="noopener">"Windräder lassen Immobilienpreise sinken"</a> - Daten: 3 Mio. Transaktionen, 2007-2015
+                        <a href="https://www.rwi-essen.de/presse/wissenschaftskommunikation/pressemitteilungen/detail/windraeder-lassen-immobilienpreise-sinken" target="_blank" rel="noopener">"Windräder lassen Immobilienpreise sinken"</a> - Daten: knapp 3 Mio. Verkaufsangebote auf ImmoScout24, 2007-2015
                     </li>
                     <li>
                         <strong>Heuer &amp; Sommer, RWI (2024):</strong>
